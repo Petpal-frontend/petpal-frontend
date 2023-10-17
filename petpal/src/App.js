@@ -1,8 +1,4 @@
 function App() {
-  return (
-    <div>
-      hello world
-    </div>
-  );
+  return <div>fsfdfsd</div>
 }
-export default App;
+export default App
