@@ -7,10 +7,8 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <div className="screenLayout">
-        <SplashPage />
-        <Router />
-      </div>
+      <SplashPage />
+      <Router />
     </>
   );
 }
