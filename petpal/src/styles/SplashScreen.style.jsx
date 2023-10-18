@@ -1,3 +1,5 @@
+// SplashScreen.style.js
+
 import styled from 'styled-components';
 
 export const SplashScreen = styled.div`
@@ -9,17 +11,15 @@ export const SplashScreen = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   width: 60%;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  transition: opacity 1s ease-in-out;
 `;
 
-export const Visible = styled(SplashScreen)`
-  opacity: 1;
-`;
-
-export const Hidden = styled(SplashScreen)`
-  opacity: 0;
+export const HiddenSplashScreen = styled(SplashScreen)`
   pointer-events: none;
   z-index: -1;
 `;

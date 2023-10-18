@@ -1,6 +1,7 @@
+// SplashPage.js
+
 import React, { useEffect, useState } from 'react';
-import '../styles/SplashScreen.style';
-import { SplashScreen, Visible, Hidden } from '../styles/SplashScreen.style';
+import { SplashScreen, HiddenSplashScreen } from '../styles/SplashScreen.style';
 
 function SplashPage() {
   const [isVisible, setIsVisible] = useState(true);
@@ -9,7 +10,7 @@ function SplashPage() {
     // 3초 후에 스플래시 화면을 숨김
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 3000);
+    }, 1500);
 
     return () => {
       clearTimeout(timer);
@@ -18,9 +19,10 @@ function SplashPage() {
 
   return (
     <div className="splash-container">
-      <SplashScreen>
+      <SplashScreen isVisible={isVisible}>
         <img src="images/splash/splashImage.svg" alt="Splash Screen" />
       </SplashScreen>
+      <HiddenSplashScreen />
     </div>
   );
 }
