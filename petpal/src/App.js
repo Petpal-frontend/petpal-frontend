@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      hello world
+      바주카포화이팅!
       <li>ddds</li>
     </div>
   );
