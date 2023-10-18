@@ -1,9 +1,14 @@
+import React from 'react';
+import SplashPage from './pages/SplashPage';
+
 function App() {
   return (
-    <div>
-      바주카포화이팅!
-      <li>ddds</li>
-    </div>
+    <>
+      <SplashPage />
+      <div>
+        <li>막막</li>
+      </div>
+    </>
   );
 }
 export default App;

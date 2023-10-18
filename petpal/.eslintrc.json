@@ -4,7 +4,7 @@
     "es6": true,
     "node": true
   },
-  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "extends": ["airbnb", "plugin:prettier/recommended", "plugin:styled-components/recommended"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -12,12 +12,13 @@
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier"],
+  "plugins": ["react", "styled-components", "prettier"],
   "rules": {
     "react/react-in-jsx-scope": 0,
     "react/prefer-stateless-function": 0,
     "react/jsx-filename-extension": 0,
     "react/jsx-one-expression-per-line": 0,
-    "no-nested-ternary": 0
+    "no-nested-ternary": 0,
+    "styled-components/css-prop": "error"
   }
 }
