@@ -1,9 +1,23 @@
-function App() {
+import * as React from 'react';
+
+import SplashPage from './pages/SplashPage';
+import { createGlobalStyle } from 'styled-components';
+import GlobalStyle from './styles/GlobalStyle';
+// const GlobalStyle = createGlobalStyle`
+//    body {
+//         margin: 0 auto;
+
+// }`;
+
+const App = () => {
   return (
-    <div>
-      바주카포화이팅!
-      <li>ddds</li>
-    </div>
+    <>
+      <GlobalStyle />
+      <div className="container">
+        <SplashPage />
+        ㅇㄴㅁㅇㄴㅁㅇㄴㅁㅇㅁㄴㅇㅁㄴㅇ
+      </div>
+    </>
   );
-}
+};
 export default App;
