@@ -9,7 +9,7 @@ export const SplashScreen = styled.div`
   position: fixed;
   margin: auto;
   width: 50%;
-  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  display: ${({ isVisible }) => (isVisible ? 'flex' : 'none')};
   transition: opacity 1s ease-in-out;
 `;
 
