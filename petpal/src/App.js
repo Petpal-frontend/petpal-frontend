@@ -1,16 +1,15 @@
 import * as React from 'react';
-import SplashPage from './pages/SplashPage';
+import Router from './pages/Router';
 import GlobalStyle from './styles/GlobalStyle';
+import SplashPage from './pages/SplashPage';
 
-const App = () => {
+function App() {
   return (
     <>
       <GlobalStyle />
-      <div className="screenLayout">
-        <SplashPage />
-        바주카포 화이팅
-      </div>
+      <SplashPage />
+      <Router />
     </>
   );
-};
+}
 export default App;
