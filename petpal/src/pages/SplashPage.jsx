@@ -1,5 +1,3 @@
-// SplashPage.js
-
 import React, { useEffect, useState } from 'react';
 import { SplashScreen, HiddenSplashScreen } from '../styles/SplashScreen.style';
 
@@ -7,7 +5,7 @@ function SplashPage() {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // 3초 후에 스플래시 화면을 숨김
+    // 1.5초 후에 스플래시 화면을 숨김
     const timer = setTimeout(() => {
       setIsVisible(false);
     }, 1500);

@@ -1,5 +1,3 @@
-// SplashScreen.style.js
-
 import styled from 'styled-components';
 
 export const SplashScreen = styled.div`
@@ -9,12 +7,8 @@ export const SplashScreen = styled.div`
   height: 100vh;
   background-color: #fffad0;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   margin: auto;
-  width: 60%;
+  width: 50%;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   transition: opacity 1s ease-in-out;
 `;
