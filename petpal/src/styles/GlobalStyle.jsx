@@ -5,7 +5,6 @@ const GlobalStyle = createGlobalStyle`
     ${reset};
     .screenLayout{
             height: 100vh;
-            background-color: #fffad0;
             margin: auto;
             width: 50%;
 },

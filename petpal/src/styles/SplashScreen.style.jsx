@@ -9,9 +9,10 @@ export const SplashScreen = styled.div`
   position: fixed;
   margin: auto;
   width: 50%;
-  display: ${({ isVisible }) => (isVisible ? 'flex' : 'none')};
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   transition: opacity 1s ease-in-out;
 `;
+// display: ${({ isVisible }) => (isVisible ? 'flex' : 'none')};
 
 export const HiddenSplashScreen = styled(SplashScreen)`
   pointer-events: none;
