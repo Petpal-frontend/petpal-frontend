@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { SplashScreen, HiddenSplashScreen } from '../styles/SplashScreen.style';
+import {
+  SplashScreen,
+  HiddenSplashScreen,
+} from '../../components/Splash/SplashScreen.style';
 
 function SplashPage() {
   const [isVisible, setIsVisible] = useState(true);
@@ -18,7 +21,7 @@ function SplashPage() {
   return (
     <div className="splash-container">
       <SplashScreen isVisible={isVisible}>
-        <img src="images/splash/splashImage.svg" alt="Splash Screen" />
+        <img src="images/logo.svg" alt="Splash Screen" />
       </SplashScreen>
       <HiddenSplashScreen />
     </div>
