@@ -10,10 +10,6 @@ export const SplashScreen = styled.div`
   position: fixed;
   background-color: #fffad0;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  transition: opacity 1s ease-in-out;
-`;
-
-export const HiddenSplashScreen = styled(SplashScreen)`
-  pointer-events: none;
-  z-index: -1;
+  z-index: ${({ isVisible }) => (isVisible ? 1 : -1)};
+  transition: all 1s ease-in-out;
 `;
