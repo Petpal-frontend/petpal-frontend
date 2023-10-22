@@ -1,48 +1,48 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const LoginContainer = styled.form`
+export const LoginContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fffad0;
-  width: 520px;
   height: 100vh;
+  background-color: #fffad0;
 `;
 
-export const LoginLogo = styled.div`
-  width: 190px;
-  height: 172px;
-  margin-bottom: 41px;
-  background-image: url('images/logo.svg');
-  background-size: 100%;
-  background-repeat: no-repeat;
+export const LoginLogo = styled.img`
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
-export const LoginLabel = styled.label`
-  &.a11yHidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    clip-path: polygon(0 0, 0 0, 0 0);
-  }
-`;
+// 로그인 폼 입력
 
 export const LoginInput = styled.input`
-  width: 300px;
-  padding: 17px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  padding: 23px 0px;
+  margin-top: 239px;
   border: 1px solid #dbdbdb;
   text-indent: 16px;
-  &.inputBottom {
-    border-bottom: none;
+  box-sizing: border-box;
+  &.inputTop {
+    margin-top: -1px;
+  }
+  &.radiusTop {
+    border-radius: 10px 10px 0 0;
+  }
+  &.radiusBottom {
+    border-radius: 0 0 10px 10px;
   }
 `;
 
 export const LoginBtn = styled.button`
   cursor: pointer;
-  width: 300px;
+  width: 400px;
   height: 60px;
   margin-top: 38px;
   background-color: #27489d;
@@ -51,4 +51,24 @@ export const LoginBtn = styled.button`
   font-size: 18px;
   font-weight: bold;
   color: #ffffff;
+`;
+
+export const SignUpLink = styled(Link)`
+  margin-top: 27px;
+  margin-bottom: 75px;
+  text-decoration: none;
+  color: #4b4b4b;
+`;
+
+// sns 로그인
+
+export const P = styled.p`
+  display: flex;
+  color: #767676;
+`;
+
+export const SnsLoginList = styled.div`
+  display: flex;
+  gap: 50px;
+  margin-top: 38px;
 `;
