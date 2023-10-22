@@ -20,13 +20,22 @@ import Search from './SearchPage/SearchPage';
 import Following from './FollowPage/FollowingPage';
 import Follower from './FollowPage/FollowerPage';
 import Page404 from './Page404';
+import SplashPage from './SplashPage/SplashPage';
 
 export default function Router() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <SplashPage />
+                <Home />
+              </>
+            }
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
 
