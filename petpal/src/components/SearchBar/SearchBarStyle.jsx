@@ -7,6 +7,7 @@ export const SearchBarInput = styled.input`
   border: 1px solid white;
   border-radius: 4px;
   margin: 28.6px;
+  // background: url('images/search.png') no-repeat right center; /* 오른쪽 중앙에 배경 이미지 설정 */
   filter: drop-shadow(
     0px 2.6666600704193115px 26.666601181030273px rgba(0, 0, 0, 0.05)
   );

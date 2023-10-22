@@ -11,7 +11,8 @@ const GlobalStyle = createGlobalStyle`
 #root {
   width: 520px;
   background-color: #fff;
-  height: 1125.331px;
+  height: 100vw;
+  
 }
 
 input::placeholder {
