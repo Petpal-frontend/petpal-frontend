@@ -21,7 +21,7 @@ export const WalkItemImage = styled.img`
 `;
 
 export const WalkItemContent = styled.h3`
-  height: 1.9em; // 글자 윗부분 잘려서 넣어줘야됨
+  height: 1.97em; // 글자 윗부분 잘려서 넣어줘야됨
   font-size: 18px;
   font-weight: bold;
   margin: 10px 5px;
