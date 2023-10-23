@@ -29,7 +29,6 @@ const ImageUploader = () => {
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // 요소가 화면에 나타나면 새로운 이미지를 불러옴
             handleUpload();
           }
         });

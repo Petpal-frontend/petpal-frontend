@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 
 const ImageUploader = () => {
-  const [totalData, setTotalData] = useState([]); // 렌더링되는 전체 데이터
-  const [isLoading, setIsLoading] = useState(false); // 새로운 데이터를 추가로 불러올 때 로딩처리를 위해
+  const [totalData, setTotalData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [nextInfo, setNextInfo] = useState({
     hasNext: true,
     nextPage: 2,
-  }); // 다음 데이터 존재 여부
+  });
 
   // 로컬 이미지 URL 배열
   const localImages = [
@@ -33,7 +33,6 @@ const ImageUploader = () => {
     'https://via.placeholder.com/220',
     'https://via.placeholder.com/221',
     'https://via.placeholder.com/222',
-    // ... 더 많은 로컬 이미지 URL을 추가할 수 있습니다.
   ];
 
   const observerRef = useRef(null);
@@ -53,12 +52,11 @@ const ImageUploader = () => {
   };
 
   const callData = pageNum => {
-    setIsLoading(true); //로딩 true
+    setIsLoading(true);
 
-    // 로컬 이미지 데이터를 불러와서 사용
     const selectData = {
-      data: localImages.slice((pageNum - 1) * 2, pageNum * 2), // 페이지 번호에 따라 이미지를 나눠 가져옴
-      hasNext: nextInfo.nextPage * 2 < localImages.length, // 더 많은 이미지가 남아있는지 확인
+      data: localImages.slice((pageNum - 1) * 2, pageNum * 2),
+      hasNext: nextInfo.nextPage * 2 < localImages.length,
       page: nextInfo.nextPage,
     };
 
