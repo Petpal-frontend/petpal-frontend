@@ -8,6 +8,8 @@ export const LoginContainer = styled.div`
   align-items: center;
   height: 100vh;
   background-color: #fffad0;
+  width: calc(100% + 30px);
+  margin: 0 0 0 -15px;
 `;
 
 export const LoginLogo = styled.img`
@@ -52,6 +54,8 @@ export const LoginBtn = styled.button`
   font-weight: bold;
   color: #ffffff;
 `;
+
+// 회원가입 화면으로 연결
 
 export const SignUpLink = styled(Link)`
   margin-top: 27px;

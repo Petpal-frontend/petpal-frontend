@@ -1,31 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import {
-  SplashBg,
-  SplashLogo,
-} from '../../components/Splash/SplashScreen.style';
+import HomePage from '../HomePage/HomePage';
+import Splash from '../../components/Splash/Splash';
 
-function SplashPage() {
-  const imgLogo = 'images/logo.svg';
-  const [isVisible, setIsVisible] = useState(true);
+export default function SplashPage() {
+  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    // 1.5초 후에 스플래시 화면을 숨김
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-    }, 1500);
-
-    return () => {
-      clearTimeout(timer);
-    };
+    // 스플래시 화면을 보여주고 일정 시간 후에 홈 화면으로 전환
+    setTimeout(() => {
+      setShowSplash(false);
+    }, 1500); // 1.5초 후 스플래시 화면을 사라지게 함
   }, []);
 
-  return (
-    <>
-      <SplashBg>
-        <SplashLogo src={imgLogo} alt="스플래시 로고" />
-      </SplashBg>
-    </>
-  );
+  return <div>{showSplash ? <Splash /> : <HomePage />}</div>;
 }
-
-export default SplashPage;

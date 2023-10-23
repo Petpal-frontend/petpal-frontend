@@ -4,10 +4,16 @@ export const SplashBg = styled.div`
   width: calc(100% + 30px);
   height: 100vh;
   background-color: #fffad0;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  margin: 0 0 0 -15px;
+  animation: fadein 1.5s ease-in-out;
+  @keyframes fadein {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 `;
 
 export const SplashLogo = styled.img`

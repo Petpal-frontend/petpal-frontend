@@ -4,6 +4,14 @@ import reset from 'styled-reset';
 const GlobalStyle = createGlobalStyle`
   ${reset};
 
+  :root {
+    /* Font Size */
+    --font-size-s: 10px;
+    --font-size-sm: 12px;
+    --font-size-m: 14px;
+    --font-size-l: 18px;
+  }
+
   * {
     box-sizing: border-box;
   }
@@ -17,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0 15px;
     height: 100vh;
     background-color: #fff;
-    position: relative;
 }
 
 input::placeholder {
