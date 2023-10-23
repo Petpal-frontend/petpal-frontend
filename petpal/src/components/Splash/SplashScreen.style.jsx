@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
-export const SplashScreen = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 520px;
+export const SplashBg = styled.div`
+  width: calc(100% + 30px);
   height: 100vh;
-  margin: auto;
-  position: fixed;
   background-color: #fffad0;
-  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  z-index: ${({ isVisible }) => (isVisible ? 1 : -1)};
-  transition: all 1s ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`;
+
+export const SplashLogo = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;

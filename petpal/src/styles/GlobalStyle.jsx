@@ -3,16 +3,21 @@ import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
+
+  * {
+    box-sizing: border-box;
+  }
+
   body {
-	display: flex;
-	justify-content: center;
-  background-color: #F2F2F2;
-}
-#root {
-  width: 520px;
-  background-color: #fff;
-  height: 100vw;
-  
+    background-color: #F2F2F2;
+  }
+  #root {
+    margin: 0 auto;
+    width: 520px;
+    padding: 0 15px;
+    height: 100vh;
+    background-color: #fff;
+    position: relative;
 }
 
 input::placeholder {

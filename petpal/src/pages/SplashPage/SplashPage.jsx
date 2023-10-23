@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { SplashScreen } from '../../components/Splash/SplashScreen.style';
+import {
+  SplashBg,
+  SplashLogo,
+} from '../../components/Splash/SplashScreen.style';
 
 function SplashPage() {
+  const imgLogo = 'images/logo.svg';
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -16,11 +20,11 @@ function SplashPage() {
   }, []);
 
   return (
-    <div className="splash-container">
-      <SplashScreen isVisible={isVisible}>
-        <img src="images/logo.svg" alt="Splash Screen" />
-      </SplashScreen>
-    </div>
+    <>
+      <SplashBg>
+        <SplashLogo src={imgLogo} alt="스플래시 로고" />
+      </SplashBg>
+    </>
   );
 }
 
