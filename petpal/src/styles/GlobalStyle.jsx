@@ -9,14 +9,16 @@ const GlobalStyle = createGlobalStyle`
   background-color: #F2F2F2;
 }
 #root {
-	width: 520px;
-	min-height: 100vh;
+  width: 520px;
   background-color: #fff;
+  height: 100vw;
+  
 }
 
 input::placeholder {
   color: #DBDBDB;
   font-size: 16px;
+  text-indent: 16px;
 }
 `;
 
