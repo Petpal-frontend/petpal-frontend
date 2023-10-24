@@ -17,11 +17,11 @@ export const WalkItemImage = styled.img`
   width: 90px;
   height: 90px;
   border-radius: 10px;
-	margin-left: 15px;
+  margin-left: 15px;
 `;
 
 export const WalkItemContent = styled.h3`
-  height: 1.97em; // 글자 윗부분 잘려서 넣어줘야됨
+  line-height: 1.2em; // 글자 윗부분 잘려서 넣어줘야됨
   font-size: 18px;
   font-weight: bold;
   margin: 10px 5px;

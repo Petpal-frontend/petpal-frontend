@@ -28,13 +28,14 @@ export default function HomePage() {
       <p
         style={{
           fontSize: '21px',
-          marginLeft: '20px',
+          padding: '0 15px',
+          marginBottom: '14px',
           fontWeight: '700',
         }}
       >
         우리 귀여운 집사님 보고가세요!
       </p>
-      {/* <ImageUploader /> */}
+      <ImageUploader />
     </>
   );
 }

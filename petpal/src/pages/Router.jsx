@@ -21,6 +21,7 @@ import Following from './FollowPage/FollowingPage';
 import Follower from './FollowPage/FollowerPage';
 import Page404 from './Page404';
 import SplashPage from './SplashPage/SplashPage';
+import NavBar from '../components/Common/NavBar/NavBar';
 
 export default function Router() {
   return (
@@ -33,13 +34,22 @@ export default function Router() {
               <>
                 <SplashPage />
                 <Home />
+                <NavBar />
               </>
             }
           />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
 
-          <Route path="/productList" element={<ProductList />} />
+          <Route
+            path="/productList"
+            element={
+              <>
+                <ProductList />
+                <NavBar />
+              </>
+            }
+          />
           <Route path="/productDetail" element={<ProductDetail />} />
           <Route path="/productPost" element={<ProductPost />} />
 

@@ -9,10 +9,11 @@ const GlobalStyle = createGlobalStyle`
   background-color: #F2F2F2;
 }
 #root {
-  width: 520px;
+  // width: 520px;
+  // max-width: 767px;
+  // height: 100vh;
+  width: clamp(320px, 100%, 767px);
   background-color: #fff;
-  height: 100vw;
-  
 }
 
 input::placeholder {
