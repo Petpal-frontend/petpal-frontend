@@ -40,7 +40,7 @@ export default function ProductList() {
               <ProductInfo>9,900원</ProductInfo>
             </ProductLi> */}
             <ProductLi>
-              <Link to={`/productDetail/`}>
+              <Link to={`/productDetail`}>
                 <p className="productImg">
                   <img src="./images/product00.svg" alt="상품 이미지" />
                 </p>
@@ -58,7 +58,7 @@ export default function ProductList() {
               </Link>
             </ProductLi>
             <ProductLi>
-              <Link to={`/productDetail/`}>
+              <Link to={`/productDetail`}>
                 <p className="productImg">
                   <img src="./images/product00.svg" alt="상품 이미지" />
                 </p>
@@ -76,7 +76,7 @@ export default function ProductList() {
               </Link>
             </ProductLi>
             <ProductLi>
-              <Link to={`/productDetail/`}>
+              <Link to={`/productDetail`}>
                 <p className="productImg">
                   <img src="./images/product00.svg" alt="상품 이미지" />
                 </p>
@@ -94,7 +94,7 @@ export default function ProductList() {
               </Link>
             </ProductLi>
             <ProductLi>
-              <Link to={`/productDetail/`}>
+              <Link to={`/productDetail`}>
                 <p className="productImg">
                   <img src="./images/product00.svg" alt="상품 이미지" />
                 </p>
@@ -112,7 +112,7 @@ export default function ProductList() {
               </Link>
             </ProductLi>
             <ProductLi>
-              <Link to={`/productDetail/`}>
+              <Link to={`/productDetail`}>
                 <p className="productImg">
                   <img src="./images/product00.svg" alt="상품 이미지" />
                 </p>
@@ -130,7 +130,7 @@ export default function ProductList() {
               </Link>
             </ProductLi>
             <ProductLi>
-              <Link to={`/productDetail/`}>
+              <Link to={`/productDetail`}>
                 <p className="productImg">
                   <img src="./images/product00.svg" alt="상품 이미지" />
                 </p>

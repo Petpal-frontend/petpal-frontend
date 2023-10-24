@@ -5,7 +5,6 @@ export const StyledLayout = styled.div`
   position: relative;
 `;
 
-// root width빼고 max-width: 767px;
 export const HeaderWrap = styled.header`
   display: flex;
   align-items: center;
