@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { StyledLabel } from '../Common/Input/InputStyle';
+import { StyledButton } from '../Common/Button/FormButton/FormButtonStyle';
 import Input from '../Common/Input/Input';
 
 import {
@@ -8,13 +10,15 @@ import {
   ProfileImgBox,
   ProfileImg,
   ProfileUpload,
-  SearchImg,
+  AddressBox,
+  AddressInput,
+  SearchBtn,
+  Search,
 } from './SignUpStyle';
 
 export default function SignUp() {
   const imgProfile = '/images/profile.svg';
   const imgProfileBtn = '/images/profile-btn.svg';
-  const imgSearch = '/images/icon-search.svg';
 
   return (
     <SignUpContainer>
@@ -27,7 +31,7 @@ export default function SignUp() {
         <Input
           type="text"
           label="닉네임"
-          placeholder="닉네임을 입력해 주세요."
+          placeholder="2~10자 이내여야 합니다."
         />
         <Input
           type="text"
@@ -39,12 +43,18 @@ export default function SignUp() {
           label="비밀번호"
           placeholder="비밀번호를 입력해 주세요."
         />
-        <Input
-          type="text"
-          label="주소"
-          placeholder="예) 문래동 강서타워, 테헤란로"
-        />
-        <SearchImg src={imgSearch} alt="검색 돋보기 아이콘" />
+        <AddressBox>
+          <StyledLabel label="주소">주소</StyledLabel>
+          <AddressInput
+            type="text"
+            placeholder="예) 문래동 강서타워, 테헤란로"
+          />
+          <SearchBtn type="button">
+            <Search className="a11yHidden">검색</Search>
+          </SearchBtn>
+        </AddressBox>
+
+        <StyledButton />
       </form>
     </SignUpContainer>
   );

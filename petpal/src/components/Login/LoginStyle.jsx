@@ -31,6 +31,11 @@ export const LoginInput = styled.input`
   border: 1px solid #dbdbdb;
   text-indent: 16px;
   box-sizing: border-box;
+  &::placeholder {
+    color: #dbdbdb;
+    font-size: var(--font-size-l);
+    text-indent: 18px;
+  }
   &.inputTop {
     margin-top: -1px;
   }
