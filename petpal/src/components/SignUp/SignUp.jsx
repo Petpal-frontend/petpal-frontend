@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SignupInput from '../Common/Input/SignupInput';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-const apiUrl = 'https://api.mandarin.weniv.co.kr/user';
+const apiUrl = 'https://api.mandarin.weniv.co.kr';
 
 const SignUpForm = () => {
   const navigate = useNavigate();
@@ -17,15 +17,43 @@ const SignUpForm = () => {
   const [info, setInfo] = useState('');
 
   const Signup = () => {
-    axios
-      .post(apiUrl, {
-        username: username,
-        email: email,
-        password: password,
-        accountname: accountname,
-        image: image,
-        info: info,
-      })
+    // axios
+    //   .post(apiUrl, {
+    //     username: username,
+    //     email: email,
+    //     password: password,
+    //     accountname: accountname,
+    //     image: image,
+    //     info: info,
+    //   })
+    //   .then(response => {
+    //     console.log(response);
+    //     alert('회원가입성공');
+    //     if (response.status === 200) {
+    //       return navigate('/login');
+    //     }
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
+
+    axios({
+      method: 'post',
+      url: `${apiUrl}/user`,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: {
+        user: {
+          username: username,
+          email: email,
+          password: password,
+          accountname: accountname,
+          image: image,
+          info: info,
+        },
+      },
+    })
       .then(response => {
         console.log(response);
         alert('회원가입성공');
@@ -77,7 +105,7 @@ const SignUpForm = () => {
         <label>accountname</label>
         <br />
         <input
-          type="accountname"
+          type="text"
           placeholder="accountname"
           onChange={e => {
             setAccountname(e.target.value);
@@ -88,7 +116,7 @@ const SignUpForm = () => {
         <label>info</label>
         <br />
         <input
-          type="info"
+          type="text"
           placeholder="info"
           onChange={e => {
             setInfo(e.target.value);
