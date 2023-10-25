@@ -20,17 +20,39 @@ import Search from './SearchPage/SearchPage';
 import Following from './FollowPage/FollowingPage';
 import Follower from './FollowPage/FollowerPage';
 import Page404 from './Page404';
+import SplashPage from './SplashPage/SplashPage';
+import HomePage from './HomePage/HomePage';
+
+import NavBar from '../components/Common/NavBar/NavBar';
+
 
 export default function Router() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <SplashPage />
+                <Home />
+                <NavBar />
+              </>
+            }
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
 
-          <Route path="/productList" element={<ProductList />} />
+          <Route
+            path="/productList"
+            element={
+              <>
+                <ProductList />
+                <NavBar />
+              </>
+            }
+          />
           <Route path="/productDetail" element={<ProductDetail />} />
           <Route path="/productPost" element={<ProductPost />} />
 

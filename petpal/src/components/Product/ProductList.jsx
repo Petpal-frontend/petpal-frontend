@@ -5,8 +5,8 @@ import { HeaderWrap } from './ProductListStyle';
 import { PrevBtn, HeaderContent } from './ProductListStyle';
 import { MainWrap } from './ProductListStyle';
 import { ProductLi, ProductImg, ProductInfo } from './ProductListStyle';
-import { NavBarWrap } from './ProductListStyle';
-import { NavBarUl, IconImg, IconInfo } from './ProductListStyle';
+import { NavBarWrap, NavBarUl } from '../Common/NavBar/NavBar';
+import { IconImg, IconInfo } from './ProductListStyle';
 import { AddBtn } from './ProductListStyle';
 
 export default function ProductList() {
@@ -149,7 +149,6 @@ export default function ProductList() {
             </ProductLi>
           </ul>
         </MainWrap>
-
         <NavBarWrap>
           <NavBarUl>
             <li>
@@ -190,6 +189,7 @@ export default function ProductList() {
             글쓰기
           </Link>
         </AddBtn>
+
       </StyledLayout>
     </>
   );
