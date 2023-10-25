@@ -27,19 +27,24 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+	  display: flex;
+	  justify-content: center;
     background-color: #F2F2F2;
-//  display: flex;
-// 	justify-content: center;
-//  background-color: #F2F2F2;
   }
   
   #root {
-    margin: 0 auto;
-    width: 520px;
-    padding: 0 15px;
-    height: 100vh;
-    background-color: #fff;
-}
+  // width: 520px;
+  // max-width: 767px;
+  // height: 100vh;
+  width: clamp(320px, 100%, 767px);
+  background-color: #fff;
+  
+  //     margin: 0 auto;
+  //     width: 520px;
+  //     padding: 0 15px;
+  //     height: 100vh;
+  //     background-color: #fff;
+  }
 
 .a11yHidden {
     position: absolute;

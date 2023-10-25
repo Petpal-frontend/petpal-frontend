@@ -23,17 +23,36 @@ import Page404 from './Page404';
 import SplashPage from './SplashPage/SplashPage';
 import HomePage from './HomePage/HomePage';
 
+import NavBar from '../components/Common/NavBar/NavBar';
+
+
 export default function Router() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<SplashPage />} />
-          <Route path="/home" element={<HomePage />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <SplashPage />
+                <Home />
+                <NavBar />
+              </>
+            }
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
 
-          <Route path="/productList" element={<ProductList />} />
+          <Route
+            path="/productList"
+            element={
+              <>
+                <ProductList />
+                <NavBar />
+              </>
+            }
+          />
           <Route path="/productDetail" element={<ProductDetail />} />
           <Route path="/productPost" element={<ProductPost />} />
 
