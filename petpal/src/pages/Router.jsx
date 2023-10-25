@@ -21,7 +21,10 @@ import Following from './FollowPage/FollowingPage';
 import Follower from './FollowPage/FollowerPage';
 import Page404 from './Page404';
 import SplashPage from './SplashPage/SplashPage';
+import HomePage from './HomePage/HomePage';
+
 import NavBar from '../components/Common/NavBar/NavBar';
+
 
 export default function Router() {
   return (

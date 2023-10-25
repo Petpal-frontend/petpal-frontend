@@ -32,11 +32,11 @@ export default function WalkItem({
               <InfoSpan>{user.name}</InfoSpan>
             </InfoGroup>
             <LikeAndChat>
-              <InfoGroup>
+              <InfoGroup className='likeAndChat'>
                 <LikeImg like={like} />
                 <InfoSpan>{likeNum}</InfoSpan>
               </InfoGroup>
-              <InfoGroup>
+              <InfoGroup className='likeAndChat'>
                 <ChatImg />
                 <InfoSpan>{chatNum}</InfoSpan>
               </InfoGroup>

@@ -61,4 +61,8 @@ export const ContentDiv = styled.div`
 export const LikeAndChat = styled.div`
   display: flex;
   gap: 10px;
+
+	.likeAndChat {
+		width: 50px;
+	}
 `;
