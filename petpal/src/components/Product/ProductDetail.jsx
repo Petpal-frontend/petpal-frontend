@@ -8,9 +8,7 @@ import { ImgArea } from './ProductDetailStyle';
 import {
   DescArea,
   ProfileArea,
-  ProfilePhoto,
   TextArea,
-  ChatBtn,
   ChatBtnArea,
 } from './ProductDetailStyle';
 
@@ -21,7 +19,7 @@ export default function ProductDetail() {
         <HeaderWrap>
           <h1 className="a11y-hidden">쇼핑하기 상품 상세</h1>
           <PrevBtn>
-            <Link to={`/productList`}></Link>
+            <Link to="/productList"></Link>
           </PrevBtn>
           <MoreBtn />
         </HeaderWrap>
@@ -31,11 +29,15 @@ export default function ProductDetail() {
           </ImgArea>
           <DescArea>
             <ProfileArea>
-              <ProfilePhoto />
-              <p className="userInfo">
-                <strong>식빵맘</strong>
-                <span>22분전</span>
-              </p>
+              <Link to={`/profile`} className="profileInfo">
+                <span className="profileImg">
+                  <img src="./images/profile-img.svg" alt="프로필 이미지" />
+                </span>
+                <span className="userInfo">
+                  <strong>식빵맘</strong>
+                  <span>22분전</span>
+                </span>
+              </Link>
             </ProfileArea>
             <TextArea>
               <strong className="productTitle">
@@ -67,7 +69,9 @@ export default function ProductDetail() {
             </TextArea>
           </DescArea>
           <ChatBtnArea>
-            <ChatBtn>채팅하기</ChatBtn>
+            <Link to={`/chatRoom`} className="chatBtn">
+              채팅하기
+            </Link>
           </ChatBtnArea>
         </MainWrap>
       </StyledLayout>

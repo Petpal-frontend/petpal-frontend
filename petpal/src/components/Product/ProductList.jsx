@@ -185,7 +185,11 @@ export default function ProductList() {
           </NavBarUl>
         </NavBarWrap>
 
-        <AddBtn>글쓰기</AddBtn>
+        <AddBtn>
+          <Link to="/productPost" className="">
+            글쓰기
+          </Link>
+        </AddBtn>
       </StyledLayout>
     </>
   );

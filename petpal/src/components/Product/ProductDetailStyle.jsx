@@ -30,7 +30,6 @@ export const PrevBtn = styled.p`
     background-image: url('./images/prev.svg');
     background-repeat: no-repeat;
     background-position: center center;
-    cursor: pointer;
   }
 `;
 export const MoreBtn = styled.button`
@@ -58,6 +57,30 @@ export const ImgArea = styled.p`
 
 export const DescArea = styled.div`
   padding: 0 15px;
+`;
+
+export const ProfileArea = styled.div`
+  margin-bottom: 30px;
+
+  .profileInfo {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .profileImg {
+    display: block;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+
+  .profileImg img {
+    width: 100%;
+  }
 
   .userInfo {
     display: flex;
@@ -78,24 +101,6 @@ export const DescArea = styled.div`
   }
 `;
 
-export const ProfileArea = styled.div`
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-`;
-export const ProfilePhoto = styled.button`
-  display: block;
-  width: 44px;
-  height: 44px;
-  //   aspect-ratio: 44/44;
-  border: none;
-  border-radius: 50%;
-  background-image: url('./images/profile-photo.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  cursor: pointer;
-`;
 export const TextArea = styled.div`
   color: #242424;
   font-size: 22px;
@@ -134,21 +139,23 @@ export const ChatBtnArea = styled.p`
   background-color: #fff;
   position: fixed;
   bottom: 0;
-`;
 
-export const ChatBtn = styled.button`
-  width: clamp(320px, 100% - 30px, 767px);
-  max-width: calc(767px - 30px);
-  height: 60px;
-  border: none;
-  border-radius: 10px;
-  background-color: #27489d;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 600;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-  position: fixed;
-  left: 50%;
-  bottom: 42px;
-  transform: translateX(-50%);
+  .chatBtn {
+    width: clamp(320px, 100% - 30px, 767px);
+    max-width: calc(767px - 30px);
+    height: 60px;
+    line-height: 60px;
+    border-radius: 10px;
+    background-color: #27489d;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 50%;
+    bottom: 42px;
+    transform: translateX(-50%);
+  }
 `;

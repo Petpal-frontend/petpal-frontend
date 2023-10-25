@@ -140,20 +140,25 @@ export const IconInfo = styled.span`
   font-size: 10px;
 `;
 
-export const AddBtn = styled.button`
+export const AddBtn = styled.p`
   width: 92px;
   height: 43px;
-  border: none;
   border-radius: 30px;
   background-color: #ffe769;
   font-size: 14px;
   font-weight: 600;
   box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
   position: fixed;
-  //   right: calc(50% - 240px);
   right: 20px;
   bottom: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
   &::before {
     content: '';
@@ -164,5 +169,9 @@ export const AddBtn = styled.button`
     background-image: url('./images/icon-plus.svg');
     background-repeat: no-repeat;
     background-size: 10px 10px;
+  }
+
+  @media all and (min-width: 768px) {
+    right: calc(50% - 364px);
   }
 `;
