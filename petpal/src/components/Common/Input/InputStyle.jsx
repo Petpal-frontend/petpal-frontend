@@ -6,20 +6,24 @@ export const InputContainer = styled.div`
 `;
 
 export const StyledLabel = styled.label`
-  font-size: var(--font-size-m);
-  color: var(--color-gray-76);
+  font-size: var(--font-size-md);
+  color: var(--color-gray-light);
 `;
 export const StyledInput = styled.input`
-  width: 429px;
-  padding: 1em 0;
-  margin-bottom: 20px;
-  border: none;
-  border-bottom: 1px solid var(--color-gray-76);
-  &::placeholder {
-    color: #dbdbdb;
-    font-size: var(--font-size-m);
-  }
-  &:focus {
-    outline: none;
-  }
+	width: 429px;
+	padding: 14px 0;
+	margin-bottom: 20px;
+	border: none;
+	border-bottom: 1px solid var(--color-gray-light);
+	font-size: var(--font-size-lg);
+	&::placeholder {
+		color: #dbdbdb;
+		font-size: var(--font-size-md);
+	}
+	&:focus {
+		outline: none;
+	}
 `;
+
+
+
