@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { postSignUp } from '../../api/signUpApi';
+import { postSignUp, checkEmailExist } from '../../api/signUpApi';
 import { uploadImg } from '../../api/imageApi';
 import AddressSearch from '../AddressSearch/AddressSearch';
 
@@ -67,6 +67,9 @@ const SignUpForm = () => {
           intro,
         },
       };
+
+      const isEmailValid = await checkEmailExist(userData);
+      console.log(isEmailValid);
 
       const response = await postSignUp(userData);
 
