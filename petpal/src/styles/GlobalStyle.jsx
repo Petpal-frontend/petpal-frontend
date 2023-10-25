@@ -30,6 +30,7 @@ const GlobalStyle = createGlobalStyle`
 		display: flex;
 		justify-content: center;
     background-color: #F2F2F2;
+    font-family: 'Pretendard', sans-serif;
   }
   
   #root {
@@ -45,8 +46,19 @@ const GlobalStyle = createGlobalStyle`
   //     height: 100vh;
   //     background-color: #fff;
   }
-
-.a11yHidden {
+  
+  input::placeholder {
+    color: #DBDBDB;
+    font-size: 16px;
+    }
+    
+    
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .a11yHidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -54,6 +66,7 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     clip-path: polygon(0 0, 0 0, 0 0);
   }
-`;
+  
+ `;
 
 export default GlobalStyle;

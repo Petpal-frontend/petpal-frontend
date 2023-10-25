@@ -40,7 +40,7 @@ export default function ProductList() {
               <ProductInfo>9,900원</ProductInfo>
             </ProductLi> */}
             <ProductLi>
-              <Link to={`/productDetail/`}>
+              <Link to={`/productDetail`}>
                 <p className="productImg">
                   <img src="./images/product00.svg" alt="상품 이미지" />
                 </p>
@@ -58,7 +58,7 @@ export default function ProductList() {
               </Link>
             </ProductLi>
             <ProductLi>
-              <Link to={`/productDetail/`}>
+              <Link to={`/productDetail`}>
                 <p className="productImg">
                   <img src="./images/product00.svg" alt="상품 이미지" />
                 </p>
@@ -76,7 +76,7 @@ export default function ProductList() {
               </Link>
             </ProductLi>
             <ProductLi>
-              <Link to={`/productDetail/`}>
+              <Link to={`/productDetail`}>
                 <p className="productImg">
                   <img src="./images/product00.svg" alt="상품 이미지" />
                 </p>
@@ -94,7 +94,7 @@ export default function ProductList() {
               </Link>
             </ProductLi>
             <ProductLi>
-              <Link to={`/productDetail/`}>
+              <Link to={`/productDetail`}>
                 <p className="productImg">
                   <img src="./images/product00.svg" alt="상품 이미지" />
                 </p>
@@ -112,7 +112,7 @@ export default function ProductList() {
               </Link>
             </ProductLi>
             <ProductLi>
-              <Link to={`/productDetail/`}>
+              <Link to={`/productDetail`}>
                 <p className="productImg">
                   <img src="./images/product00.svg" alt="상품 이미지" />
                 </p>
@@ -130,7 +130,7 @@ export default function ProductList() {
               </Link>
             </ProductLi>
             <ProductLi>
-              <Link to={`/productDetail/`}>
+              <Link to={`/productDetail`}>
                 <p className="productImg">
                   <img src="./images/product00.svg" alt="상품 이미지" />
                 </p>
@@ -149,8 +149,47 @@ export default function ProductList() {
             </ProductLi>
           </ul>
         </MainWrap>
+        <NavBarWrap>
+          <NavBarUl>
+            <li>
+              <Link to="/">
+                <IconImg src="./images/icon-home-fill.svg" />
+                <IconInfo>홈</IconInfo>
+              </Link>
+            </li>
+            <li>
+              <Link to="/feed">
+                <IconImg src="./images/icon-feed.svg" />
+                <IconInfo>피드</IconInfo>
+              </Link>
+            </li>
+            <li>
+              <Link to="/productPost">
+                <IconImg src="./images/icon-edit.svg" />
+                <IconInfo>게시물 작성</IconInfo>
+              </Link>
+            </li>
+            <li>
+              <Link to="/chatList">
+                <IconImg src="./images/icon-chat.svg" />
+                <IconInfo>채팅</IconInfo>
+              </Link>
+            </li>
+            <li>
+              <Link to="/profile">
+                <IconImg src="./images/icon-user.svg" />
+                <IconInfo>프로필</IconInfo>
+              </Link>
+            </li>
+          </NavBarUl>
+        </NavBarWrap>
 
-        <AddBtn>글쓰기</AddBtn>
+        <AddBtn>
+          <Link to="/productPost" className="">
+            글쓰기
+          </Link>
+        </AddBtn>
+
       </StyledLayout>
     </>
   );
