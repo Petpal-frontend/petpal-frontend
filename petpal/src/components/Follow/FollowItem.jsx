@@ -4,8 +4,7 @@ import {
   FollowItemImage,
   ContentDiv,
   FollowItemUser,
-  InfoSpan,
-  InfoDiv,
+  FollowItemButton,
 } from './FollowItemStyle';
 import { StyledLink } from '../Common/Text/StyledLink';
 
@@ -16,7 +15,7 @@ export default function FollowItem({ imgSrc, user, follow }) {
         <FollowItemImage src={imgSrc} />
         <ContentDiv>
           <FollowItemUser>{user}</FollowItemUser>
-          <FollowItemUser>{follow}</FollowItemUser>
+          <FollowItemButton src={follow} />
         </ContentDiv>
       </FollowItemContainer>
     </StyledLink>

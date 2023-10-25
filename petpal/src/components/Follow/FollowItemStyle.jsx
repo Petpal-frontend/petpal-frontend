@@ -26,10 +26,19 @@ export const FollowItemUser = styled.h3`
   font-weight: bold;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+`;
+export const FollowItemButton = styled.button`
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  margin-left: 15px;
+  // background-image: url('images/homeLogo.svg');
 `;
 
 export const ContentDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
   margin: 0 25px;
 `;
