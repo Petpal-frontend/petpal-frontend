@@ -27,7 +27,7 @@ const followerList = [
 export default function FollowerPage() {
   return (
     <>
-      <Header type="walk" title="Followers" />
+      <Header type="walk" title="Followers진행중!" />
       <FollowerList followerList={followerList} />
     </>
   );
