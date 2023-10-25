@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import {
   LoginContainer,
   LoginLogo,
@@ -37,16 +37,15 @@ export default function Login() {
       <SignUpLink to="/signup">이메일로 회원가입</SignUpLink>
       <P>SNS 계정으로 간편 로그인</P>
       <SnsLoginList>
-        {/* Link로 변경 */}
-        <a href="#">
+        <Link href="#">
           <img src={imgNaver} alt="네이버 계정으로 로그인" />
-        </a>
-        <a href="#">
+        </Link>
+        <Link href="#">
           <img src={imgGoogle} alt="구글 계정으로 로그인" />
-        </a>
-        <a href="#">
+        </Link>
+        <Link href="#">
           <img src={imgKakao} alt="카카오 계정으로 로그인" />
-        </a>
+        </Link>
       </SnsLoginList>
     </LoginContainer>
   );

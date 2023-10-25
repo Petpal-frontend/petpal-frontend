@@ -28,7 +28,11 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: #F2F2F2;
+//  display: flex;
+// 	justify-content: center;
+//  background-color: #F2F2F2;
   }
+  
   #root {
     margin: 0 auto;
     width: 520px;
