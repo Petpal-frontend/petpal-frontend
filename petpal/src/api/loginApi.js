@@ -2,7 +2,7 @@ import { instance } from './axiosInstance';
 
 export const postLogin = async userData => {
   const response = await instance.post(`/user/login`, userData);
-  return response.data;
+  return response;
 };
 
 // import { instance } from './axiosInstance';

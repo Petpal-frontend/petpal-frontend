@@ -32,23 +32,21 @@ export default function LoginPage() {
           password,
         },
       };
-      console.log(userData);
 
       const response = await postLogin(userData);
-      console.log('res' + response);
-      console.log('resdata' + response.data);
+      console.log('response.data = ' + JSON.stringify(response.data.user));
 
       if (response.status === 200) {
-        const token = response.user.token;
+        const token = response.data.user.token;
         console.log('tototoot' + token);
         // 로컬스토리지에 토큰 저장하기.
         localStorage.setItem('token', token);
         alert('로그인 성공');
-        // return navigate(`/`);
+        return navigate(`/`);
       }
     } catch (err) {
       console.log(err);
-      alert('로그인 실패');
+      alert('회원정보가 일치하지않습니다.');
     }
   };
 
