@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DaumPostcode from 'react-daum-postcode';
 import Modal from 'react-modal';
+import Input from '../Common/Input/Input';
 
 function AddressSearch({ onAddressSelect }) {
   const [roadAddress, setRoadAddress] = useState('');
@@ -30,14 +31,12 @@ function AddressSearch({ onAddressSelect }) {
 
   return (
     <div>
-      <br />
-      <input
+      <Input
         value={roadAddress}
         readOnly
         placeholder="주소"
         onClick={openModal}
       />
-      <br />
       <Modal
         isOpen={isOpen}
         ariaHideApp={false}

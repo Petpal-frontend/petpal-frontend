@@ -27,8 +27,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-	  display: flex;
-	  justify-content: center;
+		display: flex;
+		justify-content: center;
     background-color: #F2F2F2;
   }
   
@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
   // width: 520px;
   // max-width: 767px;
   // height: 100vh;
-  width: clamp(320px, 100%, 767px);
+  width: clamp(320px, 100%, 520px);
   background-color: #fff;
   
   //     margin: 0 auto;
