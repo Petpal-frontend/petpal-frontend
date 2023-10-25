@@ -84,4 +84,8 @@ export const SignUpButtonBox = styled.div`
   margin-top: 106px;
 `;
 
-export const LinkWrapper = styled.span``;
+export const LinkWrapper = styled.span`
+  &::after {
+    content: '|';
+  }
+`;
