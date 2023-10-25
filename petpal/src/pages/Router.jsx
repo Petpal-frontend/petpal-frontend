@@ -21,21 +21,15 @@ import Following from './FollowPage/FollowingPage';
 import Follower from './FollowPage/FollowerPage';
 import Page404 from './Page404';
 import SplashPage from './SplashPage/SplashPage';
+import HomePage from './HomePage/HomePage';
 
 export default function Router() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <SplashPage />
-                <Home />
-              </>
-            }
-          />
+          <Route path="/" element={<SplashPage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
 
