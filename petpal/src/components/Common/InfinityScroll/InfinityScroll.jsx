@@ -73,11 +73,10 @@ const ImageUploader = () => {
   return (
     <div
       style={{
-        position: 'absolute',
-        width: '50%',
-        height: '500px',
-        display: 'flex',
-        flexWrap: 'wrap',
+        padding: '0 15px 74px',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(2, 1fr)',
+        gap: '14px',
       }}
     >
       {totalData.map((dr, idx) => {
@@ -85,17 +84,16 @@ const ImageUploader = () => {
           <div
             key={idx}
             style={{
-              width: '230px',
-              height: '209px',
-              marginLeft: '20px',
-              marginTop: '20px',
-              borderRadius: '30px',
+              width: '100%',
+              aspectRatio: '173/157',
+              borderRadius: '5px',
+              overflow: 'hidden',
             }}
           >
             <img
               src={dr}
               alt=""
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              style={{ width: '100%', objectFit: 'cover' }}
             />
           </div>
         );

@@ -1,13 +1,20 @@
 import React from 'react';
 import SpanImg from '../Common/SpanImg/SpanImg';
+import { WalkItemListContainer } from './WalkItemListStyle';
 
-export default function WalkDetailItem({ walkDetailItem }) {
-  const user = walkDetailItem.post[0].author;
+export default function WalkDetailItem({ location, walkDetailItem }) {
+  const post = walkDetailItem;
+  console.log(location);
+  // console.log(post);
+  // console.log(index);
 
-  console.log(user);
+  // console.log(post[index]);
   return (
     <>
-      <SpanImg type="user" user={user._id} /> {user.username}
+      <WalkItemListContainer>
+        <div style={{ width: '100px', height: '100px' }}>{walkDetailItem}</div>
+        {/* <SpanImg type="post" post={post[index]} />  */}
+      </WalkItemListContainer>
     </>
   );
 }

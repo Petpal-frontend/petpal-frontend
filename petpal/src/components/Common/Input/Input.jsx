@@ -2,13 +2,29 @@ import React from 'react';
 
 import { InputContainer, StyledLabel, StyledInput } from './InputStyle';
 
-export default function Input({ id, label, type, value, placeholder }) {
+export default function Input({
+  id,
+  readOnly,
+  label,
+  type,
+  value,
+  placeholder,
+  onChange,
+  onClick,
+}) {
   return (
     <InputContainer>
       <StyledLabel htmlFor={id} label={label}>
         {label}
       </StyledLabel>
-      <StyledInput type={type} value={value} placeholder={placeholder} />
+      <StyledInput
+        type={type}
+        readOnly={readOnly}
+        value={value}
+        placeholder={placeholder}
+        onChange={onChange}
+        onClick={onClick}
+      />
     </InputContainer>
   );
 }

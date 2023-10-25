@@ -17,7 +17,7 @@ export const StyledInput = styled.input`
   border-bottom: 1px solid var(--color-gray-76);
   &::placeholder {
     color: #dbdbdb;
-    font-size: var(--font-size-l);
+    font-size: var(--font-size-m);
   }
   &:focus {
     outline: none;

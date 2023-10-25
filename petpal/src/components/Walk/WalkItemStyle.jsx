@@ -17,7 +17,7 @@ export const WalkItemImage = styled.img`
   width: 90px;
   height: 90px;
   border-radius: 10px;
-	margin-left: 15px;
+  margin-left: 15px;
 `;
 
 export const WalkItemContent = styled.h3`

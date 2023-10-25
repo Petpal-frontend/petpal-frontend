@@ -20,7 +20,11 @@ export const ProfileImgBox = styled.div`
   align-items: center;
 `;
 
-export const ProfileImg = styled.img``;
+export const ProfileImg = styled.img`
+	width: 150px;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+`;
 
 export const ProfileUpload = styled.img`
   position: absolute;

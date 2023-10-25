@@ -5,5 +5,6 @@ export const StyledButton = styled.button`
   width: 429px;
   height: 58px;
   background-color: var(--color-button_enabled);
+  color: white;
   border: 0;
 `;
