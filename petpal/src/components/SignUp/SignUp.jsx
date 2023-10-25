@@ -1,24 +1,26 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { postSignUp, checkEmailExist } from '../../api/signUpApi';
-import { uploadImg } from '../../api/imageApi';
-import AddressSearch from '../AddressSearch/AddressSearch';
+// import React, { useState, useEffect, useCallback } from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import { postSignUp, checkEmailExist } from '../../api/signUpApi';
+// import { uploadImg } from '../../api/imageApi';
+// import AddressSearch from '../AddressSearch/AddressSearch';
+// import { StyledLabel } from '../Common/Input/InputStyle';
+// import { StyledButton } from '../Common/Button/FormButton/FormButtonStyle';
+// import Input from '../Common/Input/Input';
 
+// // const SignUpForm = () => {
+// //   const navigate = useNavigate();
 
-// const SignUpForm = () => {
-//   const navigate = useNavigate();
+// const [username, setUsername] = useState('');
+// const [email, setEmail] = useState('');
+// const [password, setPassword] = useState('');
+// const [accountname, setAccountname] = useState('');
+// const [image, setImage] = useState(
+//   'https://api.mandarin.weniv.co.kr/Ellipse.png',
+// );
+// const [previewImage, setPreviewImage] = useState(null);
 
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [accountname, setAccountname] = useState('');
-  const [image, setImage] = useState(
-    'https://api.mandarin.weniv.co.kr/Ellipse.png',
-  );
-  const [previewImage, setPreviewImage] = useState(null);
-
-  const [intro, setIntro] = useState('');
-  const [latestValue, setLatestValue] = useState(1);
+// const [intro, setIntro] = useState('');
+// const [latestValue, setLatestValue] = useState(1);
 
 //   //받아온 주소값 짤라서 intro에 넣어줌
 //   const handleAddressSelect = address => {
@@ -85,6 +87,66 @@ import AddressSearch from '../AddressSearch/AddressSearch';
 //     }
 //   };
 
+
+
+// <div className="signup">
+//   <div className="signup_input">
+//     <label>name</label>
+//     <br />
+//     <input
+//       type="text"
+//       placeholder="username"
+//       onChange={e => {
+//         setUsername(e.target.value);
+//       }}
+//       label="닉네임"
+//       placeholder="2~10자 이내여야 합니다."
+//     />
+//   </div>
+//   <div className="signup_input">
+//     <label>Email</label>
+//     <br />
+//     <input
+//       type="text"
+//       placeholder="email"
+//       onChange={e => {
+//         setEmail(e.target.value);
+//       }}
+//     />
+//   </div>
+//   <div className="signup_input">
+//     <label>password</label>
+//     <br />
+//     <input
+//       type="password"
+//       placeholder="password"
+//       onChange={e => {
+//         setPassword(e.target.value);
+//       }}
+//     />
+
+//     <AddressBox>
+//       <StyledLabel label="주소">주소</StyledLabel>
+//       <AddressInput
+//         type="text"
+//         placeholder="예) 문래동 강서타워, 테헤란로"
+//       />
+//       <SearchBtn type="button">
+//         <Search className="a11yHidden">검색</Search>
+//       </SearchBtn>
+//     </AddressBox>
+
+//     <StyledButton />
+//   </form>
+// </SignUpContainer>
+
+//       </div>
+//       <AddressSearch onAddressSelect={handleAddressSelect} />
+//       <button onClick={Signup}>signup</button>
+//     </div>
+
+import React from 'react';
+
 import { StyledLabel } from '../Common/Input/InputStyle';
 import { StyledButton } from '../Common/Button/FormButton/FormButtonStyle';
 import Input from '../Common/Input/Input';
@@ -105,49 +167,29 @@ export default function SignUp() {
   const imgProfile = '/images/profile.svg';
   const imgProfileBtn = '/images/profile-btn.svg';
 
-
   return (
-    <div className="signup">
-      <div className="signup_input">
-        <label>name</label>
-        <br />
-        <input
+    <SignUpContainer>
+      <H1>이메일로 회원가입</H1>
+      <ProfileImgBox>
+        <ProfileImg src={imgProfile} alt="프로필 기본 이미지" />
+        <ProfileUpload src={imgProfileBtn} alt="사진 업로드 버튼 이미지" />
+      </ProfileImgBox>
+      <form>
+        <Input
           type="text"
-          placeholder="username"
-          onChange={e => {
-            setUsername(e.target.value);
-          }}
           label="닉네임"
           placeholder="2~10자 이내여야 합니다."
         />
-      </div>
-      <div className="signup_input">
-        <label>Email</label>
-        <br />
-        <input
+        <Input
           type="text"
-          placeholder="email"
-          onChange={e => {
-            setEmail(e.target.value);
-          }}
+          label="이메일"
+          placeholder="이메일을 입력해 주세요."
         />
-      </div>
-      <div className="signup_input">
-        <label>password</label>
-        <br />
-        <input
+        <Input
           type="password"
-          placeholder="password"
-          onChange={e => {
-            setPassword(e.target.value);
-          }}
+          label="비밀번호"
+          placeholder="비밀번호를 입력해 주세요."
         />
-// <<<<<<< imageApi
-//       </div>
-//       <AddressSearch onAddressSelect={handleAddressSelect} />
-//       <button onClick={Signup}>signup</button>
-//     </div>
-// =======
         <AddressBox>
           <StyledLabel label="주소">주소</StyledLabel>
           <AddressInput
@@ -163,6 +205,4 @@ export default function SignUp() {
       </form>
     </SignUpContainer>
   );
-};
-
-export default SignUpForm;
+}
