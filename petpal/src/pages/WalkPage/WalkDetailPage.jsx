@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../components/Common/Header/Header';
 import WalkDetailItem from '../../components/Walk/WalkDetailItem';
 
-export default function WalkDetailPage() {
+export default function WalkDetailPage({ location }) {
   const walkDetailItem = {
     // SUCCESS
 
@@ -12,7 +12,7 @@ export default function WalkDetailPage() {
         content:
           '식빵이랑 친구해요 성격이 순하고 착해요. 비슷한 나이의 같은 남자 아이랑 산책하고 싶네요~ 강아지 친구들끼리 만나요!!!',
         image: String,
-        createdAt: '20231024', 
+        createdAt: '20231024',
         updatedAt: '20231024',
         hearted: true,
         heartCount: 32,
@@ -40,7 +40,7 @@ export default function WalkDetailPage() {
   return (
     <>
       <Header type="walk" title="" />
-      <WalkDetailItem walkDetailItem={walkDetailItem} />
+      <WalkDetailItem location={location} walkDetailItem={walkDetailItem} />
     </>
   );
 }

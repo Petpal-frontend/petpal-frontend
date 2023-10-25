@@ -8,6 +8,7 @@ export default function WalkItemList({ walkItemList }) {
       {walkItemList.map((item, index) => (
         <WalkItem
           key={index}
+          index={index}
           imgSrc={item.imgSrc}
           content={item.content}
           user={item.user}

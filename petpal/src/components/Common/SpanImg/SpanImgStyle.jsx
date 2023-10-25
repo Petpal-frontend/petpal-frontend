@@ -26,3 +26,9 @@ export const ChatImg = styled.span`
   background-image: url('images/chatImg.svg');
   ${spanImgStyle}
 `;
+
+export const PostUserImg = styled.span`
+  background-image: url(${props => props.author.image});
+  border-radius: 50%;
+  ${spanImgStyle}
+`;
