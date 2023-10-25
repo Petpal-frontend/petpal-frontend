@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-
+import ImageButton from '../Common/Button/ImageButton/ImageButton';
 export const FollowItemContainer = styled.div`
-  margin: 10px;
+  // margin: 10px;
   padding: 10px;
   width: 490px;
   height: 100px;
@@ -14,10 +14,10 @@ export const FollowItemContainer = styled.div`
 `;
 
 export const FollowItemImage = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 100px;
-  margin-left: 15px;
+  margin-right: 20px;
 `;
 
 export const FollowItemUser = styled.h3`
@@ -29,16 +29,34 @@ export const FollowItemUser = styled.h3`
   -webkit-line-clamp: 2;
 `;
 export const FollowItemButton = styled.button`
-  width: 50px;
-  height: 50px;
-  border-radius: 100px;
-  margin-left: 15px;
-  // background-image: url('images/homeLogo.svg');
+  width: 68px;
+  height: 30px;
+  margin-right: 15px;
+  background-image: url(${props => props.followButton});
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 10px;
 `;
 
-export const ContentDiv = styled.div`
+export const ContentDiv = styled.button`
   display: flex;
-  justify-content: space-between;
   width: 90%;
+  text-align: center;
+  align-items: center;
   margin: 0 25px;
+  gap: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  // background-image: url(${props => props.followUserButton});
 `;
+
+// export const ContentDiv = styled.div`
+//   display: flex;
+//   // justify-content: space-between;
+//   width: 90%;
+//   text-align: center;
+//   align-items: center;
+//   margin: 0 25px;
+//   gap: 10px;
+// `;

@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import {
   FollowItemContainer,
   FollowItemImage,
@@ -10,14 +10,17 @@ import { StyledLink } from '../Common/Text/StyledLink';
 
 export default function FollowItem({ imgSrc, user, follow }) {
   return (
-    <StyledLink to="/">
+    <>
+      {/* <StyledLink to="/"> */}
       <FollowItemContainer>
-        <FollowItemImage src={imgSrc} />
         <ContentDiv>
+          <FollowItemImage src={imgSrc} />
           <FollowItemUser>{user}</FollowItemUser>
-          <FollowItemButton src={follow} />
         </ContentDiv>
+        {/* <FollowItemButton src={follow} /> */}
+        <FollowItemButton followButton={follow} />
       </FollowItemContainer>
-    </StyledLink>
+      {/* </StyledLink> */}
+    </>
   );
 }

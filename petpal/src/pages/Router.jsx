@@ -25,7 +25,6 @@ import HomePage from './HomePage/HomePage';
 
 import NavBar from '../components/Common/NavBar/NavBar';
 
-
 export default function Router() {
   return (
     <>
@@ -71,8 +70,14 @@ export default function Router() {
           <Route path="/chatRoom" element={<ChatRoom />} />
 
           <Route path="/profile" element={<Profile />} />
-          <Route path="/following" element={<Following />} />
-          <Route path="/follower" element={<Follower />} />
+          {/* <Route path="/following" element={<Following />} /> */}
+          {/* <Route path="/follower" element={<Follower />} /> */}
+
+          <Route path="/profile/:accountname/follower" element={<Follower />} />
+          <Route
+            path="/profile/:accountname/following"
+            element={<Following />}
+          />
 
           <Route path="/404error" element={<Page404 />} />
         </Routes>
