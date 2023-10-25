@@ -26,14 +26,15 @@ export const LoginInput = styled.input`
   flex-direction: column;
   justify-content: center;
   width: 400px;
-  padding: 23px 0px;
+  padding: 21px 0px;
   margin-top: 239px;
   border: 1px solid #dbdbdb;
-  text-indent: 16px;
   box-sizing: border-box;
+  text-indent: 18px;
+  font-size: var(--font-size-lg);
   &::placeholder {
     color: #dbdbdb;
-    font-size: var(--font-size-l);
+    font-size: var(--font-size-lg);
     text-indent: 18px;
   }
   &.inputTop {
@@ -47,33 +48,24 @@ export const LoginInput = styled.input`
   }
 `;
 
-export const LoginBtn = styled.button`
-  cursor: pointer;
-  width: 400px;
-  height: 60px;
+export const LoginButtonBox = styled.div`
   margin-top: 38px;
-  background-color: #27489d;
-  border: none;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #ffffff;
 `;
 
 // 회원가입 화면으로 연결
 
 export const SignUpLink = styled(Link)`
   margin-top: 27px;
-  margin-bottom: 75px;
+  margin-bottom: 60px;
   text-decoration: none;
-  color: #4b4b4b;
+  color: var(--color-gray-med);
 `;
 
 // sns 로그인
 
 export const P = styled.p`
   display: flex;
-  color: #767676;
+  color: var(--color-gray-light);
 `;
 
 export const SnsLoginList = styled.div`

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button from '../Common/Button/SubmitButton/Button';
 import {
   LoginContainer,
   LoginLogo,
   LoginInput,
-  LoginBtn,
+  LoginButtonBox,
   SignUpLink,
   P,
   SnsLoginList,
@@ -32,7 +33,11 @@ export default function Login() {
           placeholder="비밀번호"
           className="radiusBottom inputTop"
         />
-        <LoginBtn type="submit">로그인</LoginBtn>
+        <LoginButtonBox>
+          <Button type="submit" size="md" variant="primary">
+            로그인
+          </Button>
+        </LoginButtonBox>
       </form>
       <SignUpLink to="/signup">이메일로 회원가입</SignUpLink>
       <P>SNS 계정으로 간편 로그인</P>

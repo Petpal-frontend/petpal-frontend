@@ -87,8 +87,6 @@
 //     }
 //   };
 
-
-
 // <div className="signup">
 //   <div className="signup_input">
 //     <label>name</label>
@@ -146,10 +144,11 @@
 //     </div>
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { StyledLabel } from '../Common/Input/InputStyle';
-import { StyledButton } from '../Common/Button/FormButton/FormButtonStyle';
 import Input from '../Common/Input/Input';
+import Button from '../Common/Button/SubmitButton/Button';
 
 import {
   SignUpContainer,
@@ -161,6 +160,8 @@ import {
   AddressInput,
   SearchBtn,
   Search,
+  SignUpButtonBox,
+  LinkWrapper,
 } from './SignUpStyle';
 
 export default function SignUp() {
@@ -200,9 +201,16 @@ export default function SignUp() {
             <Search className="a11yHidden">검색</Search>
           </SearchBtn>
         </AddressBox>
-
-        <StyledButton />
+        <SignUpButtonBox>
+          <Button type="submit" size="lg" variant="primary" disabled>
+            펫팔하러 GO!
+          </Button>
+        </SignUpButtonBox>
       </form>
+      <LinkWrapper>
+        <Link to="/login">로그인</Link>
+        <Link to="/">메인으로 돌아가기</Link>
+      </LinkWrapper>
     </SignUpContainer>
   );
 }

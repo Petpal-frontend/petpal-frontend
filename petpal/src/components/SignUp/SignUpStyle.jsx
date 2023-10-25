@@ -33,7 +33,7 @@ export const AddressBox = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid var(--color-gray-76);
+  border-bottom: 1px solid var(--color-gray-light);
 `;
 
 export const AddressInput = styled.input`
@@ -42,7 +42,7 @@ export const AddressInput = styled.input`
   border: none;
   &::placeholder {
     color: #dbdbdb;
-    font-size: var(--font-size-l);
+    font-size: var(--font-size-lg);
   }
   &:focus {
     outline: none;
@@ -79,3 +79,9 @@ export const Search = styled.span`
     clip-path: polygon(0 0, 0 0, 0 0);
   }
 `;
+
+export const SignUpButtonBox = styled.div`
+  margin-top: 106px;
+`;
+
+export const LinkWrapper = styled.span``;
