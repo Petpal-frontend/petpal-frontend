@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import setTokenInterceptors from './interseptor';
+import setTokenInterceptors from './interseptor';
 
 export const URL = 'https://api.mandarin.weniv.co.kr/';
 
@@ -24,22 +24,22 @@ export const tokenInstance = axios.create({
   },
 });
 
-tokenInstance.interceptors.request.use(
-  config => {
-    const token = localStorage.getItem('token');
-    if (config.headers.Authorization.includes('null')) {
-      config.headers = {
-        ...config.headers,
-        Authorization: `Bearer ${token}`,
-      };
-    }
-    console.log('intercepter2', config);
-    return config;
-  },
-  error => {
-    console.log(error.message);
-    return Promise.reject(error);
-  },
-);
+// tokenInstance.interceptors.request.use(
+//   config => {
+//     const token = localStorage.getItem('token');
+//     if (config.headers.Authorization.includes('null')) {
+//       config.headers = {
+//         ...config.headers,
+//         Authorization: `Bearer ${token}`,
+//       };
+//     }
+//     console.log('intercepter2', config);
+//     return config;
+//   },
+//   error => {
+//     console.log(error.message);
+//     return Promise.reject(error);
+//   },
+// );
 
-// setTokenInterceptors(tokenInstance);
+setTokenInterceptors(tokenInstance);

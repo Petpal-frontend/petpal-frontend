@@ -31,12 +31,13 @@ export default function FollowerPage() {
   // const token = localStorage.getItem('token');
 
   const accountname = useParams().accountname;
-
+  console.log('dsdsd####' + localStorage.getItem(accountname));
+  console.log('accountname####' + accountname);
   useEffect(() => {
     const followList = async () => {
       const response = await getFollowingList(accountname);
       console.log('response= ' + JSON.stringify(response));
-      console.log('response= ' + JSON.stringify(response.username));
+      // console.log('response= ' + JSON.stringify(response.username));
       setFollowerList(response);
     };
     followList();
