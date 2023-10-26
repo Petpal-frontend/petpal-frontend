@@ -19,8 +19,27 @@ export const imgInstance = axios.create({
 export const tokenInstance = axios.create({
   baseURL: URL,
   headers: {
+    Authorization: `Bearer ${localStorage.getItem('token')}`,
     'Content-Type': 'application/json',
   },
 });
+
+// tokenInstance.interceptors.request.use(
+//   config => {
+//     const token = localStorage.getItem('token');
+//     if (config.headers.Authorization.includes('null')) {
+//       config.headers = {
+//         ...config.headers,
+//         Authorization: `Bearer ${token}`,
+//       };
+//     }
+//     console.log('intercepter2', config);
+//     return config;
+//   },
+//   error => {
+//     console.log(error.message);
+//     return Promise.reject(error);
+//   },
+// );
 
 setTokenInterceptors(tokenInstance);
