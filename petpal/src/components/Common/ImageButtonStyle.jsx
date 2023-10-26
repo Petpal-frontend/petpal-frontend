@@ -31,4 +31,9 @@ export const ImageButton = styled(Link)`
   background-repeat: no-repeat;
   background-position: center;
   background-image: ${({ backgroundimage }) => `url('${backgroundimage}')`};
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
 `;
