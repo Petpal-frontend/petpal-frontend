@@ -4,8 +4,7 @@ import HomeHeaderLogo from '../../components/HomeHeader/HomeHeaderLogo';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import { HomeHeaderStyle } from '../../components/HomeHeader/HomeHeaderStyle';
 import { ImageButtons } from '../../components/Common/ImageButton';
-import ImageUploader from '../../components/Common/InfinityScroll/InfinityScroll';
-
+import InfiniteScroll from '../../components/Common/InfinityScroll/scroll';
 export default function HomePage() {
   const buttons = [
     {
@@ -35,7 +34,7 @@ export default function HomePage() {
       >
         우리 귀여운 집사님 보고가세요!
       </p>
-      <ImageUploader />
+      <InfiniteScroll />
     </>
   );
 }
