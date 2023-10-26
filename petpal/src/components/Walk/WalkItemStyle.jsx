@@ -22,6 +22,7 @@ export const WalkItemImage = styled.img`
 
 export const WalkItemContent = styled.h3`
   line-height: 1.2em; // 글자 윗부분 잘려서 넣어줘야됨
+  word-break: break-all;
   font-size: 18px;
   font-weight: bold;
   margin: 10px 5px;
@@ -62,7 +63,7 @@ export const LikeAndChat = styled.div`
   display: flex;
   gap: 10px;
 
-	.likeAndChat {
-		width: 50px;
-	}
+  .likeAndChat {
+    width: 50px;
+  }
 `;

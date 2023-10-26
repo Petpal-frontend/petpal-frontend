@@ -13,6 +13,7 @@ export const checkEmailExist = async email => {
     console.error(error);
   }
 };
+
 export const checkIdExist = async accountname => {
   const response = await instance.post(`user/accountnamevalid`, accountname);
   return response.data;

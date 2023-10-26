@@ -2,16 +2,17 @@ import React from 'react';
 import Header from '../../components/Common/Header/Header';
 import WalkDetailItem from '../../components/Walk/WalkDetailItem';
 
-export default function WalkDetailPage({ location }) {
+// export default function WalkDetailPage({ location }) {
+export default function WalkDetailPage() {
   const walkDetailItem = {
     // SUCCESS
 
-    post: [
+    post: [ 
       {
         id: '0',
         content:
           '식빵이랑 친구해요 성격이 순하고 착해요. 비슷한 나이의 같은 남자 아이랑 산책하고 싶네요~ 강아지 친구들끼리 만나요!!!',
-        image: String,
+        image: 'http://146.56.183.55:5050/Ellipse.png',
         createdAt: '20231024',
         updatedAt: '20231024',
         hearted: true,
@@ -40,7 +41,8 @@ export default function WalkDetailPage({ location }) {
   return (
     <>
       <Header type="walk" title="" />
-      <WalkDetailItem location={location} walkDetailItem={walkDetailItem} />
+      {/* <WalkDetailItem location={location} walkDetailItem={walkDetailItem} /> */}
+      <WalkDetailItem walkDetailItem={walkDetailItem} />
     </>
   );
 }
