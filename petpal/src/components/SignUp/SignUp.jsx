@@ -23,14 +23,14 @@ export default function SignUpForm() {
 
   const navigate = useNavigate();
 
-  const [username, setUsername] = useState(''); 						// 닉네임
+  const [username, setUsername] = useState(''); // 닉네임
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [accountname, setAccountname] = useState('');
   const [image, setImage] = useState('images/profile.svg');
-  const [selectedImage, setSelectedImage] = useState(null); 
+  const [selectedImage, setSelectedImage] = useState(null);
   const [intro, setIntro] = useState('');
-  const [validCheck, setValidCheck] = useState(false); 			// 이메일 유효성 체크
+  const [validCheck, setValidCheck] = useState(false); // 이메일 유효성 체크
   const [warningMessage, setWarningMessage] = useState(''); // response의 message
 
   //받아온 주소값 짤라서 intro에 넣어줌
@@ -91,14 +91,17 @@ export default function SignUpForm() {
       };
 
       const isEmailValid = await checkEmailExist(userData);
-      // console.log(isEmailValid.data.message);
+      console.log(isEmailValid);
+      console.log(isEmailValid.data.message);
       if (isEmailValid.data.message === '사용 가능한 이메일 입니다.') {
         setWarningMessage('');
         setValidCheck(!validCheck);
-        console.log('422err');
         // console.log(validCheck);
         const response = await postSignUp(userData);
+        console.log(response);
+        console.log(response.data);
         alert('회원가입성공');
+
         if (response.status === 200) {
           return navigate(`/login`);
         }

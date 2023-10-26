@@ -22,14 +22,15 @@ export default function WalkItem({
   chatNum,
 }) {
   const DetailPath = {
-    pathname: '/walkDetail/:'+ index,
+    pathname: '/walkDetail/:' + index,
     state: { index: index },
   };
 
   console.log(DetailPath.state);
 
   return (
-    <StyledLink to={DetailPath}>
+    // <StyledLink to={DetailPath}>
+    <StyledLink to={'/walkDetail'}>
       <WalkItemContainer>
         <WalkItemImage src={imgSrc} alt={content} />
         <ContentDiv>

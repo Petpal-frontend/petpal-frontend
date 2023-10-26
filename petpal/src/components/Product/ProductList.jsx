@@ -5,7 +5,7 @@ import { HeaderWrap } from './ProductListStyle';
 import { PrevBtn, HeaderContent } from './ProductListStyle';
 import { MainWrap } from './ProductListStyle';
 import { ProductLi, ProductImg, ProductInfo } from './ProductListStyle';
-import { NavBarWrap, NavBarUl } from '../Common/NavBar/NavBar';
+// import { NavBarWrap, NavBarUl } from '../NavBar/NavBarStyle';
 import { IconImg, IconInfo } from './ProductListStyle';
 import { AddBtn } from './ProductListStyle';
 
@@ -149,7 +149,7 @@ export default function ProductList() {
             </ProductLi>
           </ul>
         </MainWrap>
-        <NavBarWrap>
+        {/* <NavBarWrap>
           <NavBarUl>
             <li>
               <Link to="/">
@@ -182,7 +182,7 @@ export default function ProductList() {
               </Link>
             </li>
           </NavBarUl>
-        </NavBarWrap>
+        </NavBarWrap> */}
 
         <AddBtn>
           <Link to="/productPost" className="">

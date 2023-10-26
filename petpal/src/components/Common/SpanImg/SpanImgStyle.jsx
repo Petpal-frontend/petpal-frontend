@@ -32,3 +32,4 @@ export const PostUserImg = styled.span`
   border-radius: 50%;
   ${spanImgStyle}
 `;
+
