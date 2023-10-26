@@ -76,10 +76,10 @@ export const ImgArea = styled.div`
   overflow: hidden;
   position: relative;
 
-  .productImg {
-    width: 100%;
-    aspect-ratio: 322/204;
-    object-fit: cover;
+  .uploadBtnImg {
+    position: absolute;
+    top: 98px;
+    left: 98px;
   }
 
   p {
@@ -98,6 +98,7 @@ export const ImgArea = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
   }
 
   .a11y-hidden {

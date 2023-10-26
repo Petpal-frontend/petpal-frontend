@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { StyledLayout } from './ProductPostStyle';
 import { HeaderWrap } from './ProductPostStyle';
@@ -6,7 +6,19 @@ import { PrevBtn, HeaderContent, UploadBtn } from './ProductPostStyle';
 import { MainWrap } from './ProductPostStyle';
 import { ImgArea, FormArea } from './ProductPostStyle';
 
-export default function ProductPost() {
+export default function ProductPost(props) {
+  const {
+    productTitle,
+    productPrice,
+    productDescription,
+    imageFile,
+    onTitleChange,
+    onPriceChange,
+    onDescriptionChange,
+    onImageChange,
+    onUploadClick,
+  } = props;
+
   return (
     <>
       <StyledLayout>
@@ -18,25 +30,35 @@ export default function ProductPost() {
             </PrevBtn>
             <HeaderContent>상품 등록</HeaderContent>
           </div>
-          <UploadBtn disabled>업로드</UploadBtn>
+          <UploadBtn onClick={onUploadClick}>업로드</UploadBtn>
         </HeaderWrap>
         <MainWrap>
           <ImgArea>
-            {/* <img
-              src="./images/product00.svg"
-              alt="상품 이미지"
-              className="productImg"
-            /> */}
             <p>
               <label htmlFor="uploadImgBtn">
-                <img
-                  src="./images/icon-upload-img.svg"
-                  alt="이미지 업로드 버튼"
-                />
+                {imageFile ? (
+                  <img
+                    // src={URL.createObjectURL(imageFile)}
+                    src={URL.createObjectURL(imageFile)}
+                    alt="업로드된 이미지 미리보기"
+                  />
+                ) : (
+                  <img
+                    src="./images/icon-upload-img.svg"
+                    alt="이미지 업로드 버튼"
+                  />
+                )}
               </label>
-              <input type="file" id="uploadImgBtn" className="a11y-hidden" />
+              <input
+                type="file"
+                id="uploadImgBtn"
+                accept="image/*"
+                className="a11y-hidden"
+                onChange={onImageChange}
+              />
             </p>
           </ImgArea>
+
           <FormArea>
             <form action="#" method="POST">
               <fieldset>
@@ -47,26 +69,27 @@ export default function ProductPost() {
                     type="text"
                     id="productTitle"
                     placeholder="2~15자 이내여야 합니다."
+                    value={productTitle}
+                    onChange={onTitleChange}
                   />
                 </p>
                 <p>
-                  <label htmlFor="productTitle">가격</label>
+                  <label htmlFor="productPrice">가격</label>
                   <input
                     type="number"
                     id="productPrice"
                     placeholder="숫자만 입력 가능합니다."
+                    value={productPrice}
+                    onChange={onPriceChange}
                   />
                 </p>
                 <p>
-                  <label htmlFor="productTitle">상품 설명</label>
-                  {/* <input
-                    type="text"
-                    id="productDesc"
-                    placeholder="2~15자 이내여야 합니다."
-                  /> */}
+                  <label htmlFor="productDescription">상품 설명</label>
                   <textarea
                     placeholder="상품에 대해 설명해주세요."
                     rows="4"
+                    value={productDescription}
+                    onChange={onDescriptionChange}
                   ></textarea>
                 </p>
               </fieldset>
