@@ -21,7 +21,7 @@ export default function HomePage() {
     <>
       <HomeHeaderStyle>
         <HomeHeaderLogo />
-        <SearchBar placeholder="상품, 게시물 검색" onChange={''} />
+        <SearchBar placeholder="상품, 게시물 검색" />
       </HomeHeaderStyle>
       <SlideComponent />
       <ImageButtons buttons={buttons} />

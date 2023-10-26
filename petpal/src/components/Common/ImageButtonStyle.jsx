@@ -21,22 +21,18 @@ export const RightContainer = styled.div`
 export const LeftImageButton = styled(Link)`
   cursor: pointer;
   display: block;
-  // width: 230px;
-  // height: 248px;
   aspect-ratio: 173/186;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: ${({ backgroundImage }) => `url('${backgroundImage}')`};
+  background-image: ${({ backgroundimage }) => `url('${backgroundimage}')`};
 `;
 export const ImageButton = styled(Link)`
   cursor: pointer;
   display: block;
-  // width: 230px;
-  // height: ${({ size }) => (size === 'large' ? '248px' : '117px')};
   aspect-ratio: 173/88;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: ${({ backgroundImage }) => `url('${backgroundImage}')`};
+  background-image: ${({ backgroundimage }) => `url('${backgroundimage}')`};
 `;
