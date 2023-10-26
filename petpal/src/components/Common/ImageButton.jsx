@@ -15,7 +15,6 @@ export const ImageButtons = ({ buttons }) => {
           <ImageButton
             key={index}
             to={button.to}
-            size={button.size}
             backgroundimage={button.image}
           />
         ))}

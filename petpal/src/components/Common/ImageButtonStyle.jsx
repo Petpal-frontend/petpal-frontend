@@ -4,10 +4,6 @@ import { Link } from 'react-router-dom';
 export const Container = styled.div`
   padding: 0 15px;
   margin-bottom: 34px;
-  // margin-top: 20px;
-  // margin-left: 20px;
-  // display: flex;
-  // justify-content: space-between;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;

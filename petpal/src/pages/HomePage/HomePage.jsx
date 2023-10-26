@@ -9,7 +9,6 @@ export default function HomePage() {
   const buttons = [
     {
       to: '/productList',
-      size: 'large',
       image: '/images/homepageButton/shoppingButton.png',
     },
     { to: '/walkList', image: '/images/homepageButton/walkButton.png' },
