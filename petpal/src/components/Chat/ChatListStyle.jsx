@@ -118,7 +118,7 @@ export const ProductLi = styled.li`
 `;
 
 export const NavBarWrap = styled.nav`
-  width: clamp(320px, 100%, 767px);
+  width: clamp(320px, 100%, 520px);
   height: 60px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
   position: fixed;

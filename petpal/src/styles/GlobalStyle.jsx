@@ -46,24 +46,14 @@ const GlobalStyle = createGlobalStyle`
   }
   
   #root {
-  // width: 520px;
-  // max-width: 767px;
-  // height: 100vh;
   width: clamp(320px, 100%, 520px);
   background-color: #fff;
-  
-  //     margin: 0 auto;
-  //     width: 520px;
-  //     padding: 0 15px;
-  //     height: 100vh;
-  //     background-color: #fff;
   }
   
   input::placeholder {
     color: #DBDBDB;
     font-size: 16px;
     }
-    
     
   a {
     text-decoration: none;
@@ -78,7 +68,6 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     clip-path: polygon(0 0, 0 0, 0 0);
   }
-  
  `;
 
 export default GlobalStyle;
