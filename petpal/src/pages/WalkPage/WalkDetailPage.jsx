@@ -5,8 +5,6 @@ import WalkDetailItem from '../../components/Walk/WalkDetailItem';
 // export default function WalkDetailPage({ location }) {
 export default function WalkDetailPage() {
   const walkDetailItem = {
-    // SUCCESS
-
     post: [ 
       {
         id: '0',
@@ -33,10 +31,6 @@ export default function WalkDetailPage() {
       },
     ],
   };
-
-  // FAIL
-  // 게시글이 존재하지 않을 때
-  //존재하지 않는 게시글입니다.
 
   return (
     <>

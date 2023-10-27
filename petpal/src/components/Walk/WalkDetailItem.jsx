@@ -3,7 +3,6 @@ import { WalkItemListContainer } from './WalkItemListStyle';
 import {
   Divider,
   PostBottom,
-  PostContainer,
   PostContent,
   PostImage,
   PostTop,

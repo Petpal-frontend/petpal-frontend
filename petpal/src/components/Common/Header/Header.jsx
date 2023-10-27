@@ -20,6 +20,17 @@ function BackButton({ type }) {
   );
 }
 
+function HamburgerButton() {
+  const handleMenuButtonClick = () => {};
+  return (
+    <ImageButton
+      src="images/hamburger.svg"
+      alt="menu button"
+      onClick={handleMenuButtonClick}
+    />
+  );
+}
+
 function HeaderTitle({ type, title }) {
   return type === 'walk' ? <HeaderTitleSpan>{title}</HeaderTitleSpan> : null;
 }
@@ -31,6 +42,7 @@ export default function Header({ type, title }) {
         <HeaderContainer type={type}>
           <BackButton type={type} />
           <HeaderTitle type={type} title={title} />
+          <HamburgerButton />
         </HeaderContainer>
       );
     default:

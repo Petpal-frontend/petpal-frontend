@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-// 스타일드 컴포넌트를 사용하여 스타일 정의
 export const PostContainer = styled.div`
   border: 1px solid #e1e1e1;
   margin: 10px;
