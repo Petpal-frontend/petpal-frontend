@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { postSignUp, checkEmailExist } from '../../api/signUpApi';
 
 import { StyledLabel } from '../Common/Input/InputStyle';
-import { StyledButton } from '../Common/Button/FormButton/FormButtonStyle';
 import Input from '../Common/Input/Input';
+import Button from '../Common/Button/SubmitButton/Button';
 
 import {
   SignUpContainer,
@@ -15,6 +15,9 @@ import {
   AddressBox,
   SearchBtn,
   Search,
+  LinkWrapper,
+  LoginLink,
+  MainLink,
 } from './SignUpStyle';
 import AddressSearch from '../AddressSearch/AddressSearch';
 
@@ -179,85 +182,19 @@ export default function SignUpForm() {
             <Search className="a11yHidden">검색</Search>
           </SearchBtn>
         </AddressBox>
-        <StyledButton
+        <Button
           type="submit"
+          size="lg"
+          variant="primary"
           disabled={!username || !email || !password || !intro}
         >
-          회원가입
-        </StyledButton>
+          펫팔하러 GO!
+        </Button>
       </form>
+      <LinkWrapper>
+        <LoginLink to="/login">로그인</LoginLink>
+        <MainLink to="/">메인으로 돌아가기</MainLink>
+      </LinkWrapper>
     </SignUpContainer>
   );
 }
-
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-
-// import { StyledLabel } from '../Common/Input/InputStyle';
-// import Input from '../Common/Input/Input';
-// import Button from '../Common/Button/SubmitButton/Button';
-
-// import {
-//   SignUpContainer,
-//   H1,
-//   ProfileImgBox,
-//   ProfileImg,
-//   ProfileUpload,
-//   AddressBox,
-//   AddressInput,
-//   SearchBtn,
-//   Search,
-//   SignUpButtonBox,
-//   LinkWrapper,
-// } from './SignUpStyle';
-
-// export default function SignUp() {
-//   const imgProfile = '/images/profile.svg';
-//   const imgProfileBtn = '/images/profile-btn.svg';
-
-//   return (
-//     <SignUpContainer>
-//       <H1>이메일로 회원가입</H1>
-//       <ProfileImgBox>
-//         <ProfileImg src={imgProfile} alt="프로필 기본 이미지" />
-//         <ProfileUpload src={imgProfileBtn} alt="사진 업로드 버튼 이미지" />
-//       </ProfileImgBox>
-//       <form>
-//         <Input
-//           type="text"
-//           label="닉네임"
-//           placeholder="2~10자 이내여야 합니다."
-//         />
-//         <Input
-//           type="text"
-//           label="이메일"
-//           placeholder="이메일을 입력해 주세요."
-//         />
-//         <Input
-//           type="password"
-//           label="비밀번호"
-//           placeholder="비밀번호를 입력해 주세요."
-//         />
-//         <AddressBox>
-//           <StyledLabel label="주소">주소</StyledLabel>
-//           <AddressInput
-//             type="text"
-//             placeholder="예) 문래동 강서타워, 테헤란로"
-//           />
-//           <SearchBtn type="button">
-//             <Search className="a11yHidden">검색</Search>
-//           </SearchBtn>
-//         </AddressBox>
-//         <SignUpButtonBox>
-//           <Button type="submit" size="lg" variant="primary" disabled>
-//             펫팔하러 GO!
-//           </Button>
-//         </SignUpButtonBox>
-//       </form>
-//       <LinkWrapper>
-//         <Link to="/login">로그인</Link>
-//         <Link to="/">메인으로 돌아가기</Link>
-//       </LinkWrapper>
-//     </SignUpContainer>
-//   );
-// }

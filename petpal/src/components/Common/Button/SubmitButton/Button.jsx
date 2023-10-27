@@ -42,6 +42,7 @@ const SIZES = {
     --button-font-size: var(--font-size-xlg);
     --button-width: 480px;
     --button-height: 80px;
+    --button-radius: 13px;
   `,
 };
 
