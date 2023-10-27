@@ -5,7 +5,8 @@ import { HeaderWrap } from './ProductListStyle';
 import { PrevBtn, HeaderContent } from './ProductListStyle';
 import { MainWrap } from './ProductListStyle';
 import { ProductLi, ProductImg, ProductInfo } from './ProductListStyle';
-// import { NavBarWrap, NavBarUl } from '../NavBar/NavBarStyle';
+import { NavBarWrap, NavBarUl } from '../Common/NavBar/NavBarStyle';
+
 import { IconImg, IconInfo } from './ProductListStyle';
 import { AddBtn } from './ProductListStyle';
 
@@ -189,7 +190,6 @@ export default function ProductList() {
             글쓰기
           </Link>
         </AddBtn>
-
       </StyledLayout>
     </>
   );
