@@ -36,7 +36,7 @@ export default function Router() {
               <>
                 <SplashPage />
                 {/* <Home /> */}
-                <NavBar />
+                {/* <NavBar /> */}
               </>
             }
           />

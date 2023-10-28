@@ -68,7 +68,7 @@ export default function MyProfile({ myData, myProduct, myPost }) {
         <ItemContainer>
           {myPost.post.map((item, index) => (
             <ItemDiv>
-              <img src={item.image} alt="productImage" />
+              <img src={item.image} alt="postImage" />
             </ItemDiv>
           ))}
         </ItemContainer>
