@@ -140,6 +140,7 @@ export default function SignUpForm() {
       </ProfileImgBox>
       <form onSubmit={handleSignUp}>
         <Input
+          id="userNameSignUp"
           type="text"
           label="닉네임"
           placeholder="2~10자 이내여야 합니다."
@@ -148,6 +149,7 @@ export default function SignUpForm() {
           }}
         />
         <Input
+          id="emailSignUp"
           type="text"
           label="이메일"
           placeholder="이메일을 입력해 주세요."
@@ -168,6 +170,7 @@ export default function SignUpForm() {
           </div>
         )}
         <Input
+          id="passwordSignUp"
           type="password"
           label="비밀번호"
           placeholder="비밀번호를 입력해 주세요."
