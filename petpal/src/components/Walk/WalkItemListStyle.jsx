@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const WalkItemListContainer = styled.div`
-  margin-top: 5rem;
+export const ItemListContainer = styled.div`
+  margin-top: 6rem;
 	display: flex;
   flex-direction: column;
   align-items: center;

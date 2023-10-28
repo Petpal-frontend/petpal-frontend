@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export const HeaderContainer = styled.header`
+  padding: 0 30px;
   background-color: white;
   width: inherit;
   height: 5rem;
@@ -10,6 +11,7 @@ export const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   ${props => {
     switch (props.type) {
       case 'walk':
