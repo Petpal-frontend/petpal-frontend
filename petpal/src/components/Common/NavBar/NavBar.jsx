@@ -32,7 +32,6 @@ export default function NavBar() {
               <IconImg src="./images/icon-edit.svg" />
               <IconInfo>게시물 작성</IconInfo>
             </Link>
-            {isModalOpen && <BottomModal onClose={toggleModal} />}
           </li>
 
           <li>
@@ -48,6 +47,7 @@ export default function NavBar() {
             </Link>
           </li>
         </NavBarUl>
+        {isModalOpen && <BottomModal onClose={toggleModal} />}
       </NavBarWrap>
     </>
   );
