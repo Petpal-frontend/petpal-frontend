@@ -125,7 +125,7 @@ const walkItemList = [
 export default function WalkListPage() {
   return (
     <>
-      <Header type="walk" title="산책메이트" />
+      <Header type="list" title="산책메이트" />
       <WalkItemList walkItemList={walkItemList} />
     </>
   );

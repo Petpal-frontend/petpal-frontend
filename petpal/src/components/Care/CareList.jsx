@@ -1,12 +1,12 @@
 import React from 'react';
-import { ItemListContainer } from './WalkItemListStyle';
-import WalkItem from './WalkItem';
+import { ItemListContainer } from '../Walk/WalkItemListStyle';
+import CareItem from './CareItem';
 
-export default function WalkItemList({ walkItemList }) {
+export default function CareList({ careItemList }) {
   return (
     <ItemListContainer>
-      {walkItemList.map((item, index) => (
-        <WalkItem
+      {careItemList.map((item, index) => (
+        <CareItem
           key={index}
           index={index}
           imgSrc={item.imgSrc}

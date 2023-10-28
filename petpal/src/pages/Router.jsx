@@ -36,7 +36,7 @@ export default function Router() {
               <>
                 <SplashPage />
                 {/* <Home /> */}
-                <NavBar />
+                {/* <NavBar /> */}
               </>
             }
           />
@@ -53,8 +53,24 @@ export default function Router() {
           />
           <Route path="/productDetail" element={<ProductDetail />} />
           <Route path="/productPost" element={<ProductPost />} />
-          <Route path="/walkList" element={<WalkList />} />
-          <Route path="/walkDetail" element={<WalkDetail />} />
+          <Route
+            path="/walkList"
+            element={
+              <>
+                <WalkList />
+                <NavBar />
+              </>
+            }
+          />
+          <Route
+            path="/walkDetail"
+            element={
+              <>
+                <WalkDetail />
+                <NavBar />
+              </>
+            }
+          />
           <Route path="/walkPost" element={<WalkPost />} />
           <Route path="/careList" element={<CareList />} />
           <Route path="/careDetail" element={<CareDetail />} />
@@ -63,7 +79,15 @@ export default function Router() {
           <Route path="/search" element={<Search />} />
           <Route path="/chatList" element={<ChatList />} />
           <Route path="/chatRoom" element={<ChatRoom />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/profile"
+            element={
+              <>
+                <Profile />
+                <NavBar />
+              </>
+            }
+          />
           <Route path="/following" element={<Following />} />
           <Route path="/follower" element={<Follower />} />
           {/* <Route path="/profile/:accountname/follower" element={<Follower />} />

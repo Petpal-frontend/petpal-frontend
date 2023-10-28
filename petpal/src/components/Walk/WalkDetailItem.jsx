@@ -1,9 +1,8 @@
 import React from 'react';
-import { WalkItemListContainer } from './WalkItemListStyle';
+import { ItemListContainer } from './WalkItemListStyle';
 import {
   Divider,
   PostBottom,
-  PostContainer,
   PostContent,
   PostImage,
   PostTop,
@@ -55,9 +54,9 @@ export default function WalkDetailItem({ walkDetailItem }) {
 
   return (
     <>
-      <WalkItemListContainer>
+      <ItemListContainer>
         <PostTop>
-          <UserInfo img={img} username={post.author.username} />
+          <UserInfo img={post.image} username={post.author.username} />
           <Button
             type="button"
             children="채팅하기"
@@ -65,7 +64,7 @@ export default function WalkDetailItem({ walkDetailItem }) {
             variant="primary"
           />
         </PostTop>
-        <PostImage src={img} alt="Post" />
+        <PostImage src={post.image} alt="Post" />
         <PostBottom>
           <LikeAndChat>
             <InfoGroup className="likeAndChat">
@@ -81,7 +80,7 @@ export default function WalkDetailItem({ walkDetailItem }) {
         </PostBottom>
         <Divider />
         <Comment comments={comments} />
-      </WalkItemListContainer>
+      </ItemListContainer>
     </>
   );
 }

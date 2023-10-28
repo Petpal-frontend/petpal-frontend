@@ -14,12 +14,6 @@ export default function ProductList() {
   return (
     <>
       <StyledLayout>
-        <HeaderWrap>
-          <h1 className="a11y-hidden">쇼핑하기</h1>
-          <PrevBtn />
-          <HeaderContent>쇼핑하기</HeaderContent>
-        </HeaderWrap>
-
         <MainWrap>
           <ul>
             {/* <li>

@@ -1,18 +1,17 @@
 import React from 'react';
 import {
   ItemContainer,
-  WalkItemImage,
   ContentDiv,
   WalkItemContent,
   InfoSpan,
-  InfoDiv,
   InfoGroup,
   LikeAndChat,
-} from './WalkItemStyle';
+} from '../Walk/WalkItemStyle';
 import { UserImg, LikeImg, ChatImg } from '../Common/SpanImg/SpanImgStyle';
 import { StyledLink } from '../Common/Text/StyledLink';
+import { CareInfoDiv, CareItemImage } from './CareItemStyle';
 
-export default function WalkItem({
+export default function CareItem({
   index,
   imgSrc,
   content,
@@ -30,12 +29,11 @@ export default function WalkItem({
 
   return (
     // <StyledLink to={DetailPath}>
-    <StyledLink to={'/walkDetail'}>
+    <StyledLink to={'/careDetail'}>
       <ItemContainer>
-        <WalkItemImage src={imgSrc} alt={content} />
         <ContentDiv>
           <WalkItemContent>{content}</WalkItemContent>
-          <InfoDiv>
+          <CareInfoDiv>
             <InfoGroup>
               <UserImg user={user} />
               <InfoSpan>{user.name}</InfoSpan>
@@ -50,8 +48,9 @@ export default function WalkItem({
                 <InfoSpan>{chatNum}</InfoSpan>
               </InfoGroup>
             </LikeAndChat>
-          </InfoDiv>
+          </CareInfoDiv>
         </ContentDiv>
+        <CareItemImage src={imgSrc} alt={content} />
       </ItemContainer>
     </StyledLink>
   );

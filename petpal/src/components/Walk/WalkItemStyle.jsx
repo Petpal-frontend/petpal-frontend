@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const WalkItemContainer = styled.div`
-  margin: 10px;
+export const ItemContainer = styled.div`
+  margin: 10px auto;
   padding: 10px;
   width: 90%;
   height: 120px;
