@@ -1,11 +1,13 @@
 import React from 'react';
 import Header from '../../components/Common/Header/Header';
 import WalkDetailItem from '../../components/Walk/WalkDetailItem';
+import BottomInput from '../../components/Common/Input/BottomInput/BottomInput';
 
 // export default function WalkDetailPage({ location }) {
 export default function WalkDetailPage() {
   const walkDetailItem = {
     post: [ 
+
       {
         id: '0',
         content:
@@ -37,6 +39,7 @@ export default function WalkDetailPage() {
       <Header type="post" title="" />
       {/* <WalkDetailItem location={location} walkDetailItem={walkDetailItem} /> */}
       <WalkDetailItem walkDetailItem={walkDetailItem} />
+      <BottomInput id="comment" placeholder="댓글을 남겨보세요" />
     </>
   );
 }
