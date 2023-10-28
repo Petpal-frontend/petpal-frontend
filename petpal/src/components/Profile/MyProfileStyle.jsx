@@ -56,11 +56,17 @@ export const ListContainer = styled.div`
   margin: 15px 17px;
 `;
 
-export const ItemContainer = styled.div`
+export const ProductItemContainer = styled.div`
   background: #f8f8f8;
   padding: 17px 0;
   margin: 15px 0;
   display: flex;
+`;
+
+export const PostItemContainer = styled.div`
+  background: #f8f8f8;
+  padding: 17px 0;
+  margin: 15px 0;
 `;
 
 export const ItemDiv = styled.div`
@@ -88,4 +94,11 @@ export const Description = styled.p`
   font-size: 10px;
   font-weight: 700;
   line-height: 156.836%;
+`;
+
+export const Image = styled.img`
+  width: 110px;
+  height: 110px;
+  margin: 5px;
+  border-radius: 10px;
 `;

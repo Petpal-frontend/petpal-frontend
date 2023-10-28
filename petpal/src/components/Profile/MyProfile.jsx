@@ -8,9 +8,11 @@ import {
   FollowNum,
   FollowSpan,
   H3,
-  ItemContainer,
+  Image,
   ItemDiv,
   ListContainer,
+  PostItemContainer,
+  ProductItemContainer,
   ProfileContainer,
   TextSection,
   Title,
@@ -51,7 +53,7 @@ export default function MyProfile({ myData, myProduct, myPost }) {
       </ItemListContainer>
       <ListContainer>
         <H3>판매중인 상품</H3>
-        <ItemContainer>
+        <ProductItemContainer>
           {myProduct.product.map((item, index) => (
             <ItemDiv>
               <img src={item.itemImage} alt="productImage" />
@@ -61,17 +63,15 @@ export default function MyProfile({ myData, myProduct, myPost }) {
               </TextSection>
             </ItemDiv>
           ))}
-        </ItemContainer>
+        </ProductItemContainer>
       </ListContainer>
       <ListContainer>
         <H3>게시글</H3>
-        <ItemContainer>
+        <PostItemContainer>
           {myPost.post.map((item, index) => (
-            <ItemDiv>
-              <img src={item.image} alt="postImage" />
-            </ItemDiv>
+            <Image src={item.image} alt="postImage" />
           ))}
-        </ItemContainer>
+        </PostItemContainer>
       </ListContainer>
     </>
   );
