@@ -36,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
   }
   * {
     box-sizing: border-box;
+		
   }
 
   body {
@@ -68,6 +69,6 @@ const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     clip-path: polygon(0 0, 0 0, 0 0);
   }
- `;
+`;
 
 export default GlobalStyle;

@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const ItemListContainer = styled.div`
   margin-top: 6rem;
-	display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  letter-spacing: 0.5px;
 `;

@@ -60,6 +60,7 @@ const StyledButton = styled.button`
   font: inherit;
   font-weight: 600;
   border: none;
+  border: var(--button-border);
   margin: 0;
   width: var(--button-width);
   height: var(--button-height);
