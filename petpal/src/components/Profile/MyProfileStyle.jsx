@@ -61,6 +61,7 @@ export const ProductItemContainer = styled.div`
   padding: 17px 0;
   margin: 15px 0;
   display: flex;
+  overflow-x: auto;
 `;
 
 export const PostItemContainer = styled.div`
@@ -78,6 +79,7 @@ export const ItemDiv = styled.div`
   border-radius: 10px;
   background-color: #ffffff;
   overflow: hidden;
+  flex-shrink: 0;
 `;
 
 export const TextSection = styled.div`
@@ -101,4 +103,11 @@ export const Image = styled.img`
   height: 110px;
   margin: 5px;
   border-radius: 10px;
+`;
+
+export const WarningMessage = styled.h3`
+  color: #000;
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  padding: 0 17px;
 `;

@@ -24,6 +24,7 @@ import SplashPage from './SplashPage/SplashPage';
 import HomePage from './HomePage/HomePage';
 
 import NavBar from '../components/Common/NavBar/NavBar';
+import YourProfile from '../pages/ProfilePage/YourProfilePage';
 
 export default function Router() {
   return (
@@ -84,6 +85,16 @@ export default function Router() {
             element={
               <>
                 <Profile />
+                <NavBar />
+              </>
+            }
+          />
+          {/* 임시 라우팅 */}
+          <Route
+            path="/yourProfile"
+            element={
+              <>
+                <YourProfile />
                 <NavBar />
               </>
             }
