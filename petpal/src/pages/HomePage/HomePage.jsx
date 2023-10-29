@@ -48,7 +48,7 @@ export default function HomePage() {
       >
         우리 귀여운 집사님 보고가세요!
       </p>
-      <InfiniteScroll imageData={imageData} />
+      <InfiniteScroll imageData={imageData} className="homeImageStyle" />
     </>
   );
 }

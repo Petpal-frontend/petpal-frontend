@@ -1,27 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { ScrollContainer, ScrollImageButton } from './scrollStyle';
 
-const InfiniteScroll = ({ imageData }) => {
+const InfiniteScroll = ({ imageData, className }) => {
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
   const imgUrl = 'https://api.mandarin.weniv.co.kr/';
-  // const imageData = {
-  //   img: [
-  //     '1698572201904.jpeg',
-  //     '1698571896561.jpeg',
-  //     '1698571922466.jpeg',
-  //     '1698571938881.jpeg',
-  //     '1698571951485.jpeg',
-  //     '1698571964117.jpeg',
-  //     '1698571982647.jpeg',
-  //     '1698571998553.jpeg',
-  //     '1698572010820.jpeg',
-  //     '1698572022537.jpeg',
-  //     '1698572034168.jpeg',
-  //     '1698572046653.jpeg',
-  //     '1698572063667.jpeg',
-  //     '1698572148559.jpeg',
-  //   ],
-  // };
 
   const initialImageUrls = Array.from(
     { length: 10 },
@@ -65,6 +47,7 @@ const InfiniteScroll = ({ imageData }) => {
           key={index}
           to={imageUrl.to}
           backgroundimage={imageUrl.image}
+          className={className}
         >
           <img src={imageUrl} alt={`프로필 ${index + 1}`} />
         </ScrollImageButton>
