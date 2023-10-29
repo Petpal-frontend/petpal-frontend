@@ -7,7 +7,7 @@ function BackButton({ type }) {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    if (type === 'list' || type === 'post') {
+    if (type === 'list' || type === 'post' || type === 'feed') {
       navigate(-1);
     }
   };
@@ -60,6 +60,13 @@ export default function Header({ type, title }) {
           <BackButton type={type} />
           <HeaderTitle type={type} title={title} />
           <Button type="button" size="xs" variant="primary" children="업로드" />
+        </HeaderContainer>
+      );
+    case 'feed':
+      return (
+        <HeaderContainer type={type}>
+          <BackButton type={type} />
+          <HeaderTitle type={type} title={title} />
         </HeaderContainer>
       );
     default:

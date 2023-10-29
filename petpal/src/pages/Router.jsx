@@ -75,7 +75,15 @@ export default function Router() {
           <Route path="/careList" element={<CareList />} />
           <Route path="/careDetail" element={<CareDetail />} />
           <Route path="/carePost" element={<CarePost />} />
-          <Route path="/feed" element={<Feed />} />
+          <Route
+            path="/feed"
+            element={
+              <>
+                <Feed />
+                <NavBar />
+              </>
+            }
+          />
           <Route path="/search" element={<Search />} />
           <Route path="/chatList" element={<ChatList />} />
           <Route path="/chatRoom" element={<ChatRoom />} />
