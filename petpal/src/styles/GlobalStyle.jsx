@@ -35,22 +35,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-		display: flex;
-		justify-content: center;
+    height: 100vh;
     background-color: #F2F2F2;
     font-family: 'Pretendard', sans-serif;
   }
   
   #root {
-  width: clamp(320px, 100%, 520px);
+    margin: 0 auto;
+  width: 520px;
   background-color: #fff;
   }
   
-  input::placeholder {
-    color: #DBDBDB;
-    font-size: 16px;
-    }
-    
   a {
     text-decoration: none;
     color: inherit;

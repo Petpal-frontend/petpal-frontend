@@ -57,21 +57,23 @@ function TempModal({ isOpen, closeModal }) {
 }
 
 function HeaderTitle({ type, title }) {
-  return type === 'list' ? <HeaderTitleSpan>{title}</HeaderTitleSpan> : null;
+  return type === 'list' || type === 'post' || type === 'posting' ? (
+    <HeaderTitleSpan>{title}</HeaderTitleSpan>
+  ) : null;
 }
 
-export default function Header({ type, title }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+//   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleMenuButtonClick = () => {
-    console.log('open hamburger');
-    setIsModalOpen(true);
-  };
+//   const handleMenuButtonClick = () => {
+//     console.log('open hamburger');
+//     setIsModalOpen(true);
+//   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+//   const closeModal = () => {
+//     setIsModalOpen(false);
+//   };
 
+export default function Header({ type, title, onClick }) {
   switch (type) {
     case 'list':
       return (
@@ -97,7 +99,13 @@ export default function Header({ type, title }) {
         <HeaderContainer type={type}>
           <BackButton type={type} />
           <HeaderTitle type={type} title={title} />
-          <Button type="button" size="xs" variant="primary" children="업로드" />
+          <Button
+            type="submit"
+            size="xs"
+            variant="primary"
+            children="업로드"
+            onClick={onClick}
+          />
         </HeaderContainer>
       );
     default:
