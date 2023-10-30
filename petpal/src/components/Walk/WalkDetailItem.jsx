@@ -12,8 +12,10 @@ import UserInfo from '../Common/Userinfo/UserInfo';
 import { InfoGroup, InfoSpan, LikeAndChat } from './WalkItemStyle';
 import { ChatImg, LikeImg } from '../Common/SpanImg/SpanImgStyle';
 import Comment from '../Common/Comment/Comment';
+import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 
 // export default function WalkDetailItem({ location, walkDetailItem }) {
+// 컴포넌트 분리 및 재사용 고려해서 다시 수정 예정 -> 산책, 돌보미 재사용
 export default function WalkDetailItem({ walkDetailItem }) {
   const post = walkDetailItem.post[0];
 
@@ -53,7 +55,7 @@ export default function WalkDetailItem({ walkDetailItem }) {
   ];
 
   return (
-    <>
+    <ComponentLayout>
       <ItemListContainer>
         <PostTop>
           <UserInfo img={post.image} username={post.author.username} />
@@ -81,6 +83,6 @@ export default function WalkDetailItem({ walkDetailItem }) {
         <Divider />
         <Comment comments={comments} />
       </ItemListContainer>
-    </>
+    </ComponentLayout>
   );
 }
