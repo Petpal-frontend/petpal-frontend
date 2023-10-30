@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const SplashBg = styled.div`
-  width: clamp(320px, 100%, 520px);
+  position: relative;
+  width: 520px;
   height: 100vh;
   background-color: #fffad0;
-  margin: 0 0 0 px;
   animation: fadein 1.5s ease-in-out;
   @keyframes fadein {
     0% {

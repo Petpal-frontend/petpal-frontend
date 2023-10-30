@@ -173,7 +173,7 @@ export const MessageForm = styled.p`
   }
 
   input::placeholder {
-    color: #acacac;
+    color: var(--color-gray-med);
     font-size: 13px;
     font-weight: 500;
   }

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 export const BottomButtonContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
+  text-align: left;
+  margin-left: 30px;
   .pathbtn {
     margin-bottom: 10px;
     width: 322px;
