@@ -1,13 +1,14 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { StyledLayout } from './ChatListStyle';
-import { HeaderWrap } from './ChatListStyle';
-import { PrevBtn, MoreBtn } from './ChatListStyle';
-import { MainWrap } from './ChatListStyle';
-import { ProductLi } from './ChatListStyle';
-import { NavBarWrap } from './ChatListStyle';
-import { NavBarUl, IconImg, IconInfo } from './ChatListStyle';
+import {
+  StyledLayout,
+  HeaderWrap,
+  PrevBtn,
+  MoreBtn,
+  MainWrap,
+  ProductLi,
+} from './ChatListStyle';
+import NavBar from '../Common/NavBar/NavBar';
 
 export default function ChatList() {
   return (
@@ -83,42 +84,8 @@ export default function ChatList() {
           </ul>
         </MainWrap>
 
-        <NavBarWrap>
-          <NavBarUl>
-            <li>
-              <Link to="/">
-                <IconImg src="./images/icon-home-fill.svg" />
-                <IconInfo>홈</IconInfo>
-              </Link>
-            </li>
-            <li>
-              <Link to="/feed">
-                <IconImg src="./images/icon-feed.svg" />
-                <IconInfo>피드</IconInfo>
-              </Link>
-            </li>
-            <li>
-              <Link to="/productPost">
-                <IconImg src="./images/icon-edit.svg" />
-                <IconInfo>게시물 작성</IconInfo>
-              </Link>
-            </li>
-            <li>
-              <Link to="/chatList">
-                <IconImg src="./images/icon-chat.svg" />
-                <IconInfo>채팅</IconInfo>
-              </Link>
-            </li>
-            <li>
-              <Link to="/profile">
-                <IconImg src="./images/icon-user.svg" />
-                <IconInfo>프로필</IconInfo>
-              </Link>
-            </li>
-          </NavBarUl>
-        </NavBarWrap>
+        <NavBar />
       </StyledLayout>
     </>
   );
 }
-

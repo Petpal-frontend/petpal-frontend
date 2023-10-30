@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { HeaderTitleSpan, HeaderContainer } from './HeaderStyle';
 import ImageButton from '../Button/ImageButton/ImageButton';
 import Button from '../Button/SubmitButton/Button';
+import SearchBar from '../../SearchBar/SearchBar';
 import { useState } from 'react';
 
 function BackButton({ type }) {
@@ -62,18 +63,7 @@ function HeaderTitle({ type, title }) {
   ) : null;
 }
 
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-
-//   const handleMenuButtonClick = () => {
-//     console.log('open hamburger');
-//     setIsModalOpen(true);
-//   };
-
-//   const closeModal = () => {
-//     setIsModalOpen(false);
-//   };
-
-export default function Header({ type, title, onClick }) {
+export default function Header({ type, title, onClick, onChange }) {
   switch (type) {
     case 'list':
       return (
@@ -113,6 +103,18 @@ export default function Header({ type, title, onClick }) {
         <HeaderContainer type={type}>
           <BackButton type={type} />
           <HeaderTitle type={type} title={title} />
+        </HeaderContainer>
+      );
+    case 'search':
+      return (
+        <HeaderContainer type={type}>
+          <BackButton type={type} />
+          <HeaderTitle type={type} title={title} />
+          <SearchBar
+            placeholder="계정 검색"
+            onChange={onChange}
+            className="accountSearch"
+          />
         </HeaderContainer>
       );
     default:

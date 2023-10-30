@@ -101,6 +101,7 @@ export const ProductLi = styled.li`
 
   .date {
     align-self: center;
+    flex-shrink: 0;
     font-size: 0.625rem;
   }
 
@@ -115,38 +116,4 @@ export const ProductLi = styled.li`
     top: 0;
     border-radius: 50%;
   }
-`;
-
-export const NavBarWrap = styled.nav`
-  width: clamp(320px, 100%, 520px);
-  height: 60px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
-  position: fixed;
-  bottom: 0;
-`;
-export const NavBarUl = styled.ul`
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-
-  li {
-    width: 20%;
-  }
-
-  li a {
-    padding: 11px 0;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-  }
-`;
-export const IconImg = styled.img`
-  width: 24px;
-  height: 24px;
-`;
-export const IconInfo = styled.span`
-  color: #242424;
-  font-size: 10px;
 `;
