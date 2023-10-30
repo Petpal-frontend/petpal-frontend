@@ -129,7 +129,7 @@ export const ChatBox = styled.div`
 `;
 
 export const MessageWrap = styled.div`
-  width: clamp(320px, 100%, 767px);
+  width: clamp(320px, 100%, 520px);
   height: 60px;
   padding: 12px 15px;
   background-color: #fff;

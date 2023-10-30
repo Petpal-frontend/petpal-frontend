@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { HeaderTitleSpan, HeaderContainer } from './HeaderStyle';
 import ImageButton from '../Button/ImageButton/ImageButton';
 import Button from '../Button/SubmitButton/Button';
+import SearchBar from '../../SearchBar/SearchBar';
 
 function BackButton({ type }) {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ function HeaderTitle({ type, title }) {
   return type === 'list' ? <HeaderTitleSpan>{title}</HeaderTitleSpan> : null;
 }
 
-export default function Header({ type, title }) {
+export default function Header({ type, title, onChange }) {
   switch (type) {
     case 'list':
       return (
@@ -60,6 +61,18 @@ export default function Header({ type, title }) {
           <BackButton type={type} />
           <HeaderTitle type={type} title={title} />
           <Button type="button" size="xs" variant="primary" children="업로드" />
+        </HeaderContainer>
+      );
+    case 'search':
+      return (
+        <HeaderContainer type={type}>
+          <BackButton type={type} />
+          <HeaderTitle type={type} title={title} />
+          <SearchBar
+            placeholder="계정 검색"
+            onChange={onChange}
+            className="accountSearch"
+          />
         </HeaderContainer>
       );
     default:

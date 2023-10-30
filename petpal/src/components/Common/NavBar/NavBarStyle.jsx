@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const NavBarWrap = styled.nav`
-  //   width: 520px;
   width: clamp(320px, 100%, 520px);
   height: 60px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
   position: fixed;
   bottom: 0;
 `;
+
 export const NavBarUl = styled.ul`
   display: flex;
   align-items: center;
@@ -26,6 +26,17 @@ export const NavBarUl = styled.ul`
     gap: 4px;
   }
 `;
+
+export const IconImg = styled.img`
+  width: 24px;
+  height: 24px;
+`;
+
+export const IconInfo = styled.span`
+  color: #242424;
+  font-size: 10px;
+`;
+
 export const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
