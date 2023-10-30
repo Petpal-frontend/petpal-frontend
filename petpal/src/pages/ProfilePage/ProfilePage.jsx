@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from '../../components/Common/Header/Header';
 import MyProfile from '../../components/Profile/MyProfile';
-
+import { userInfoAtom } from '../../atoms/AtomUserState';
+import { useRecoilValue } from 'recoil';
 export default function ProfilePage() {
   // const myData = {
   //   user: {
@@ -16,7 +17,8 @@ export default function ProfilePage() {
   //     followingCount: 3,
   //   },
   // };
-
+  const userState = useRecoilValue(userInfoAtom);
+  console.log('userAtom=====' + userState.email);
   const myData = [
     {
       user: {

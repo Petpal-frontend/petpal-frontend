@@ -3,7 +3,7 @@ import Login from '../../components/Login/Login';
 import { postLogin } from '../../api/loginApi';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-
+import { userInfoAtom } from '../../atoms/AtomUserState';
 import {
   LoginContainer,
   LoginLogo,
@@ -13,9 +13,11 @@ import {
   P,
   SnsLoginList,
 } from './LoginPageStyle';
+import { useRecoilState } from 'recoil';
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [userInfo, setUserInfo] = useRecoilState(userInfoAtom);
 
   const navigate = useNavigate();
   const imgLogo = 'images/logo.svg';
@@ -34,13 +36,23 @@ export default function LoginPage() {
       };
 
       const response = await postLogin(userData);
-      console.log('response.data = ' + JSON.stringify(response.data.user));
-
       if (response.status === 200) {
         const token = response.data.user.token;
-        console.log('tototoot' + token);
         // 로컬스토리지에 토큰 저장하기.
         localStorage.setItem('token', token);
+
+        const atomUserInfo = response.data.user;
+        setUserInfo({
+          ...userInfo,
+          _id: atomUserInfo._id,
+          username: atomUserInfo.username,
+          email: atomUserInfo.email,
+          accountname: atomUserInfo.accountname,
+          intro: atomUserInfo.intro,
+          image: atomUserInfo.image,
+          token: atomUserInfo.token,
+          refreshToken: atomUserInfo.refreshToken,
+        });
         alert('로그인 성공');
         return navigate(`/`);
       }
