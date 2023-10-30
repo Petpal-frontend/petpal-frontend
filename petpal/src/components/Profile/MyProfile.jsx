@@ -1,6 +1,8 @@
 import React from 'react';
 import { ItemListContainer } from '../Walk/WalkItemListStyle';
 import Button from '../Common/Button/SubmitButton/Button';
+import { Link } from 'react-router-dom';
+
 import {
   ButtonContainer,
   Description,
@@ -46,12 +48,14 @@ export default function MyProfile({ myData, myProduct, myPost }) {
             variant="white"
             children="프로필 수정"
           />
-          <Button
-            type="button"
-            size="xs"
-            variant="primary"
-            children="상품 등록"
-          />
+          <Link to="/productPost">
+            <Button
+              type="button"
+              size="xs"
+              variant="primary"
+              children="상품 등록"
+            />
+          </Link>
         </ButtonContainer>
       </ItemListContainer>
       {/* 컴포넌트로 분리 예정 -> 내 프로필, 상대 프로필 재사용 */}
