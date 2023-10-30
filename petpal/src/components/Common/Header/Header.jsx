@@ -8,7 +8,7 @@ function BackButton({ type }) {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    if (type === 'list' || type === 'post' || type === 'posting') {
+    if (type === 'list' || type === 'post' || type === 'feed'|| type === 'posting') {
       navigate(-1);
     }
   };
@@ -106,6 +106,13 @@ export default function Header({ type, title, onClick }) {
             children="업로드"
             onClick={onClick}
           />
+        </HeaderContainer>
+      );
+    case 'feed':
+      return (
+        <HeaderContainer type={type}>
+          <BackButton type={type} />
+          <HeaderTitle type={type} title={title} />
         </HeaderContainer>
       );
     default:

@@ -5,6 +5,7 @@ import { postSignUp, checkEmailExist } from '../../api/signUpApi';
 import { StyledLabel } from '../Common/Input/InputStyle';
 import Input from '../Common/Input/Input';
 import Button from '../Common/Button/SubmitButton/Button';
+import { uploadImg } from '../../api/imageApi';
 
 import {
   SignUpContainer,
@@ -75,20 +76,49 @@ export default function SignUpForm() {
   const handleImageUpload = event => {
     const file = event.target.files[0];
     if (file) {
-      setSelectedImage(file);
+      //감귤마켓 api에 허용된 확장자
+      const allowedExtensions = [
+        'jpg',
+        'jpeg',
+        'png',
+        'gif',
+        'bmp',
+        'tif',
+        'heic',
+      ];
+
+      // 파일 확장자 추출
+      const extension = file.name.split('.').pop().toLowerCase();
+
+      if (allowedExtensions.includes(extension)) {
+        setSelectedImage(file);
+      } else {
+        alert(
+          '올바른 이미지 유형을 선택하세요 (.jpg, .jpeg, .png, .gif, .bmp, .tif, .heic).',
+        );
+      }
     }
   };
 
   const handleSignUp = async e => {
+    // 기본 냥이 이미지 URL
+    let baseImage = 'https://api.mandarin.weniv.co.kr/1698598137638.jpg';
     try {
       e.preventDefault();
+      if (selectedImage) {
+        const imgData = new FormData();
+        imgData.append('image', selectedImage);
+        const imageUpload = await uploadImg(imgData);
+        const imagePath = imageUpload.data.filename;
+        baseImage = `https://api.mandarin.weniv.co.kr/${imagePath}`;
+      }
       const userData = {
         user: {
           username,
           email,
           password,
           accountname,
-          image,
+          image: baseImage,
           intro,
         },
       };
@@ -99,7 +129,6 @@ export default function SignUpForm() {
       if (isEmailValid.data.message === '사용 가능한 이메일 입니다.') {
         setWarningMessage('');
         setValidCheck(!validCheck);
-        // console.log(validCheck);
         const response = await postSignUp(userData);
         console.log(response);
         console.log(response.data);
