@@ -9,7 +9,12 @@ function BackButton({ type }) {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    if (type === 'list' || type === 'post' || type === 'feed'|| type === 'posting') {
+    if (
+      type === 'list' ||
+      type === 'post' ||
+      type === 'feed' ||
+      type === 'posting'
+    ) {
       navigate(-1);
     }
   };
@@ -64,6 +69,17 @@ function HeaderTitle({ type, title }) {
 }
 
 export default function Header({ type, title, onClick, onChange }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleMenuButtonClick = () => {
+    console.log('open hamburger');
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   switch (type) {
     case 'list':
       return (
