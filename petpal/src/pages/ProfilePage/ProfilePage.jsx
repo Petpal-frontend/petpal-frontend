@@ -12,43 +12,63 @@ export default function ProfilePage() {
   const [userProductData, setUserProductData] = useState(null); // 로딩 상태를 관리할 상태
   const [userPostData, setUserPostData] = useState(null); // 로딩 상태를 관리할 상태
   const [loading, setLoading] = useState(false); // 로딩 상태를 관리할 상태
-  const token = useEffect(() => {
-    const fetchProfileData = async () => {
-      try {
-        const response = await getMyProfile(userState.token);
-        setUserData(response.data);
-      } catch (error) {
-        console.error('프로필 데이터를 불러오는 중 오류 발생:', error);
-      }
-    };
-    fetchProfileData();
-  }, [userState.token]);
 
   useEffect(() => {
-    const fetchProductData = async () => {
+    const fetchData = async () => {
       try {
-        const response = await getMyProduct(userState.accountname);
-        setUserProductData(response.data);
-      } catch (error) {
-        console.error('상품 데이터를 불러오는 중 오류 발생:', error);
-      }
-    };
-    fetchProductData();
-  }, [userState.accountname]);
-
-  useEffect(() => {
-    const fetchPostData = async () => {
-      try {
-        const response = await getMyPost(userState.accountname);
+        const profileResponse = await getMyProfile(userState.token);
+        const productResponse = await getMyProduct(userState.accountname);
+        const postResponse = await getMyPost(userState.accountname);
         // console.log('어카운트네임!==' + userState.accountname);
-        // console.log('데이터확인!==' + response.data.post[0].content);
-        setUserPostData(response.data);
+        // console.log('데이터확인!==' + postResponse.data.post[0].content);
+        setUserData(profileResponse.data);
+        setUserProductData(productResponse.data);
+        setUserPostData(postResponse.data);
       } catch (error) {
-        console.error('게시물 데이터를 불러오는 중 오류 발생:', error);
+        console.error('데이터를 불러오는 중 오류 발생:', error);
       }
     };
-    fetchPostData();
-  }, [userState.accountname]);
+
+    fetchData();
+  }, [userState.token, userState.accountname]);
+
+  // const token = useEffect(() => {
+  //   const fetchProfileData = async () => {
+  //     try {
+  //       const response = await getMyProfile(userState.token);
+  //       setUserData(response.data);
+  //     } catch (error) {
+  //       console.error('프로필 데이터를 불러오는 중 오류 발생:', error);
+  //     }
+  //   };
+  //   fetchProfileData();
+  // }, [userState.token]);
+
+  // useEffect(() => {
+  //   const fetchProductData = async () => {
+  //     try {
+  //       const response = await getMyProduct(userState.accountname);
+  //       setUserProductData(response.data);
+  //     } catch (error) {
+  //       console.error('상품 데이터를 불러오는 중 오류 발생:', error);
+  //     }
+  //   };
+  //   fetchProductData();
+  // }, [userState.accountname]);
+
+  // useEffect(() => {
+  //   const fetchPostData = async () => {
+  //     try {
+  //       const response = await getMyPost(userState.accountname);
+  //       // console.log('어카운트네임!==' + userState.accountname);
+  //       // console.log('데이터확인!==' + response.data.post[0].content);
+  //       setUserPostData(response.data);
+  //     } catch (error) {
+  //       console.error('게시물 데이터를 불러오는 중 오류 발생:', error);
+  //     }
+  //   };
+  //   fetchPostData();
+  // }, [userState.accountname]);
 
   // const myData = {
   //   user: {

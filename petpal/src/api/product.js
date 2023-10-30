@@ -10,3 +10,9 @@ export const getMyProduct = async accountname => {
   const response = await tokenInstance.get(`/product/${accountname}`);
   return response;
 };
+
+/* 상세 상품 가져오기*/
+export const getProductDetail = async productId => {
+  const response = await tokenInstance.get(`/product/detail/${productId}`);
+  return response;
+};

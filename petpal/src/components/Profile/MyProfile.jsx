@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ItemListContainer } from '../Walk/WalkItemListStyle';
 import Button from '../Common/Button/SubmitButton/Button';
 import { Link } from 'react-router-dom';
-
+// import { useLocation } from 'react-router-dom';
+import { getProductDetail } from '../../api/product';
 import {
   ButtonContainer,
   Description,
@@ -25,6 +26,25 @@ import {
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 
 export default function MyProfile({ myData, myProduct, myPost }) {
+  const [productDetail, setProductDetail] = useState(null);
+
+  // const location = useLocation();
+
+  const handleProductClick = async productId => {
+    try {
+      const response = await getProductDetail(productId);
+      setProductDetail(response); // API 응답 데이터에서 product를 가져옴
+
+      // API로부터 받은 데이터 처리
+      // ...
+      console.log('resoso=K====' + response.data.product.id);
+      // 페이지 이동
+      window.location.href = `/productDetail/${productId}`;
+    } catch (error) {
+      console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
+    }
+  };
+
   return (
     <ComponentLayout>
       {/* 컴포넌트로 분리 예정 -> 내 프로필, 상대 프로필 재사용 */}
@@ -65,7 +85,12 @@ export default function MyProfile({ myData, myProduct, myPost }) {
           {myProduct.data > 0 ? (
             myProduct.product.map((item, index) => (
               <ItemDiv key={index}>
-                <img src={item.itemImage} alt="productImage" />
+                <img
+                  src={item.itemImage}
+                  alt="productImage"
+                  onClick={() => handleProductClick(item.id)}
+                />
+
                 <TextSection>
                   <Title>{item.itemName}</Title>
                   <Description>{item.price}원</Description>
