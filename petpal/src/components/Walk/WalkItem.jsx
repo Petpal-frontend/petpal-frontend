@@ -1,25 +1,24 @@
 import React from 'react';
+import { WalkItemImage, LikeAndChat } from './WalkItemStyle';
 import {
-  ItemContainer,
-  WalkItemImage,
-  ContentDiv,
-  WalkItemContent,
-  InfoSpan,
   InfoDiv,
   InfoGroup,
-  LikeAndChat,
-} from './WalkItemStyle';
+  InfoSpan,
+  ItemContainer,
+  ItemContent,
+  ItemContentDiv,
+} from '../Common/Layout/LayoutStyle';
 import { UserImg, LikeImg, ChatImg } from '../Common/SpanImg/SpanImgStyle';
 import { StyledLink } from '../Common/Text/StyledLink';
 
 export default function WalkItem({
   index,
-  imgSrc,
+  image,
   content,
-  user,
-  like,
-  likeNum,
-  chatNum,
+  author,
+  hearted,
+  heartedCount,
+  commentCount,
 }) {
   const DetailPath = {
     pathname: '/walkDetail/:' + index,
@@ -32,27 +31,27 @@ export default function WalkItem({
     // <StyledLink to={DetailPath}>
     <StyledLink to={'/walkDetail'}>
       <ItemContainer>
-        <WalkItemImage src={imgSrc} alt={content} />
-        <ContentDiv>
-          <WalkItemContent>{content}</WalkItemContent>
+        <WalkItemImage src={image} alt={content} />
+        <ItemContentDiv>
+          <ItemContent>{content}</ItemContent>
           {/* 컴포넌트로 분리 예정 -> 산책, 돌보미 재사용 */}
           <InfoDiv>
             <InfoGroup>
-              <UserImg user={user} />
-              <InfoSpan>{user.name}</InfoSpan>
+              <UserImg user={author} />
+              <InfoSpan>{author.username}</InfoSpan>
             </InfoGroup>
             <LikeAndChat>
               <InfoGroup className="likeAndChat">
-                <LikeImg like={like} />
-                <InfoSpan>{likeNum}</InfoSpan>
+                <LikeImg like={hearted} />
+                <InfoSpan>{heartedCount}</InfoSpan>
               </InfoGroup>
               <InfoGroup className="likeAndChat">
                 <ChatImg />
-                <InfoSpan>{chatNum}</InfoSpan>
+                <InfoSpan>{commentCount}</InfoSpan>
               </InfoGroup>
             </LikeAndChat>
           </InfoDiv>
-        </ContentDiv>
+        </ItemContentDiv>
       </ItemContainer>
     </StyledLink>
   );

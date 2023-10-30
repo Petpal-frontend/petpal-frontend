@@ -1,5 +1,5 @@
 import React from 'react';
-import { ItemListContainer } from '../Walk/WalkItemListStyle';
+import { ItemListContainer } from '../Common/Layout/LayoutStyle';
 import Button from '../Common/Button/SubmitButton/Button';
 import {
   ButtonContainer,

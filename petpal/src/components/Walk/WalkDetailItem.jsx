@@ -1,5 +1,5 @@
 import React from 'react';
-import { ItemListContainer } from './WalkItemListStyle';
+import { InfoGroup, InfoSpan, ItemListContainer } from '../Common/Layout/LayoutStyle';
 import {
   Divider,
   PostBottom,
@@ -9,7 +9,7 @@ import {
 } from './WalkDetailItemStyle';
 import Button from '../Common/Button/SubmitButton/Button';
 import UserInfo from '../Common/Userinfo/UserInfo';
-import { InfoGroup, InfoSpan, LikeAndChat } from './WalkItemStyle';
+import { LikeAndChat } from './WalkItemStyle';
 import { ChatImg, LikeImg } from '../Common/SpanImg/SpanImgStyle';
 import Comment from '../Common/Comment/Comment';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
