@@ -38,11 +38,14 @@ export const FollowNum = styled.p`
   text-align: center;
 `;
 
-export const FollowDiv = styled.div`
+export const FollowDiv = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 `;
 
 export const H3 = styled.h3`

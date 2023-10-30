@@ -32,7 +32,7 @@ export default function MyProfile({ myData, myProduct, myPost }) {
             <FollowNum>{myData.user.followerCount}</FollowNum>
             <FollowSpan>followers</FollowSpan>
           </FollowDiv>
-          <UserProfileImage src="images/exDogImg.jpg" alt="User Profile" />
+          <UserProfileImage src={myData.user.image} alt="User Profile" />
           <FollowDiv>
             <FollowNum>{myData.user.followingCount}</FollowNum>
             <FollowSpan>followings</FollowSpan>
@@ -80,7 +80,7 @@ export default function MyProfile({ myData, myProduct, myPost }) {
         <PostItemContainer>
           {myPost.post.length > 0 ? (
             myPost.post.map((item, index) => (
-              <Image src={item.image} alt="postImage" key={index} />
+              <Image src={item.author.image} alt="postImage" key={index} />
             ))
           ) : (
             <WarningMessage>
