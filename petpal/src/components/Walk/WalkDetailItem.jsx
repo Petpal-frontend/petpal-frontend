@@ -1,9 +1,8 @@
 import React from 'react';
-import { WalkItemListContainer } from './WalkItemListStyle';
+import { ItemListContainer } from './WalkItemListStyle';
 import {
   Divider,
   PostBottom,
-  PostContainer,
   PostContent,
   PostImage,
   PostTop,
@@ -13,8 +12,10 @@ import UserInfo from '../Common/Userinfo/UserInfo';
 import { InfoGroup, InfoSpan, LikeAndChat } from './WalkItemStyle';
 import { ChatImg, LikeImg } from '../Common/SpanImg/SpanImgStyle';
 import Comment from '../Common/Comment/Comment';
+import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 
 // export default function WalkDetailItem({ location, walkDetailItem }) {
+// 컴포넌트 분리 및 재사용 고려해서 다시 수정 예정 -> 산책, 돌보미 재사용
 export default function WalkDetailItem({ walkDetailItem }) {
   const post = walkDetailItem.post[0];
 
@@ -54,10 +55,10 @@ export default function WalkDetailItem({ walkDetailItem }) {
   ];
 
   return (
-    <>
-      <WalkItemListContainer>
+    <ComponentLayout>
+      <ItemListContainer>
         <PostTop>
-          <UserInfo img={img} username={post.author.username} />
+          <UserInfo img={post.image} username={post.author.username} />
           <Button
             type="button"
             children="채팅하기"
@@ -65,7 +66,7 @@ export default function WalkDetailItem({ walkDetailItem }) {
             variant="primary"
           />
         </PostTop>
-        <PostImage src={img} alt="Post" />
+        <PostImage src={post.image} alt="Post" />
         <PostBottom>
           <LikeAndChat>
             <InfoGroup className="likeAndChat">
@@ -81,7 +82,7 @@ export default function WalkDetailItem({ walkDetailItem }) {
         </PostBottom>
         <Divider />
         <Comment comments={comments} />
-      </WalkItemListContainer>
-    </>
+      </ItemListContainer>
+    </ComponentLayout>
   );
 }

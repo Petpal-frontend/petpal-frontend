@@ -24,6 +24,7 @@ import SplashPage from './SplashPage/SplashPage';
 import HomePage from './HomePage/HomePage';
 
 import NavBar from '../components/Common/NavBar/NavBar';
+import YourProfile from '../pages/ProfilePage/YourProfilePage';
 
 export default function Router() {
   return (
@@ -35,8 +36,8 @@ export default function Router() {
             element={
               <>
                 <SplashPage />
-                <Home />
-                <NavBar />
+                {/* <Home /> */}
+                {/* <NavBar /> */}
               </>
             }
           />
@@ -53,17 +54,59 @@ export default function Router() {
           />
           <Route path="/productDetail" element={<ProductDetail />} />
           <Route path="/productPost" element={<ProductPost />} />
-          <Route path="/walkList" element={<WalkList />} />
-          <Route path="/walkDetail" element={<WalkDetail />} />
+          <Route
+            path="/walkList"
+            element={
+              <>
+                <WalkList />
+                <NavBar />
+              </>
+            }
+          />
+          <Route
+            path="/walkDetail"
+            element={
+              <>
+                <WalkDetail />
+                <NavBar />
+              </>
+            }
+          />
           <Route path="/walkPost" element={<WalkPost />} />
           <Route path="/careList" element={<CareList />} />
           <Route path="/careDetail" element={<CareDetail />} />
           <Route path="/carePost" element={<CarePost />} />
-          <Route path="/feed" element={<Feed />} />
+          <Route
+            path="/feed"
+            element={
+              <>
+                <Feed />
+                <NavBar />
+              </>
+            }
+          />
           <Route path="/search" element={<Search />} />
           <Route path="/chatList" element={<ChatList />} />
           <Route path="/chatRoom" element={<ChatRoom />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/profile"
+            element={
+              <>
+                <Profile />
+                <NavBar />
+              </>
+            }
+          />
+          {/* 임시 라우팅 */}
+          <Route
+            path="/yourProfile"
+            element={
+              <>
+                <YourProfile />
+                <NavBar />
+              </>
+            }
+          />
           <Route path="/following" element={<Following />} />
           <Route path="/follower" element={<Follower />} />
           {/* <Route path="/profile/:accountname/follower" element={<Follower />} />

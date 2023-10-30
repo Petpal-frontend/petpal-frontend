@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export const WalkItemContainer = styled.div`
-  margin: 10px;
+export const ItemContainer = styled.div`
+  margin: 10px auto;
   padding: 10px;
-  width: 90%;
+  width: 468px;
   height: 120px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -30,6 +30,7 @@ export const WalkItemContent = styled.h3`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+	text-align: left;
 `;
 
 export const InfoSpan = styled.span`
@@ -57,6 +58,7 @@ export const ContentDiv = styled.div`
   justify-content: space-between;
   flex-direction: column;
   margin: 0 15px;
+	width: 80%;
 `;
 
 export const LikeAndChat = styled.div`

@@ -172,6 +172,6 @@ export const AddBtn = styled.p`
   }
 
   @media all and (min-width: 768px) {
-    right: calc(50% - 364px);
+    right: calc(50% - 230px);
   }
 `;

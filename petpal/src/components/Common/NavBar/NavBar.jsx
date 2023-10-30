@@ -1,44 +1,89 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { NavBarUl, NavBarWrap } from './NavBarStyle';
-import { IconImg, IconInfo } from '../../Product/ProductListStyle';
+import { React, useState, useRef, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { NavBarWrap, NavBarUl, IconImg, IconInfo } from './NavBarStyle';
+import BottomModal from './BottomModal';
+//아이콘
+import home from '../../../assets/image/icon-home.svg';
+import feed from '../../../assets/image/icon-feed.svg';
+import post from '../../../assets/image/icon-edit.svg';
+import chat from '../../../assets/image/icon-chat.svg';
+import user from '../../../assets/image/icon-user.svg';
+//클릭시 아이콘
+import homefill from '../../../assets/image/icon-home-fill.svg';
+import feedfill from '../../../assets/image/icon-feed-fill.svg';
+import postfill from '../../../assets/image/icon-edit-fill.svg';
+import chatfill from '../../../assets/image/icon-chat-fill.svg';
+import userfill from '../../../assets/image/icon-user-fill.svg';
 
 export default function NavBar() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  //모달창 토글
+  const toggleModal = () => {
+    setModalOpen(!isModalOpen);
+  };
+
+  //location
+  const { pathname } = useLocation();
+
+  const icons = [
+    {
+      name: '홈',
+      image: home,
+      fillImage: homefill,
+      path: '/',
+    },
+    {
+      name: '피드',
+      image: feed,
+      fillImage: feedfill,
+      path: '/feed',
+    },
+    {
+      name: '게시물 작성',
+      image: post,
+      fillImage: postfill,
+      path: '',
+    },
+    {
+      name: '채팅',
+      image: chat,
+      fillImage: chatfill,
+      path: '/chatList',
+    },
+    {
+      name: '프로필',
+      image: user,
+      fillImage: userfill,
+      path: '/profile',
+    },
+  ];
+
   return (
     <>
       <NavBarWrap>
         <NavBarUl>
-          <li>
-            <Link to="/">
-              <IconImg src="./images/icon-home-fill.svg" />
-              <IconInfo>홈</IconInfo>
-            </Link>
-          </li>
-          <li>
-            <Link to="/feed">
-              <IconImg src="./images/icon-feed.svg" />
-              <IconInfo>피드</IconInfo>
-            </Link>
-          </li>
-          <li>
-            <Link to="/productPost">
-              <IconImg src="./images/icon-edit.svg" />
-              <IconInfo>게시물 작성</IconInfo>
-            </Link>
-          </li>
-          <li>
-            <Link to="/chatList">
-              <IconImg src="./images/icon-chat.svg" />
-              <IconInfo>채팅</IconInfo>
-            </Link>
-          </li>
-          <li>
-            <Link to="/profile">
-              <IconImg src="./images/icon-user.svg" />
-              <IconInfo>프로필</IconInfo>
-            </Link>
-          </li>
+          {icons.map((el, i) => {
+            return (
+              <li key={i}>
+                <Link
+                  to={el.path}
+                  onClick={e =>
+                    e.target.parentElement.innerText === '게시물 작성'
+                      ? toggleModal()
+                      : null
+                  }
+                >
+                  <IconImg
+                    src={pathname === el.path ? el.fillImage : el.image}
+                  />
+                  <IconInfo>{el.name}</IconInfo>
+                </Link>
+              </li>
+            );
+          })}
         </NavBarUl>
+        {isModalOpen && <BottomModal onClose={toggleModal} />}
       </NavBarWrap>
     </>
   );

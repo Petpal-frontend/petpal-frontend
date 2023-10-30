@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import HomePage from '../HomePage/HomePage';
 import Splash from '../../components/Splash/Splash';
+import NavBar from '../../components/Common/NavBar/NavBar';
 
 export default function SplashPage() {
   const [showSplash, setShowSplash] = useState(true);
@@ -12,5 +13,16 @@ export default function SplashPage() {
     }, 1500); // 1.5초 후 스플래시 화면을 사라지게 함
   }, []);
 
-  return <div>{showSplash ? <Splash /> : <HomePage />}</div>;
+  return (
+    <div>
+      {showSplash ? (
+        <Splash />
+      ) : (
+        <>
+          <HomePage />
+          <NavBar />
+        </>
+      )}
+    </div>
+  );
 }

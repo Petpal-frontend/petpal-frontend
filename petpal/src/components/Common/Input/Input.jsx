@@ -18,6 +18,7 @@ export default function Input({
         {label}
       </StyledLabel>
       <StyledInput
+        id={id}
         type={type}
         readOnly={readOnly}
         value={value}

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  WalkItemContainer,
+  ItemContainer,
   WalkItemImage,
   ContentDiv,
   WalkItemContent,
@@ -31,10 +31,11 @@ export default function WalkItem({
   return (
     // <StyledLink to={DetailPath}>
     <StyledLink to={'/walkDetail'}>
-      <WalkItemContainer>
+      <ItemContainer>
         <WalkItemImage src={imgSrc} alt={content} />
         <ContentDiv>
           <WalkItemContent>{content}</WalkItemContent>
+          {/* 컴포넌트로 분리 예정 -> 산책, 돌보미 재사용 */}
           <InfoDiv>
             <InfoGroup>
               <UserImg user={user} />
@@ -52,7 +53,7 @@ export default function WalkItem({
             </LikeAndChat>
           </InfoDiv>
         </ContentDiv>
-      </WalkItemContainer>
+      </ItemContainer>
     </StyledLink>
   );
 }
