@@ -18,29 +18,29 @@ import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 
 // export default function WalkDetailItem({ location, walkDetailItem }) {
 // 컴포넌트 분리 및 재사용 고려해서 다시 수정 예정 -> 산책, 돌보미 재사용
-export default function WalkDetailItem({ walkDetailItem }) {
-  const comments = [
-    {
-      num: 1,
-      like: 1,
-    },
-    {
-      num: 1,
-      like: 1,
-    },
-    {
-      num: 1,
-      like: 1,
-    },
-    {
-      num: 1,
-      like: 1,
-    },
-    {
-      num: 1,
-      like: 1,
-    },
-  ];
+export default function WalkDetailItem({ walkDetailItem, commentList }) {
+  // const comments = [
+  //   {
+  //     num: 1,
+  //     like: 1,
+  //   },
+  //   {
+  //     num: 1,
+  //     like: 1,
+  //   },
+  //   {
+  //     num: 1,
+  //     like: 1,
+  //   },
+  //   {
+  //     num: 1,
+  //     like: 1,
+  //   },
+  //   {
+  //     num: 1,
+  //     like: 1,
+  //   },
+  // ];
 
   return (
     <ComponentLayout>
@@ -74,7 +74,7 @@ export default function WalkDetailItem({ walkDetailItem }) {
           </LikeAndChat>
         </PostBottom>
         <Divider />
-        <Comment comments={comments} />
+        {commentList && <Comment comments={commentList} />}
       </DetailContainer>
     </ComponentLayout>
   );

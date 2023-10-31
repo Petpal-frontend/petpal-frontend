@@ -21,17 +21,11 @@ export default function WalkItem({
   heartedCount,
   commentCount,
 }) {
-  // const DetailPath = {
-  //   pathname: '/walkDetail/:' + index,
-  //   state: { index: index },
-  // };
-  // console.log(DetailPath.state);
-
   const [heartedNum, setHeartedNum] = useState(0);
   const [commentNum, setCommentNum] = useState(0);
 
   if (heartedCount) setHeartedNum(heartedCount);
-  if (commentCount) setHeartedNum(commentCount);
+  if (commentCount) setCommentNum(commentCount);
 
   return (
     // <StyledLink to={DetailPath}>

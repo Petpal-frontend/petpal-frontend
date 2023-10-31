@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LikeAndChat } from '../Walk/WalkItemStyle';
 import {
   InfoGroup,
@@ -10,9 +10,11 @@ import {
 import { UserImg, LikeImg, ChatImg } from '../Common/SpanImg/SpanImgStyle';
 import { StyledLink } from '../Common/Text/StyledLink';
 import { CareInfoDiv, CareItemImage } from './CareItemStyle';
+import defaultImg from '../../assets/image/profile.png';
 
 export default function CareItem({
   index,
+  id,
   image,
   content,
   author,
@@ -20,16 +22,15 @@ export default function CareItem({
   heartedCount,
   commentCount,
 }) {
-  const DetailPath = {
-    pathname: '/walkDetail/:' + index,
-    state: { index: index },
-  };
+  const [heartedNum, setHeartedNum] = useState(0);
+  const [commentNum, setCommentNum] = useState(0);
 
-  console.log(DetailPath.state);
+  if (heartedCount) setHeartedNum(heartedCount);
+  if (commentCount) setCommentNum(commentCount);
 
   return (
     // <StyledLink to={DetailPath}>
-    <StyledLink to={'/careDetail'}>
+    <StyledLink to={`/careDetail/${id}`}>
       <ItemContainer>
         <ItemContentDiv>
           <ItemContent>{content}</ItemContent>
@@ -41,16 +42,20 @@ export default function CareItem({
             <LikeAndChat>
               <InfoGroup className="likeAndChat">
                 <LikeImg like={hearted} />
-                <InfoSpan>{heartedCount}</InfoSpan>
+                <InfoSpan>{heartedNum}</InfoSpan>
               </InfoGroup>
               <InfoGroup className="likeAndChat">
                 <ChatImg />
-                <InfoSpan>{commentCount}</InfoSpan>
+                <InfoSpan>{commentNum}</InfoSpan>
               </InfoGroup>
             </LikeAndChat>
           </CareInfoDiv>
         </ItemContentDiv>
-        <CareItemImage src={image} alt={content} />
+        {image ? (
+          <CareItemImage src={image} alt="img" />
+        ) : (
+          <CareItemImage src={defaultImg} alt="img" />
+        )}
       </ItemContainer>
     </StyledLink>
   );

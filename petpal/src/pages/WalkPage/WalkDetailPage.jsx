@@ -23,15 +23,20 @@ export default function WalkDetailPage() {
   useEffect(() => {
     getCommentList(params.id).then(res => {
       setCommentList(res.data.comments);
+      console.log(commentList);
     });
   }, []);
 
   return (
     <>
       <Header type="post" title="" />
-      {walkDetailItem && <WalkDetailItem walkDetailItem={walkDetailItem} />}
+      {walkDetailItem && commentList && (
+        <WalkDetailItem
+          walkDetailItem={walkDetailItem}
+          commentList={commentList}
+        />
+      )}
       <BottomInput id="comment" placeholder="댓글을 남겨보세요" />
-      <Comment comments={commentList} />
     </>
   );
 }
