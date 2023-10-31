@@ -1,22 +1,23 @@
 import React from 'react';
-import { ItemListContainer } from './WalkItemListStyle';
+import { ItemListContainer } from '../Common/Layout/LayoutStyle';
 import WalkItem from './WalkItem';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 
-export default function WalkItemList({ walkItemList }) {
+export default function WalkItemList({ walkList }) {
   return (
     <ComponentLayout>
       <ItemListContainer>
-        {walkItemList.map((item, index) => (
+        {console.log(walkList)}
+        {walkList.map((item, index) => (
           <WalkItem
             key={index}
-            index={index}
-            imgSrc={item.imgSrc}
+            id={item._id}
+            image={item.image}
             content={item.content}
-            user={item.user}
-            like={item.like}
-            likeNum={item.likeNum}
-            chatNum={item.chatNum}
+            author={item.author}
+            hearted={item.hearted}
+            heartedCount={item.heartedCount}
+            commentCount={item.commentCount}
           />
         ))}
       </ItemListContainer>

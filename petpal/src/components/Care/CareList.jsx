@@ -1,5 +1,5 @@
 import React from 'react';
-import { ItemListContainer } from '../Walk/WalkItemListStyle';
+import { ItemListContainer } from '../Common/Layout/LayoutStyle';
 import CareItem from './CareItem';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 
@@ -11,12 +11,12 @@ export default function CareList({ careItemList }) {
           <CareItem
             key={index}
             index={index}
-            imgSrc={item.imgSrc}
+            image={item.image}
             content={item.content}
-            user={item.user}
-            like={item.like}
-            likeNum={item.likeNum}
-            chatNum={item.chatNum}
+            author={item.author}
+            hearted={item.hearted}
+            heartedCount={item.heartedCount}
+            commentCount={item.commentCount}
           />
         ))}
       </ItemListContainer>

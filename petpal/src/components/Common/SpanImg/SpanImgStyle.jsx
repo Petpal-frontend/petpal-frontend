@@ -9,7 +9,7 @@ export const spanImgStyle = css`
 `;
 
 export const UserImg = styled.span`
-  background-image: url(${props => props.user.profile});
+  background-image: url(${props => props.user.image});
   border-radius: 50%;
   ${spanImgStyle}
 `;

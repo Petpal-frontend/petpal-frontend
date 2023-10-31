@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { ItemListContainer } from '../Walk/WalkItemListStyle';
+import React from 'react';
+import { ItemListContainer } from '../Common/Layout/LayoutStyle';
+
 import Button from '../Common/Button/SubmitButton/Button';
 import { Link } from 'react-router-dom';
 // import { useLocation } from 'react-router-dom';

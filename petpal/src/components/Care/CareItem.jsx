@@ -1,24 +1,24 @@
 import React from 'react';
+import { LikeAndChat } from '../Walk/WalkItemStyle';
 import {
-  ItemContainer,
-  ContentDiv,
-  WalkItemContent,
-  InfoSpan,
   InfoGroup,
-  LikeAndChat,
-} from '../Walk/WalkItemStyle';
+  InfoSpan,
+  ItemContainer,
+  ItemContent,
+  ItemContentDiv,
+} from '../Common/Layout/LayoutStyle';
 import { UserImg, LikeImg, ChatImg } from '../Common/SpanImg/SpanImgStyle';
 import { StyledLink } from '../Common/Text/StyledLink';
 import { CareInfoDiv, CareItemImage } from './CareItemStyle';
 
 export default function CareItem({
   index,
-  imgSrc,
+  image,
   content,
-  user,
-  like,
-  likeNum,
-  chatNum,
+  author,
+  hearted,
+  heartedCount,
+  commentCount,
 }) {
   const DetailPath = {
     pathname: '/walkDetail/:' + index,
@@ -31,26 +31,26 @@ export default function CareItem({
     // <StyledLink to={DetailPath}>
     <StyledLink to={'/careDetail'}>
       <ItemContainer>
-        <ContentDiv>
-          <WalkItemContent>{content}</WalkItemContent>
+        <ItemContentDiv>
+          <ItemContent>{content}</ItemContent>
           <CareInfoDiv>
             <InfoGroup>
-              <UserImg user={user} />
-              <InfoSpan>{user.name}</InfoSpan>
+              <UserImg user={author} />
+              <InfoSpan>{author.username}</InfoSpan>
             </InfoGroup>
             <LikeAndChat>
               <InfoGroup className="likeAndChat">
-                <LikeImg like={like} />
-                <InfoSpan>{likeNum}</InfoSpan>
+                <LikeImg like={hearted} />
+                <InfoSpan>{heartedCount}</InfoSpan>
               </InfoGroup>
               <InfoGroup className="likeAndChat">
                 <ChatImg />
-                <InfoSpan>{chatNum}</InfoSpan>
+                <InfoSpan>{commentCount}</InfoSpan>
               </InfoGroup>
             </LikeAndChat>
           </CareInfoDiv>
-        </ContentDiv>
-        <CareItemImage src={imgSrc} alt={content} />
+        </ItemContentDiv>
+        <CareItemImage src={image} alt={content} />
       </ItemContainer>
     </StyledLink>
   );
