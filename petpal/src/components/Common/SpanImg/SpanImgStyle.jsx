@@ -1,4 +1,7 @@
 import styled, { css } from 'styled-components';
+import redHeartUrl from '../../../assets/image/redHeartImg.svg';
+import whiteHeartUrl from '../../../assets/image/whiteHeartImg.svg';
+import chatUrl from '../../../assets/image/chatImg.svg';
 
 export const spanImgStyle = css`
   background-size: cover;
@@ -14,8 +17,6 @@ export const UserImg = styled.span`
   ${spanImgStyle}
 `;
 
-const redHeartUrl = 'images/redHeartImg.svg';
-const whiteHeartUrl = 'images/whiteHeartImg.svg';
 export const LikeImg = styled.span`
   background-image: url(${props =>
     props.like === true ? redHeartUrl : whiteHeartUrl});
@@ -23,7 +24,7 @@ export const LikeImg = styled.span`
 `;
 
 export const ChatImg = styled.span`
-  background-image: url('images/chatImg.svg');
+  background-image: url(${chatUrl});
   ${spanImgStyle}
 `;
 
@@ -32,4 +33,3 @@ export const PostUserImg = styled.span`
   border-radius: 50%;
   ${spanImgStyle}
 `;
-

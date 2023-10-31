@@ -14,11 +14,7 @@ export default function WalkDetailPage() {
 
   useEffect(() => {
     getWalkDetail(params.id).then(res => {
-      // console.log(res.data.post, '12121313');
-
       setWalkDetailItem(res.data.post);
-      // console.log('detail::::::::', walkDetailItem);
-      // console.log(walkDetailItem.author);
     });
   }, []);
 
@@ -30,32 +26,3 @@ export default function WalkDetailPage() {
     </>
   );
 }
-
-// const walkDetailItem = {
-// type:
-//   post: [
-//     {
-//       id: '0',
-//       content:
-//         '식빵이랑 친구해요 성격이 순하고 착해요. 비슷한 나이의 같은 남자 아이랑 산책하고 싶네요~ 강아지 친구들끼리 만나요!!!',
-//       image: 'images/exDogImg.jpg',
-//       createdAt: '20231024',
-//       updatedAt: '20231024',
-//       hearted: true,
-//       heartCount: 32,
-//       commentCount: 0,
-//       author: {
-//         _id: 'id_sorikikikim12',
-//         username: 'username_sorikikikim12',
-//         accountname: 'account_sorikikikim12',
-//         intro: 'intro',
-//         image: 'images/exDogImg.jpg',
-//         isfollow: true,
-//         following: [],
-//         follower: ['follower1'],
-//         followerCount: 1,
-//         followingCount: 0,
-//       },
-//     },
-//   ],
-// };

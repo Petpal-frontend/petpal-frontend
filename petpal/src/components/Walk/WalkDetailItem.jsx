@@ -1,12 +1,10 @@
 import React from 'react';
+import { InfoGroup, InfoSpan } from '../Common/Layout/LayoutStyle';
 import {
-  InfoGroup,
-  InfoSpan,
-  ItemListContainer,
-} from '../Common/Layout/LayoutStyle';
-import {
+  DetailContainer,
   Divider,
   PostBottom,
+  PostContainer,
   PostContent,
   PostImage,
   PostTop,
@@ -21,20 +19,6 @@ import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 // export default function WalkDetailItem({ location, walkDetailItem }) {
 // 컴포넌트 분리 및 재사용 고려해서 다시 수정 예정 -> 산책, 돌보미 재사용
 export default function WalkDetailItem({ walkDetailItem }) {
-  // const post = walkDetailItem.post[0];
-
-  // console.log(post.author);
-  // console.log(post.author.image);
-  // console.log(post.author);
-  // console.log(post[0].content);
-
-  // console.log(location);
-  // console.log(post);
-  // console.log(index);
-
-  // console.log(post[index]);
-  const img = 'images/exDogImg.jpg';
-
   const comments = [
     {
       num: 1,
@@ -60,9 +44,12 @@ export default function WalkDetailItem({ walkDetailItem }) {
 
   return (
     <ComponentLayout>
-      <ItemListContainer>
+      <DetailContainer>
         <PostTop>
-          <UserInfo img={img} username={walkDetailItem.author.username} />
+          <UserInfo
+            img={walkDetailItem.author.image}
+            username={walkDetailItem.author.username}
+          />
           <Button
             type="button"
             children="채팅하기"
@@ -70,8 +57,10 @@ export default function WalkDetailItem({ walkDetailItem }) {
             variant="primary"
           />
         </PostTop>
-        {/* {walkDetailItem.image && <PostImage src={img} alt="Post" />} */}
-        <PostImage src={walkDetailItem.image} alt="Post" />
+        {walkDetailItem.image ? (
+          <PostImage src={walkDetailItem.image} alt="Post" />
+        ) : null}
+        <PostContent>{walkDetailItem.content}</PostContent>
         <PostBottom>
           <LikeAndChat>
             <InfoGroup className="likeAndChat">
@@ -83,11 +72,10 @@ export default function WalkDetailItem({ walkDetailItem }) {
               <InfoSpan>{walkDetailItem.commentCount}</InfoSpan>
             </InfoGroup>
           </LikeAndChat>
-          <PostContent>{walkDetailItem.content}</PostContent>
         </PostBottom>
         <Divider />
         <Comment comments={comments} />
-      </ItemListContainer>
+      </DetailContainer>
     </ComponentLayout>
   );
 }

@@ -4,8 +4,7 @@ export const getWalkList = async () => {
   try {
     const response = await tokenInstance.get(
       // 'post',
-      'post',
-      // GET /post?limit=Number&skip=Number
+      'post?limit=30&skip=Number',
     );
     // let retResponse = { posts: [], data: 0 };
     // retResponse.posts = response.posts.filter(
@@ -23,7 +22,7 @@ export const getWalkDetail = async id => {
     const response = await tokenInstance.get(`post/${id}`);
     console.log(response);
     console.log(response.data.post);
-		
+
     return response;
   } catch (err) {
     return null;
