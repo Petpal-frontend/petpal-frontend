@@ -5,7 +5,6 @@ import { getProductList } from '../../api/productListApi';
 import { getProductDetail } from '../../api/product';
 export default function ProductList() {
   const [products, setProducts] = useState([]);
-  const [productDetail, setProductDetail] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -18,13 +17,6 @@ export default function ProductList() {
 
     fetchData();
   }, []);
-  // useEffect(() => {
-  //   if (products.length > 0) {
-  //     console.log(products);
-  //     console.log(products[0].author.accountname);
-  //     // console.log(products[0].author.accountname.includes('petpal_'));
-  //   }
-  // }, [products]);
 
   const filteredProducts = products.filter(v =>
     v.author.accountname.includes('petpal_'),
@@ -33,11 +25,7 @@ export default function ProductList() {
   const handleProductClick = async productId => {
     try {
       const response = await getProductDetail(productId);
-      setProductDetail(response); // API 응답 데이터에서 product를 가져옴
 
-      // API로부터 받은 데이터 처리
-      // ...
-      // console.log('resoso=K====' + response.data.product.id);
       // 페이지 이동
       window.location.href = `/productDetail/${productId}`;
     } catch (error) {
