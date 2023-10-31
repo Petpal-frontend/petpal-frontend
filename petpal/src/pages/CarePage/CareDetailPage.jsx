@@ -35,7 +35,7 @@ export default function CareDetailPage() {
     <>
       <Header type="post" title="" />
       {/* <WalkDetailItem location={location} careDetailItem={careDetailItem} /> */}
-      <WalkDetailItem walkDetailItem={careDetailItem} />
+      <WalkDetailItem walkDetailItem={careDetailItem.post[0]} />
     </>
   );
 }
