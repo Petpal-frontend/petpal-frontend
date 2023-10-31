@@ -109,7 +109,10 @@ export default function SignUpForm() {
         const imgData = new FormData();
         imgData.append('image', selectedImage);
         const imageUpload = await uploadImg(imgData);
+        console.log(imageUpload);
         const imagePath = imageUpload.data.filename;
+        console.log('iiii==' + imagePath);
+        console.log('eeee' + imageUpload.data.filename);
         baseImage = `https://api.mandarin.weniv.co.kr/${imagePath}`;
       }
       const userData = {
