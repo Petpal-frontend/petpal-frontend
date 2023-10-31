@@ -64,7 +64,7 @@ export default function Router() {
             }
           />
           <Route
-            path="/walkDetail"
+            path="/walkDetail/:id"
             element={
               <>
                 <WalkDetail />

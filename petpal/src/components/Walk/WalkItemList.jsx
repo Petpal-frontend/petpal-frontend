@@ -3,14 +3,14 @@ import { ItemListContainer } from '../Common/Layout/LayoutStyle';
 import WalkItem from './WalkItem';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 
-export default function WalkItemList({ walkItemList }) {
+export default function WalkItemList({ walkList }) {
   return (
     <ComponentLayout>
       <ItemListContainer>
-        {walkItemList.map((item, index) => (
+        {walkList.map((item, index) => (
           <WalkItem
             key={index}
-            index={index}
+            id={item._id}
             image={item.image}
             content={item.content}
             author={item.author}

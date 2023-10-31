@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { WalkItemImage, LikeAndChat } from './WalkItemStyle';
 import {
   InfoDiv,
@@ -12,7 +12,7 @@ import { UserImg, LikeImg, ChatImg } from '../Common/SpanImg/SpanImgStyle';
 import { StyledLink } from '../Common/Text/StyledLink';
 
 export default function WalkItem({
-  index,
+  id,
   image,
   content,
   author,
@@ -20,16 +20,21 @@ export default function WalkItem({
   heartedCount,
   commentCount,
 }) {
-  const DetailPath = {
-    pathname: '/walkDetail/:' + index,
-    state: { index: index },
-  };
+  // const DetailPath = {
+  //   pathname: '/walkDetail/:' + index,
+  //   state: { index: index },
+  // };
+  // console.log(DetailPath.state);
 
-  console.log(DetailPath.state);
+  const [heartedNum, setHeartedNum] = useState(0);
+  const [commentNum, setCommentNum] = useState(0);
+
+  if (heartedCount) setHeartedNum(heartedCount);
+  if (commentCount) setHeartedNum(commentCount);
 
   return (
     // <StyledLink to={DetailPath}>
-    <StyledLink to={'/walkDetail'}>
+    <StyledLink to={`/walkDetail/${id}`}>
       <ItemContainer>
         <WalkItemImage src={image} alt={content} />
         <ItemContentDiv>
@@ -43,11 +48,11 @@ export default function WalkItem({
             <LikeAndChat>
               <InfoGroup className="likeAndChat">
                 <LikeImg like={hearted} />
-                <InfoSpan>{heartedCount}</InfoSpan>
+                <InfoSpan>{heartedNum}</InfoSpan>
               </InfoGroup>
               <InfoGroup className="likeAndChat">
                 <ChatImg />
-                <InfoSpan>{commentCount}</InfoSpan>
+                <InfoSpan>{commentNum}</InfoSpan>
               </InfoGroup>
             </LikeAndChat>
           </InfoDiv>
