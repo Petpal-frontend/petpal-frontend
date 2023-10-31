@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ItemListContainer } from '../Common/Layout/LayoutStyle';
 
 import Button from '../Common/Button/SubmitButton/Button';
@@ -35,7 +35,6 @@ export default function MyProfile({ myData, myProduct, myPost }) {
     try {
       const response = await getProductDetail(productId);
       setProductDetail(response); // API 응답 데이터에서 product를 가져옴
-
       // API로부터 받은 데이터 처리
       // ...
       console.log('resoso=K====' + response.data.product.id);
@@ -45,7 +44,7 @@ export default function MyProfile({ myData, myProduct, myPost }) {
       console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
     }
   };
-
+  console.log(myProduct.product[0].id);
   return (
     <ComponentLayout>
       {/* 컴포넌트로 분리 예정 -> 내 프로필, 상대 프로필 재사용 */}

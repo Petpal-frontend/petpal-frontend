@@ -134,14 +134,14 @@ export const TextArea = styled.div`
 `;
 
 export const ChatBtnArea = styled.p`
-  width: clamp(320px, 100%, 767px);
-  height: 114px;
+  width: clamp(320px, 100%, 520px);
+  // height: 114px;
   background-color: #fff;
   position: fixed;
   bottom: 0;
 
   .chatBtn {
-    width: clamp(320px, 100% - 30px, 767px);
+    width: clamp(320px, 100% - 30px, 520px);
     max-width: calc(767px - 30px);
     height: 60px;
     line-height: 60px;
