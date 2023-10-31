@@ -4,30 +4,33 @@ import WalkItemList from '../../components/Walk/WalkItemList';
 import { getWalkList } from '../../api/walk';
 
 export default function WalkListPage() {
-  const [walkList, setWalkList] = useState({ data: 0, posts: [] });
+  const [postList, setPostList] = useState([]);
 
   useEffect(() => {
-    getWalkList()
-      .then(res => {
-        setWalkList({
-          posts: [
-            // ...res.data.posts,
-            ...res.data.posts.filter(post =>
-              post.author.username.includes('petpal_'),
-            ),
-          ],
-          data: res.data.data,
-        });
-        console.log(walkList);
-      })
-      .catch(err => console.error(err));
+    const fetchData = async () => {
+      const data = await getWalkList();
+      setPostList(data.data.posts);
+      // setWalkList(
+      //   // ...res.data.posts,
+      //   data,
+      // );
+    };
+    fetchData();
+    console.log(postList);
   }, []);
-  console.log(walkList);
+
+  const walkList = postList.filter(post =>
+    post.author.accountname.includes('petpal_'),
+  );
+
+  // .filter(post =>
+  // 	post.author.username.includes('petpal_'),
+  // ),
 
   return (
     <>
       <Header type="list" title="산책메이트" />
-      {walkList && <WalkItemList walkList={walkList.posts} />}
+      {walkList.length > 0 && <WalkItemList walkList={walkList} />}
     </>
   );
 }

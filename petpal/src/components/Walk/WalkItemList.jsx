@@ -7,6 +7,7 @@ export default function WalkItemList({ walkList }) {
   return (
     <ComponentLayout>
       <ItemListContainer>
+        {console.log(walkList)}
         {walkList.map((item, index) => (
           <WalkItem
             key={index}

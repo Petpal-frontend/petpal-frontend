@@ -5,6 +5,9 @@ import Button from '../Button/SubmitButton/Button';
 import SearchBar from '../../SearchBar/SearchBar';
 import { useState } from 'react';
 
+import backBtn from '../../../assets/image/backBtn.svg';
+import hamburgerBtn from '../../../assets/image/hamburger.svg';
+
 function BackButton({ type }) {
   const navigate = useNavigate();
 
@@ -20,18 +23,14 @@ function BackButton({ type }) {
   };
 
   return (
-    <ImageButton
-      src="images/backBtn.svg"
-      alt="back button"
-      onClick={handleButtonClick}
-    />
+    <ImageButton src={backBtn} alt="back button" onClick={handleButtonClick} />
   );
 }
 
 function HamburgerButton({ onMenuButtonClick }) {
   return (
     <ImageButton
-      src="images/hamburger.svg"
+      src={hamburgerBtn}
       alt="menu button"
       onClick={onMenuButtonClick}
     />
