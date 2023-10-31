@@ -1,12 +1,10 @@
 import React from 'react';
+import { InfoGroup, InfoSpan } from '../Common/Layout/LayoutStyle';
 import {
-  InfoGroup,
-  InfoSpan,
-  ItemListContainer,
-} from '../Common/Layout/LayoutStyle';
-import {
+  DetailContainer,
   Divider,
   PostBottom,
+  PostContainer,
   PostContent,
   PostImage,
   PostTop,
@@ -21,20 +19,6 @@ import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 // export default function WalkDetailItem({ location, walkDetailItem }) {
 // 컴포넌트 분리 및 재사용 고려해서 다시 수정 예정 -> 산책, 돌보미 재사용
 export default function WalkDetailItem({ walkDetailItem }) {
-  // const post = walkDetailItem.post[0];
-
-  // console.log(post.author);
-  // console.log(post.author.image);
-  // console.log(post.author);
-  // console.log(post[0].content);
-
-  // console.log(location);
-  // console.log(post);
-  // console.log(index);
-
-  // console.log(post[index]);
-  const img = 'images/exDogImg.jpg';
-
   const comments = [
     {
       num: 1,
@@ -60,7 +44,7 @@ export default function WalkDetailItem({ walkDetailItem }) {
 
   return (
     <ComponentLayout>
-      <ItemListContainer>
+      <DetailContainer>
         <PostTop>
           <UserInfo
             img={walkDetailItem.author.image}
@@ -76,7 +60,6 @@ export default function WalkDetailItem({ walkDetailItem }) {
         {walkDetailItem.image ? (
           <PostImage src={walkDetailItem.image} alt="Post" />
         ) : null}
-        {/* <PostImage src={walkDetailItem.image} alt="Post" /> */}
         <PostContent>{walkDetailItem.content}</PostContent>
         <PostBottom>
           <LikeAndChat>
@@ -92,7 +75,7 @@ export default function WalkDetailItem({ walkDetailItem }) {
         </PostBottom>
         <Divider />
         <Comment comments={comments} />
-      </ItemListContainer>
+      </DetailContainer>
     </ComponentLayout>
   );
 }

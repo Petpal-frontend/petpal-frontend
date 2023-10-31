@@ -14,11 +14,7 @@ export default function WalkDetailPage() {
 
   useEffect(() => {
     getWalkDetail(params.id).then(res => {
-      // console.log(res.data.post, '12121313');
-
       setWalkDetailItem(res.data.post);
-      // console.log('detail::::::::', walkDetailItem);
-      // console.log(walkDetailItem.author);
     });
   }, []);
 
