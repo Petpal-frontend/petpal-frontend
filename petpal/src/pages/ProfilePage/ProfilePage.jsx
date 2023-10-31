@@ -8,10 +8,9 @@ import { getMyProduct } from '../../api/product';
 import { getMyPost } from '../../api/post';
 export default function ProfilePage() {
   const userState = useRecoilValue(userInfoAtom);
-  const [userData, setUserData] = useState(null); // 프로필 데이터를 저장할 상태
-  const [userProductData, setUserProductData] = useState(null); // 로딩 상태를 관리할 상태
-  const [userPostData, setUserPostData] = useState(null); // 로딩 상태를 관리할 상태
-  const [loading, setLoading] = useState(false); // 로딩 상태를 관리할 상태
+  const [userData, setUserData] = useState(null);
+  const [userProductData, setUserProductData] = useState(null);
+  const [userPostData, setUserPostData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
