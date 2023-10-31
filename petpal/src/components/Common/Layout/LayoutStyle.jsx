@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // 헤더 밑에 오는 전체 컴포넌트에 적용 가능
 export const ComponentLayout = styled.div`
   padding: 4.5rem 0;
-  height: 100vh;
+  height: 100%;
 `;
 
 // 리스트 형식의 컴포넌트들을 감싸는 컨테이너 -> 산책, 돌보미, 쇼핑
