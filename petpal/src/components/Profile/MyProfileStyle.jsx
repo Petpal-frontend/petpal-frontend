@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const ProfileContainer = styled.div`
   max-width: 520px;
   margin: 0 auto;
-  padding: 15px 0;
   display: flex;
   align-items: center;
 `;
@@ -19,6 +18,7 @@ export const UserProfileImage = styled.img`
   height: 112px;
   border-radius: 50%;
   margin: 0 17px;
+  object-fit: cover;
 `;
 
 export const Username = styled.h2`
@@ -38,11 +38,14 @@ export const FollowNum = styled.p`
   text-align: center;
 `;
 
-export const FollowDiv = styled.div`
+export const FollowDiv = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 `;
 
 export const H3 = styled.h3`
@@ -50,10 +53,11 @@ export const H3 = styled.h3`
   font-size: var(--font-size-md);
   font-weight: 700;
   text-align: left;
+  margin: 0px 22px;
 `;
 
 export const ListContainer = styled.div`
-  margin: 15px 17px;
+  margin: 15px 0px;
 `;
 
 export const ProductItemContainer = styled.div`
@@ -65,9 +69,9 @@ export const ProductItemContainer = styled.div`
 `;
 
 export const PostItemContainer = styled.div`
-  background: #f8f8f8;
-  padding: 17px 0;
-  margin: 15px 0;
+  // background: #f8f8f8;
+  // padding: 17px 0;
+  margin: 15px 15px;
 `;
 
 export const ItemDiv = styled.div`
@@ -75,11 +79,15 @@ export const ItemDiv = styled.div`
   flex-direction: column;
   width: 156px;
   height: 156px;
-  margin: 0 8px;
+  margin: 0 15px;
   border-radius: 10px;
   background-color: #ffffff;
   overflow: hidden;
   flex-shrink: 0;
+  img {
+    height: 105px;
+    object-fit: cover;
+  }
 `;
 
 export const TextSection = styled.div`
@@ -102,7 +110,8 @@ export const Image = styled.img`
   width: 110px;
   height: 110px;
   margin: 5px;
-  border-radius: 10px;
+  // border-radius: 10px;
+  object-fit: cover;
 `;
 
 export const WarningMessage = styled.h3`

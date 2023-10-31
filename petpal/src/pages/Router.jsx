@@ -52,7 +52,8 @@ export default function Router() {
               </>
             }
           />
-          <Route path="/productDetail" element={<ProductDetail />} />
+          <Route path="/productDetail/:productId" element={<ProductDetail />} />
+          {/* <Route path="/productDetail" element={<ProductDetail />} /> */}
           <Route path="/productPost" element={<ProductPost />} />
           <Route
             path="/walkList"

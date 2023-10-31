@@ -12,7 +12,24 @@ import {
   ChatBtnArea,
 } from './ProductDetailStyle';
 
-export default function ProductDetail() {
+export default function ProductDetail({ ProductDetail }) {
+  //시간 계산 로직입니다
+  function formatDateTime(dateTimeString) {
+    const options = {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    };
+    const formattedDate = new Date(dateTimeString).toLocaleDateString(
+      'ko-KR',
+      options,
+    );
+    return formattedDate;
+  }
+  const updatedAt = ProductDetail.product.updatedAt;
   return (
     <>
       <StyledLayout>
@@ -25,47 +42,31 @@ export default function ProductDetail() {
         </HeaderWrap>
         <MainWrap>
           <ImgArea>
-            <img src="./images/product00.svg" alt="상품 이미지" />
+            <img src={ProductDetail.product.itemImage} alt="상품 이미지" />
           </ImgArea>
           <DescArea>
             <ProfileArea>
               <Link to={`/profile`} className="profileInfo">
                 <span className="profileImg">
-                  <img src="./images/profile-img.svg" alt="프로필 이미지" />
+                  <img
+                    src={ProductDetail.product.author.image}
+                    alt="프로필 이미지"
+                  />
                 </span>
                 <span className="userInfo">
-                  <strong>식빵맘</strong>
-                  <span>22분전</span>
+                  <strong>{ProductDetail.product.author.username}</strong>
+                  <span>{formatDateTime(updatedAt)}</span>
                 </span>
               </Link>
             </ProfileArea>
             <TextArea>
               <strong className="productTitle">
-                강아지 사료 팝니다. 강아지 사료 팝니다. 강아지 사료 팝니다.
+                {ProductDetail.product.itemName}
               </strong>
               <strong className="productPrice">
-                <span>9900</span>원
+                <span>{ProductDetail.product.price}</span>원
               </strong>
-              <span className="productDesc">
-                저희 강아지가 이 제품은 안먹네요 ㅠㅠ 그래서 팝니다. 저희
-                강아지가 이 제품은 안먹네요 ㅠㅠ 그래서 팝니다. 저희 강아지가 이
-                제품은 안먹네요 ㅠㅠ 그래서 팝니다. 저희 강아지가 이 제품은
-                안먹네요 ㅠㅠ 그래서 팝니다. 저희 강아지가 이 제품은 안먹네요
-                ㅠㅠ 그래서 팝니다. 저희 강아지가 이 제품은 안먹네요 ㅠㅠ 그래서
-                팝니다. 저희 강아지가 이 제품은 안먹네요 ㅠㅠ 그래서 팝니다.
-                저희 강아지가 이 제품은 안먹네요 ㅠㅠ 그래서 팝니다. 저희
-                강아지가 이 제품은 안먹네요 ㅠㅠ 그래서 팝니다. 저희 강아지가 이
-                제품은 안먹네요 ㅠㅠ 그래서 팝니다. 저희 강아지가 이 제품은
-                안먹네요 ㅠㅠ 그래서 팝니다. 저희 강아지가 이 제품은 안먹네요
-                ㅠㅠ 그래서 팝니다. 저희 강아지가 이 제품은 안먹네요 ㅠㅠ 그래서
-                팝니다. 저희 강아지가 이 제품은 안먹네요 ㅠㅠ 그래서 팝니다.
-                저희 강아지가 이 제품은 안먹네요 ㅠㅠ 그래서 팝니다. 저희
-                강아지가 이 제품은 안먹네요 ㅠㅠ 그래서 팝니다. 저희 강아지가 이
-                제품은 안먹네요 ㅠㅠ 그래서 팝니다. 저희 강아지가 이 제품은
-                안먹네요 ㅠㅠ 그래서 팝니다. 저희 강아지가 이 제품은 안먹네요
-                ㅠㅠ 그래서 팝니다. 저희 강아지가 이 제품은 안먹네요 ㅠㅠ 그래서
-                팝니다. 끝
-              </span>
+              <span className="productDesc">{ProductDetail.product.link}</span>
             </TextArea>
           </DescArea>
           <ChatBtnArea>
