@@ -62,7 +62,10 @@ export default function WalkDetailItem({ walkDetailItem }) {
     <ComponentLayout>
       <ItemListContainer>
         <PostTop>
-          <UserInfo img={img} username={walkDetailItem.author.username} />
+          <UserInfo
+            img={walkDetailItem.author.image}
+            username={walkDetailItem.author.username}
+          />
           <Button
             type="button"
             children="채팅하기"
@@ -70,8 +73,11 @@ export default function WalkDetailItem({ walkDetailItem }) {
             variant="primary"
           />
         </PostTop>
-        {/* {walkDetailItem.image && <PostImage src={img} alt="Post" />} */}
-        <PostImage src={walkDetailItem.image} alt="Post" />
+        {walkDetailItem.image ? (
+          <PostImage src={walkDetailItem.image} alt="Post" />
+        ) : null}
+        {/* <PostImage src={walkDetailItem.image} alt="Post" /> */}
+        <PostContent>{walkDetailItem.content}</PostContent>
         <PostBottom>
           <LikeAndChat>
             <InfoGroup className="likeAndChat">
@@ -83,7 +89,6 @@ export default function WalkDetailItem({ walkDetailItem }) {
               <InfoSpan>{walkDetailItem.commentCount}</InfoSpan>
             </InfoGroup>
           </LikeAndChat>
-          <PostContent>{walkDetailItem.content}</PostContent>
         </PostBottom>
         <Divider />
         <Comment comments={comments} />
