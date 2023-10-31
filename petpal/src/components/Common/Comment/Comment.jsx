@@ -8,14 +8,14 @@ import {
 import { UserImg, Username } from '../Userinfo/UserInfoStyle';
 
 export default function Comment({ comments }) {
-  console.log('comments', comments);
+  console.log('comments!!!!!!', comments);
   return (
     <CommentsContainer>
       {comments.map((item, index) => (
         <CommentContainer key={index}>
-          <UserImg src={item.image} alt={'comment profile'} />
+          <UserImg src={item.author.image} alt={'comment profile'} />
           <CommentContent>
-            <Username>{item.username}</Username>
+            <Username>{item.author.username}</Username>
             <CommentText>{item.content}</CommentText>
           </CommentContent>
         </CommentContainer>
