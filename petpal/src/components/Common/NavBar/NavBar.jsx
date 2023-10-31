@@ -59,6 +59,23 @@ export default function NavBar() {
     },
   ];
 
+  useEffect(() => {
+    const rootElement = document.getElementById('root');
+    if (isModalOpen && rootElement) {
+      rootElement.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+      rootElement.style.zIndex = '9999';
+    } else {
+      rootElement.style.backgroundColor = '';
+      rootElement.style.zIndex = '';
+    }
+
+    // Clean up 함수 - 컴포넌트가 언마운트될 때 스타일을 초기화
+    return () => {
+      rootElement.style.backgroundColor = '';
+      rootElement.style.zIndex = '';
+    };
+  }, [isModalOpen]);
+
   return (
     <>
       <NavBarWrap>
@@ -83,8 +100,8 @@ export default function NavBar() {
             );
           })}
         </NavBarUl>
-        {isModalOpen && <BottomModal onClose={toggleModal} />}
       </NavBarWrap>
+      {isModalOpen && <BottomModal onClose={toggleModal} />}
     </>
   );
 }
