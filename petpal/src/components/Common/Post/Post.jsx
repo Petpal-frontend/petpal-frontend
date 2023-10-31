@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../Header/Header';
 import { UserImg } from '../../Common/Userinfo/UserInfoStyle';
 
@@ -21,6 +21,9 @@ export default function Post({
 }) {
   const myProfile = 'images/profile-img4.svg';
   const imgUploadBtn = 'images/chat-upload-btn.svg';
+
+  const [image, setImage] = useState('images/profile.svg');
+  const [selectedImage, setSelectedImage] = useState([]);
 
   return (
     <>

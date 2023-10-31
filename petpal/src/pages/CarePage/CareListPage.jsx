@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react';
 import CareList from '../../components/Care/CareList';
 import Header from '../../components/Common/Header/Header';
+import { getCareList } from '../../api/care';
 
 const careItemList = {
   post: [
@@ -123,10 +125,25 @@ const careItemList = {
 };
 
 export default function CareListPage() {
+  const [postList, setPostList] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getCareList();
+      setPostList(data.data.posts);
+    };
+    fetchData();
+    console.log(postList);
+  }, []);
+
+  const careList = postList.filter(post =>
+    post.author.accountname.includes('petpal_'),
+  );
+
   return (
     <>
       <Header type="list" title="돌보미" />
-      <CareList careItemList={careItemList.post} />
+      {careList && <CareList careItemList={careList} />}
     </>
   );
 }

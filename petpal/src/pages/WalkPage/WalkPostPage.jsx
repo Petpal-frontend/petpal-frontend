@@ -1,7 +1,7 @@
 import React from 'react';
 import Post from '../../components/Common/Post/Post';
 
-export default function WalkPostPage({ id, placeholder }) {
+export default function WalkPostPage() {
   return (
     <>
       <Post

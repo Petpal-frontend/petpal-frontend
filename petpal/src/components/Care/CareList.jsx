@@ -10,6 +10,7 @@ export default function CareList({ careItemList }) {
         {careItemList.map((item, index) => (
           <CareItem
             key={index}
+            id={item._id}
             index={index}
             image={item.image}
             content={item.content}
