@@ -41,10 +41,10 @@ const GlobalStyle = createGlobalStyle`
   
   #root {
     width: 520px;
-    height: 100vh;
+    min-height:880px; /* 최소 높이를 대략 880px로 지정 */
+    height: auto; /* 추가되는 요소에 따라 자동으로 늘어남 */
     margin: 0 auto;
     background-color: #fff;
-    overflow-y: auto;
 }
   a {
     text-decoration: none;
