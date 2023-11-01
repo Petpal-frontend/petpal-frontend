@@ -25,7 +25,6 @@ import {
   WarningMessage,
 } from './MyProfileStyle';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
-import { useState } from 'react';
 
 export default function MyProfile({ myData, myProduct, myPost }) {
   const handleProductClick = async productId => {
