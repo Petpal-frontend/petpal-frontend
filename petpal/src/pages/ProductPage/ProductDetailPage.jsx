@@ -27,9 +27,6 @@ export default function ProductDetailPage({ product }) {
         setAccess(response.data.product.author.accountname);
         setUserProductData(response.data);
         console.log('ress=====' + JSON.stringify(response.data.product));
-        // console.log(
-        //   're=====' + JSON.stringify(userProductData.product.itemName),
-        // );
       } catch (error) {
         console.error('데이터를 불러오는 중 오류 발생:', error);
       }
@@ -38,6 +35,7 @@ export default function ProductDetailPage({ product }) {
     fetchData();
   }, [productId]);
 
+  // console.log('sdsd==' + userProductData.product.link);
   //계정 주인과 일치하는지
   const isAccessAllowed = access === userState.accountname;
   //productEditPage로 아래의 값을 이동시켜주는 로직입니다

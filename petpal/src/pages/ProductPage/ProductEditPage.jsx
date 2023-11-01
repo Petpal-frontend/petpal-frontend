@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProductPost from '../../components/Product/ProductPost';
 import { updateProduct } from '../../api/product';
 import { uploadImg } from '../../api/imageApi';
@@ -13,10 +13,8 @@ export default function ProductEditPage() {
   const [productDescription, setProductDescription] = useState(
     product.link || '',
   );
-  //   const [imageFile, setImageFile] = useState(null);
-  const [imageFile, setImageFile] = useState(product.imageFile || '');
-
-  console.log(product.id);
+  const [imageFile, setImageFile] = useState(product.itemImage ?? '');
+  const [previewImage, setPreviewImage] = useState(product.itemImage ?? '');
   const handleTitleChange = e => {
     setProductTitle(e.target.value);
   };
@@ -32,10 +30,10 @@ export default function ProductEditPage() {
   const handleImageChange = e => {
     const file = e.target.files[0];
     if (file) {
+      setPreviewImage(URL.createObjectURL(file));
       setImageFile(file);
     }
   };
-
   const handleProductUpload = async () => {
     try {
       const imgData = new FormData();
@@ -49,12 +47,12 @@ export default function ProductEditPage() {
         itemImage:
           'https://api.mandarin.weniv.co.kr/' + imageUpload.data.filename,
       };
-      console.log('ewqeqd+===' + product);
+      // console.log('ewqeqd+===' + product);
       //   console.log(imageUpload.data.filename);
       const response = await updateProduct(product.id, updatedProduct);
-      console.log('Producid', product.id);
-      console.log('Product uploaded response:', response);
-      console.log('updatedProduct:', updatedProduct);
+      // console.log('Producid', product.id);
+      // console.log('Product uploaded response:', response);
+      // console.log('updatedProduct:', updatedProduct);
       alert('상품이 수정되었습니다.');
       navigate('/productList');
     } catch (error) {
@@ -69,7 +67,7 @@ export default function ProductEditPage() {
         productTitle={productTitle}
         productPrice={productPrice}
         productDescription={productDescription}
-        imageFile={imageFile}
+        imageFile={previewImage}
         onTitleChange={handleTitleChange}
         onPriceChange={handlePriceChange}
         onDescriptionChange={handleDescriptionChange}
