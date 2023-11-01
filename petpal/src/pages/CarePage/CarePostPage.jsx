@@ -6,6 +6,7 @@ export default function CarePostPage({ id, placeholder }) {
     <>
       <Post
         title="돌보미 구인"
+        type="care"
         id="PostContent"
         placeholder="게시글 입력하기..."
       />

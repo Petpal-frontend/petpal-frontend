@@ -15,12 +15,12 @@ import {
   UploadBtn,
 } from '../../Product/ProductPostStyle';
 import { Link, useNavigate } from 'react-router-dom';
-import { uploadWalkPost } from '../../../api/walk';
+import { uploadPost } from '../../../api/post';
 import { uploadImg, uploadImgs } from '../../../api/imageApi';
 
 export default function Post({
-  title,
   id,
+  title,
   type,
   label,
   value,
@@ -48,7 +48,10 @@ export default function Post({
     }
   };
 
-  const uploadPost = async e => {
+  const appendFlagContent =
+    type === 'walk' ? `petpal_walk_${content}` : `petpal_care_${content}`;
+
+  const uploadData = async e => {
     try {
       e.preventDefault();
       if (selectedImages) {
@@ -88,18 +91,24 @@ export default function Post({
         const imgPath = imgUpload.data.filename;
         console.log(imgPath);
       }
-      // const postData = {
-      //   post: {
-      //     images: selectedImages,
-      //     content,
-      //   },
-      // };
+      const postData = {
+        post: {
+          images: selectedImages,
+          content: appendFlagContent,
+        },
+      };
 
-      // const response = await uploadWalkPost(postData);
-      // await console.log('response:::', response.data);
-      // if (response.status === 200) {
-      //   navigate('/walkList');
-      // }
+      const response = await uploadPost(postData);
+      await console.log('response:::', response.data);
+      if (response.status === 200) {
+        alert('게시글 등록이 완료되었습니다. 게시글 목록으로 이동합니다.');
+        if (type === 'walk') {
+          navigate('/walkList');
+        }
+        if (type === 'care') {
+          navigate('/careList');
+        }
+      }
     } catch (err) {
       console.error(err);
     }
@@ -108,14 +117,14 @@ export default function Post({
   return (
     <>
       <HeaderWrap>
-        <h1 className="a11y-hidden">쇼핑하기 상품 등록 작성</h1>
+        <h1 className="a11y-hidden">게시글 등록 작성</h1>
         <div>
           <PrevBtn>
             <Link to="/walkList"></Link>
           </PrevBtn>
-          <HeaderContent>산책메이트</HeaderContent>
+          <HeaderContent>{title}</HeaderContent>
         </div>
-        <UploadBtn onClick={uploadPost} type="submit">
+        <UploadBtn onClick={uploadData} type="submit">
           업로드
         </UploadBtn>
       </HeaderWrap>

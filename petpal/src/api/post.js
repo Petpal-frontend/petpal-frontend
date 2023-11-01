@@ -7,3 +7,8 @@ export const getMyPost = async accountname => {
   );
   return response;
 };
+
+export const uploadPost = async post => {
+  const response = await tokenInstance.post(`/post`, post);
+  return response;
+};

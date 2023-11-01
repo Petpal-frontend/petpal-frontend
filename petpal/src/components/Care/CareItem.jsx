@@ -33,7 +33,7 @@ export default function CareItem({
     <StyledLink to={`/careDetail/${id}`}>
       <ItemContainer>
         <ItemContentDiv>
-          <ItemContent>{content}</ItemContent>
+          <ItemContent>{content.split('petpal_care_')}</ItemContent>
           <CareInfoDiv>
             <InfoGroup>
               <UserImg user={author} />
