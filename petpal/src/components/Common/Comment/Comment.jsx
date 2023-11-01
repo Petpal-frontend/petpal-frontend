@@ -8,7 +8,6 @@ import {
 import { UserImg, Username } from '../Userinfo/UserInfoStyle';
 
 export default function Comment({ comments }) {
-  console.log('comments!!!!!!', comments);
   return (
     <CommentsContainer>
       {comments.map((item, index) => (

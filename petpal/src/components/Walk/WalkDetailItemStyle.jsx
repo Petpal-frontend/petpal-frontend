@@ -13,7 +13,7 @@ export const PostTop = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-	width: 520px;
+  width: 520px;
 `;
 
 export const PostBottom = styled.div`
@@ -29,12 +29,12 @@ export const PostImage = styled.img`
 
 export const PostContent = styled.p`
   padding: 10px 27px;
-	line-height: 1.6em;
+  line-height: 1.6em;
 `;
 
 export const Divider = styled.div`
-  border-top: 1px solid #DBDBDB; 
-	width: 520px;
+  border-top: 1px solid #dbdbdb;
+  width: 520px;
 `;
 
 export const DetailContainer = styled.div`

@@ -13,12 +13,11 @@ import Button from '../Common/Button/SubmitButton/Button';
 import UserInfo from '../Common/Userinfo/UserInfo';
 import { LikeAndChat } from './WalkItemStyle';
 import { ChatImg, LikeImg } from '../Common/SpanImg/SpanImgStyle';
-import Comment from '../Common/Comment/Comment';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 
 // export default function WalkDetailItem({ location, walkDetailItem }) {
 // 컴포넌트 분리 및 재사용 고려해서 다시 수정 예정 -> 산책, 돌보미 재사용
-export default function WalkDetailItem({ walkDetailItem, commentList }) {
+export default function WalkDetailItem({ walkDetailItem }) {
   // const comments = [
   //   {
   //     num: 1,
@@ -74,7 +73,6 @@ export default function WalkDetailItem({ walkDetailItem, commentList }) {
           </LikeAndChat>
         </PostBottom>
         <Divider />
-        {commentList && <Comment comments={commentList} />}
       </DetailContainer>
     </ComponentLayout>
   );

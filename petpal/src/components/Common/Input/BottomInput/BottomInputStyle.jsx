@@ -22,7 +22,7 @@ export const ImageBtnBox = styled.button`
   background: none;
 `;
 
-export const BottomInputBox = styled.div``;
+export const BottomInputBox = styled.form``;
 
 export const StyledInput = styled.input`
   position: relative;

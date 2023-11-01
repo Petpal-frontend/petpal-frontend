@@ -5,7 +5,12 @@ export const getCommentList = async id => {
   return response;
 };
 
-export const wrtieComment = async id => {
-  const response = await tokenInstance.post(`/post/${id}/comments`);
+export const writeComment = async (id, content) => {
+  console.log('dfddfdfdfdf', id, content);
+  const response = await tokenInstance.post(`/post/${id}/comments`, {
+    comment: {
+      content,
+    },
+  });
   return response;
 };

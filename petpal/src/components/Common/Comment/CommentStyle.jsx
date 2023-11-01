@@ -8,7 +8,7 @@ export const CommentContainer = styled.div`
 
 export const CommentsContainer = styled.div`
   display: flex;
-	flex-direction: column;
+  flex-direction: column;
   margin: 10px 0;
   width: 520px;
   padding: 20px;
