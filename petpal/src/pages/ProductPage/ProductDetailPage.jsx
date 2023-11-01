@@ -9,7 +9,7 @@ import { userInfoAtom } from '../../atoms/AtomUserState';
 import useAlertControl from '../../components/Common/Modal/useAlertControl';
 import Alert from '../../components/Common/Modal/Alert';
 import { useNavigate } from 'react-router-dom';
-
+import { deleteProduct } from '../../api/product';
 export default function ProductDetailPage() {
   const { productId } = useParams();
   const [access, setAccess] = useState(null);
@@ -42,10 +42,14 @@ export default function ProductDetailPage() {
       openAlert();
     }
   };
+  const deleteProductReq = async () => {
+    await deleteProduct(productId);
+    navigate(-1);
+  };
 
   const handledelete = event => {
     if (event.target.textContent === '삭제') {
-      navigate(-1);
+      deleteProductReq();
     }
   };
 
