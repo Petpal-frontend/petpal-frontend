@@ -4,7 +4,7 @@ import { updateProduct } from '../../api/product';
 import { uploadImg } from '../../api/imageApi';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-export default function ProductPostPage() {
+export default function ProductEditPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const { product } = location.state;

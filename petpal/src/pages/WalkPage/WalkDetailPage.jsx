@@ -53,35 +53,32 @@ export default function WalkDetailPage() {
       console.error('댓글 작성 실패:', error);
     }
   };
-
   const isAccessAllowed = access === userState.accountname;
   const handleModal = event => {
-    //productEditPage로 아래의 값을 이동시켜주는 로직입니다
+    //walkEditPage로 아래의 값을 이동시켜주는 로직입니다
     if (event.target.textContent === '수정') {
-      navigate('/productEdit', {
-        // state: {
-        //   product: {
-        //     id: userProductData.product.id,
-        //     itemName: userProductData.product.itemName,
-        //     price: userProductData.product.price,
-        //     link: userProductData.product.link,
-        //     itemImage: userProductData.product.itemImage,
-        //   },
-        // },
+      navigate('/walkEdit', {
+        state: {
+          post: {
+            id: walkDetailItem.id,
+            content: walkDetailItem.content,
+            image: walkDetailItem.image,
+          },
+        },
       });
     } else if (event.target.textContent === '삭제') {
       openAlert();
     }
   };
 
-  const deleteProductReq = async () => {
+  const deletePostReq = async () => {
     await deletePost(params.id);
     navigate(-1);
   };
 
   const handledelete = event => {
     if (event.target.textContent === '삭제') {
-      deleteProductReq();
+      deletePostReq();
     }
   };
   return (

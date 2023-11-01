@@ -10,6 +10,7 @@ import ProductEdit from './ProductPage/ProductEditPage';
 import WalkList from './WalkPage/WalkListPage';
 import WalkDetail from './WalkPage/WalkDetailPage';
 import WalkPost from './WalkPage/WalkPostPage';
+import WalkEdit from './WalkPage/WalkEditPage';
 import CareList from './CarePage/CareListPage';
 import CareDetail from './CarePage/CareDetailPage';
 import CarePost from './CarePage/CarePostPage';
@@ -77,6 +78,7 @@ export default function Router() {
             }
           />
           <Route path="/walkPost" element={<WalkPost />} />
+          <Route path="/WalkEdit" element={<WalkEdit />} />
           <Route
             path="/careList"
             element={
