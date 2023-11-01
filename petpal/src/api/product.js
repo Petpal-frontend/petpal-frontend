@@ -16,3 +16,9 @@ export const getProductDetail = async productId => {
   const response = await tokenInstance.get(`/product/detail/${productId}`);
   return response;
 };
+
+/* 상품 삭제하기 */
+export const deleteProduct = async productId => {
+  const response = await tokenInstance.delete(`/product/${productId}`);
+  return response;
+};

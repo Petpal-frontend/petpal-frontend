@@ -1,6 +1,7 @@
 import React from 'react';
 import InfiniteScroll from '../../components/Common/InfinityScroll/scroll';
 import Header from '../../components/Common/Header/Header';
+
 export default function FeedPage() {
   const imageData = [
     '1698572201904.jpeg',
@@ -21,7 +22,7 @@ export default function FeedPage() {
   return (
     <>
       <Header type="feed" />
-      <div style={{ paddingTop: '80px' }}>
+      <div style={{ paddingTop: '65px' }}>
         <InfiniteScroll imageData={imageData} className="feedImageStyle" />
       </div>
     </>
