@@ -27,3 +27,8 @@ export const getWalkDetail = async id => {
     return null;
   }
 };
+
+export const uploadWalkPost = async post => {
+  const response = await tokenInstance.post(`/post`, post);
+  return response;
+};

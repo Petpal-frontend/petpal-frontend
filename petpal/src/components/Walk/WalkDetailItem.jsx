@@ -19,6 +19,7 @@ import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 
 // export default function WalkDetailItem({ location, walkDetailItem }) {
 // 컴포넌트 분리 및 재사용 고려해서 다시 수정 예정 -> 산책, 돌보미 재사용
+
 export default function WalkDetailItem({ walkDetailItem }) {
   const elapsedTime = date => {
     const start = new Date(date);

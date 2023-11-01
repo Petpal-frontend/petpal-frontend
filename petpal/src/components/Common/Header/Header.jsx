@@ -83,13 +83,7 @@ export default function Header({ type, title, onClick, onChange, handleFunc }) {
         <HeaderContainer type={type}>
           <BackButton type={type} />
           <HeaderTitle type={type} title={title} />
-          <Button
-            type="submit"
-            size="xs"
-            variant="primary"
-            children="업로드"
-            onClick={onClick}
-          />
+          <Button type="submit" size="xs" variant="primary" children="업로드" />
         </HeaderContainer>
       );
     case 'feed':
