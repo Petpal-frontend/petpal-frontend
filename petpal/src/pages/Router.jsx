@@ -74,7 +74,15 @@ export default function Router() {
             }
           />
           <Route path="/walkPost" element={<WalkPost />} />
-          <Route path="/careList" element={<CareList />} />
+          <Route
+            path="/careList"
+            element={
+              <>
+                <CareList />
+                <NavBar />
+              </>
+            }
+          />
           <Route
             path="/careDetail/:id"
             element={
@@ -84,7 +92,15 @@ export default function Router() {
               </>
             }
           />
-          <Route path="/carePost" element={<CarePost />} />
+          <Route
+            path="/carePost"
+            element={
+              <>
+                <CarePost />
+                <NavBar />
+              </>
+            }
+          />
           <Route
             path="/feed"
             element={

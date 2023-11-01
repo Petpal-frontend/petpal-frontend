@@ -129,6 +129,7 @@ export default function SignUpForm() {
       const isEmailValid = await checkEmailExist(userData);
       console.log(isEmailValid);
       console.log(isEmailValid.data.message);
+
       if (isEmailValid.data.message === '사용 가능한 이메일 입니다.') {
         setWarningMessage('');
         setValidCheck(!validCheck);
