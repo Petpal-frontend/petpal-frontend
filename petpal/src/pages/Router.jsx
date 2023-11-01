@@ -16,6 +16,7 @@ import Feed from './FeedPage/FeedPage';
 import ChatList from './ChatPage/ChatListPage';
 import ChatRoom from './ChatPage/ChatRoomPage';
 import Profile from './ProfilePage/ProfilePage';
+import ProfileEdit from './ProfilePage/ProfileEditPage';
 import Search from './SearchPage/SearchPage';
 import Following from './FollowPage/FollowingPage';
 import Follower from './FollowPage/FollowerPage';
@@ -118,6 +119,15 @@ export default function Router() {
             element={
               <>
                 <Profile />
+                <NavBar />
+              </>
+            }
+          />
+          <Route
+            path="/profileEdit"
+            element={
+              <>
+                <ProfileEdit />
                 <NavBar />
               </>
             }

@@ -71,3 +71,16 @@ export const InfoSpan = styled.span`
   font-size: 12px;
   font-weight: 400;
 `;
+
+// 회원가입, 프로필 입력 Form
+export const FormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+`;
+
+export const H1 = styled.h1`
+  font-size: var(--font-size-xl);
+  margin-top: 40px;
+`;

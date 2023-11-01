@@ -8,8 +8,6 @@ import Button from '../Common/Button/SubmitButton/Button';
 import { uploadImg } from '../../api/imageApi';
 
 import {
-  SignUpContainer,
-  H1,
   ProfileImgBox,
   ProfileImg,
   ProfileUpload,
@@ -21,10 +19,10 @@ import {
   MainLink,
 } from './SignUpStyle';
 import AddressSearch from '../AddressSearch/AddressSearch';
+import { FormContainer, H1 } from '../Common/Layout/LayoutStyle';
+import imgProfileBtn from '../../assets/image/profile-btn.svg';
 
 export default function SignUpForm() {
-  const imgProfileBtn = '/images/profile-btn.svg';
-
   const navigate = useNavigate();
 
   const [username, setUsername] = useState(''); // 닉네임
@@ -153,7 +151,7 @@ export default function SignUpForm() {
   };
 
   return (
-    <SignUpContainer>
+    <FormContainer>
       <H1>이메일로 회원가입</H1>
       <ProfileImgBox>
         <ProfileImg
@@ -231,6 +229,6 @@ export default function SignUpForm() {
         <LoginLink to="/login">로그인</LoginLink>
         <MainLink to="/">메인으로 돌아가기</MainLink>
       </LinkWrapper>
-    </SignUpContainer>
+    </FormContainer>
   );
 }

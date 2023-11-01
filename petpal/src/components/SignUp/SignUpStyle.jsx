@@ -1,17 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const SignUpContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-`;
-
-export const H1 = styled.h1`
-  font-size: var(--font-size-xl);
-  margin-top: 40px;
-`;
 
 // 프로필 사진 설정
 export const ProfileImgBox = styled.div`
