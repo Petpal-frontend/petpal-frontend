@@ -108,6 +108,15 @@ export default function Router() {
               </>
             }
           />
+          {/* <Route
+            path="/yourProfile/:username"
+            element={
+              <>
+                <YourProfile />
+                <NavBar />
+              </>
+            }
+          /> */}
           <Route path="/following" element={<Following />} />
           <Route path="/follower" element={<Follower />} />
           {/* <Route path="/profile/:accountname/follower" element={<Follower />} />

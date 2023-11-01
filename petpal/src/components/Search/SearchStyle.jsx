@@ -29,8 +29,10 @@ export const ProductLi = styled.li`
   }
 
   .profileImg img {
-    border-radius: 25px;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
   }
 
   .text {
