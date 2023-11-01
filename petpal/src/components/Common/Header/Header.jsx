@@ -82,7 +82,10 @@ export default function Header({ type, title, onClick, onChange }) {
   switch (type) {
     case 'list':
       return (
-        <HeaderContainer type={type}>
+        <HeaderContainer
+          type={type}
+          style={{ borderBottom: '1px solid #dbdbdb' }}
+        >
           <BackButton type={type} />
           <HeaderTitle type={type} title={title} />
           {/* 하단 모달 열기 버튼 */}

@@ -18,7 +18,6 @@ export const getWalkList = async () => {
 
 export const getWalkDetail = async id => {
   try {
-    await console.log(id, '~~~');
     const response = await tokenInstance.get(`post/${id}`);
     console.log(response);
     console.log(response.data.post);

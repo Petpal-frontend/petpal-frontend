@@ -4,52 +4,59 @@ import {
   DetailContainer,
   Divider,
   PostBottom,
-  PostContainer,
   PostContent,
   PostImage,
   PostTop,
+  UserInfoBox,
+  PostTime,
+  NameAndTimeBox,
 } from './WalkDetailItemStyle';
 import Button from '../Common/Button/SubmitButton/Button';
-import UserInfo from '../Common/Userinfo/UserInfo';
+import { UserImg, Username } from '../Common/Userinfo/UserInfoStyle';
 import { LikeAndChat } from './WalkItemStyle';
 import { ChatImg, LikeImg } from '../Common/SpanImg/SpanImgStyle';
-import Comment from '../Common/Comment/Comment';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 
 // export default function WalkDetailItem({ location, walkDetailItem }) {
 // 컴포넌트 분리 및 재사용 고려해서 다시 수정 예정 -> 산책, 돌보미 재사용
-export default function WalkDetailItem({ walkDetailItem, commentList }) {
-  // const comments = [
-  //   {
-  //     num: 1,
-  //     like: 1,
-  //   },
-  //   {
-  //     num: 1,
-  //     like: 1,
-  //   },
-  //   {
-  //     num: 1,
-  //     like: 1,
-  //   },
-  //   {
-  //     num: 1,
-  //     like: 1,
-  //   },
-  //   {
-  //     num: 1,
-  //     like: 1,
-  //   },
-  // ];
+export default function WalkDetailItem({ walkDetailItem }) {
+  const elapsedTime = date => {
+    const start = new Date(date);
+    const end = new Date();
+
+    const seconds = Math.floor((end.getTime() - start.getTime()) / 1000);
+    if (seconds < 60) return '방금 전';
+
+    const minutes = seconds / 60;
+    if (minutes < 60) return `${Math.floor(minutes)}분 전`;
+
+    const hours = minutes / 60;
+    if (hours < 24) return `${Math.floor(hours)}시간 전`;
+
+    const days = hours / 24;
+    if (days < 7) return `${Math.floor(days)}일 전`;
+
+    return `${start.toLocaleDateString()}`;
+  };
 
   return (
     <ComponentLayout>
       <DetailContainer>
         <PostTop>
-          <UserInfo
-            img={walkDetailItem.author.image}
-            username={walkDetailItem.author.username}
-          />
+          <UserInfoBox>
+            <UserImg
+              src={walkDetailItem.author.image}
+              style={{ width: '50px', height: '50px' }}
+              alt="프로필 이미지"
+            />
+            <NameAndTimeBox>
+              <Username>{walkDetailItem.author.username}</Username>
+
+              <PostTime>
+                {`${elapsedTime(new Date(walkDetailItem.createdAt))}`}
+              </PostTime>
+            </NameAndTimeBox>
+          </UserInfoBox>
           <Button
             type="button"
             children="채팅하기"
@@ -74,7 +81,6 @@ export default function WalkDetailItem({ walkDetailItem, commentList }) {
           </LikeAndChat>
         </PostBottom>
         <Divider />
-        {commentList && <Comment comments={commentList} />}
       </DetailContainer>
     </ComponentLayout>
   );

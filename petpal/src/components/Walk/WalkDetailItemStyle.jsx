@@ -1,19 +1,16 @@
 import styled from 'styled-components';
 
-export const PostContainer = styled.div`
-  border: 1px solid #e1e1e1;
-  margin: 10px;
-  max-width: 300px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-`;
-
 export const PostTop = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-	width: 520px;
+  padding: 0 15px;
+  width: 520px;
+`;
+
+export const UserInfoBox = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const PostBottom = styled.div`
@@ -28,16 +25,28 @@ export const PostImage = styled.img`
 `;
 
 export const PostContent = styled.p`
-  padding: 10px 27px;
-	line-height: 1.6em;
+  margin: 20px;
+  line-height: 1.6em;
 `;
 
 export const Divider = styled.div`
-  border-top: 1px solid #DBDBDB; 
-	width: 520px;
+  border-top: 1px solid #dbdbdb;
+  width: 520px;
 `;
 
 export const DetailContainer = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const NameAndTimeBox = styled.div`
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const PostTime = styled.span`
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-med);
 `;
