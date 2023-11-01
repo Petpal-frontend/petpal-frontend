@@ -22,3 +22,23 @@ export const deleteProduct = async productId => {
   const response = await tokenInstance.delete(`/product/${productId}`);
   return response;
 };
+
+/* 상품 수정하기 */
+export const updateProduct = async (
+  productId,
+  { itemName, price, link, itemImage },
+) => {
+  try {
+    const response = await tokenInstance.put(`/product/${productId}`, {
+      product: {
+        itemName,
+        price,
+        link,
+        itemImage,
+      },
+    });
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
