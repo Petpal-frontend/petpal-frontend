@@ -14,6 +14,7 @@ export const MainWrap = styled.div`
   }
 `;
 export const ProductLi = styled.li`
+  cursor: pointer;
   a {
     text-decoration: none;
   }

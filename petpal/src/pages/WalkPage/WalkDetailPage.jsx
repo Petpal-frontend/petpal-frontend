@@ -6,18 +6,25 @@ import { useParams } from 'react-router-dom';
 import { getWalkDetail } from '../../api/walk';
 import { getCommentList, uploadComment } from '../../api/commentApi';
 import Comment from '../../components/Common/Comment/Comment';
-
-// export default function WalkDetailPage({ location }) {
+import { useRecoilValue } from 'recoil';
+import { useNavigate } from 'react-router-dom';
+import { userInfoAtom } from '../../atoms/AtomUserState';
+import useAlertControl from '../../components/Common/Modal/useAlertControl';
+import Alert from '../../components/Common/Modal/Alert';
+import { deletePost } from '../../api/post';
 export default function WalkDetailPage() {
   const params = useParams();
-
+  const navigate = useNavigate();
+  const { openAlert, AlertComponent } = useAlertControl();
+  const userState = useRecoilValue(userInfoAtom);
+  const [access, setAccess] = useState(null);
   const [walkDetailItem, setWalkDetailItem] = useState();
   const [commentList, setCommentList] = useState([]);
   const [newComment, setNewComment] = useState('');
-
   useEffect(() => {
     getWalkDetail(params.id).then(res => {
       setWalkDetailItem(res.data.post);
+      setAccess(res.data.post.author.accountname);
     });
   }, []);
 
@@ -46,10 +53,42 @@ export default function WalkDetailPage() {
       console.error('댓글 작성 실패:', error);
     }
   };
+  const isAccessAllowed = access === userState.accountname;
+  const handleModal = event => {
+    //walkEditPage로 아래의 값을 이동시켜주는 로직입니다
+    if (event.target.textContent === '수정') {
+      navigate('/walkEdit', {
+        state: {
+          post: {
+            id: walkDetailItem.id,
+            content: walkDetailItem.content,
+            image: walkDetailItem.image,
+          },
+        },
+      });
+    } else if (event.target.textContent === '삭제') {
+      openAlert();
+    }
+  };
 
+  const deletePostReq = async () => {
+    await deletePost(params.id);
+    navigate(-1);
+  };
+
+  const handledelete = event => {
+    if (event.target.textContent === '삭제') {
+      deletePostReq();
+    }
+  };
   return (
     <>
-      <Header type="post" title="" />
+      {isAccessAllowed ? (
+        <Header type="myWalkDetail" onClick={handleModal} />
+      ) : (
+        <Header type="walkDetail" onClick={handleModal} />
+      )}
+
       {walkDetailItem && <WalkDetailItem walkDetailItem={walkDetailItem} />}
       {commentList && <Comment comments={commentList} />}
       <BottomInput
@@ -59,6 +98,13 @@ export default function WalkDetailPage() {
         onChange={handleChangeComment}
         onSubmit={handleSubmitComment}
       />
+      <AlertComponent>
+        <Alert
+          alertMsg={'상품을 삭제하시겠습니까?'}
+          choice={['취소', '삭제']}
+          handleFunc={handledelete}
+        />
+      </AlertComponent>
     </>
   );
 }
