@@ -68,7 +68,11 @@ export default function WalkDetailItem({ walkDetailItem }) {
         {walkDetailItem.image ? (
           <PostImage src={walkDetailItem.image} alt="Post" />
         ) : null}
-        <PostContent>{walkDetailItem.content}</PostContent>
+        <PostContent>
+          {walkDetailItem.content.includes('petpal_walk_')
+            ? walkDetailItem.content.split('petpal_walk_')
+            : walkDetailItem.content.split('petpal_care_')}
+        </PostContent>
         <PostBottom>
           <LikeAndChat>
             <InfoGroup className="likeAndChat">
