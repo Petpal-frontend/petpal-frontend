@@ -6,7 +6,6 @@ import { getCareDetail } from '../../api/care';
 
 export default function CareDetailPage() {
   const params = useParams();
-  console.log('!!!!id', params.id);
 
   const [careDetailItem, setCareDetailItem] = useState();
 
@@ -14,7 +13,7 @@ export default function CareDetailPage() {
     getCareDetail(params.id).then(res => {
       setCareDetailItem(res.data.post);
     });
-  }, []);
+  }, [params.id]);
 
   return (
     <>
