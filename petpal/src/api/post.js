@@ -7,3 +7,9 @@ export const getMyPost = async accountname => {
   );
   return response;
 };
+
+/* 게시글 삭제하기 */
+export const deletePost = async postId => {
+  const response = await tokenInstance.delete(`/post/${postId}`);
+  return response;
+};
