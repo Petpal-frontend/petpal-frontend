@@ -26,7 +26,8 @@ export const BottomInputBox = styled.form``;
 
 export const StyledInput = styled.input`
   position: relative;
-  padding: 12px 315px 12px 22px;
+  width: 503px;
+  height: 42px;
   border: none;
   border-radius: 50px;
   background-color: #f2f2f2;
@@ -34,7 +35,8 @@ export const StyledInput = styled.input`
   ${props =>
     props.isChat &&
     `
-    padding: 12px 260px 12px 22px;
+width: 448px;
+height: 42px;
     border: none;
     border-radius: 20px;
     background-color: #f2f2f2;
@@ -48,6 +50,7 @@ export const StyledInput = styled.input`
   &::placeholder {
     color: #acacac;
     font-size: var(--font-size-md);
+    text-indent: var(--font-size-md);
     font-weight: 500;
   }
 `;

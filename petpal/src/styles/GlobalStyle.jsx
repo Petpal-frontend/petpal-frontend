@@ -35,14 +35,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    height: 100vh;
     background-color: #F2F2F2;
     font-family: 'Pretendard', sans-serif;
   }
   
   #root {
+    width: 520px;
+    height: 100vh;
     margin: 0 auto;
-  width: 520px;
   background-color: #fff;
   }
   
