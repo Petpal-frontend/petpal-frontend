@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-
+import hamburgerBtn from '../../../assets/image/hamburger.svg';
 export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
@@ -36,4 +36,19 @@ export const HeaderTitleSpan = styled.span`
   letter-spacing: 0.02rem;
   font-weight: 700;
   margin: 0 auto;
+`;
+
+export const PostStyle = styled.article`
+  position: relative;
+
+  .postMoreButton {
+    position: absolute;
+    top: -12px;
+    right: 8px;
+    width: 18px;
+    height: 27px;
+    background: url(${hamburgerBtn}) no-repeat center / auto 100%;
+    cursor: pointer;
+    border: none;
+  }
 `;

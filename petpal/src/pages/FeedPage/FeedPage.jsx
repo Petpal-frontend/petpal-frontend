@@ -1,24 +1,8 @@
 import React from 'react';
 import InfiniteScroll from '../../components/Common/InfinityScroll/scroll';
 import Header from '../../components/Common/Header/Header';
-import useModalControl from '../../components/Common/Modal/useModalControl';
-import { Modal } from '../../components/Common/Modal/Modal';
-import { useNavigate, useLocation } from 'react-router-dom';
-import styled from 'styled-components';
-import hamburgerBtn from '../../assets/image/hamburger.svg';
 
 export default function FeedPage() {
-  const navigate = useNavigate();
-  const { openModal, ModalComponent } = useModalControl();
-  const handleModal = event => {
-    if (event.target.textContent === '삭제') {
-      navigate('/feed');
-    } else if (event.target.textContent === '수정') {
-      navigate('/feed');
-    } else if (event.target.textContent === '확인') {
-      navigate('/feed');
-    }
-  };
   const imageData = [
     '1698572201904.jpeg',
     '1698572010820.jpeg',
@@ -37,37 +21,10 @@ export default function FeedPage() {
   ];
   return (
     <>
-      <PostStyle>
-        <button
-          className="postMoreButton"
-          aria-label="PostMoreBtn"
-          onClick={() => {
-            openModal();
-          }}
-        />
-      </PostStyle>
-      {/* <Header type="feed" /> */}
-      <ModalComponent>
-        <Modal contents={['삭제', '수정']} handleFunc={handleModal} />
-      </ModalComponent>
+      <Header type="feed" />
       <div style={{ paddingTop: '65px' }}>
         <InfiniteScroll imageData={imageData} className="feedImageStyle" />
       </div>
     </>
   );
 }
-
-const PostStyle = styled.article`
-  position: relative;
-
-  .postMoreButton {
-    position: absolute;
-    top: 30px;
-    right: 50px;
-    width: 18px;
-    height: 18px;
-    background: url(${hamburgerBtn}) no-repeat center / auto 100%;
-    cursor: pointer;
-    border: none;
-  }
-`;

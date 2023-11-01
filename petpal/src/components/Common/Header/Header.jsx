@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { HeaderTitleSpan, HeaderContainer } from './HeaderStyle';
+import { HeaderTitleSpan, HeaderContainer, PostStyle } from './HeaderStyle';
 import ImageButton from '../Button/ImageButton/ImageButton';
 import Button from '../Button/SubmitButton/Button';
 import SearchBar from '../../SearchBar/SearchBar';
 import { useState } from 'react';
-
+import useModalControl from '../Modal/useModalControl';
 import backBtn from '../../../assets/image/backBtn.svg';
 import hamburgerBtn from '../../../assets/image/hamburger.svg';
+import { Modal } from '../Modal/Modal';
 
 function BackButton({ type }) {
   const navigate = useNavigate();
@@ -16,6 +17,9 @@ function BackButton({ type }) {
       type === 'list' ||
       type === 'post' ||
       type === 'feed' ||
+      type === 'profile' ||
+      type === 'productDetail' ||
+      type === 'myProductDetail' ||
       type === 'posting'
     ) {
       navigate(-1);
@@ -27,57 +31,34 @@ function BackButton({ type }) {
   );
 }
 
-function HamburgerButton({ onMenuButtonClick }) {
-  return (
-    <ImageButton
-      src={hamburgerBtn}
-      alt="menu button"
-      onClick={onMenuButtonClick}
-    />
-  );
-}
-
-function TempModal({ isOpen, closeModal }) {
-  if (!isOpen) {
-    return null;
-  }
-
-  const handleModalClose = () => {
-    closeModal();
-  };
-
-  return (
-    <div
-      style={{
-        width: '500px',
-        height: '500px',
-        backgroundColor: 'red',
-        color: 'white',
-      }}
-    >
-      TempModal 입니다
-      <button onClick={handleModalClose}>닫기</button>
-    </div>
-  );
-}
-
 function HeaderTitle({ type, title }) {
   return type === 'list' || type === 'post' || type === 'posting' ? (
     <HeaderTitleSpan>{title}</HeaderTitleSpan>
   ) : null;
 }
 
-export default function Header({ type, title, onClick, onChange }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+export default function Header({ type, title, onClick, onChange, handleFunc }) {
+  const { openModal, ModalComponent } = useModalControl();
+  const navigate = useNavigate();
 
-  const handleMenuButtonClick = () => {
-    console.log('open hamburger');
-    setIsModalOpen(true);
-  };
+  function ProfileModal({ onClick }) {
+    return (
+      <ModalComponent>
+        <Modal
+          contents={['설정 및 개인정보', '로그아웃']}
+          handleFunc={onClick}
+        />
+      </ModalComponent>
+    );
+  }
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  function ProductDetailModal({ onClick }) {
+    return (
+      <ModalComponent>
+        <Modal contents={['수정', '삭제']} handleFunc={onClick} />
+      </ModalComponent>
+    );
+  }
 
   switch (type) {
     case 'list':
@@ -85,9 +66,6 @@ export default function Header({ type, title, onClick, onChange }) {
         <HeaderContainer type={type}>
           <BackButton type={type} />
           <HeaderTitle type={type} title={title} />
-          {/* 하단 모달 열기 버튼 */}
-          <HamburgerButton onMenuButtonClick={handleMenuButtonClick} />
-          <TempModal isOpen={isModalOpen} onClose={closeModal} />
         </HeaderContainer>
       );
     case 'post':
@@ -95,8 +73,6 @@ export default function Header({ type, title, onClick, onChange }) {
         <HeaderContainer type={type}>
           <BackButton type={type} />
           <HeaderTitle type={type} title={title} />
-          <HamburgerButton onMenuButtonClick={handleMenuButtonClick} />
-          <TempModal isOpen={isModalOpen} onClose={closeModal} />
         </HeaderContainer>
       );
     case 'posting':
@@ -120,6 +96,23 @@ export default function Header({ type, title, onClick, onChange }) {
           <HeaderTitle type={type} title={title} />
         </HeaderContainer>
       );
+    case 'profile':
+      return (
+        <HeaderContainer type={type}>
+          <BackButton type={type} />
+          <HeaderTitle type={type} title={title} />
+          <PostStyle>
+            <button
+              className="postMoreButton"
+              aria-label="PostMoreBtn"
+              onClick={() => {
+                openModal();
+              }}
+            />
+          </PostStyle>
+          <ProfileModal onClick={onClick} />
+        </HeaderContainer>
+      );
     case 'search':
       return (
         <HeaderContainer type={type}>
@@ -130,6 +123,30 @@ export default function Header({ type, title, onClick, onChange }) {
             onChange={onChange}
             className="accountSearch"
           />
+        </HeaderContainer>
+      );
+    case 'productDetail':
+      return (
+        <HeaderContainer type={type}>
+          <HeaderTitle type={type} title={title} />
+          <BackButton type={type} />
+        </HeaderContainer>
+      );
+    case 'myProductDetail':
+      return (
+        <HeaderContainer type={type}>
+          <BackButton type={type} />
+          <HeaderTitle type={type} title={title} />
+          <PostStyle>
+            <button
+              className="postMoreButton"
+              aria-label="PostMoreBtn"
+              onClick={() => {
+                openModal();
+              }}
+            />
+          </PostStyle>
+          <ProductDetailModal onClick={onClick} />
         </HeaderContainer>
       );
     default:
