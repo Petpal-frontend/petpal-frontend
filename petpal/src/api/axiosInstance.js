@@ -33,7 +33,7 @@ tokenInstance.interceptors.request.use(
         Authorization: `Bearer ${token}`,
       };
     }
-    console.log('intercepter2', config);
+    // console.log('intercepter2', config);
     return config;
   },
   error => {

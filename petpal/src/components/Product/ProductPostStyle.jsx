@@ -76,6 +76,12 @@ export const ImgArea = styled.div`
   overflow: hidden;
   position: relative;
 
+  .productImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .uploadBtnImg {
     position: absolute;
     top: 98px;
