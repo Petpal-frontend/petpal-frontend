@@ -7,8 +7,8 @@ export const spanImgStyle = css`
   background-size: cover;
   width: 24px;
   height: 24px;
-  border: none;
   display: inline-block;
+  border: none;
 `;
 
 export const UserImg = styled.span`

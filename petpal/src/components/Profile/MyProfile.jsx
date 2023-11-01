@@ -25,27 +25,20 @@ import {
   WarningMessage,
 } from './MyProfileStyle';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
+import { useState } from 'react';
 
 export default function MyProfile({ myData, myProduct, myPost }) {
-  const [productDetail, setProductDetail] = useState(null);
-
-  // const location = useLocation();
-
   const handleProductClick = async productId => {
     try {
       const response = await getProductDetail(productId);
-      setProductDetail(response); // API 응답 데이터에서 product를 가져옴
-
-      // API로부터 받은 데이터 처리
-      // ...
-      console.log('resoso=K====' + response.data.product.id);
+      console.log('response.data.product.id' + response.data.product.id);
       // 페이지 이동
       window.location.href = `/productDetail/${productId}`;
     } catch (error) {
       console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
     }
   };
-
+  console.log(myProduct.product[0].id);
   return (
     <ComponentLayout>
       {/* 컴포넌트로 분리 예정 -> 내 프로필, 상대 프로필 재사용 */}

@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import ProductPost from '../../components/Product/ProductPost';
 import { uploadProduct } from '../../api/product';
 import { uploadImg } from '../../api/imageApi';
+import { useNavigate } from 'react-router-dom';
+
 export default function ProductPostPage() {
+  const navigate = useNavigate();
+
   const [productTitle, setProductTitle] = useState('');
   const [productPrice, setProductPrice] = useState('');
   const [productDescription, setProductDescription] = useState('');
@@ -46,6 +50,8 @@ export default function ProductPostPage() {
       console.log(imageUpload.data.filename);
       const response = await uploadProduct(product); // uploadProduct 함수를 사용하여 API 호출
       console.log('Product uploaded response:', response);
+      alert('상품이 등록되었습니다.');
+      navigate(-1);
     } catch (error) {
       console.error('Error uploading product:', error);
       // TODO: 오류 처리, 사용자에게 알리기 등

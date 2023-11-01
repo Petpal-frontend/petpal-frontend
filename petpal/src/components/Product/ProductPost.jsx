@@ -1,10 +1,15 @@
 import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { StyledLayout } from './ProductPostStyle';
-import { HeaderWrap } from './ProductPostStyle';
-import { PrevBtn, HeaderContent, UploadBtn } from './ProductPostStyle';
-import { MainWrap } from './ProductPostStyle';
-import { ImgArea, FormArea } from './ProductPostStyle';
+import {
+  StyledLayout,
+  HeaderWrap,
+  PrevBtn,
+  HeaderContent,
+  UploadBtn,
+  MainWrap,
+  ImgArea,
+  FormArea,
+} from './ProductPostStyle';
 
 export default function ProductPost(props) {
   const {
@@ -34,20 +39,20 @@ export default function ProductPost(props) {
         </HeaderWrap>
         <MainWrap>
           <ImgArea>
+            {imageFile ? (
+              <img
+                // src={URL.createObjectURL(imageFile)}
+                src={URL.createObjectURL(imageFile)}
+                alt="업로드된 이미지 미리보기"
+                className="productImg"
+              />
+            ) : null}
             <p>
               <label htmlFor="uploadImgBtn">
-                {imageFile ? (
-                  <img
-                    // src={URL.createObjectURL(imageFile)}
-                    src={URL.createObjectURL(imageFile)}
-                    alt="업로드된 이미지 미리보기"
-                  />
-                ) : (
-                  <img
-                    src="./images/icon-upload-img.svg"
-                    alt="이미지 업로드 버튼"
-                  />
-                )}
+                <img
+                  src="./images/icon-upload-img.svg"
+                  alt="이미지 업로드 버튼"
+                />
               </label>
               <input
                 type="file"
@@ -58,7 +63,6 @@ export default function ProductPost(props) {
               />
             </p>
           </ImgArea>
-
           <FormArea>
             <form action="#" method="POST">
               <fieldset>
@@ -69,6 +73,7 @@ export default function ProductPost(props) {
                     type="text"
                     id="productTitle"
                     placeholder="2~15자 이내여야 합니다."
+                    autoComplete="off"
                     value={productTitle}
                     onChange={onTitleChange}
                   />
