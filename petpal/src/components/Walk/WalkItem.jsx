@@ -20,18 +20,15 @@ export default function WalkItem({
   heartCount,
   image,
 }) {
-  const [heartedNum, setHeartedNum] = useState(0);
-  const [commentNum, setCommentNum] = useState(0);
-
-  // if (heartedCount) setHeartedNum(heartedCount);
-  // if (commentCount) setCommentNum(commentCount);
+  const commentNum = comments.length;
+  const isHearted = heartCount > 0;
+  const imageArr = image ? image.split(',') : null;
 
   return (
-    // <StyledLink to={DetailPath}>
     <StyledLink to={`/walkDetail/${id}`}>
       <ItemContainer>
-        {image ? (
-          <WalkItemImage src={image} alt={content} />
+        {imageArr ? (
+          <WalkItemImage src={imageArr[0]} alt={content} />
         ) : (
           <WalkItemImage src={defaultImg} alt={content} />
         )}
@@ -45,8 +42,8 @@ export default function WalkItem({
             </InfoGroup>
             <LikeAndChat>
               <InfoGroup className="likeAndChat">
-                <LikeImg like={heartedNum} />
-                <InfoSpan>{heartedNum}</InfoSpan>
+                <LikeImg like={isHearted} />
+                <InfoSpan>{heartCount}</InfoSpan>
               </InfoGroup>
               <InfoGroup className="likeAndChat">
                 <ChatImg />

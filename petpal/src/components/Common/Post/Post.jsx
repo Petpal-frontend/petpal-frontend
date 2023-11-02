@@ -34,17 +34,35 @@ export default function Post({
   const navigate = useNavigate();
 
   const handleImageChange = async e => {
+    const selectedFiles = Array.from(e.target.files);
+
+    const formData = new FormData();
+    selectedFiles.forEach(file => {
+      formData.append('image', file);
+    });
+
     try {
-      console.log('handle img func');
-      const selectedFiles = Array.from(e.target.files);
-      const createUrlPromises = selectedFiles.map(file =>
-        URL.createObjectURL(file),
+      const imgUpload = await uploadImgs(formData);
+
+      // imgUpload.data.forEach(data => {
+      //   setSelectedImages(prevImgFiles => [
+      //     ...prevImgFiles,
+      //     `https://api.mandarin.weniv.co.kr/${data.filename}`,
+      //   ]);
+      // });
+      if (selectedFiles.length > 3) {
+        alert('이미지는 최대 3개까지 선택할 수 있습니다.');
+        return;
+      }
+      setSelectedImages(
+        imgUpload.data.map(
+          data => `https://api.mandarin.weniv.co.kr/${data.filename}`,
+        ),
       );
-      const imageUrls = await Promise.all(createUrlPromises);
-      setSelectedImages(imageUrls);
-      console.log('imaged', selectedImages);
-    } catch (err) {
-      console.error(err);
+
+      console.log(imgUpload);
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -54,50 +72,15 @@ export default function Post({
   const uploadData = async e => {
     try {
       e.preventDefault();
-      if (selectedImages) {
-        // 1. FormData에 여러 이미지 한번에 넣기
-        const imgData = new FormData();
 
-        await selectedImages.forEach((img, index) => {
-          imgData.append('image', img);
-        });
-
-        // 2. 배열을 만들어 각 인덱스에 FormData 만들고 이미지 하나씩 넣기
-        // const imgData = [];
-
-        // await selectedImages.forEach((img, index) => {
-        //   imgData[index] = new FormData();
-        //   imgData[index].append('image', img);
-        // });
-
-        // 3. FormData 내에 unique key값으로 여러 개의 이미지 넣기
-        // const imgData = new FormData();
-
-        // await selectedImages.forEach((img, index) => {
-        //   imgData.append(`image${index}`, img);
-        // });
-
-        // imgData에 저장 확인
-        // for (let key of imgData.keys()) {
-        //   console.log('!!!!!!!!!key:', key);
-        // }
-        // for (let value of imgData.values()) {
-        //   console.log('!!!!!!!!!value:', value);
-        // }
-
-        const imgUpload = await uploadImgs(imgData);
-        await console.log('2222', imgUpload);
-
-        const imgPath = imgUpload.data.filename;
-        console.log(imgPath);
-      }
       const postData = {
         post: {
-          images: selectedImages,
+          image: selectedImages.toString(),
           content: appendFlagContent,
         },
       };
 
+      // await console.log(postData);
       const response = await uploadPost(postData);
       await console.log('response:::', response.data);
       if (response.status === 200) {

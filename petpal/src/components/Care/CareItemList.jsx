@@ -11,13 +11,11 @@ export default function CareList({ careItemList }) {
           <CareItem
             key={index}
             id={item._id}
-            index={index}
-            image={item.image}
-            content={item.content}
             author={item.author}
-            hearted={item.hearted}
-            heartedCount={item.heartedCount}
-            commentCount={item.commentCount}
+            comments={item.comments}
+            content={item.content}
+            heartCount={item.heartCount}
+            image={item.image}
           />
         ))}
       </ItemListContainer>
