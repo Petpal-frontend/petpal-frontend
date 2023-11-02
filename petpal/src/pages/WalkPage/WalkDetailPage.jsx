@@ -117,7 +117,7 @@ export default function WalkDetailPage() {
   };
 
   const deletePostReq = async () => {
-    await deletePost(params.id);
+    await deletePost(id);
     navigate(-1);
   };
 
@@ -136,23 +136,11 @@ export default function WalkDetailPage() {
       )}
 
       {walkDetailItem && <WalkDetailItem walkDetailItem={walkDetailItem} />}
-      {commentList && <Comment comments={commentList} openAlert={openAlert} />}
-      {isAccessAllowed ? (
-        <AlertComponent>
-          <Alert
-            alertMsg={'댓글을 삭제하시겠습니까?'}
-            choice={['취소', '삭제']}
-            handleFunc={handledeleteComment}
-          />
-        </AlertComponent>
-      ) : (
-        <AlertComponent>
-          <Alert
-            alertMsg={'댓글을 신고하시겠습니까?'}
-            choice={['취소', '신고']}
-            handleFunc={handledeleteComment}
-          />
-        </AlertComponent>
+      {commentList && (
+        <Comment
+          comments={commentList}
+          handledeleteComment={handledeleteComment}
+        />
       )}
       <BottomInput
         id="comment"

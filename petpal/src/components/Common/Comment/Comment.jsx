@@ -11,11 +11,14 @@ import {
 import { UserImg, Username } from '../Userinfo/UserInfoStyle';
 import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../../atoms/AtomUserState';
+import useAlertControl from '../Modal/useAlertControl';
+import Alert from '../Modal/Alert';
 
-export default function Comment({ comments, openAlert }) {
+export default function Comment({ comments, handledeleteComment }) {
   const moreBtn = '/images/icon-more-vertical.svg';
   const reversedComments = comments.slice().reverse();
   const userState = useRecoilValue(userInfoAtom);
+  const { openAlert, AlertComponent } = useAlertControl();
 
   const elapsedTime = date => {
     const start = new Date(date);
@@ -48,14 +51,25 @@ export default function Comment({ comments, openAlert }) {
             </CommentTime>
             <CommentText>{item.content}</CommentText>
           </CommentContent>
+          <MoreButton onClick={() => openAlert()}>
+            <ButtonImg src={moreBtn} />
+          </MoreButton>
           {item.author.accountname === userState.accountname ? (
-            <MoreButton onClick={() => openAlert(true)}>
-              <ButtonImg src={moreBtn} />
-            </MoreButton>
+            <AlertComponent>
+              <Alert
+                alertMsg={'댓글을 삭제하시겠습니까?'}
+                choice={['취소', '삭제']}
+                handleFunc={handledeleteComment}
+              />
+            </AlertComponent>
           ) : (
-            <MoreButton onClick={() => openAlert(false)}>
-              <ButtonImg src={moreBtn} />
-            </MoreButton>
+            <AlertComponent>
+              <Alert
+                alertMsg={'댓글을 신고하시겠습니까?'}
+                choice={['취소', '신고']}
+                handleFunc={handledeleteComment}
+              />
+            </AlertComponent>
           )}
         </CommentContainer>
       ))}

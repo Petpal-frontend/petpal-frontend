@@ -35,7 +35,7 @@ export const deleteComment = async (id, commentId) => {
 
 export const reportComment = async (id, commentId) => {
   try {
-    const response = await tokenInstance.delete(
+    const response = await tokenInstance.post(
       `/post/${id}/comments/${commentId}/report`,
     );
     return response;
