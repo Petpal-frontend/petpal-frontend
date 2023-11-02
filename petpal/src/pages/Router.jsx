@@ -14,6 +14,7 @@ import WalkEdit from './WalkPage/WalkEditPage';
 import CareList from './CarePage/CareListPage';
 import CareDetail from './CarePage/CareDetailPage';
 import CarePost from './CarePage/CarePostPage';
+import CareEdit from './CarePage/CareEditPage';
 import Feed from './FeedPage/FeedPage';
 import ChatList from './ChatPage/ChatListPage';
 import ChatRoom from './ChatPage/ChatRoomPage';
@@ -78,7 +79,7 @@ export default function Router() {
             }
           />
           <Route path="/walkPost" element={<WalkPost />} />
-          <Route path="/WalkEdit" element={<WalkEdit />} />
+          <Route path="/walkEdit" element={<WalkEdit />} />
           <Route
             path="/careList"
             element={
@@ -104,6 +105,8 @@ export default function Router() {
               </>
             }
           />
+          <Route path="/careEdit" element={<CareEdit />} />
+
           <Route
             path="/feed"
             element={

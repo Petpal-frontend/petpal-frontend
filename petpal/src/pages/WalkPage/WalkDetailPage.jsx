@@ -19,7 +19,6 @@ import Alert from '../../components/Common/Modal/Alert';
 
 export default function WalkDetailPage() {
   const { id, commentId } = useParams();
-
   const [walkDetailItem, setWalkDetailItem] = useState();
   const [commentList, setCommentList] = useState([]);
   const [newComment, setNewComment] = useState('');
