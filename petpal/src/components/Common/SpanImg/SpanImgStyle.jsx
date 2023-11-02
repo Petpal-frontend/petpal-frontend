@@ -18,7 +18,9 @@ export const UserImg = styled.span`
   border: 1px solid #dbdbdb;
 `;
 
-export const LikeImg = styled.span`
+export const LikeImg = styled.button`
+  border: none;
+  background-color: white;
   background-image: url(${props =>
     props.like === true ? redHeartUrl : whiteHeartUrl});
   ${spanImgStyle}

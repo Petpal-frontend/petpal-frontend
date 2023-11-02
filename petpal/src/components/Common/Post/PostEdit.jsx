@@ -14,7 +14,6 @@ import {
   UploadBtn,
 } from '../../Product/ProductPostStyle';
 import { Link, useNavigate } from 'react-router-dom';
-import { updatePost, uploadPost } from '../../../api/post';
 import { uploadImg, uploadImgs } from '../../../api/imageApi';
 
 export default function PostEdit({
@@ -28,7 +27,6 @@ export default function PostEdit({
   onSubmit,
 }) {
   const myProfile = 'images/profile-img4.svg';
-
 
   const imageArr = beforePostData.post.image
     ? beforePostData.post.image.split(',')

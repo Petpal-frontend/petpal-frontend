@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { InfoGroup, InfoSpan } from '../Common/Layout/LayoutStyle';
 import {
   DetailContainer,
@@ -16,6 +16,7 @@ import { UserImg, Username } from '../Common/Userinfo/UserInfoStyle';
 import { LikeAndChat } from './WalkItemStyle';
 import { ChatImg, LikeImg } from '../Common/SpanImg/SpanImgStyle';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
+import { likePost, unlikePost } from '../../api/post';
 
 // export default function WalkDetailItem({ location, walkDetailItem }) {
 // 컴포넌트 분리 및 재사용 고려해서 다시 수정 예정 -> 산책, 돌보미 재사용
@@ -24,6 +25,9 @@ export default function WalkDetailItem({ walkDetailItem }) {
   const imageArr = walkDetailItem.image
     ? walkDetailItem.image.split(',')
     : null;
+
+  const [isLiked, setIsLiked] = useState(walkDetailItem.hearted);
+  const [likeCount, setLikeCount] = useState(walkDetailItem.heartCount);
 
   const elapsedTime = date => {
     const start = new Date(date);
@@ -44,6 +48,11 @@ export default function WalkDetailItem({ walkDetailItem }) {
     return `${start.toLocaleDateString()}`;
   };
 
+  useEffect(() => {
+    console.log(isLiked);
+    console.log(likeCount);
+    console.log(walkDetailItem.heartCount);
+  }, [isLiked, likeCount]);
   return (
     <ComponentLayout>
       <DetailContainer>
@@ -71,7 +80,7 @@ export default function WalkDetailItem({ walkDetailItem }) {
         </PostTop>
         {imageArr
           ? imageArr.map(img => <PostImage src={img} alt="Post" />)
-          : null}	
+          : null}
         <PostContent>
           {walkDetailItem.content.includes('petpal_walk_')
             ? walkDetailItem.content.split('petpal_walk_')
@@ -80,8 +89,30 @@ export default function WalkDetailItem({ walkDetailItem }) {
         <PostBottom>
           <LikeAndChat>
             <InfoGroup className="likeAndChat">
-              <LikeImg like={walkDetailItem.hearted} />
-              <InfoSpan>{walkDetailItem.heartCount}</InfoSpan>
+              {/* <LikeImg like={walkDetailItem.hearted} /> */}
+              <LikeImg
+                like={isLiked}
+                onClick={async () => {
+                  if (isLiked) {
+                    try {
+                      await unlikePost(walkDetailItem.id);
+                      setIsLiked(false);
+                      setLikeCount(likeCount - 1);
+                    } catch (error) {
+                      console.error(error);
+                    }
+                  } else {
+                    try {
+                      await likePost(walkDetailItem.id);
+                      setIsLiked(true);
+                      setLikeCount(likeCount + 1);
+                    } catch (error) {
+                      console.error(error);
+                    }
+                  }
+                }}
+              />
+              <InfoSpan>{likeCount}</InfoSpan>
             </InfoGroup>
             <InfoGroup className="likeAndChat">
               <ChatImg />

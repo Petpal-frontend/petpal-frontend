@@ -1,8 +1,12 @@
 import { tokenInstance } from './axiosInstance';
 
 export const getMyProfile = async token => {
-  const response = await tokenInstance.get(`/user/myinfo`, token);
-  return response;
+  try {
+    const response = await tokenInstance.get(`/user/myinfo`, token);
+    return response;
+  } catch (err) {
+    console.error(err);
+  }
 };
 
 export const putMyProfile = async userData => {
