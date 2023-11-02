@@ -13,11 +13,10 @@ import {
   reportComment,
 } from '../../api/commentApi';
 import Comment from '../../components/Common/Comment/Comment';
-
+import { deletePost } from '../../api/post';
 import useAlertControl from '../../components/Common/Modal/useAlertControl';
 import Alert from '../../components/Common/Modal/Alert';
 
-// export default function WalkDetailPage({ location }) {
 export default function WalkDetailPage() {
   const { id, commentId } = useParams();
 
@@ -26,26 +25,10 @@ export default function WalkDetailPage() {
   const [newComment, setNewComment] = useState('');
   const [access, setAccess] = useState(null);
   const userState = useRecoilValue(userInfoAtom);
-  console.log('userState', userState);
   const { openAlert, AlertComponent } = useAlertControl();
   const navigate = useNavigate();
+  const params = useParams();
 
-// import { useRecoilValue } from 'recoil';
-// import { useNavigate } from 'react-router-dom';
-// import { userInfoAtom } from '../../atoms/AtomUserState';
-// import useAlertControl from '../../components/Common/Modal/useAlertControl';
-// import Alert from '../../components/Common/Modal/Alert';
-// import { deletePost } from '../../api/post';
-// export default function WalkDetailPage() {
-//   const params = useParams();
-//   const navigate = useNavigate();
-//   const { openAlert, AlertComponent } = useAlertControl();
-//   const userState = useRecoilValue(userInfoAtom);
-//   const [access, setAccess] = useState(null);
-//   const [walkDetailItem, setWalkDetailItem] = useState();
-//   const [commentList, setCommentList] = useState([]);
-//   const [newComment, setNewComment] = useState('');
-  
   useEffect(() => {
     getWalkDetail(id).then(res => {
       setWalkDetailItem(res.data.post);
@@ -57,7 +40,6 @@ export default function WalkDetailPage() {
   useEffect(() => {
     getCommentList(id).then(res => {
       setCommentList(res.data.comments);
-      setAccess(res.data.comments[0].author.accountname);
       console.log('resresresresresres', res);
     });
   }, []);
@@ -80,7 +62,6 @@ export default function WalkDetailPage() {
       console.error('댓글 작성 실패:', error);
     }
   };
-  const isAccessAllowed = access === userState.accountname;
   const handleModal = event => {
     //walkEditPage로 아래의 값을 이동시켜주는 로직입니다
     if (event.target.textContent === '수정') {
@@ -119,7 +100,6 @@ export default function WalkDetailPage() {
   const isAccessAllowed = access === userState.accountname;
   console.log('isAccessAllowed', isAccessAllowed);
   console.log('access', access);
-  console.log('dfddfdfdfdf', userState.accountname);
 
   const deleteCommentReq = async () => {
     await deleteComment(id, commentId);
@@ -136,7 +116,6 @@ export default function WalkDetailPage() {
       deleteCommentReq();
     }
   };
-
 
   const deletePostReq = async () => {
     await deletePost(params.id);

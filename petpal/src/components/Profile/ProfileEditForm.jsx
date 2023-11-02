@@ -28,6 +28,7 @@ export default function ProfileEditForm({ beforeUserData }) {
   const [intro, setIntro] = useState(beforeUserData.intro);
   const navigate = useNavigate();
 
+  console.log('asdad' + image);
   const handleImageUpload = event => {
     const file = event.target.files[0];
     if (file) {
@@ -45,6 +46,7 @@ export default function ProfileEditForm({ beforeUserData }) {
       const extension = file.name.split('.').pop().toLowerCase();
 
       if (allowedExtensions.includes(extension)) {
+        setImage(URL.createObjectURL(file));
         setSelectedImage(file);
       } else {
         alert(
