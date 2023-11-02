@@ -46,7 +46,10 @@ export default function ProductDetail({ ProductDetail }) {
           </ImgArea>
           <DescArea>
             <ProfileArea>
-              <Link to={`/profile`} className="profileInfo">
+              <Link
+                to={`/yourProfile/${ProductDetail.product.author.accountname}`}
+                className="profileInfo"
+              >
                 <span className="profileImg">
                   <img
                     src={ProductDetail.product.author.image}
