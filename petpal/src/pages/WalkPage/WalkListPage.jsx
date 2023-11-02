@@ -20,6 +20,7 @@ export default function WalkListPage() {
       post.author.accountname.includes('petpal_') &&
       post.content.includes('petpal_walk'),
   );
+  console.log(walkList);
 
   return (
     <>
