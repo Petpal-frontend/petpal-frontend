@@ -43,8 +43,8 @@ const GlobalStyle = createGlobalStyle`
     width: 520px;
     height: 100vh;
     margin: 0 auto;
-  background-color: #fff;
-  }
+    background-color: #fff;
+}
   
   a {
     text-decoration: none;

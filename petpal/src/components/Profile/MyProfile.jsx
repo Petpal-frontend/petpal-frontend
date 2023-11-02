@@ -25,13 +25,11 @@ import {
   WarningMessage,
 } from './MyProfileStyle';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
-import { useState } from 'react';
 
 export default function MyProfile({ myData, myProduct, myPost }) {
   const handleProductClick = async productId => {
     try {
       const response = await getProductDetail(productId);
-      console.log('response.data.product.id' + response.data.product.id);
       // 페이지 이동
       window.location.href = `/productDetail/${productId}`;
     } catch (error) {

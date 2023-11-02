@@ -10,8 +10,10 @@ import {
 } from './CommentStyle';
 import { UserImg, Username } from '../Userinfo/UserInfoStyle';
 
-export default function Comment({ comments, onModalHandler }) {
+export default function Comment({ comments, openAlert }) {
   const moreBtn = '/images/icon-more-vertical.svg';
+  const reversedComments = comments.slice().reverse();
+
   const elapsedTime = date => {
     const start = new Date(date);
     const end = new Date();
@@ -31,10 +33,6 @@ export default function Comment({ comments, onModalHandler }) {
     return `${start.toLocaleDateString()}`;
   };
 
-  const reversedComments = comments.slice().reverse();
-  const [isModalOpen, setIsModalOpen] = useState(false); // 모달 열림
-  const [commentToDelete, setCommentToDelete] = useState(null); // 삭제할 댓글 정보
-
   return (
     <CommentsContainer>
       {reversedComments.map((item, index) => (
@@ -47,7 +45,7 @@ export default function Comment({ comments, onModalHandler }) {
             </CommentTime>
             <CommentText>{item.content}</CommentText>
           </CommentContent>
-          <MoreButton onClick={onModalHandler}>
+          <MoreButton onClick={() => openAlert()}>
             <ButtonImg src={moreBtn} />
           </MoreButton>
         </CommentContainer>
