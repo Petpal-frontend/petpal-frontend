@@ -17,7 +17,7 @@ export const UserProfileImage = styled.img`
   width: 112px;
   height: 112px;
   border-radius: 50%;
-  margin: 0 17px;
+  margin: 17px;
   object-fit: cover;
 `;
 
@@ -118,5 +118,5 @@ export const WarningMessage = styled.h3`
   color: #000;
   font-size: var(--font-size-md);
   font-weight: 700;
-  padding: 0 17px;
+  padding: 0 22px;
 `;
