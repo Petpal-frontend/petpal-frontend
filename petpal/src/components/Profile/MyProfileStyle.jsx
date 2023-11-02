@@ -84,6 +84,7 @@ export const ItemDiv = styled.div`
   background-color: #ffffff;
   overflow: hidden;
   flex-shrink: 0;
+  cursor: pointer;
   img {
     height: 105px;
     object-fit: cover;
@@ -107,6 +108,7 @@ export const Description = styled.p`
 `;
 
 export const Image = styled.img`
+  cursor: pointer;
   width: 110px;
   height: 110px;
   margin: 5px;

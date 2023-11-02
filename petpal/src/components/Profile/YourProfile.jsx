@@ -1,6 +1,8 @@
 import React from 'react';
 import { ItemListContainer } from '../Common/Layout/LayoutStyle';
 import Button from '../Common/Button/SubmitButton/Button';
+import { getProductDetail } from '../../api/product';
+import { getCareDetail } from '../../api/care';
 import {
   ButtonContainer,
   Description,
@@ -24,6 +26,31 @@ import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 import profileImg from '../../assets/image/profile.png';
 
 export default function YourProfile({ yourData, yourProduct, yourPost }) {
+  const handleProductClick = async productId => {
+    try {
+      const response = await getProductDetail(productId);
+      // 페이지 이동
+      window.location.href = `/productDetail/${productId}`;
+    } catch (error) {
+      console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
+    }
+  };
+
+  const handlePostClick = async postId => {
+    try {
+      const response = await getCareDetail(postId);
+      // const path = response.data.post.content;
+      const path = response.data.post.content.includes('petpal_walk')
+        ? `/walkDetail/${postId}`
+        : `/careDetail/${postId}`;
+
+      window.location.href = path;
+      // 페이지 이동
+      // window.location.href = `/walkDetail/${postId}`;
+    } catch (error) {
+      console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
+    }
+  };
   return (
     <ComponentLayout>
       <ItemListContainer>
@@ -62,7 +89,7 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
         <ProductItemContainer>
           {yourProduct.data > 0 ? (
             yourProduct.product.map((item, index) => (
-              <ItemDiv key={index}>
+              <ItemDiv key={index} onClick={() => handleProductClick(item.id)}>
                 <img src={item.itemImage} alt="productImage" />
                 <TextSection>
                   <Title>{item.itemName}</Title>
@@ -83,7 +110,14 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
           {yourPost.post.length > 0 ? (
             yourPost.post.map((item, index) => {
               let imageArr = item.image ? item.image.split(',') : [profileImg];
-              return <Image src={imageArr[0]} alt="postImage" key={index} />;
+              return (
+                <Image
+                  src={imageArr[0]}
+                  alt="postImage"
+                  key={index}
+                  onClick={() => handlePostClick(item.id)}
+                />
+              );
             })
           ) : (
             <WarningMessage>

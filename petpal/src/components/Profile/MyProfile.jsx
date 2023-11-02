@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { ItemListContainer } from '../Common/Layout/LayoutStyle';
-
+import { getCareDetail } from '../../api/care';
 import Button from '../Common/Button/SubmitButton/Button';
 import { Link } from 'react-router-dom';
-// import { useLocation } from 'react-router-dom';
 import { getProductDetail } from '../../api/product';
 import {
   ButtonContainer,
@@ -37,7 +36,22 @@ export default function MyProfile({ myData, myProduct, myPost }) {
       console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
     }
   };
-  console.log(myData);
+
+  const handlePostClick = async postId => {
+    try {
+      const response = await getCareDetail(postId);
+      // const path = response.data.post.content;
+      const path = response.data.post.content.includes('petpal_walk')
+        ? `/walkDetail/${postId}`
+        : `/careDetail/${postId}`;
+
+      window.location.href = path;
+      // 페이지 이동
+      // window.location.href = `/walkDetail/${postId}`;
+    } catch (error) {
+      console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
+    }
+  };
 
   return (
     <ComponentLayout>
@@ -80,12 +94,8 @@ export default function MyProfile({ myData, myProduct, myPost }) {
         <ProductItemContainer>
           {myProduct.data > 0 ? (
             myProduct.product.map((item, index) => (
-              <ItemDiv key={index}>
-                <img
-                  src={item.itemImage}
-                  alt="productImage"
-                  onClick={() => handleProductClick(item.id)}
-                />
+              <ItemDiv key={index} onClick={() => handleProductClick(item.id)}>
+                <img src={item.itemImage} alt="productImage" />
 
                 <TextSection>
                   <Title>{item.itemName}</Title>
@@ -106,7 +116,14 @@ export default function MyProfile({ myData, myProduct, myPost }) {
           {myPost.post.length > 0 ? (
             myPost.post.map((item, index) => {
               let imageArr = item.image ? item.image.split(',') : [profileImg];
-              return <Image src={imageArr[0]} alt="postImage" key={index} />;
+              return (
+                <Image
+                  src={imageArr[0]}
+                  alt="postImage"
+                  key={index}
+                  onClick={() => handlePostClick(item.id)}
+                />
+              );
             })
           ) : (
             <WarningMessage>

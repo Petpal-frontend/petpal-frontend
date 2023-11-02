@@ -14,9 +14,9 @@ export const getCareList = async () => {
 
 export const getCareDetail = async id => {
   try {
-    await console.log(id, '@@@');
+    // await console.log(id, '@@@');
     const response = await tokenInstance.get(`post/${id}`);
-		
+
     return response;
   } catch (err) {
     return null;
