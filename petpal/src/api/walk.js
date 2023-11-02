@@ -19,12 +19,11 @@ export const getWalkList = async () => {
 export const getWalkDetail = async id => {
   try {
     const response = await tokenInstance.get(`post/${id}`);
-    console.log(response);
-    console.log(response.data.post);
+    // console.log(response);
+    // console.log(response.data.post);
 
     return response;
   } catch (err) {
     return null;
   }
 };
-

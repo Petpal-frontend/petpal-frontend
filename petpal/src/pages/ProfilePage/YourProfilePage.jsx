@@ -23,15 +23,15 @@ export default function YourProfilePage() {
         setYourData(yourDataRes.data);
         setYourProduct(yourProductRes.data);
         setYourPost(yourPostRes.data);
-        console.log('2222', yourData.username);
+        console.log('2222', yourData);
         console.log('3333', yourProduct);
         console.log('4444', yourPost);
       } catch (err) {
         console.error(err);
       }
-      fetchData();
     };
-  });
+    fetchData();
+  }, [accountname]);
 
   return (
     <>
