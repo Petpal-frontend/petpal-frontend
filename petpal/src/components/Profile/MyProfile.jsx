@@ -25,6 +25,7 @@ import {
   WarningMessage,
 } from './MyProfileStyle';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
+import profileImg from '../../assets/image/profile.png';
 
 export default function MyProfile({ myData, myProduct, myPost }) {
   const handleProductClick = async productId => {
@@ -36,6 +37,7 @@ export default function MyProfile({ myData, myProduct, myPost }) {
       console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
     }
   };
+  console.log(myData);
 
   return (
     <ComponentLayout>
@@ -102,14 +104,16 @@ export default function MyProfile({ myData, myProduct, myPost }) {
         <H3>게시글</H3>
         <PostItemContainer>
           {myPost.post.length > 0 ? (
-            myPost.post.map((item, index) => (
-              <Image src={item.author.image} alt="postImage" key={index} />
-            ))
+            myPost.post.map((item, index) => {
+              let imageArr = item.image ? item.image.split(',') : [profileImg];
+              return <Image src={imageArr[0]} alt="postImage" key={index} />;
+            })
           ) : (
             <WarningMessage>
               {myData.user.username}님의 게시글이 없습니다.
             </WarningMessage>
           )}
+          {console.log(myData)}
         </PostItemContainer>
       </ListContainer>
     </ComponentLayout>

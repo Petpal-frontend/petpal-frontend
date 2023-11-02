@@ -21,6 +21,7 @@ import {
   WarningMessage,
 } from './MyProfileStyle';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
+import profileImg from '../../assets/image/profile.png';
 
 export default function YourProfile({ yourData, yourProduct, yourPost }) {
   return (
@@ -80,9 +81,10 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
         <H3>게시글</H3>
         <PostItemContainer>
           {yourPost.post.length > 0 ? (
-            yourPost.post.map((item, index) => (
-              <Image src={item.image} alt="postImage" key={index} />
-            ))
+            yourPost.post.map((item, index) => {
+              let imageArr = item.image ? item.image.split(',') : [profileImg];
+              return <Image src={imageArr[0]} alt="postImage" key={index} />;
+            })
           ) : (
             <WarningMessage>
               {yourData.profile.username}님의 게시글이 없습니다.
