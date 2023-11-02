@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { UserImg } from '../../Common/Userinfo/UserInfoStyle';
-
+import { updatePost } from '../../../api/post';
 import {
   PostContainer,
   PostContent,
@@ -29,6 +29,7 @@ export default function PostEdit({
 }) {
   const myProfile = 'images/profile-img4.svg';
 
+
   const imageArr = beforePostData.post.image
     ? beforePostData.post.image.split(',')
     : [];
@@ -39,6 +40,7 @@ export default function PostEdit({
       ? beforePostData.post.content.split('petpal_walk_').join('')
       : beforePostData.post.content.split('petpal_care_').join(''),
   );
+
   const navigate = useNavigate();
 
   imageArr ? console.log('hihihihihih', imageArr) : console.log('byebye');
@@ -59,6 +61,7 @@ export default function PostEdit({
       //     `https://api.mandarin.weniv.co.kr/${data.filename}`,
       //   ]);
       // });
+
       if (selectedFiles.length > 3) {
         alert('이미지는 최대 3개까지 선택할 수 있습니다.');
         return;
@@ -74,14 +77,12 @@ export default function PostEdit({
       console.error(error);
     }
   };
-
   const appendFlagContent =
     type === 'walk' ? `petpal_walk_${content}` : `petpal_care_${content}`;
 
   const uploadData = async e => {
     try {
       e.preventDefault();
-
       const postData = {
         post: {
           image: selectedImages.toString(),
@@ -92,8 +93,9 @@ export default function PostEdit({
       // await console.log(postData);
       const response = await updatePost(beforePostData.post.id, postData);
       await console.log('response:::', response.data);
+
       if (response.status === 200) {
-        alert('게시글 등록이 완료되었습니다. 게시글 목록으로 이동합니다.');
+        alert('게시글이 수정되었습니다.');
         if (type === 'walk') {
           navigate('/walkList');
         }
@@ -110,14 +112,14 @@ export default function PostEdit({
     <>
       <HeaderWrap>
         <h1 className="a11y-hidden">게시글 등록 작성</h1>
+        <PrevBtn>
+          <Link to="/walkList"></Link>
+        </PrevBtn>
         <div>
-          <PrevBtn>
-            <Link to="/walkList"></Link>
-          </PrevBtn>
           <HeaderContent>{title}</HeaderContent>
         </div>
         <UploadBtn onClick={uploadData} type="submit">
-          업로드
+          수정하기
         </UploadBtn>
       </HeaderWrap>
       <PostContainer>

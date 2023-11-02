@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import Home from './HomePage/HomePage';
 import Login from './LoginPage/LoginPage';
 import Signup from './SignupPage/SignupPage';
@@ -21,8 +21,7 @@ import ChatRoom from './ChatPage/ChatRoomPage';
 import Profile from './ProfilePage/ProfilePage';
 import ProfileEdit from './ProfilePage/ProfileEditPage';
 import Search from './SearchPage/SearchPage';
-import Following from './FollowPage/FollowingPage';
-import Follower from './FollowPage/FollowerPage';
+import Follow from './FollowPage/FollowPage';
 import Page404 from './Page404';
 import SplashPage from './SplashPage/SplashPage';
 import HomePage from './HomePage/HomePage';
@@ -156,13 +155,9 @@ export default function Router() {
               </>
             }
           /> */}
-          <Route path="/following" element={<Following />} />
-          <Route path="/follower" element={<Follower />} />
-          {/* <Route path="/profile/:accountname/follower" element={<Follower />} />
-          <Route
-            path="/profile/:accountname/following"
-            element={<Following />}
-          /> */}
+          <Route path="/profile/:accountname" element={<Outlet />}>
+            <Route path=":follow/" element={<Follow />} />
+          </Route>
           <Route path="/404error" element={<Page404 />} />
         </Routes>
       </BrowserRouter>

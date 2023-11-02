@@ -8,10 +8,6 @@ export const FollowItemContainer = styled.div`
   justify-content: space-between;
 
   .userInfo {
-    // margin: 0 25px;
-    // border: none;
-    // background: none;
-    // background-image: url(${props => props.followUserButton});
     text-align: center;
     cursor: pointer;
     display: flex;
