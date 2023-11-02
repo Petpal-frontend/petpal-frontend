@@ -9,9 +9,14 @@ import {
   ButtonImg,
 } from './CommentStyle';
 import { UserImg, Username } from '../Userinfo/UserInfoStyle';
+import { useRecoilValue } from 'recoil';
+import { userInfoAtom } from '../../../atoms/AtomUserState';
 
-export default function Comment({ comments, onModalHandler }) {
+export default function Comment({ comments, openAlert }) {
   const moreBtn = '/images/icon-more-vertical.svg';
+  const reversedComments = comments.slice().reverse();
+  const userState = useRecoilValue(userInfoAtom);
+
   const elapsedTime = date => {
     const start = new Date(date);
     const end = new Date();
@@ -31,10 +36,6 @@ export default function Comment({ comments, onModalHandler }) {
     return `${start.toLocaleDateString()}`;
   };
 
-  const reversedComments = comments.slice().reverse();
-  const [isModalOpen, setIsModalOpen] = useState(false); // 모달 열림
-  const [commentToDelete, setCommentToDelete] = useState(null); // 삭제할 댓글 정보
-
   return (
     <CommentsContainer>
       {reversedComments.map((item, index) => (
@@ -47,9 +48,15 @@ export default function Comment({ comments, onModalHandler }) {
             </CommentTime>
             <CommentText>{item.content}</CommentText>
           </CommentContent>
-          <MoreButton onClick={onModalHandler}>
-            <ButtonImg src={moreBtn} />
-          </MoreButton>
+          {item.author.accountname === userState.accountname ? (
+            <MoreButton onClick={() => openAlert(true)}>
+              <ButtonImg src={moreBtn} />
+            </MoreButton>
+          ) : (
+            <MoreButton onClick={() => openAlert(false)}>
+              <ButtonImg src={moreBtn} />
+            </MoreButton>
+          )}
         </CommentContainer>
       ))}
     </CommentsContainer>

@@ -13,27 +13,22 @@ import { CareInfoDiv, CareItemImage } from './CareItemStyle';
 import defaultImg from '../../assets/image/profile.png';
 
 export default function CareItem({
-  index,
   id,
-  image,
-  content,
   author,
-  hearted,
-  heartedCount,
-  commentCount,
+  comments,
+  content,
+  heartCount,
+  image,
 }) {
-  const [heartedNum, setHeartedNum] = useState(0);
-  const [commentNum, setCommentNum] = useState(0);
-
-  if (heartedCount) setHeartedNum(heartedCount);
-  if (commentCount) setCommentNum(commentCount);
+  const commentNum = comments.length;
+  const isHearted = heartCount > 0;
+  const imageArr = image ? image.split(',') : null;
 
   return (
-    // <StyledLink to={DetailPath}>
     <StyledLink to={`/careDetail/${id}`}>
       <ItemContainer>
         <ItemContentDiv>
-          <ItemContent>{content}</ItemContent>
+          <ItemContent>{content.split('petpal_care_')}</ItemContent>
           <CareInfoDiv>
             <InfoGroup>
               <UserImg user={author} />
@@ -41,8 +36,8 @@ export default function CareItem({
             </InfoGroup>
             <LikeAndChat>
               <InfoGroup className="likeAndChat">
-                <LikeImg like={hearted} />
-                <InfoSpan>{heartedNum}</InfoSpan>
+                <LikeImg like={isHearted} />
+                <InfoSpan>{heartCount}</InfoSpan>
               </InfoGroup>
               <InfoGroup className="likeAndChat">
                 <ChatImg />
@@ -51,8 +46,8 @@ export default function CareItem({
             </LikeAndChat>
           </CareInfoDiv>
         </ItemContentDiv>
-        {image ? (
-          <CareItemImage src={image} alt="img" />
+        {imageArr ? (
+          <CareItemImage src={imageArr[0]} alt="img" />
         ) : (
           <CareItemImage src={defaultImg} alt="img" />
         )}

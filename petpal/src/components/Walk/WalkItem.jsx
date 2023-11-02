@@ -14,30 +14,26 @@ import defaultImg from '../../assets/image/profile.png';
 
 export default function WalkItem({
   id,
-  image,
-  content,
   author,
-  hearted,
-  heartedCount,
-  commentCount,
+  comments,
+  content,
+  heartCount,
+  image,
 }) {
-  const [heartedNum, setHeartedNum] = useState(0);
-  const [commentNum, setCommentNum] = useState(0);
-
-  if (heartedCount) setHeartedNum(heartedCount);
-  if (commentCount) setCommentNum(commentCount);
+  const commentNum = comments.length;
+  const isHearted = heartCount > 0;
+  const imageArr = image ? image.split(',') : null;
 
   return (
-    // <StyledLink to={DetailPath}>
     <StyledLink to={`/walkDetail/${id}`}>
       <ItemContainer>
-        {image ? (
-          <WalkItemImage src={image} alt={content} />
+        {imageArr ? (
+          <WalkItemImage src={imageArr[0]} alt={content} />
         ) : (
           <WalkItemImage src={defaultImg} alt={content} />
         )}
         <ItemContentDiv>
-          <ItemContent>{content}</ItemContent>
+          <ItemContent>{content.split('petpal_walk_')}</ItemContent>
           {/* 컴포넌트로 분리 예정 -> 산책, 돌보미 재사용 */}
           <InfoDiv>
             <InfoGroup>
@@ -46,8 +42,8 @@ export default function WalkItem({
             </InfoGroup>
             <LikeAndChat>
               <InfoGroup className="likeAndChat">
-                <LikeImg like={hearted} />
-                <InfoSpan>{heartedNum}</InfoSpan>
+                <LikeImg like={isHearted} />
+                <InfoSpan>{heartCount}</InfoSpan>
               </InfoGroup>
               <InfoGroup className="likeAndChat">
                 <ChatImg />

@@ -66,7 +66,6 @@ export default function ProfilePage() {
           handleFunc={handleLogout}
         />
       </AlertComponent>
-      ;
     </>
   );
 }

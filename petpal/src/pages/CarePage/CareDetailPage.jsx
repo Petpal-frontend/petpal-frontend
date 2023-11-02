@@ -1,53 +1,72 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../components/Common/Header/Header';
 import WalkDetailItem from '../../components/Walk/WalkDetailItem';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getCareDetail } from '../../api/care';
-
+import { useRecoilValue } from 'recoil';
+import { userInfoAtom } from '../../atoms/AtomUserState';
+import useAlertControl from '../../components/Common/Modal/useAlertControl';
+import Alert from '../../components/Common/Modal/Alert';
+import { deletePost } from '../../api/post';
 export default function CareDetailPage() {
   const params = useParams();
-  console.log('!!!!id', params.id);
-
+  const [access, setAccess] = useState(null);
   const [careDetailItem, setCareDetailItem] = useState();
+  const userState = useRecoilValue(userInfoAtom);
+  const navigate = useNavigate();
+  const { openAlert, AlertComponent } = useAlertControl();
 
   useEffect(() => {
     getCareDetail(params.id).then(res => {
       setCareDetailItem(res.data.post);
+      setAccess(res.data.post.author.accountname);
     });
-  }, []);
+  }, [params.id]);
+  const isAccessAllowed = access === userState.accountname;
+
+  const handleModal = event => {
+    //careEditPage로 아래의 값을 이동시켜주는 로직입니다
+    if (event.target.textContent === '수정') {
+      navigate('/careEdit', {
+        state: {
+          post: {
+            id: careDetailItem.id,
+            content: careDetailItem.content,
+            image: careDetailItem.image,
+          },
+        },
+      });
+    } else if (event.target.textContent === '삭제') {
+      openAlert();
+    }
+  };
+
+  const deletePostReq = async () => {
+    await deletePost(params.id);
+    navigate(-1);
+  };
+
+  const handledelete = event => {
+    if (event.target.textContent === '삭제') {
+      deletePostReq();
+    }
+  };
 
   return (
     <>
-      <Header type="post" title="" />
+      {isAccessAllowed ? (
+        <Header type="myCareDetail" onClick={handleModal} />
+      ) : (
+        <Header type="careDetail" onClick={handleModal} />
+      )}
       {careDetailItem && <WalkDetailItem walkDetailItem={careDetailItem} />}
+      <AlertComponent>
+        <Alert
+          alertMsg={'상품을 삭제하시겠습니까?'}
+          choice={['취소', '삭제']}
+          handleFunc={handledelete}
+        />
+      </AlertComponent>
     </>
   );
 }
-
-// const careDetailItem = {
-//   post: [
-//     {
-//       id: '0',
-//       content:
-//         '저희가 3일 동안 여행을 가야하는데 고양이 2마리 돌봐주실 분을 구해요. 사례는 넉넉히 해드립니다. 자세한건 채팅으로 알려드리겠습니다.',
-//       image: 'images/exCatImg.png',
-//       createdAt: '20231024',
-//       updatedAt: '20231024',
-//       hearted: true,
-//       heartCount: 32,
-//       commentCount: 0,
-//       author: {
-//         _id: 'id_sorikikikim12',
-//         username: 'username_sorikikikim12',
-//         accountname: 'account_sorikikikim12',
-//         intro: 'intro',
-//         image: 'images/exCatImg.png',
-//         isfollow: true,
-//         following: [],
-//         follower: ['follower1'],
-//         followerCount: 1,
-//         followingCount: 0,
-//       },
-//     },
-//   ],
-// };

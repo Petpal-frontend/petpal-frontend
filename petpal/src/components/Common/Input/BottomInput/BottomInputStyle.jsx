@@ -11,7 +11,7 @@ export const BottomInputContainer = styled.div`
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
   background-color: #fff;
   bottom: 0;
-  z-index: 10;
+  z-index: 2;
 `;
 
 export const ImageBtnBox = styled.button`

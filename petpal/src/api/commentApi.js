@@ -27,7 +27,18 @@ export const deleteComment = async (id, commentId) => {
     const response = await tokenInstance.delete(
       `/post/${id}/comments/${commentId}`,
     );
-    return response.data;
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const reportComment = async (id, commentId) => {
+  try {
+    const response = await tokenInstance.delete(
+      `/post/${id}/comments/${commentId}/report`,
+    );
+    return response;
   } catch (error) {
     console.error(error);
   }

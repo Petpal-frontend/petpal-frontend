@@ -6,12 +6,15 @@ import Signup from './SignupPage/SignupPage';
 import ProductList from './ProductPage/ProductListPage';
 import ProductDetail from './ProductPage/ProductDetailPage';
 import ProductPost from './ProductPage/ProductPostPage';
+import ProductEdit from './ProductPage/ProductEditPage';
 import WalkList from './WalkPage/WalkListPage';
 import WalkDetail from './WalkPage/WalkDetailPage';
 import WalkPost from './WalkPage/WalkPostPage';
+import WalkEdit from './WalkPage/WalkEditPage';
 import CareList from './CarePage/CareListPage';
 import CareDetail from './CarePage/CareDetailPage';
 import CarePost from './CarePage/CarePostPage';
+import CareEdit from './CarePage/CareEditPage';
 import Feed from './FeedPage/FeedPage';
 import ChatList from './ChatPage/ChatListPage';
 import ChatRoom from './ChatPage/ChatRoomPage';
@@ -55,6 +58,7 @@ export default function Router() {
           <Route path="/productDetail/:productId" element={<ProductDetail />} />
           {/* <Route path="/productDetail" element={<ProductDetail />} /> */}
           <Route path="/productPost" element={<ProductPost />} />
+          <Route path="/productEdit" element={<ProductEdit />} />
           <Route
             path="/walkList"
             element={
@@ -74,6 +78,7 @@ export default function Router() {
             }
           />
           <Route path="/walkPost" element={<WalkPost />} />
+          <Route path="/walkEdit" element={<WalkEdit />} />
           <Route
             path="/careList"
             element={
@@ -88,7 +93,6 @@ export default function Router() {
             element={
               <>
                 <CareDetail />
-                <NavBar />
               </>
             }
           />
@@ -97,10 +101,11 @@ export default function Router() {
             element={
               <>
                 <CarePost />
-                <NavBar />
               </>
             }
           />
+          <Route path="/careEdit" element={<CareEdit />} />
+
           <Route
             path="/feed"
             element={

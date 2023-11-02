@@ -21,6 +21,10 @@ import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 // 컴포넌트 분리 및 재사용 고려해서 다시 수정 예정 -> 산책, 돌보미 재사용
 
 export default function WalkDetailItem({ walkDetailItem }) {
+  const imageArr = walkDetailItem.image
+    ? walkDetailItem.image.split(',')
+    : null;
+
   const elapsedTime = date => {
     const start = new Date(date);
     const end = new Date();
@@ -65,10 +69,14 @@ export default function WalkDetailItem({ walkDetailItem }) {
             variant="primary"
           />
         </PostTop>
-        {walkDetailItem.image ? (
-          <PostImage src={walkDetailItem.image} alt="Post" />
-        ) : null}
-        <PostContent>{walkDetailItem.content}</PostContent>
+        {imageArr
+          ? imageArr.map(img => <PostImage src={img} alt="Post" />)
+          : null}	
+        <PostContent>
+          {walkDetailItem.content.includes('petpal_walk_')
+            ? walkDetailItem.content.split('petpal_walk_')
+            : walkDetailItem.content.split('petpal_care_')}
+        </PostContent>
         <PostBottom>
           <LikeAndChat>
             <InfoGroup className="likeAndChat">

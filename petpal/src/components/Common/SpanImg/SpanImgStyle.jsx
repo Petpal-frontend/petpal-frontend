@@ -15,6 +15,7 @@ export const UserImg = styled.span`
   background-image: url(${props => props.user.image});
   border-radius: 50%;
   ${spanImgStyle}
+  border: 1px solid #dbdbdb;
 `;
 
 export const LikeImg = styled.span`
@@ -32,4 +33,5 @@ export const PostUserImg = styled.span`
   background-image: url(${props => props.author.image});
   border-radius: 50%;
   ${spanImgStyle}
+  border: 1px solid #dbdbdb;
 `;

@@ -25,20 +25,20 @@ import {
   WarningMessage,
 } from './MyProfileStyle';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
-// import { useState } from 'react';
+import profileImg from '../../assets/image/profile.png';
 
 export default function MyProfile({ myData, myProduct, myPost }) {
   const handleProductClick = async productId => {
     try {
       const response = await getProductDetail(productId);
-      console.log('response.data.product.id' + response.data.product.id);
       // 페이지 이동
       window.location.href = `/productDetail/${productId}`;
     } catch (error) {
       console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
     }
   };
-  console.log(myProduct.product[0].id);
+  console.log(myData);
+
   return (
     <ComponentLayout>
       {/* 컴포넌트로 분리 예정 -> 내 프로필, 상대 프로필 재사용 */}
@@ -56,12 +56,14 @@ export default function MyProfile({ myData, myProduct, myPost }) {
         </ProfileContainer>
         <Username>{myData.user.username}</Username>
         <ButtonContainer>
-          <Button
-            type="button"
-            size="xs"
-            variant="white"
-            children="프로필 수정"
-          />
+          <Link to="/profileEdit">
+            <Button
+              type="button"
+              size="xs"
+              variant="white"
+              children="프로필 수정"
+            />
+          </Link>
           <Link to="/productPost">
             <Button
               type="button"
@@ -102,14 +104,16 @@ export default function MyProfile({ myData, myProduct, myPost }) {
         <H3>게시글</H3>
         <PostItemContainer>
           {myPost.post.length > 0 ? (
-            myPost.post.map((item, index) => (
-              <Image src={item.author.image} alt="postImage" key={index} />
-            ))
+            myPost.post.map((item, index) => {
+              let imageArr = item.image ? item.image.split(',') : [profileImg];
+              return <Image src={imageArr[0]} alt="postImage" key={index} />;
+            })
           ) : (
             <WarningMessage>
               {myData.user.username}님의 게시글이 없습니다.
             </WarningMessage>
           )}
+          {console.log(myData)}
         </PostItemContainer>
       </ListContainer>
     </ComponentLayout>
