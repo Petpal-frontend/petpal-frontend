@@ -9,10 +9,13 @@ import {
   ButtonImg,
 } from './CommentStyle';
 import { UserImg, Username } from '../Userinfo/UserInfoStyle';
+import { useRecoilValue } from 'recoil';
+import { userInfoAtom } from '../../../atoms/AtomUserState';
 
 export default function Comment({ comments, openAlert }) {
   const moreBtn = '/images/icon-more-vertical.svg';
   const reversedComments = comments.slice().reverse();
+  const userState = useRecoilValue(userInfoAtom);
 
   const elapsedTime = date => {
     const start = new Date(date);
@@ -45,9 +48,15 @@ export default function Comment({ comments, openAlert }) {
             </CommentTime>
             <CommentText>{item.content}</CommentText>
           </CommentContent>
-          <MoreButton onClick={() => openAlert()}>
-            <ButtonImg src={moreBtn} />
-          </MoreButton>
+          {item.author.accountname === userState.accountname ? (
+            <MoreButton onClick={() => openAlert(true)}>
+              <ButtonImg src={moreBtn} />
+            </MoreButton>
+          ) : (
+            <MoreButton onClick={() => openAlert(false)}>
+              <ButtonImg src={moreBtn} />
+            </MoreButton>
+          )}
         </CommentContainer>
       ))}
     </CommentsContainer>
