@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../Header/Header';
 import { UserImg } from '../../Common/Userinfo/UserInfoStyle';
 
 import {
