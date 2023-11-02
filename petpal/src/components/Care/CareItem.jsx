@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { LikeAndChat } from '../Walk/WalkItemStyle';
 import {
   InfoGroup,
@@ -11,6 +11,7 @@ import { UserImg, LikeImg, ChatImg } from '../Common/SpanImg/SpanImgStyle';
 import { StyledLink } from '../Common/Text/StyledLink';
 import { CareInfoDiv, CareItemImage } from './CareItemStyle';
 import defaultImg from '../../assets/image/profile.png';
+import { getCareDetail } from '../../api/care';
 
 export default function CareItem({
   id,
@@ -21,8 +22,15 @@ export default function CareItem({
   image,
 }) {
   const commentNum = comments.length;
-  const isHearted = heartCount > 0;
+  const [isHearted, setIsHearted] = useState(false);
   const imageArr = image ? image.split(',') : null;
+
+  useEffect(() => {
+    getCareDetail(id).then(res => {
+      setIsHearted(res.data.post.hearted);
+      console.log('resresresresresres', isHearted);
+    });
+  }, []);
 
   return (
     <StyledLink to={`/careDetail/${id}`}>
