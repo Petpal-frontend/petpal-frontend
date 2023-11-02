@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { WalkItemImage, LikeAndChat } from './WalkItemStyle';
 import {
   InfoDiv,
@@ -11,6 +11,7 @@ import {
 import { UserImg, LikeImg, ChatImg } from '../Common/SpanImg/SpanImgStyle';
 import { StyledLink } from '../Common/Text/StyledLink';
 import defaultImg from '../../assets/image/profile.png';
+import { getWalkDetail } from '../../api/walk';
 
 export default function WalkItem({
   id,
@@ -21,9 +22,15 @@ export default function WalkItem({
   image,
 }) {
   const commentNum = comments.length;
-  const isHearted = heartCount > 0;
+  const [isHearted, setIsHearted] = useState(false);
   const imageArr = image ? image.split(',') : null;
 
+  useEffect(() => {
+    getWalkDetail(id).then(res => {
+      setIsHearted(res.data.post.hearted);
+      console.log('resresresresresres', isHearted);
+    });
+  }, []);
   return (
     <StyledLink to={`/walkDetail/${id}`}>
       <ItemContainer>
