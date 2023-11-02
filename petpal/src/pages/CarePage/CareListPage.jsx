@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import CareList from '../../components/Care/CareList';
+import CareList from '../../components/Care/CareItemList';
 import Header from '../../components/Common/Header/Header';
 import { getCareList } from '../../api/care';
 

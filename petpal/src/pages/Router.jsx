@@ -93,7 +93,6 @@ export default function Router() {
             element={
               <>
                 <CareDetail />
-                <NavBar />
               </>
             }
           />

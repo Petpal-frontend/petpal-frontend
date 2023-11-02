@@ -60,9 +60,9 @@ export const InfoDiv = styled.div`
 
 export const InfoGroup = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 6px;
+  width: 200px;
 `;
 
 export const InfoSpan = styled.span`

@@ -21,6 +21,7 @@ export const PostBottom = styled.div`
 `;
 
 export const PostImage = styled.img`
+  margin: 10px 0;
   max-width: 100%;
 `;
 
