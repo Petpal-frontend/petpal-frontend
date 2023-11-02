@@ -21,12 +21,7 @@ export const deletePost = async postId => {
 };
 
 /* 게시글 수정하기 */
-export const updatePost = async (postId, { content, image }) => {
-  const response = await tokenInstance.put(`/post/${postId}`, {
-    post: {
-      content,
-      image,
-    },
-  });
+export const updatePost = async (postId, postData) => {
+  const response = await tokenInstance.put(`/post/${postId}`, postData);
   return response;
 };

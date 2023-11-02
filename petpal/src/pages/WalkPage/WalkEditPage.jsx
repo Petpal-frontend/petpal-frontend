@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PostEdit from '../../components/Common/Post/PostEdit';
-import { useRecoilValue } from 'recoil';
-import { userInfoAtom } from '../../atoms/AtomUserState';
 import { getWalkDetail } from '../../api/walk';
-import { useParams, useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
 export default function WalkEditPage() {
   const location = useLocation();
-  const userState = useRecoilValue(userInfoAtom);
   const { post } = location.state;
 
   const [beforePostData, setBeforePostData] = useState();
@@ -31,10 +27,11 @@ export default function WalkEditPage() {
       {beforePostData && (
         <PostEdit
           title="산책메이트"
+          type="walk"
           id="PostContent"
-          placeholder={beforePostData.post.content}
+          placeholder="게시글 입력하기..."
           beforePostData={beforePostData}
-          // value={beforePostData.post.content}
+          value={beforePostData.post.content}
         />
       )}
     </>
