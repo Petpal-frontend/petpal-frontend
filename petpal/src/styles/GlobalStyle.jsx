@@ -46,6 +46,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     background-color: #fff;
 }
+
   a {
     text-decoration: none;
     color: inherit;
