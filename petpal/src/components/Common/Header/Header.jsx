@@ -20,6 +20,8 @@ function BackButton({ type }) {
       type === 'profile' ||
       type === 'productDetail' ||
       type === 'myProductDetail' ||
+      type === 'walkDetail' ||
+      type === 'myWalkDetail' ||
       type === 'posting'
     ) {
       navigate(-1);
@@ -52,7 +54,7 @@ export default function Header({ type, title, onClick, onChange, handleFunc }) {
     );
   }
 
-  function ProductDetailModal({ onClick }) {
+  function DetailModal({ onClick }) {
     return (
       <ModalComponent>
         <Modal contents={['수정', '삭제']} handleFunc={onClick} />
@@ -143,7 +145,31 @@ export default function Header({ type, title, onClick, onChange, handleFunc }) {
               }}
             />
           </PostStyle>
-          <ProductDetailModal onClick={onClick} />
+          <DetailModal onClick={onClick} />
+        </HeaderContainer>
+      );
+    case 'walkDetail':
+      return (
+        <HeaderContainer type={type}>
+          <HeaderTitle type={type} title={title} />
+          <BackButton type={type} />
+        </HeaderContainer>
+      );
+    case 'myWalkDetail':
+      return (
+        <HeaderContainer type={type}>
+          <BackButton type={type} />
+          <HeaderTitle type={type} title={title} />
+          <PostStyle>
+            <button
+              className="postMoreButton"
+              aria-label="PostMoreBtn"
+              onClick={() => {
+                openModal();
+              }}
+            />
+          </PostStyle>
+          <DetailModal onClick={onClick} />
         </HeaderContainer>
       );
     default:

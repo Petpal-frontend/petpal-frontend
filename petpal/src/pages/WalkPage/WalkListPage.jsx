@@ -15,8 +15,10 @@ export default function WalkListPage() {
     console.log(postList);
   }, []);
 
-  const walkList = postList.filter(post =>
-    post.author.accountname.includes('petpal_'),
+  const walkList = postList.filter(
+    post =>
+      post.author.accountname.includes('petpal_') &&
+      post.content.includes('petpal_walk'),
   );
 
   return (

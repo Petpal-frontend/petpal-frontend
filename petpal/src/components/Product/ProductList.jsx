@@ -39,13 +39,9 @@ export default function ProductList() {
         <ul>
           {filteredProducts.map((el, i) => {
             return (
-              <ProductLi key={i}>
+              <ProductLi key={i} onClick={() => handleProductClick(el._id)}>
                 <p className="productImg">
-                  <img
-                    src={el.itemImage}
-                    alt="상품 이미지"
-                    onClick={() => handleProductClick(el._id)}
-                  />
+                  <img src={el.itemImage} alt="상품 이미지" />
                 </p>
                 <strong className="productTitle">{el.itemName}</strong>
                 <span className="productDesc">{el.link}</span>

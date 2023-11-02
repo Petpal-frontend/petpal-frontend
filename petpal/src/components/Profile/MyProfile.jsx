@@ -36,7 +36,7 @@ export default function MyProfile({ myData, myProduct, myPost }) {
       console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
     }
   };
-  console.log(myProduct.product[0].id);
+
   return (
     <ComponentLayout>
       {/* 컴포넌트로 분리 예정 -> 내 프로필, 상대 프로필 재사용 */}
@@ -54,12 +54,14 @@ export default function MyProfile({ myData, myProduct, myPost }) {
         </ProfileContainer>
         <Username>{myData.user.username}</Username>
         <ButtonContainer>
-          <Button
-            type="button"
-            size="xs"
-            variant="white"
-            children="프로필 수정"
-          />
+          <Link to="/profileEdit">
+            <Button
+              type="button"
+              size="xs"
+              variant="white"
+              children="프로필 수정"
+            />
+          </Link>
           <Link to="/productPost">
             <Button
               type="button"

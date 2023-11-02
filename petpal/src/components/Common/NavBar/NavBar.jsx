@@ -1,7 +1,9 @@
 import { React, useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { NavBarWrap, NavBarUl, IconImg, IconInfo } from './NavBarStyle';
-import BottomModal from './BottomModal';
+import useModalControl from '../Modal/useModalControl';
+import { Modal } from '../Modal/Modal';
+import { useNavigate } from 'react-router-dom';
 //아이콘
 import home from '../../../assets/image/icon-home.svg';
 import feed from '../../../assets/image/icon-feed.svg';
@@ -15,15 +17,10 @@ import postfill from '../../../assets/image/icon-edit-fill.svg';
 import chatfill from '../../../assets/image/icon-chat-fill.svg';
 import userfill from '../../../assets/image/icon-user-fill.svg';
 
-export default function NavBar() {
-  const [isModalOpen, setModalOpen] = useState(false);
+export default function NavBar({ onClick }) {
+  const navigate = useNavigate();
+  const { openModal, ModalComponent } = useModalControl();
 
-  //모달창 토글
-  const toggleModal = () => {
-    setModalOpen(!isModalOpen);
-  };
-
-  //location
   const { pathname } = useLocation();
 
   const icons = [
@@ -59,23 +56,15 @@ export default function NavBar() {
     },
   ];
 
-  useEffect(() => {
-    const rootElement = document.getElementById('root');
-    if (isModalOpen && rootElement) {
-      rootElement.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-      rootElement.style.zIndex = '9999';
-    } else {
-      rootElement.style.backgroundColor = '';
-      rootElement.style.zIndex = '';
+  const handleCreate = event => {
+    if (event.target.textContent === '상품 등록') {
+      navigate('/productPost');
+    } else if (event.target.textContent === '산책 메이트 구하기') {
+      navigate('/walkPost');
+    } else if (event.target.textContent === '돌보미 구하기') {
+      navigate('/carePost');
     }
-
-    // Clean up 함수 - 컴포넌트가 언마운트될 때 스타일을 초기화
-    return () => {
-      rootElement.style.backgroundColor = '';
-      rootElement.style.zIndex = '';
-    };
-  }, [isModalOpen]);
-
+  };
   return (
     <>
       <NavBarWrap>
@@ -87,7 +76,7 @@ export default function NavBar() {
                   to={el.path}
                   onClick={e =>
                     e.target.parentElement.innerText === '게시물 작성'
-                      ? toggleModal()
+                      ? openModal()
                       : null
                   }
                 >
@@ -101,7 +90,12 @@ export default function NavBar() {
           })}
         </NavBarUl>
       </NavBarWrap>
-      {isModalOpen && <BottomModal onClose={toggleModal} />}
+      <ModalComponent>
+        <Modal
+          contents={['상품 등록', '산책 메이트 구하기', '돌보미 구하기']}
+          handleFunc={handleCreate}
+        />
+      </ModalComponent>
     </>
   );
 }
