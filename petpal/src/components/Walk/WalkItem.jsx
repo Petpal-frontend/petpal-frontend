@@ -14,18 +14,17 @@ import defaultImg from '../../assets/image/profile.png';
 
 export default function WalkItem({
   id,
-  image,
-  content,
   author,
-  hearted,
-  heartedCount,
-  commentCount,
+  comments,
+  content,
+  heartCount,
+  image,
 }) {
   const [heartedNum, setHeartedNum] = useState(0);
   const [commentNum, setCommentNum] = useState(0);
 
-  if (heartedCount) setHeartedNum(heartedCount);
-  if (commentCount) setCommentNum(commentCount);
+  // if (heartedCount) setHeartedNum(heartedCount);
+  // if (commentCount) setCommentNum(commentCount);
 
   return (
     // <StyledLink to={DetailPath}>
@@ -46,7 +45,7 @@ export default function WalkItem({
             </InfoGroup>
             <LikeAndChat>
               <InfoGroup className="likeAndChat">
-                <LikeImg like={hearted} />
+                <LikeImg like={heartedNum} />
                 <InfoSpan>{heartedNum}</InfoSpan>
               </InfoGroup>
               <InfoGroup className="likeAndChat">
