@@ -13,3 +13,12 @@ export const putMyProfile = async userData => {
     console.error(err);
   }
 };
+
+export const getYourProfile = async accountname => {
+  try {
+    const response = await tokenInstance.get(`/profile/${accountname}`);
+    return response;
+  } catch (err) {
+    console.error(err);
+  }
+};

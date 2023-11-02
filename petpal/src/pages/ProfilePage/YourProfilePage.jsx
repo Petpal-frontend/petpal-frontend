@@ -1,232 +1,48 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../../components/Common/Header/Header';
 import YourProfile from '../../components/Profile/YourProfile';
+import { getYourProfile } from '../../api/profile';
+import { getMyProduct } from '../../api/product';
+import { getMyPost } from '../../api/post';
+import { useParams } from 'react-router-dom';
 
 export default function YourProfilePage() {
-  // GET /profile/:accountname
-  const yourData = {
-    profile: {
-      _id: 'walking12',
-      username: '산책시키는사람',
-      accountname: 'walking12',
-      intro: '서울',
-      image: 'images/catExImg.png',
-      isfollow: true,
-      following: [],
-      follower: [],
-      followerCount: 61,
-      followingCount: 12,
-    },
-  };
+  const params = useParams();
+  const accountname = params.accountname;
+  console.log('111111', accountname);
+  const [yourData, setYourData] = useState();
+  const [yourProduct, setYourProduct] = useState();
+  const [yourPost, setYourPost] = useState();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const yourDataRes = await getYourProfile(accountname);
+        const yourProductRes = await getMyProduct(accountname);
+        const yourPostRes = await getMyPost(accountname);
 
-  const yourPost = {
-    post: [
-      {
-        id: '202320310313',
-        content: '안녕하세요. 1 입니다.',
-        image: 'images/exDogImg.jpg',
-        createdAt: String,
-        updatedAt: String,
-        hearted: false,
-        heartCount: 0,
-        commentCount: 0,
-        author: {
-          _id: 'sorikikikim',
-          username: '소링이',
-          accountname: 'sorikikikim',
-          intro: '',
-          image: 'images/exDogImg.jpg',
-          isfollow: false,
-          following: [],
-          follower: ['follower id'],
-          followerCount: 1,
-          followingCount: 0,
-        },
-      },
-      {
-        id: '202320310313',
-        content: '안녕하세요. 2 입니다.',
-        image: 'images/exDogImg.jpg',
-        createdAt: String,
-        updatedAt: String,
-        hearted: false,
-        heartCount: 0,
-        commentCount: 0,
-        author: {
-          _id: 'sorikikikim',
-          username: '소링이',
-          accountname: 'sorikikikim',
-          intro: '',
-          image: 'images/exDogImg.jpg',
-          isfollow: false,
-          following: [],
-          follower: ['follower id'],
-          followerCount: 1,
-          followingCount: 0,
-        },
-      },
-      {
-        id: '202320310313',
-        content: '안녕하세요. 3 입니다.',
-        image: 'images/exDogImg.jpg',
-        createdAt: String,
-        updatedAt: String,
-        hearted: false,
-        heartCount: 0,
-        commentCount: 0,
-        author: {
-          _id: 'sorikikikim',
-          username: '소링이',
-          accountname: 'sorikikikim',
-          intro: '',
-          image: 'images/exDogImg.jpg',
-          isfollow: false,
-          following: [],
-          follower: ['follower id'],
-          followerCount: 1,
-          followingCount: 0,
-        },
-      },
-      {
-        id: '202320310313',
-        content: '안녕하세요. 3 입니다.',
-        image: 'images/exCatImg.png',
-        createdAt: String,
-        updatedAt: String,
-        hearted: false,
-        heartCount: 0,
-        commentCount: 0,
-        author: {
-          _id: 'sorikikikim',
-          username: '소링이',
-          accountname: 'sorikikikim',
-          intro: '',
-          image: 'images/exDogImg.jpg',
-          isfollow: false,
-          following: [],
-          follower: ['follower id'],
-          followerCount: 1,
-          followingCount: 0,
-        },
-      },
-      {
-        id: '202320310313',
-        content: '안녕하세요. 3 입니다.',
-        image: 'images/exCatImg.png',
-        createdAt: String,
-        updatedAt: String,
-        hearted: false,
-        heartCount: 0,
-        commentCount: 0,
-        author: {
-          _id: 'sorikikikim',
-          username: '소링이',
-          accountname: 'sorikikikim',
-          intro: '',
-          image: 'images/exDogImg.jpg',
-          isfollow: false,
-          following: [],
-          follower: ['follower id'],
-          followerCount: 1,
-          followingCount: 0,
-        },
-      },
-      {
-        id: '202320310313',
-        content: '안녕하세요. 3 입니다.',
-        image: 'images/exCatImg.png',
-        createdAt: String,
-        updatedAt: String,
-        hearted: false,
-        heartCount: 0,
-        commentCount: 0,
-        author: {
-          _id: 'sorikikikim',
-          username: '소링이',
-          accountname: 'sorikikikim',
-          intro: '',
-          image: 'images/exDogImg.jpg',
-          isfollow: false,
-          following: [],
-          follower: ['follower id'],
-          followerCount: 1,
-          followingCount: 0,
-        },
-      },
-    ],
-  };
-
-  const yourProduct = {
-    data: 3,
-    product: [
-      {
-        id: String,
-        itemName: '반려동물 파우치',
-        price: 5000,
-        link: String,
-        itemImage: 'images/shoppingImg.png',
-        author: {
-          _id: '작성자 id',
-          username: '2',
-          accountname: '2',
-          intro: '2',
-          image: '2',
-          isfollow: false,
-          following: [],
-          follower: ['팔로워 한 사용자의 id'],
-          followerCount: 1,
-          followingCount: 0,
-        },
-      },
-      {
-        id: String,
-        itemName: '반려동물 파우치',
-        price: 5000,
-        link: String,
-        itemImage: 'images/shoppingImg.png',
-        author: {
-          _id: '작성자 id',
-          username: '2',
-          accountname: '2',
-          intro: '2',
-          image: '2',
-          isfollow: false,
-          following: [],
-          follower: ['팔로워 한 사용자의 id'],
-          followerCount: 1,
-          followingCount: 0,
-        },
-      },
-      {
-        id: String,
-        itemName: '반려동물 파우치',
-        price: 5000,
-        link: String,
-        itemImage: 'images/shoppingImg.png',
-        author: {
-          _id: '작성자 id',
-          username: '2',
-          accountname: '2',
-          intro: '2',
-          image: '2',
-          isfollow: false,
-          following: [],
-          follower: ['팔로워 한 사용자의 id'],
-          followerCount: 1,
-          followingCount: 0,
-        },
-      },
-    ],
-  };
+        setYourData(yourDataRes.data);
+        setYourProduct(yourProductRes.data);
+        setYourPost(yourPostRes.data);
+        console.log('2222', yourData.username);
+        console.log('3333', yourProduct);
+        console.log('4444', yourPost);
+      } catch (err) {
+        console.error(err);
+      }
+      fetchData();
+    };
+  });
 
   return (
     <>
       <Header type="post" />
-      <YourProfile
-        yourData={yourData}
-        yourProduct={yourProduct}
-        yourPost={yourPost}
-      />
+      {yourData && yourProduct && yourPost && (
+        <YourProfile
+          yourData={yourData}
+          yourProduct={yourProduct}
+          yourPost={yourPost}
+        />
+      )}
     </>
   );
 }

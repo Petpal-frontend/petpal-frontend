@@ -138,7 +138,7 @@ export default function Router() {
           />
           {/* 임시 라우팅 */}
           <Route
-            path="/yourProfile"
+            path="/yourProfile/:accountname"
             element={
               <>
                 <YourProfile />
