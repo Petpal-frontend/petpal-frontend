@@ -71,6 +71,12 @@ export default function Header({ type, title, onClick, onChange, handleFunc }) {
         >
           <BackButton type={type} />
           <HeaderTitle type={type} title={title} />
+          <div
+            style={{
+              width: '29px',
+              height: '17.5px',
+            }}
+          />
         </HeaderContainer>
       );
     case 'post':
