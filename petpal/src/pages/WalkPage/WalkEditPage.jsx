@@ -32,7 +32,8 @@ export default function WalkEditPage() {
         <PostEdit
           title="산책메이트"
           id="PostContent"
-          placeholder={beforePostData.post.content}
+          type="walk"
+          // placeholder={beforePostData.post.content}
           beforePostData={beforePostData}
           // value={beforePostData.post.content}
         />

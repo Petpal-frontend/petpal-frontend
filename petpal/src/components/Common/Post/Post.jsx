@@ -16,7 +16,7 @@ import {
 } from '../../Product/ProductPostStyle';
 import { Link, useNavigate } from 'react-router-dom';
 import { uploadPost } from '../../../api/post';
-import { uploadImg, uploadImgs } from '../../../api/imageApi';
+import { uploadImgs } from '../../../api/imageApi';
 
 export default function Post({
   id,

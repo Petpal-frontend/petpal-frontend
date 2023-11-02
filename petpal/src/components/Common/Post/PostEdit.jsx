@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../Header/Header';
 import { UserImg } from '../../Common/Userinfo/UserInfoStyle';
-
+import { updatePost } from '../../../api/post';
 import {
   PostContainer,
   PostContent,
@@ -15,8 +15,7 @@ import {
   UploadBtn,
 } from '../../Product/ProductPostStyle';
 import { Link, useNavigate } from 'react-router-dom';
-import { uploadPost } from '../../../api/post';
-import { uploadImg, uploadImgs } from '../../../api/imageApi';
+import { uploadImgs } from '../../../api/imageApi';
 
 export default function PostEdit({
   id,
@@ -29,56 +28,49 @@ export default function PostEdit({
   beforePostData,
 }) {
   const myProfile = 'images/profile-img4.svg';
-  console.log('sdasd' + beforePostData);
   const [selectedImages, setSelectedImages] = useState([]);
   const [content, setContent] = useState(beforePostData.post.content);
   const navigate = useNavigate();
   const handleImageChange = async e => {
+    const selectedFiles = Array.from(e.target.files);
+
+    const formData = new FormData();
+    selectedFiles.forEach(file => {
+      formData.append('image', file);
+    });
+
     try {
-      console.log('handle img func');
-      const selectedFiles = Array.from(e.target.files);
-      const createUrlPromises = selectedFiles.map(file =>
-        URL.createObjectURL(file),
+      const imgUpload = await uploadImgs(formData);
+      if (selectedFiles.length > 3) {
+        alert('이미지는 최대 3개까지 선택할 수 있습니다.');
+        return;
+      }
+      setSelectedImages(
+        imgUpload.data.map(
+          data => `https://api.mandarin.weniv.co.kr/${data.filename}`,
+        ),
       );
-      const imageUrls = await Promise.all(createUrlPromises);
-      setSelectedImages(imageUrls);
-      console.log('imaged', selectedImages);
-    } catch (err) {
-      console.error(err);
+
+      console.log(imgUpload);
+    } catch (error) {
+      console.error(error);
     }
   };
-
   const appendFlagContent =
     type === 'walk' ? `petpal_walk_${content}` : `petpal_care_${content}`;
 
   const uploadData = async e => {
     try {
       e.preventDefault();
-      if (selectedImages) {
-        // 1. FormData에 여러 이미지 한번에 넣기
-        const imgData = new FormData();
-
-        await selectedImages.forEach((img, index) => {
-          imgData.append('image', img);
-        });
-
-        const imgUpload = await uploadImgs(imgData);
-        await console.log('2222', imgUpload);
-
-        const imgPath = imgUpload.data.filename;
-        console.log(imgPath);
-      }
       const postData = {
-        post: {
-          images: selectedImages,
-          content: appendFlagContent,
-        },
+        image: selectedImages.toString(),
+        content: appendFlagContent,
       };
 
-      const response = await uploadPost(postData);
-      await console.log('response:::', response.data);
+      const response = await updatePost(beforePostData.post.id, postData);
+      await console.log('response:::', response);
       if (response.status === 200) {
-        alert('게시글 등록이 완료되었습니다. 게시글 목록으로 이동합니다.');
+        alert('게시글이 수정되었습니다.');
         if (type === 'walk') {
           navigate('/walkList');
         }
@@ -95,14 +87,14 @@ export default function PostEdit({
     <>
       <HeaderWrap>
         <h1 className="a11y-hidden">게시글 등록 작성</h1>
+        <PrevBtn>
+          <Link to="/walkList"></Link>
+        </PrevBtn>
         <div>
-          <PrevBtn>
-            <Link to="/walkList"></Link>
-          </PrevBtn>
           <HeaderContent>{title}</HeaderContent>
         </div>
         <UploadBtn onClick={uploadData} type="submit">
-          업로드
+          수정하기
         </UploadBtn>
       </HeaderWrap>
       <PostContainer>
