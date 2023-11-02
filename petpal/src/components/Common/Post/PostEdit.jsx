@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../Header/Header';
 import { UserImg } from '../../Common/Userinfo/UserInfoStyle';
 import { updatePost } from '../../../api/post';
 import {
@@ -15,7 +14,8 @@ import {
   UploadBtn,
 } from '../../Product/ProductPostStyle';
 import { Link, useNavigate } from 'react-router-dom';
-import { uploadImgs } from '../../../api/imageApi';
+import { updatePost, uploadPost } from '../../../api/post';
+import { uploadImg, uploadImgs } from '../../../api/imageApi';
 
 export default function PostEdit({
   id,
@@ -24,13 +24,26 @@ export default function PostEdit({
   label,
   value,
   placeholder,
-  onSubmit,
   beforePostData,
+  onSubmit,
 }) {
   const myProfile = 'images/profile-img4.svg';
-  const [selectedImages, setSelectedImages] = useState([]);
-  const [content, setContent] = useState(beforePostData.post.content);
+
+
+  const imageArr = beforePostData.post.image
+    ? beforePostData.post.image.split(',')
+    : [];
+
+  const [selectedImages, setSelectedImages] = useState(imageArr);
+  const [content, setContent] = useState(
+    type === 'walk'
+      ? beforePostData.post.content.split('petpal_walk_').join('')
+      : beforePostData.post.content.split('petpal_care_').join(''),
+  );
+
   const navigate = useNavigate();
+
+  imageArr ? console.log('hihihihihih', imageArr) : console.log('byebye');
   const handleImageChange = async e => {
     const selectedFiles = Array.from(e.target.files);
 
@@ -41,6 +54,14 @@ export default function PostEdit({
 
     try {
       const imgUpload = await uploadImgs(formData);
+
+      // imgUpload.data.forEach(data => {
+      //   setSelectedImages(prevImgFiles => [
+      //     ...prevImgFiles,
+      //     `https://api.mandarin.weniv.co.kr/${data.filename}`,
+      //   ]);
+      // });
+
       if (selectedFiles.length > 3) {
         alert('이미지는 최대 3개까지 선택할 수 있습니다.');
         return;
@@ -63,12 +84,16 @@ export default function PostEdit({
     try {
       e.preventDefault();
       const postData = {
-        image: selectedImages.toString(),
-        content: appendFlagContent,
+        post: {
+          image: selectedImages.toString(),
+          content: appendFlagContent,
+        },
       };
 
+      // await console.log(postData);
       const response = await updatePost(beforePostData.post.id, postData);
-      await console.log('response:::', response);
+      await console.log('response:::', response.data);
+
       if (response.status === 200) {
         alert('게시글이 수정되었습니다.');
         if (type === 'walk') {
@@ -121,7 +146,7 @@ export default function PostEdit({
           />
 
           <PostContent
-            value={content.replace(/^petpal_walk_|^petpal_care_/g, '')}
+            value={content}
             placeholder={placeholder}
             onChange={e => {
               setContent(e.target.value);
@@ -129,13 +154,14 @@ export default function PostEdit({
             }}
           />
 
-          {selectedImages.map((imageUrl, index) => (
-            <SelectedImage
-              key={index}
-              src={imageUrl}
-              alt={`미리 보기 이미지 ${index + 1}`}
-            />
-          ))}
+          {selectedImages &&
+            selectedImages.map((imageUrl, index) => (
+              <SelectedImage
+                key={index}
+                src={imageUrl}
+                alt={`미리 보기 이미지 ${index + 1}`}
+              />
+            ))}
         </form>
       </PostContainer>
     </>

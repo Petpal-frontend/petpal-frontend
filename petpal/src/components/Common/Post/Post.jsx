@@ -143,13 +143,14 @@ export default function Post({
             }}
           />
 
-          {selectedImages.map((imageUrl, index) => (
-            <SelectedImage
-              key={index}
-              src={imageUrl}
-              alt={`미리 보기 이미지 ${index + 1}`}
-            />
-          ))}
+          {selectedImages &&
+            selectedImages.map((imageUrl, index) => (
+              <SelectedImage
+                key={index}
+                src={imageUrl}
+                alt={`미리 보기 이미지 ${index + 1}`}
+              />
+            ))}
         </form>
       </PostContainer>
     </>
