@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FollowerListContainer = styled.div`
+export const FollowListContainer = styled.div`
   min-height: 100vh;
   padding: 75px 15px;
   display: flex;
