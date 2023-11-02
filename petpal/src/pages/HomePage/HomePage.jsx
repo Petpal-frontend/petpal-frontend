@@ -5,6 +5,7 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 import { HomeHeaderStyle } from '../../components/HomeHeader/HomeHeaderStyle';
 import { ImageButtons } from '../../components/Common/ImageButton';
 import InfiniteScroll from '../../components/Common/InfinityScroll/scroll';
+import { Link } from 'react-router-dom';
 export default function HomePage() {
   const buttons = [
     {
@@ -34,7 +35,15 @@ export default function HomePage() {
     <>
       <HomeHeaderStyle>
         <HomeHeaderLogo />
-        <SearchBar placeholder="상품, 게시물 검색" />
+        {/* <Link to="/search" className="searchBar">
+          계정 검색
+        </Link> */}
+        {/* <Link to="/search">
+          <SearchBar placeholder="계정 검색" />
+        </Link> */}
+        <Link to="/search" className="searchBtn">
+          <img src="./images/icon-search.svg" alt="계정 검색" />
+        </Link>
       </HomeHeaderStyle>
       <SlideComponent />
       <ImageButtons buttons={buttons} />
