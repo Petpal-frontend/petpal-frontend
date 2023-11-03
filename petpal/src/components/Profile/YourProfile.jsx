@@ -127,7 +127,9 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
                 <img src={item.itemImage} alt="productImage" />
                 <TextSection>
                   <Title>{item.itemName}</Title>
-                  <Description>{item.price}원</Description>
+                  <Description>
+                    {item.price.toLocaleString('ko-KR')}원
+                  </Description>
                 </TextSection>
               </ItemDiv>
             ))

@@ -102,7 +102,9 @@ export default function MyProfile({ myData, myProduct, myPost }) {
 
                 <TextSection>
                   <Title>{item.itemName}</Title>
-                  <Description>{item.price}원</Description>
+                  <Description>
+                    {item.price.toLocaleString('ko-KR')}원
+                  </Description>
                 </TextSection>
               </ItemDiv>
             ))
