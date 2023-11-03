@@ -86,7 +86,7 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
             <FollowNum>{followerCount}</FollowNum>
             <FollowSpan>followers</FollowSpan>
           </Link>
-          <UserProfileImage src="images/exDogImg.jpg" alt="User Profile" />
+          <UserProfileImage src={yourData.profile.image} alt="User Profile" />
           <Link to={`/profile/${userAccountName}/following`}>
             <FollowNum>{yourData.profile.followingCount}</FollowNum>
             <FollowSpan>followings</FollowSpan>

@@ -79,12 +79,11 @@ export default function WalkDetailPage() {
 
   // 댓글 등록
 
-  // const handleEnterPress = e => {
-  //   if (e.key === 'Enter' && !e.shiftKey) {
-  //     e.preventDefault();
-  //     handleSubmitComment();
-  //   }
-  // };
+  const handleEnterPress = event => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      handleSubmitComment(event);
+    }
+  };
 
   const handleChangeComment = e => {
     setNewComment(e.target.value);
@@ -143,13 +142,13 @@ export default function WalkDetailPage() {
         id="comment"
         value={newComment}
         placeholder="댓글을 남겨보세요"
-        onChange={handleChangeComment}
+        onTextChange={handleChangeComment}
         onSubmit={handleSubmitComment}
-        // onEnterPress={handleEnterPress}
+        onEnterPress={handleEnterPress}
       />
       <AlertComponent>
         <Alert
-          alertMsg={'상품을 삭제하시겠습니까?'}
+          alertMsg={'게시물을 삭제하시겠습니까?'}
           choice={['취소', '삭제']}
           handleFunc={handledelete}
         />

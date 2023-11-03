@@ -5,16 +5,18 @@ import { getYourProfile } from '../../api/profile';
 import { getMyProduct } from '../../api/product';
 import { getMyPost } from '../../api/post';
 import { useParams } from 'react-router-dom';
-
+import Loading from '../../components/Common/Loading/Loading';
 export default function YourProfilePage() {
   const params = useParams();
   const accountname = params.accountname;
   console.log('111111', accountname);
+  const [loading, setLoading] = useState(true);
   const [yourData, setYourData] = useState();
   const [yourProduct, setYourProduct] = useState();
   const [yourPost, setYourPost] = useState();
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
         const yourDataRes = await getYourProfile(accountname);
         const yourProductRes = await getMyProduct(accountname);
@@ -26,6 +28,7 @@ export default function YourProfilePage() {
         console.log('2222', yourData);
         console.log('3333', yourProduct);
         console.log('4444', yourPost);
+        setLoading(false);
       } catch (err) {
         console.error(err);
       }
@@ -35,6 +38,7 @@ export default function YourProfilePage() {
 
   return (
     <>
+      {loading ? <Loading /> : null}
       <Header type="post" />
       {yourData && yourProduct && yourPost && (
         <YourProfile

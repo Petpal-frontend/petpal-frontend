@@ -24,7 +24,8 @@ function BackButton({ type }) {
       type === 'myWalkDetail' ||
       type === 'careDetail' ||
       type === 'myCareDetail' ||
-      type === 'posting'
+      type === 'posting' ||
+      type === 'chatRoom'
     ) {
       navigate(-1);
     }
@@ -188,6 +189,23 @@ export default function Header({ type, title, onClick, onChange, handleFunc }) {
         </HeaderContainer>
       );
     case 'myCareDetail':
+      return (
+        <HeaderContainer type={type}>
+          <BackButton type={type} />
+          <HeaderTitle type={type} title={title} />
+          <PostStyle>
+            <button
+              className="postMoreButton"
+              aria-label="PostMoreBtn"
+              onClick={() => {
+                openModal();
+              }}
+            />
+          </PostStyle>
+          <DetailModal onClick={onClick} />
+        </HeaderContainer>
+      );
+    case 'chatRoom':
       return (
         <HeaderContainer type={type}>
           <BackButton type={type} />
