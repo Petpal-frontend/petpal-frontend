@@ -17,6 +17,7 @@ import { LikeAndChat } from './WalkItemStyle';
 import { ChatImg, LikeImg } from '../Common/SpanImg/SpanImgStyle';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 import { likePost, unlikePost } from '../../api/post';
+import { Link } from 'react-router-dom';
 
 // export default function WalkDetailItem({ location, walkDetailItem }) {
 // 컴포넌트 분리 및 재사용 고려해서 다시 수정 예정 -> 산책, 돌보미 재사용
@@ -57,20 +58,25 @@ export default function WalkDetailItem({ walkDetailItem }) {
     <ComponentLayout>
       <DetailContainer>
         <PostTop>
-          <UserInfoBox>
-            <UserImg
-              src={walkDetailItem.author.image}
-              style={{ width: '50px', height: '50px' }}
-              alt="프로필 이미지"
-            />
-            <NameAndTimeBox>
-              <Username>{walkDetailItem.author.username}</Username>
+          <Link
+            to={`/yourProfile/${walkDetailItem.author.accountname}`}
+            className="profileInfo"
+          >
+            <UserInfoBox>
+              <UserImg
+                src={walkDetailItem.author.image}
+                style={{ width: '50px', height: '50px' }}
+                alt="프로필 이미지"
+              />
+              <NameAndTimeBox>
+                <Username>{walkDetailItem.author.username}</Username>
 
-              <PostTime>
-                {`${elapsedTime(new Date(walkDetailItem.createdAt))}`}
-              </PostTime>
-            </NameAndTimeBox>
-          </UserInfoBox>
+                <PostTime>
+                  {`${elapsedTime(new Date(walkDetailItem.createdAt))}`}
+                </PostTime>
+              </NameAndTimeBox>
+            </UserInfoBox>
+          </Link>
           <Button
             type="button"
             children="채팅하기"
