@@ -1,5 +1,11 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet,
+  useLocation,
+} from 'react-router-dom';
 import Home from './HomePage/HomePage';
 import Login from './LoginPage/LoginPage';
 import Signup from './SignupPage/SignupPage';
@@ -28,6 +34,15 @@ import HomePage from './HomePage/HomePage';
 
 import NavBar from '../components/Common/NavBar/NavBar';
 import YourProfile from '../pages/ProfilePage/YourProfilePage';
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 export default function Router() {
   return (
@@ -38,6 +53,7 @@ export default function Router() {
             path="/"
             element={
               <>
+                <ScrollToTop />
                 <SplashPage />
                 {/* <Home /> */}
                 {/* <NavBar /> */}
@@ -50,12 +66,21 @@ export default function Router() {
             path="/productList"
             element={
               <>
+                <ScrollToTop />
                 <ProductList />
                 <NavBar />
               </>
             }
           />
-          <Route path="/productDetail/:productId" element={<ProductDetail />} />
+          <Route
+            path="/productDetail/:productId"
+            element={
+              <>
+                <ScrollToTop />
+                <ProductDetail />
+              </>
+            }
+          />
           {/* <Route path="/productDetail" element={<ProductDetail />} /> */}
           <Route path="/productPost" element={<ProductPost />} />
           <Route path="/productEdit" element={<ProductEdit />} />
@@ -63,6 +88,7 @@ export default function Router() {
             path="/walkList"
             element={
               <>
+                <ScrollToTop />
                 <WalkList />
                 <NavBar />
               </>
@@ -72,6 +98,7 @@ export default function Router() {
             path="/walkDetail/:id"
             element={
               <>
+                <ScrollToTop />
                 <WalkDetail />
                 <NavBar />
               </>
@@ -83,6 +110,7 @@ export default function Router() {
             path="/careList"
             element={
               <>
+                <ScrollToTop />
                 <CareList />
                 <NavBar />
               </>
@@ -92,6 +120,7 @@ export default function Router() {
             path="/careDetail/:id"
             element={
               <>
+                <ScrollToTop />
                 <CareDetail />
               </>
             }
@@ -122,6 +151,7 @@ export default function Router() {
             path="/profile"
             element={
               <>
+                <ScrollToTop />
                 <Profile />
                 <NavBar />
               </>
@@ -141,20 +171,12 @@ export default function Router() {
             path="/yourProfile/:accountname"
             element={
               <>
+                <ScrollToTop />
                 <YourProfile />
                 <NavBar />
               </>
             }
           />
-          {/* <Route
-            path="/yourProfile/:username"
-            element={
-              <>
-                <YourProfile />
-                <NavBar />
-              </>
-            }
-          /> */}
           <Route path="/profile/:accountname" element={<Outlet />}>
             <Route path=":follow/" element={<Follow />} />
           </Route>
