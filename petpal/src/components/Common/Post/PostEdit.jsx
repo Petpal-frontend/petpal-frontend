@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { UserImg } from '../../Common/Userinfo/UserInfoStyle';
-import { updatePost } from '../../../api/post';
+// import { updatePost } from '../../../api/post';
 import {
   PostContainer,
   PostContent,
