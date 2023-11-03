@@ -52,7 +52,7 @@ export const MainWrap = styled.div`
     // gap: 40px 18px;
   }
 `;
-export const ProductLi = styled.li`
+export const ChatLi = styled.li`
   margin-bottom: 20px;
   color: #767676;
 
@@ -68,11 +68,12 @@ export const ProductLi = styled.li`
     overflow: hidden;
     flex-shrink: 0;
     position: relative;
+    border-radius: 50%;
   }
 
   .profileImg img {
-    border-radius: 25px;
     width: 100%;
+    object-fit: cover;
   }
 
   .text {

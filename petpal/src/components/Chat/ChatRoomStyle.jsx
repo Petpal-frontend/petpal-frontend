@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledLayout = styled.div`
+  padding-top: 100px 0;
   min-height: 100vh;
   position: relative;
 
