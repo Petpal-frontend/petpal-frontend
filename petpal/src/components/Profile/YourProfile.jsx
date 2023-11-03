@@ -6,7 +6,6 @@ import { getCareDetail } from '../../api/care';
 import {
   ButtonContainer,
   Description,
-  FollowDiv,
   FollowNum,
   FollowSpan,
   H3,
@@ -24,8 +23,11 @@ import {
 } from './MyProfileStyle';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 import profileImg from '../../assets/image/profile.png';
+import { Link, useParams } from 'react-router-dom';
 
 export default function YourProfile({ yourData, yourProduct, yourPost }) {
+  const userAccountName = useParams().accountname;
+
   const handleProductClick = async productId => {
     try {
       const response = await getProductDetail(productId);
@@ -55,15 +57,15 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
     <ComponentLayout>
       <ItemListContainer>
         <ProfileContainer>
-          <FollowDiv>
+          <Link to={`/profile/${userAccountName}/follower`}>
             <FollowNum>{yourData.profile.followerCount}</FollowNum>
             <FollowSpan>followers</FollowSpan>
-          </FollowDiv>
+          </Link>
           <UserProfileImage src="images/exDogImg.jpg" alt="User Profile" />
-          <FollowDiv>
+          <Link to={`/profile/${userAccountName}/following`}>
             <FollowNum>{yourData.profile.followingCount}</FollowNum>
             <FollowSpan>followings</FollowSpan>
-          </FollowDiv>
+          </Link>
         </ProfileContainer>
         <Username>{yourData.profile.username}</Username>
         <ButtonContainer>
