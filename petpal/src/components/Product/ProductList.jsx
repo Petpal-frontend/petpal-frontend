@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 import { StyledLayout, MainWrap, ProductLi, AddBtn } from './ProductListStyle';
 import { getProductList } from '../../api/productListApi';
 import { getProductDetail } from '../../api/product';
+import { useRecoilValue } from 'recoil';
+import { userInfoAtom } from '../../atoms/AtomUserState';
+
 export default function ProductList() {
+  const userInfo = useRecoilValue(userInfoAtom);
+  console.log('myInfo', userInfo);
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -18,8 +23,10 @@ export default function ProductList() {
     fetchData();
   }, []);
 
-  const filteredProducts = products.filter(v =>
-    v.author.accountname.includes('petpal_'),
+  const filteredProducts = products.filter(
+    v =>
+      v.author.accountname.includes('petpal_') &&
+      v.author.intro === userInfo.intro,
   );
 
   const handleProductClick = async productId => {
