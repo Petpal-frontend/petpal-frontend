@@ -14,9 +14,9 @@ import { userInfoAtom } from '../../../atoms/AtomUserState';
 import useAlertControl from '../Modal/useAlertControl';
 import Alert from '../Modal/Alert';
 import { Link } from 'react-router-dom';
+import moreBtn from '../../../assets/image/icon-more-vertical.svg'
 
 export default function Comment({ comments, handledeleteComment }) {
-  const moreBtn = '/images/icon-more-vertical.svg';
   const reversedComments = comments.slice().reverse();
   const userState = useRecoilValue(userInfoAtom);
   const { openAlert, AlertComponent } = useAlertControl();

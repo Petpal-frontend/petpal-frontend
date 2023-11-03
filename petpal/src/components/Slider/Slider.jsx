@@ -8,12 +8,14 @@ import {
   SlideNumber,
 } from './SliderStyle';
 
-const imgUrl = 'images/logo.svg';
+import slide1 from '../../assets/image/slide1.jpg';
+import slide2 from '../../assets/image/slide2.jpg';
+import slide3 from '../../assets/image/slide3.jpg';
 
 const items = [
-  { id: 1, image: 'images/slide1.jpg' },
-  { id: 2, image: 'images/slide2.jpg' },
-  { id: 3, image: 'images/slide3.jpg' },
+  { id: 1, image: slide1 },
+  { id: 2, image: slide2 },
+  { id: 3, image: slide3 },
 ];
 
 const SimpleSlider = () => {

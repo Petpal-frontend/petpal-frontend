@@ -1,7 +1,7 @@
 import { SplashBg, SplashLogo } from './SplashStyle';
+import imgLogo from '../../assets/image/logo.svg';
 
 function Splash() {
-  const imgLogo = 'images/logo.svg';
 
   return (
     <>

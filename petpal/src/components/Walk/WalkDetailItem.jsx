@@ -118,7 +118,7 @@ export default function WalkDetailItem({ walkDetailItem }) {
                 }}
               />
               <InfoSpan>{likeCount}</InfoSpan>
-            </InfoGroup>
+            </InfoGroup>	
             <InfoGroup className="likeAndChat">
               <ChatImg />
               <InfoSpan>{walkDetailItem.commentCount}</InfoSpan>

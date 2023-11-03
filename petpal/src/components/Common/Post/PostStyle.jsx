@@ -20,17 +20,6 @@ export const PostContent = styled.textarea`
   }
 `;
 
-// export const ImgUploadButton = styled.button`
-//   position: absolute;
-//   cursor: pointer;
-//   width: 50px;
-//   height: 50px;
-//   background: url('images/chat-upload-btn.svg') no-repeat center/ cover;
-//   border: none;
-//   bottom: 10%;
-//   right: 15px;
-// `;
-
 export const ImgUploadButton = styled.img`
   cursor: pointer;
   position: absolute;

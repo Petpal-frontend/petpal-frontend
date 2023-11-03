@@ -10,13 +10,12 @@ import {
   P,
   SnsLoginList,
 } from './LoginStyle';
+import imgLogo from '../../assets/image/logo.svg';
+import imgNaver from '../../assets/image/naver.svg';
+import imgGoogle from '../../assets/image/google.svg';
+import imgKakao from '../../assets/image/kakao.svg';
 
 export default function Login() {
-  const imgLogo = 'images/logo.svg';
-  const imgNaver = 'images/naver.svg';
-  const imgGoogle = 'images/google.svg';
-  const imgKakao = 'images/kakao.svg';
-
   return (
     <LoginContainer>
       <LoginLogo src={imgLogo} alt="펫팔 로고 이미지" />

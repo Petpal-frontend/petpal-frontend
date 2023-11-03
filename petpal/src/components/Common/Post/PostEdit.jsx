@@ -15,6 +15,8 @@ import {
 } from '../../Product/ProductPostStyle';
 import { Link, useNavigate } from 'react-router-dom';
 import { uploadImg, uploadImgs } from '../../../api/imageApi';
+import myProfile from '../../../assets/image/profile-img4.svg';
+import uploadChat from '../../../assets/image/chat-upload-btn.svg';
 
 export default function PostEdit({
   id,
@@ -26,8 +28,6 @@ export default function PostEdit({
   beforePostData,
   onSubmit,
 }) {
-  const myProfile = 'images/profile-img4.svg';
-
   const imageArr = beforePostData.post.image
     ? beforePostData.post.image.split(',')
     : [];
@@ -124,7 +124,7 @@ export default function PostEdit({
         <UserImg
           src={myProfile}
           alt="프로필 이미지"
-          style={{ width: '60px', height: '60px' }}
+          style={{ width: '60px', height: '60px', border: 'none'}}
         />
 
         <form onSubmit={onSubmit}>
@@ -132,7 +132,7 @@ export default function PostEdit({
             {label}
           </label>
           <label htmlFor={id}>
-            <ImgUploadButton src={'images/chat-upload-btn.svg'} />
+            <ImgUploadButton src={uploadChat} />
           </label>
           <input
             type="file"

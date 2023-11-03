@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from '../Header/Header';
-import { UserImg } from '../../Common/Userinfo/UserInfoStyle';
+import { UserImg } from '../Userinfo/UserInfoStyle';
 
 import {
   PostContainer,
@@ -17,6 +17,8 @@ import {
 import { Link, useNavigate } from 'react-router-dom';
 import { uploadPost } from '../../../api/post';
 import { uploadImgs } from '../../../api/imageApi';
+import myProfile from '../../../assets/image/profile-img4.svg';
+import uploadChat from '../../../assets/image/chat-upload-btn.svg';
 
 export default function Post({
   id,
@@ -27,8 +29,6 @@ export default function Post({
   placeholder,
   onSubmit,
 }) {
-  const myProfile = 'images/profile-img4.svg';
-
   const [selectedImages, setSelectedImages] = useState([]);
   const [content, setContent] = useState('');
   const navigate = useNavigate();
@@ -115,7 +115,7 @@ export default function Post({
         <UserImg
           src={myProfile}
           alt="프로필 이미지"
-          style={{ width: '60px', height: '60px' }}
+          style={{ width: '60px', height: '60px', border: 'none' }}
         />
 
         <form onSubmit={onSubmit}>
@@ -123,7 +123,7 @@ export default function Post({
             {label}
           </label>
           <label htmlFor={id}>
-            <ImgUploadButton src={'images/chat-upload-btn.svg'} />
+            <ImgUploadButton src={uploadChat} />
           </label>
           <input
             type="file"
@@ -156,3 +156,4 @@ export default function Post({
     </>
   );
 }
+

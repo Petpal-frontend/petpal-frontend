@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import prevImg from '../../assets/image/prev.svg';
 
 export const StyledLayout = styled.div`
   min-height: 100vh;
@@ -26,13 +27,14 @@ export const HeaderWrap = styled.header`
     align-items: center;
   }
 `;
+
 export const PrevBtn = styled.p`
   a {
     display: block;
     padding: 30px;
     border: none;
     background-color: transparent;
-    background-image: url('./images/prev.svg');
+    background-image: url(${prevImg});
     background-repeat: no-repeat;
     background-position: center center;
   }

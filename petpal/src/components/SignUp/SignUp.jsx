@@ -21,6 +21,7 @@ import {
 import AddressSearch from '../AddressSearch/AddressSearch';
 import { FormContainer, H1 } from '../Common/Layout/LayoutStyle';
 import imgProfileBtn from '../../assets/image/profile-btn.svg';
+import profileImg from '../../assets/image/profile.svg';
 
 export default function SignUpForm() {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ export default function SignUpForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [accountname, setAccountname] = useState('');
-  const [image, setImage] = useState('images/profile.svg');
+  const [image, setImage] = useState(profileImg);
   const [selectedImage, setSelectedImage] = useState(null);
   const [intro, setIntro] = useState('');
   const [validCheck, setValidCheck] = useState(false); // 이메일 유효성 체크
