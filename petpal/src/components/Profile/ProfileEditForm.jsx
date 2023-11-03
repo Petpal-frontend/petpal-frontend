@@ -20,14 +20,16 @@ import Button from '../Common/Button/SubmitButton/Button';
 import { uploadImg } from '../../api/imageApi';
 import { putMyProfile } from '../../api/profile';
 import { useNavigate } from 'react-router-dom';
-
+import { useRecoilValue, useRecoilState } from 'recoil';
+import { userInfoAtom } from '../../atoms/AtomUserState';
 export default function ProfileEditForm({ beforeUserData }) {
   const [username, setUsername] = useState(beforeUserData.username);
+  const [userState, setUserState] = useRecoilState(userInfoAtom);
   const [image, setImage] = useState(beforeUserData.image);
   const [selectedImage, setSelectedImage] = useState();
   const [intro, setIntro] = useState(beforeUserData.intro);
   const navigate = useNavigate();
-
+  console.log();
   console.log('asdad' + beforeUserData.image);
   const handleImageUpload = event => {
     const file = event.target.files[0];
@@ -55,7 +57,6 @@ export default function ProfileEditForm({ beforeUserData }) {
       }
     }
   };
-
   const handleAddressSelect = address => {
     setIntro(address.split(' ')[0]);
   };
@@ -78,6 +79,12 @@ export default function ProfileEditForm({ beforeUserData }) {
             image: beforeUserData.image,
           },
         };
+        setUserState({
+          ...userState,
+          username: username,
+          intro: intro,
+          image: beforeUserData.image,
+        });
       } else {
         userData = {
           user: {
@@ -86,6 +93,12 @@ export default function ProfileEditForm({ beforeUserData }) {
             image: `https://api.mandarin.weniv.co.kr/${imgPath}`,
           },
         };
+        setUserState({
+          ...userState,
+          username: username,
+          intro: intro,
+          image: `https://api.mandarin.weniv.co.kr/${imgPath}`,
+        });
       }
       const response = await putMyProfile(userData);
       console.log(response);
