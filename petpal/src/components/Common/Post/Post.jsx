@@ -72,7 +72,16 @@ export default function Post({
   const uploadData = async e => {
     try {
       e.preventDefault();
+      // 필수 입력 필드인 content와 selectedImages 검사
+      if (!content) {
+        alert('게시글 내용을 입력해주세요.');
+        return;
+      }
 
+      if (selectedImages.length === 0) {
+        alert('이미지를 업로드해주세요.');
+        return;
+      }
       const postData = {
         post: {
           image: selectedImages.toString(),
@@ -132,6 +141,7 @@ export default function Post({
             accept="image/*"
             multiple
             onChange={handleImageChange}
+            required
           />
 
           <PostContent
@@ -141,6 +151,7 @@ export default function Post({
               setContent(e.target.value);
               console.log(content);
             }}
+            required
           />
 
           {selectedImages &&
@@ -156,4 +167,3 @@ export default function Post({
     </>
   );
 }
-

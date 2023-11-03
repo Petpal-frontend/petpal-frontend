@@ -24,6 +24,20 @@ export default function ProductPost(props) {
     onUploadClick,
   } = props;
 
+  const handleUploadClick = () => {
+    if (!productTitle) {
+      alert('상품명을 입력해주세요.');
+    } else if (!productPrice) {
+      alert('가격을 입력해주세요.');
+    } else if (!productDescription) {
+      alert('상품 설명을 입력해주세요.');
+    } else if (!imageFile) {
+      alert('이미지를 업로드해주세요.');
+    } else {
+      onUploadClick();
+    }
+  };
+
   return (
     <>
       <StyledLayout>
@@ -35,14 +49,17 @@ export default function ProductPost(props) {
             </PrevBtn>
             <HeaderContent>상품 등록</HeaderContent>
           </div>
-          <UploadBtn onClick={onUploadClick}>업로드</UploadBtn>
+          <UploadBtn onClick={handleUploadClick}>업로드</UploadBtn>
         </HeaderWrap>
         <MainWrap>
           <ImgArea>
             {imageFile ? (
               <img
-                src={URL.createObjectURL(imageFile)}
-                // src={imageFile}
+                src={
+                  typeof imageFile === 'string'
+                    ? imageFile
+                    : URL.createObjectURL(imageFile)
+                }
                 alt="업로드된 이미지 미리보기"
                 className="productImg"
               />
@@ -76,6 +93,7 @@ export default function ProductPost(props) {
                     autoComplete="off"
                     value={productTitle}
                     onChange={onTitleChange}
+                    required
                   />
                 </p>
                 <p>
@@ -86,6 +104,7 @@ export default function ProductPost(props) {
                     placeholder="숫자만 입력 가능합니다."
                     value={productPrice}
                     onChange={onPriceChange}
+                    required
                   />
                 </p>
                 <p>
@@ -95,6 +114,7 @@ export default function ProductPost(props) {
                     rows="4"
                     value={productDescription}
                     onChange={onDescriptionChange}
+                    required
                   ></textarea>
                 </p>
               </fieldset>

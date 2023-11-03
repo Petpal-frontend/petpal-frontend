@@ -82,7 +82,15 @@ export default function Router() {
             }
           />
           {/* <Route path="/productDetail" element={<ProductDetail />} /> */}
-          <Route path="/productPost" element={<ProductPost />} />
+          <Route
+            path="/productPost"
+            element={
+              <>
+                <ScrollToTop />
+                <ProductPost />
+              </>
+            }
+          />
           <Route path="/productEdit" element={<ProductEdit />} />
           <Route
             path="/walkList"
@@ -104,7 +112,15 @@ export default function Router() {
               </>
             }
           />
-          <Route path="/walkPost" element={<WalkPost />} />
+          <Route
+            path="/walkPost"
+            element={
+              <>
+                <ScrollToTop />
+                <WalkPost />
+              </>
+            }
+          />
           <Route path="/walkEdit" element={<WalkEdit />} />
           <Route
             path="/careList"
@@ -129,6 +145,7 @@ export default function Router() {
             path="/carePost"
             element={
               <>
+                <ScrollToTop />
                 <CarePost />
               </>
             }
