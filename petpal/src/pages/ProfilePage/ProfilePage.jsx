@@ -9,6 +9,7 @@ import { getMyPost } from '../../api/post';
 import { useNavigate } from 'react-router-dom';
 import useAlertControl from '../../components/Common/Modal/useAlertControl';
 import Alert from '../../components/Common/Modal/Alert';
+import Loading from '../../components/Common/Loading/Loading';
 
 export default function ProfilePage() {
   const navigate = useNavigate();
@@ -16,9 +17,11 @@ export default function ProfilePage() {
   const [userData, setUserData] = useState(null);
   const [userProductData, setUserProductData] = useState(null);
   const [userPostData, setUserPostData] = useState(null);
+  const [loading, setLoading] = useState(true);
   const { openAlert, AlertComponent } = useAlertControl();
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
         console.log(userState);
         const profileResponse = await getMyProfile(userState.token);
@@ -30,6 +33,7 @@ export default function ProfilePage() {
         setUserProductData(productResponse.data);
         setUserPostData(postResponse.data);
         console.log(userData);
+        setLoading(false);
       } catch (error) {
         console.error('데이터를 불러오는 중 오류 발생:', error);
       }
@@ -54,6 +58,7 @@ export default function ProfilePage() {
   };
   return (
     <>
+      {loading ? <Loading /> : null}
       <Header type="profile" onClick={handleModal} />
       {userData && userProductData && userPostData && (
         <MyProfile
