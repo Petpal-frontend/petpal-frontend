@@ -42,6 +42,7 @@ export default function ProfilePage() {
     if (event.target.textContent === '로그아웃') {
       localStorage.clear();
       navigate('/login');
+      window.location.reload();
     }
   };
 
