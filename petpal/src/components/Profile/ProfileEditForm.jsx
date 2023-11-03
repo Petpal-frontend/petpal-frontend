@@ -74,10 +74,9 @@ export default function ProfileEditForm({ beforeUserData }) {
         user: {
           username,
           intro,
-          image,
+          image: `https://api.mandarin.weniv.co.kr/${imgPath}`,
         },
       };
-
       const response = await putMyProfile(userData);
       console.log(response);
       console.log(response.data);
