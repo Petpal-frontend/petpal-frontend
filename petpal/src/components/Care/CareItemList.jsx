@@ -2,7 +2,8 @@ import React from 'react';
 import { ItemListContainer } from '../Common/Layout/LayoutStyle';
 import CareItem from './CareItem';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
-
+import { AddBtn } from '../Product/ProductListStyle';
+import { Link } from 'react-router-dom';
 export default function CareList({ careItemList }) {
   return (
     <ComponentLayout>
@@ -19,6 +20,11 @@ export default function CareList({ careItemList }) {
           />
         ))}
       </ItemListContainer>
+      <AddBtn>
+        <Link to="/carePost" className="">
+          글쓰기
+        </Link>
+      </AddBtn>
     </ComponentLayout>
   );
 }
