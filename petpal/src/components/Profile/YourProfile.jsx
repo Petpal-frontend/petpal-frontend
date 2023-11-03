@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ItemListContainer } from '../Common/Layout/LayoutStyle';
 import Button from '../Common/Button/SubmitButton/Button';
 import { getProductDetail } from '../../api/product';
@@ -24,8 +24,32 @@ import {
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 import profileImg from '../../assets/image/profile.png';
 import { Link, useParams } from 'react-router-dom';
+// import FollowButton from '../Follow/FollowButton';
+import { deleteFollow, postFollow } from '../../api/follow';
+import { FollowItemButton } from '../Follow/FollowButtonStyle';
 
 export default function YourProfile({ yourData, yourProduct, yourPost }) {
+  const [isFollow, setIsFollow] = useState(yourData.profile.isfollow);
+  const [followerCount, setFollowerCount] = useState(
+    yourData.profile.followerCount,
+  );
+  console.log('isFollow', isFollow);
+  console.log('followerCount', yourData.profile.followerCount);
+
+  /* 팔로우 */
+  const fetchPostFollowData = async () => {
+    const data = await postFollow(yourData.profile.accountname); // 해당 유저의 accountname
+    setIsFollow(!isFollow);
+    setFollowerCount(followerCount + 1);
+  };
+
+  /* 언팔로우 */
+  const fetchDeleteFollowData = async () => {
+    const data = await deleteFollow(yourData.profile.accountname); // 해당 유저의 accountname
+    setIsFollow(!isFollow);
+    setFollowerCount(followerCount - 1);
+  };
+
   const userAccountName = useParams().accountname;
 
   const handleProductClick = async productId => {
@@ -58,7 +82,8 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
       <ItemListContainer>
         <ProfileContainer>
           <Link to={`/profile/${userAccountName}/follower`}>
-            <FollowNum>{yourData.profile.followerCount}</FollowNum>
+            {/* <FollowNum>{yourData.profile.followerCount}</FollowNum> */}
+            <FollowNum>{followerCount}</FollowNum>
             <FollowSpan>followers</FollowSpan>
           </Link>
           <UserProfileImage src="images/exDogImg.jpg" alt="User Profile" />
@@ -69,7 +94,7 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
         </ProfileContainer>
         <Username>{yourData.profile.username}</Username>
         <ButtonContainer>
-          {yourData.profile.isfollow ? (
+          {/* {yourData.profile.isfollow ? (
             <Button
               type="button"
               size="xs"
@@ -83,7 +108,14 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
               variant="primary"
               children="팔로우"
             />
-          )}
+          )} */}
+          {/* <FollowButton item={yourData.profile} /> */}
+          <FollowItemButton
+            onClick={isFollow ? fetchDeleteFollowData : fetchPostFollowData}
+            className={isFollow ? 'follow' : ''}
+          >
+            {isFollow ? '취소' : '팔로우'}
+          </FollowItemButton>
         </ButtonContainer>
       </ItemListContainer>
       <ListContainer>
