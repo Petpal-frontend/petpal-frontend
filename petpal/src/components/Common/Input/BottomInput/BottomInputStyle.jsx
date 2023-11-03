@@ -28,6 +28,7 @@ export const StyledInput = styled.input`
   position: relative;
   width: 503px;
   height: 42px;
+  padding: 0 16px;
   border: none;
   border-radius: 50px;
   background-color: #f2f2f2;
@@ -36,6 +37,7 @@ export const StyledInput = styled.input`
     props.isChat &&
     `
 width: 448px;
+padding: 0 16px;
 height: 42px;
     border: none;
     border-radius: 20px;
@@ -50,7 +52,6 @@ height: 42px;
   &::placeholder {
     color: #acacac;
     font-size: var(--font-size-md);
-    text-indent: var(--font-size-md);
     font-weight: 500;
   }
 `;
