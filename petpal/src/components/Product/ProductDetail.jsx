@@ -67,7 +67,10 @@ export default function ProductDetail({ ProductDetail }) {
                 {ProductDetail.product.itemName}
               </strong>
               <strong className="productPrice">
-                <span>{ProductDetail.product.price}</span>원
+                <span>
+                  {ProductDetail.product.price.toLocaleString('ko-KR')}
+                </span>
+                원
               </strong>
               <span className="productDesc">{ProductDetail.product.link}</span>
             </TextArea>

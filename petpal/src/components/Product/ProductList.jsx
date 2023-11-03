@@ -58,7 +58,7 @@ export default function ProductList() {
                 <strong className="productTitle">{el.itemName}</strong>
                 <span className="productDesc">{el.link}</span>
                 <strong className="productPrice">
-                  <span>{el.price}</span>원
+                  <span>{el.price.toLocaleString('ko-KR')}</span>원
                 </strong>
               </ProductLi>
             );
