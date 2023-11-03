@@ -13,6 +13,7 @@ import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../../atoms/AtomUserState';
 import useAlertControl from '../Modal/useAlertControl';
 import Alert from '../Modal/Alert';
+import { Link } from 'react-router-dom';
 
 export default function Comment({ comments, handledeleteComment }) {
   const moreBtn = '/images/icon-more-vertical.svg';
@@ -52,9 +53,19 @@ export default function Comment({ comments, handledeleteComment }) {
     <CommentsContainer>
       {reversedComments.map((item, index) => (
         <CommentContainer key={index}>
-          <UserImg src={item.author.image} alt="프로필 이미지" />
+          <Link
+            to={`/yourProfile/${item.author.accountname}`}
+            className="profileInfo"
+          >
+            <UserImg src={item.author.image} alt="프로필 이미지" />
+          </Link>
           <CommentContent>
-            <Username>{item.author.username}</Username>
+            <Link
+              to={`/yourProfile/${item.author.accountname}`}
+              className="profileInfo"
+            >
+              <Username>{item.author.username}</Username>
+            </Link>
             <CommentTime>
               {`· ${elapsedTime(new Date(item.createdAt))}`}
             </CommentTime>
