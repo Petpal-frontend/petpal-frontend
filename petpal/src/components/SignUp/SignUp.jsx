@@ -98,9 +98,9 @@ export default function SignUpForm() {
     }
   };
 
-  let baseImage = 'https://api.mandarin.weniv.co.kr/1698598137638.jpg';
   const handleSignUp = async e => {
     // 기본 냥이 이미지 URL
+    let baseImage = 'https://api.mandarin.weniv.co.kr/1698598137638.jpg';
     try {
       e.preventDefault();
       if (selectedImage) {
@@ -155,7 +155,7 @@ export default function SignUpForm() {
       <H1>이메일로 회원가입</H1>
       <ProfileImgBox>
         <ProfileImg
-          src={selectedImage ? baseImage : image}
+          src={selectedImage ? URL.createObjectURL(selectedImage) : image}
           alt="프로필 이미지"
         />
         <label htmlFor="profileImageUpload">
