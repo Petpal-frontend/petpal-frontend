@@ -5,16 +5,20 @@ import { getProductList } from '../../api/productListApi';
 import { getProductDetail } from '../../api/product';
 import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../atoms/AtomUserState';
-
+import Loading from '../Common/Loading/Loading';
 export default function ProductList() {
+  const [loading, setLoading] = useState(true);
+
   const userInfo = useRecoilValue(userInfoAtom);
   console.log('myInfo', userInfo);
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
         const data = await getProductList();
         setProducts(data.product);
+        setLoading(false);
       } catch (error) {
         console.error('데이터를 불러오는 중 오류 발생:', error);
       }
@@ -43,6 +47,7 @@ export default function ProductList() {
   return (
     <StyledLayout>
       <MainWrap>
+        {loading ? <Loading /> : null}
         <ul>
           {filteredProducts.map((el, i) => {
             return (
