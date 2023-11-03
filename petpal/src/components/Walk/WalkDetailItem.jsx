@@ -70,7 +70,6 @@ export default function WalkDetailItem({ walkDetailItem }) {
               />
               <NameAndTimeBox>
                 <Username>{walkDetailItem.author.username}</Username>
-
                 <PostTime>
                   {`${elapsedTime(new Date(walkDetailItem.createdAt))}`}
                 </PostTime>
