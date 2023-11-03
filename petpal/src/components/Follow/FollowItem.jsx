@@ -14,20 +14,20 @@ export default function FollowItem({ item }) {
 
   /* 팔로우 */
   const fetchPostFollowData = async () => {
-    const data = await postFollow(item.accountname); // 해당 유저의 accountname
+    await postFollow(item.accountname); // 해당 유저의 accountname
     setIsFollow(!isFollow);
   };
 
   /* 언팔로우 */
   const fetchDeleteFollowData = async () => {
-    const data = await deleteFollow(item.accountname); // 해당 유저의 accountname
+    await deleteFollow(item.accountname); // 해당 유저의 accountname
     setIsFollow(!isFollow);
   };
 
   return (
     <>
       <FollowItemContainer>
-        <Link to={`/profile/${item.accountname}`} className="userInfo">
+        <Link to={`/yourProfile/${item.accountname}`} className="userInfo">
           <FollowItemImage src={item.image} />
           <FollowItemUser>{item.username}</FollowItemUser>
         </Link>

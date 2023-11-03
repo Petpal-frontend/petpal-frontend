@@ -6,7 +6,6 @@ import { getCareDetail } from '../../api/care';
 import {
   ButtonContainer,
   Description,
-  FollowDiv,
   FollowNum,
   FollowSpan,
   H3,
@@ -24,8 +23,14 @@ import {
 } from './MyProfileStyle';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 import profileImg from '../../assets/image/profile.png';
+import { Link, useParams } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
+import { userInfoAtom } from '../../atoms/AtomUserState';
 
 export default function YourProfile({ yourData, yourProduct, yourPost }) {
+  const userInfo = useRecoilValue(userInfoAtom);
+  const userAccountName = useParams().accountname;
+
   const handleProductClick = async productId => {
     try {
       const response = await getProductDetail(productId);
@@ -55,34 +60,36 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
     <ComponentLayout>
       <ItemListContainer>
         <ProfileContainer>
-          <FollowDiv>
+          <Link to={`/profile/${userAccountName}/follower`}>
             <FollowNum>{yourData.profile.followerCount}</FollowNum>
             <FollowSpan>followers</FollowSpan>
-          </FollowDiv>
-          <UserProfileImage src="images/exDogImg.jpg" alt="User Profile" />
-          <FollowDiv>
+          </Link>
+          <UserProfileImage src={yourData.profile.image} alt="User Profile" />
+          <Link to={`/profile/${userAccountName}/following`}>
             <FollowNum>{yourData.profile.followingCount}</FollowNum>
             <FollowSpan>followings</FollowSpan>
-          </FollowDiv>
+          </Link>
         </ProfileContainer>
         <Username>{yourData.profile.username}</Username>
-        <ButtonContainer>
-          {yourData.profile.isfollow ? (
-            <Button
-              type="button"
-              size="xs"
-              variant="white"
-              children="팔로우 취소"
-            />
-          ) : (
-            <Button
-              type="button"
-              size="xs"
-              variant="primary"
-              children="팔로우"
-            />
-          )}
-        </ButtonContainer>
+        {userInfo.accountname !== yourData.profile.accountname ? (
+          <ButtonContainer>
+            {yourData.profile.isfollow ? (
+              <Button
+                type="button"
+                size="xs"
+                variant="white"
+                children="팔로우 취소"
+              />
+            ) : (
+              <Button
+                type="button"
+                size="xs"
+                variant="primary"
+                children="팔로우"
+              />
+            )}
+          </ButtonContainer>
+        ) : null}
       </ItemListContainer>
       <ListContainer>
         <H3>판매 중인 상품</H3>

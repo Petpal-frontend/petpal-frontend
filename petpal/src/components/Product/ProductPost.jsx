@@ -41,8 +41,8 @@ export default function ProductPost(props) {
           <ImgArea>
             {imageFile ? (
               <img
-                // src={URL.createObjectURL(imageFile)}
-                src={imageFile}
+                src={URL.createObjectURL(imageFile)}
+                // src={imageFile}
                 alt="업로드된 이미지 미리보기"
                 className="productImg"
               />

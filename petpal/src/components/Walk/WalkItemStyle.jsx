@@ -5,6 +5,7 @@ export const WalkItemImage = styled.img`
   height: 90px;
   border-radius: 10px;
   margin-left: 15px;
+  object-fit: cover;
 `;
 
 export const LikeAndChat = styled.div`

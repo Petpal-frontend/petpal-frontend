@@ -2,8 +2,11 @@ import { useEffect, useState } from 'react';
 import CareList from '../../components/Care/CareItemList';
 import Header from '../../components/Common/Header/Header';
 import { getCareList } from '../../api/care';
+import { useRecoilValue } from 'recoil';
+import { userInfoAtom } from '../../atoms/AtomUserState';
 
 export default function CareListPage() {
+  const userInfo = useRecoilValue(userInfoAtom);
   const [postList, setPostList] = useState([]);
 
   useEffect(() => {
@@ -18,7 +21,8 @@ export default function CareListPage() {
   const careList = postList.filter(
     post =>
       post.author.accountname.includes('petpal_') &&
-      post.content.includes('petpal_care_'),
+      post.content.includes('petpal_care_') &&
+      post.author.intro === userInfo.intro,
   );
 
   return (

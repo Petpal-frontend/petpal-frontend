@@ -12,4 +12,5 @@ export const CareItemImage = styled.img`
   height: 90px;
   border-radius: 10px;
   margin-right: 15px;
+  object-fit: cover;
 `;
