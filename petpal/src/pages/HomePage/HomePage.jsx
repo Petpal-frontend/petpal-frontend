@@ -6,14 +6,19 @@ import { HomeHeaderStyle } from '../../components/HomeHeader/HomeHeaderStyle';
 import { ImageButtons } from '../../components/Common/ImageButton';
 import InfiniteScroll from '../../components/Common/InfinityScroll/scroll';
 import { Link } from 'react-router-dom';
+import productImg from '../../assets/image/homepageButton/shoppingButton.png';
+import walkImg from '../../assets/image/homepageButton/walkButton.png';
+import careImg from '../../assets/image/homepageButton/careButton.png';
+import searchBtn from '../../assets/image/icon-search.svg';
+
 export default function HomePage() {
   const buttons = [
     {
       to: '/productList',
-      image: '/images/homepageButton/shoppingButton.png',
+      image: productImg,
     },
-    { to: '/walkList', image: '/images/homepageButton/walkButton.png' },
-    { to: '/careList', image: '/images/homepageButton/careButton.png' },
+    { to: '/walkList', image: walkImg },
+    { to: '/careList', image: careImg },
   ];
   const imageData = [
     '1698572022537.jpeg',
@@ -42,7 +47,7 @@ export default function HomePage() {
           <SearchBar placeholder="계정 검색" />
         </Link> */}
         <Link to="/search" className="searchBtn">
-          <img src="./images/icon-search.svg" alt="계정 검색" />
+          <img src={searchBtn} alt="계정 검색" />
         </Link>
       </HomeHeaderStyle>
       <SlideComponent />

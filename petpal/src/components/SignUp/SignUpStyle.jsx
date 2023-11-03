@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import search from '../../assets/image/icon-search.svg';
 
 // 프로필 사진 설정
 export const ProfileImgBox = styled.div`
@@ -61,7 +62,7 @@ export const SearchBtn = styled.button`
     left: 0;
     width: 32px;
     height: 32px;
-    background: url(/images/icon-search.svg);
+    background: url(${search});
   }
 `;
 

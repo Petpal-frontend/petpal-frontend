@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Login from '../../components/Login/Login';
+// import Login from '../../components/Login/Login';
 import { postLogin } from '../../api/loginApi';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -14,16 +14,17 @@ import {
   SnsLoginList,
 } from './LoginPageStyle';
 import { useRecoilState } from 'recoil';
+import imgLogo from '../../assets/image/logo.svg';
+import imgNaver from '../../assets/image/naver.svg';
+import imgGoogle from '../../assets/image/google.svg';
+import imgKakao from '../../assets/image/kakao.svg';
+
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [userInfo, setUserInfo] = useRecoilState(userInfoAtom);
 
   const navigate = useNavigate();
-  const imgLogo = 'images/logo.svg';
-  const imgNaver = 'images/naver.svg';
-  const imgGoogle = 'images/google.svg';
-  const imgKakao = 'images/kakao.svg';
 
   const handleLogin = async e => {
     e.preventDefault();

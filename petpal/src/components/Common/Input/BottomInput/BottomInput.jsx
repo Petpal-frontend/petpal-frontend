@@ -7,6 +7,8 @@ import {
   StyledInput,
   SubmitButton,
 } from './BottomInputStyle';
+import imgBtn from '../../../../assets/image/chat-upload-btn.svg';
+import imgArrow from '../../../../assets/image/icon-arrow-top.svg';
 
 const BottomInput = (
   {
@@ -23,9 +25,6 @@ const BottomInput = (
   },
   forwardedRef,
 ) => {
-  const imgBtn = '/images/chat-upload-btn.svg';
-  const imgArrow = '/images/icon-arrow-top.svg';
-
   return (
     <BottomInputContainer>
       {/* isChat이 true일 때 이미지 업로드 버튼 랜더링 */}
