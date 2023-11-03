@@ -25,7 +25,6 @@ export default function Comment({ comments, handledeleteComment }) {
   const handleMoreButtonClick = commentId => {
     // 선택된 댓글의 ID를 상태에 저장
     setSelectedCommentId(commentId);
-    // 경고 모달을 여는 함수를 호출
     openAlert();
   };
 
