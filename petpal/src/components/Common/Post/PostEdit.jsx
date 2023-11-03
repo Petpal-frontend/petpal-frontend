@@ -15,6 +15,7 @@ import {
 } from '../../Product/ProductPostStyle';
 import { Link, useNavigate } from 'react-router-dom';
 import { uploadImg, uploadImgs } from '../../../api/imageApi';
+import { updatePost } from '../../../api/post';
 
 export default function PostEdit({
   id,
