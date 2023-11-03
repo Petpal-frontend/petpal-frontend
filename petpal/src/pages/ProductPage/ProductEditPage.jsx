@@ -15,6 +15,7 @@ export default function ProductEditPage() {
   );
   const [imageFile, setImageFile] = useState(product.itemImage ?? '');
   const [previewImage, setPreviewImage] = useState(product.itemImage ?? '');
+  console.log('produ===' + JSON.stringify(product));
   const handleTitleChange = e => {
     setProductTitle(e.target.value);
   };
@@ -40,13 +41,24 @@ export default function ProductEditPage() {
       imgData.append('image', imageFile);
 
       const imageUpload = await uploadImg(imgData);
-      const updatedProduct = {
-        itemName: productTitle,
-        price: parseInt(productPrice),
-        link: productDescription,
-        itemImage:
-          'https://api.mandarin.weniv.co.kr/' + imageUpload.data.filename,
-      };
+      const imgPath = imageUpload.data.filename;
+      let updatedProduct = {};
+      if (imgPath === undefined) {
+        updatedProduct = {
+          itemName: productTitle,
+          price: parseInt(productPrice),
+          link: productDescription,
+          itemImage: product.itemImage,
+        };
+      } else {
+        updatedProduct = {
+          itemName: productTitle,
+          price: parseInt(productPrice),
+          link: productDescription,
+          itemImage:
+            'https://api.mandarin.weniv.co.kr/' + imageUpload.data.filename,
+        };
+      }
       // console.log('ewqeqd+===' + product);
       //   console.log(imageUpload.data.filename);
       const response = await updateProduct(product.id, updatedProduct);
