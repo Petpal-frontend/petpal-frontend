@@ -70,6 +70,7 @@ export default function ProfileEditForm({ beforeUserData }) {
       const imgUpload = await uploadImg(imgData);
       const imgPath = imgUpload.data.filename;
       setImage(`https://api.mandarin.weniv.co.kr/${imgPath}`);
+
       let userData = {};
       if (imgPath === undefined) {
         userData = {
@@ -100,6 +101,7 @@ export default function ProfileEditForm({ beforeUserData }) {
           image: `https://api.mandarin.weniv.co.kr/${imgPath}`,
         });
       }
+      
       const response = await putMyProfile(userData);
       console.log(response);
       console.log(response.data);

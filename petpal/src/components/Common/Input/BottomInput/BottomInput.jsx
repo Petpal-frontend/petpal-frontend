@@ -14,8 +14,9 @@ const BottomInput = (
     label,
     value,
     placeholder,
-    onClick,
-    onChange,
+    onImageClick,
+    onTextChange,
+    onImageChange,
     onSubmit,
     onEnterPress,
     isChat = false,
@@ -29,12 +30,12 @@ const BottomInput = (
     <BottomInputContainer>
       {/* isChat이 true일 때 이미지 업로드 버튼 랜더링 */}
       {isChat && (
-        <ImageBtnBox onClick={onClick}>
+        <ImageBtnBox onClick={onImageClick}>
           <input
             ref={forwardedRef}
             type="file"
             id={id}
-            onChange={onChange}
+            onChange={onImageChange}
             hidden={true}
           />
           <img src={imgBtn} alt="이미지 업로드 버튼" />
@@ -51,7 +52,7 @@ const BottomInput = (
           label={label}
           value={value}
           placeholder={placeholder}
-          onChange={onChange}
+          onChange={onTextChange}
           onKeyPress={onEnterPress}
           isChat={isChat}
         />
