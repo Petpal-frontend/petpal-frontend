@@ -3,7 +3,7 @@ import { FollowListContainer } from './FollowListStyle';
 import FollowItem from './FollowItem';
 
 export default function FollowerList({ follow, followPage }) {
-  console.log('follow: ', follow);
+  // console.log('follow: ', follow);
 
   return (
     <FollowListContainer>

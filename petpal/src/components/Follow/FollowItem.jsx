@@ -4,9 +4,8 @@ import {
   FollowItemContainer,
   FollowItemImage,
   FollowItemUser,
-  FollowItemButton,
 } from './FollowItemStyle';
-import { deleteFollow, postFollow } from '../../api/follow';
+import FollowButton from './FollowButton';
 
 export default function FollowItem({ item }) {
   const [isFollow, setIsFollow] = useState(item.isfollow);
@@ -31,12 +30,7 @@ export default function FollowItem({ item }) {
           <FollowItemImage src={item.image} />
           <FollowItemUser>{item.username}</FollowItemUser>
         </Link>
-        <FollowItemButton
-          onClick={isFollow ? fetchDeleteFollowData : fetchPostFollowData}
-          className={isFollow ? 'follow' : ''}
-        >
-          {isFollow ? '취소' : '팔로우'}
-        </FollowItemButton>
+        <FollowButton item={item} />
       </FollowItemContainer>
     </>
   );
