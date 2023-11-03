@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import prevImg from '../../assets/image/prev.svg';
+import moreImg from '../../assets/image/icon-more-vertical.svg';
 
 export const StyledLayout = styled.div`
   //   height: 100vh;
@@ -27,7 +29,7 @@ export const PrevBtn = styled.p`
     padding: 30px;
     border: none;
     background-color: transparent;
-    background-image: url('./images/prev.svg');
+    background-image: url(${prevImg});
     background-repeat: no-repeat;
     background-position: center center;
   }
@@ -36,7 +38,7 @@ export const MoreBtn = styled.button`
   padding: 30px;
   border: none;
   background-color: transparent;
-  background-image: url('./images/icon-more-vertical.svg');
+  background-image: url(${moreImg});
   background-repeat: no-repeat;
   background-position: center center;
   cursor: pointer;
