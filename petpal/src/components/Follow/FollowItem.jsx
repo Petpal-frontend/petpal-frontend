@@ -6,7 +6,8 @@ import {
   FollowItemUser,
 } from './FollowItemStyle';
 import FollowButton from './FollowButton';
-import { deleteFollow, postFollow } from '../../api/follow';
+
+import { postFollow, deleteFollow } from '../../api/follow';
 
 export default function FollowItem({ item }) {
   const [isFollow, setIsFollow] = useState(item.isfollow);

@@ -15,14 +15,15 @@ function AddressSearch({ onAddressSelect }) {
   const customStyles = {
     overlay: {
       backgroundColor: 'rgba(0,0,0,0.5)',
+      zIndex: '999',
     },
     content: {
-      left: '0',
       margin: 'auto',
-      width: '500px',
-      height: '600px',
+      width: '520px',
+      height: '444px',
       padding: '0',
       overflow: 'hidden',
+      zIndex: '999',
     },
   };
   const openModal = () => {

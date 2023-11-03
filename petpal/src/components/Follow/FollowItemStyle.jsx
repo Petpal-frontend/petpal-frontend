@@ -20,6 +20,7 @@ export const FollowItemImage = styled.img`
   width: 50px;
   height: 50px;
   border-radius: 25px;
+  object-fit: cover;
 `;
 
 export const FollowItemUser = styled.h3`
