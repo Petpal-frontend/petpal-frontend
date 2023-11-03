@@ -20,6 +20,7 @@ export default function ProfilePage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        console.log(userState);
         const profileResponse = await getMyProfile(userState.token);
         const productResponse = await getMyProduct(userState.accountname);
         const postResponse = await getMyPost(userState.accountname);
@@ -28,6 +29,7 @@ export default function ProfilePage() {
         setUserData(profileResponse.data);
         setUserProductData(productResponse.data);
         setUserPostData(postResponse.data);
+        console.log(userData);
       } catch (error) {
         console.error('데이터를 불러오는 중 오류 발생:', error);
       }
