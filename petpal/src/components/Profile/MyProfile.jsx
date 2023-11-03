@@ -7,7 +7,6 @@ import { getProductDetail } from '../../api/product';
 import {
   ButtonContainer,
   Description,
-  FollowDiv,
   FollowNum,
   FollowSpan,
   H3,
@@ -25,8 +24,12 @@ import {
 } from './MyProfileStyle';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 import profileImg from '../../assets/image/profile.png';
+import { useRecoilValue } from 'recoil';
+import { userInfoAtom } from '../../atoms/AtomUserState';
 
 export default function MyProfile({ myData, myProduct, myPost }) {
+  const userInfo = useRecoilValue(userInfoAtom);
+
   const handleProductClick = async productId => {
     try {
       const response = await getProductDetail(productId);
@@ -58,15 +61,15 @@ export default function MyProfile({ myData, myProduct, myPost }) {
       {/* 컴포넌트로 분리 예정 -> 내 프로필, 상대 프로필 재사용 */}
       <ItemListContainer>
         <ProfileContainer>
-          <FollowDiv>
+          <Link to={`/profile/${userInfo.accountname}/follower`}>
             <FollowNum>{myData.user.followerCount}</FollowNum>
             <FollowSpan>followers</FollowSpan>
-          </FollowDiv>
+          </Link>
           <UserProfileImage src={myData.user.image} alt="User Profile" />
-          <FollowDiv>
+          <Link to={`/profile/${userInfo.accountname}/following`}>
             <FollowNum>{myData.user.followingCount}</FollowNum>
             <FollowSpan>followings</FollowSpan>
-          </FollowDiv>
+          </Link>
         </ProfileContainer>
         <Username>{myData.user.username}</Username>
         <ButtonContainer>

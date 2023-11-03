@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { UserImg } from '../../Common/Userinfo/UserInfoStyle';
-import { updatePost } from '../../../api/post';
+// import { updatePost } from '../../../api/post';
 import {
   PostContainer,
   PostContent,
@@ -28,7 +28,6 @@ export default function PostEdit({
   onSubmit,
 }) {
   const myProfile = 'images/profile-img4.svg';
-
 
   const imageArr = beforePostData.post.image
     ? beforePostData.post.image.split(',')
