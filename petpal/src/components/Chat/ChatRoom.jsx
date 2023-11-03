@@ -76,7 +76,7 @@ export default function ChatRoom({ messages }) {
 //           <ChatBox>
 //             <p className="profileImg">
 //               <Link to={`/profile`}>
-//                 <img src="./images/profile-img.svg" alt="프로필 이미지" />
+//                 <img src="profile-img.svg" alt="프로필 이미지" />
 //               </Link>
 //             </p>
 //             <p className="text">
@@ -89,7 +89,7 @@ export default function ChatRoom({ messages }) {
 //           <ChatBox>
 //             <p className="profileImg">
 //               <Link to={`/profile`}>
-//                 <img src="./images/profile-img.svg" alt="프로필 이미지" />
+//                 <img src="profile-img.svg" alt="프로필 이미지" />
 //               </Link>
 //             </p>
 //             <p className="text">초코랑 친구하고 싶어요</p>
@@ -98,11 +98,11 @@ export default function ChatRoom({ messages }) {
 //           <ChatBox>
 //             <p className="profileImg">
 //               <Link to={`/profile`}>
-//                 <img src="./images/profile-img.svg" alt="프로필 이미지" />
+//                 <img src="profile-img.svg" alt="프로필 이미지" />
 //               </Link>
 //             </p>
 //             <p className="image">
-//               <img src="./images/pet-img2.svg" alt="유저 업로드 이미지" />
+//               <img src="pet-img2.svg" alt="유저 업로드 이미지" />
 //             </p>
 //             <p className="time">오전 9:39</p>
 //           </ChatBox>
@@ -116,7 +116,7 @@ export default function ChatRoom({ messages }) {
 //           </ChatBox>
 //           <ChatBox className="me">
 //             <p className="image">
-//               <img src="./images/pet-img.svg" alt="유저 업로드 이미지" />
+//               <img src="pet-img.svg" alt="유저 업로드 이미지" />
 //             </p>
 //             <p className="time">오전 9:39</p>
 //           </ChatBox>
@@ -126,7 +126,7 @@ export default function ChatRoom({ messages }) {
 //           <UploadImgBtn>
 //             <label htmlFor="uploadImgBtn">
 //               <img
-//                 src="./images/icon-upload-img-white.svg"
+//                 src="icon-upload-img-white.svg"
 //                 alt="이미지 업로드 버튼"
 //               />
 //             </label>
@@ -143,7 +143,7 @@ export default function ChatRoom({ messages }) {
 //                 placeholder="메시지를 보내세요."
 //               />
 //               <button type="submit">
-//                 <img src="./images/icon-arrow-up.svg" alt="메시지 보내기" />
+//                 <img src="icon-arrow-up.svg" alt="메시지 보내기" />
 //               </button>
 //             </form>
 //           </MessageForm>

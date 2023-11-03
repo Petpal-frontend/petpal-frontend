@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import plusIcon from '../../assets/image/icon-plus.svg';
 
 export const StyledLayout = styled.div`
   min-height: 100vh;
@@ -99,7 +100,7 @@ export const AddBtn = styled.p`
     width: 10px;
     height: 10px;
     margin-right: 10px;
-    background-image: url('./images/icon-plus.svg');
+    background-image: url(${plusIcon});
     background-repeat: no-repeat;
     background-size: 10px 10px;
   }

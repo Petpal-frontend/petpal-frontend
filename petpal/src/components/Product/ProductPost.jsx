@@ -10,6 +10,7 @@ import {
   ImgArea,
   FormArea,
 } from './ProductPostStyle';
+import imgUpload from '../../assets/image/icon-upload-img.svg';
 
 export default function ProductPost(props) {
   const {
@@ -49,10 +50,7 @@ export default function ProductPost(props) {
             ) : null}
             <p>
               <label htmlFor="uploadImgBtn">
-                <img
-                  src="./images/icon-upload-img.svg"
-                  alt="이미지 업로드 버튼"
-                />
+                <img src={imgUpload} alt="이미지 업로드 버튼" />
               </label>
               <input
                 type="file"

@@ -72,7 +72,7 @@ export default function ChatList() {
 //             <ProductLi>
 //               <Link to={`/chatRoom`}>
 //                 <span className="profileImg">
-//                   <img src="./images/profile-img.svg" alt="프로필 이미지" />
+//                   <img src="profile-img.svg" alt="프로필 이미지" />
 //                 </span>
 //                 <span className="text">
 //                   <strong>식빵맘</strong>
@@ -87,7 +87,7 @@ export default function ChatList() {
 //             <ProductLi className="newMessage">
 //               <Link to={`/chatRoom`}>
 //                 <span className="profileImg">
-//                   <img src="./images/profile-img2.svg" alt="프로필 이미지" />
+//                   <img src="profile-img2.svg" alt="프로필 이미지" />
 //                 </span>
 //                 <span className="text">
 //                   <strong>삼둥이맘</strong>
@@ -99,7 +99,7 @@ export default function ChatList() {
 //             <ProductLi>
 //               <Link to={`/chatRoom`}>
 //                 <span className="profileImg">
-//                   <img src="./images/profile-img3.svg" alt="프로필 이미지" />
+//                   <img src="profile-img3.svg" alt="프로필 이미지" />
 //                 </span>
 //                 <span className="text">
 //                   <strong>애쉬삼촌</strong>
@@ -114,7 +114,7 @@ export default function ChatList() {
 //             <ProductLi>
 //               <Link to={`/chatRoom`}>
 //                 <span className="profileImg">
-//                   <img src="./images/profile-img4.svg" alt="프로필 이미지" />
+//                   <img src="profile-img4.svg" alt="프로필 이미지" />
 //                 </span>
 //                 <span className="text">
 //                   <strong>초코맘</strong>
