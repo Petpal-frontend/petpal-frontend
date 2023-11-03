@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-
 // 프로필 사진 설정
 export const ProfileImgBox = styled.div`
   position: relative;
@@ -15,6 +14,7 @@ export const ProfileImg = styled.img`
   width: 110px;
   aspect-ratio: 1/1;
   border-radius: 50%;
+  object-fit: cover;
 `;
 
 export const ProfileUpload = styled.img`

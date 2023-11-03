@@ -28,7 +28,7 @@ export default function ProfileEditForm({ beforeUserData }) {
   const [intro, setIntro] = useState(beforeUserData.intro);
   const navigate = useNavigate();
 
-  console.log('asdad' + image);
+  console.log('asdad' + beforeUserData.image);
   const handleImageUpload = event => {
     const file = event.target.files[0];
     if (file) {
@@ -69,14 +69,24 @@ export default function ProfileEditForm({ beforeUserData }) {
       const imgUpload = await uploadImg(imgData);
       const imgPath = imgUpload.data.filename;
       setImage(`https://api.mandarin.weniv.co.kr/${imgPath}`);
-
-      const userData = {
-        user: {
-          username,
-          intro,
-          image: `https://api.mandarin.weniv.co.kr/${imgPath}`,
-        },
-      };
+      let userData = {};
+      if (imgPath === undefined) {
+        userData = {
+          user: {
+            username,
+            intro,
+            image: beforeUserData.image,
+          },
+        };
+      } else {
+        userData = {
+          user: {
+            username,
+            intro,
+            image: `https://api.mandarin.weniv.co.kr/${imgPath}`,
+          },
+        };
+      }
       const response = await putMyProfile(userData);
       console.log(response);
       console.log(response.data);
