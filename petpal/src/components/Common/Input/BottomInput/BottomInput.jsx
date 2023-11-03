@@ -17,6 +17,7 @@ const BottomInput = (
     onClick,
     onChange,
     onSubmit,
+    onEnterPress,
     isChat = false,
   },
   forwardedRef,
@@ -51,6 +52,7 @@ const BottomInput = (
           value={value}
           placeholder={placeholder}
           onChange={onChange}
+          onKeyPress={onEnterPress}
           isChat={isChat}
         />
         <SubmitButton type="submit">

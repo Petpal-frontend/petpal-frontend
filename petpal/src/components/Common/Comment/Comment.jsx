@@ -19,7 +19,17 @@ export default function Comment({ comments, handledeleteComment }) {
   const reversedComments = comments.slice().reverse();
   const userState = useRecoilValue(userInfoAtom);
   const { openAlert, AlertComponent } = useAlertControl();
+  const [selectedCommentId, setSelectedCommentId] = useState(null);
 
+  // '더 보기' 버튼 클릭 처리 함수
+  const handleMoreButtonClick = commentId => {
+    // 선택된 댓글의 ID를 상태에 저장
+    setSelectedCommentId(commentId);
+    // 경고 모달을 여는 함수를 호출
+    openAlert();
+  };
+
+  console.log('userStateuserState', userState);
   const elapsedTime = date => {
     const start = new Date(date);
     const end = new Date();
@@ -51,7 +61,7 @@ export default function Comment({ comments, handledeleteComment }) {
             </CommentTime>
             <CommentText>{item.content}</CommentText>
           </CommentContent>
-          <MoreButton onClick={() => openAlert()}>
+          <MoreButton onClick={() => handleMoreButtonClick(item.id)}>
             <ButtonImg src={moreBtn} />
           </MoreButton>
           {item.author.accountname === userState.accountname ? (
@@ -59,7 +69,7 @@ export default function Comment({ comments, handledeleteComment }) {
               <Alert
                 alertMsg={'댓글을 삭제하시겠습니까?'}
                 choice={['취소', '삭제']}
-                handleFunc={handledeleteComment}
+                handleFunc={() => handledeleteComment(item.id, 'delete')}
               />
             </AlertComponent>
           ) : (
@@ -67,7 +77,7 @@ export default function Comment({ comments, handledeleteComment }) {
               <Alert
                 alertMsg={'댓글을 신고하시겠습니까?'}
                 choice={['취소', '신고']}
-                handleFunc={handledeleteComment}
+                handleFunc={() => handledeleteComment(item.id, 'report')}
               />
             </AlertComponent>
           )}

@@ -18,16 +18,21 @@ import useAlertControl from '../../components/Common/Modal/useAlertControl';
 import Alert from '../../components/Common/Modal/Alert';
 
 export default function WalkDetailPage() {
-  const { id, commentId } = useParams();
   const [walkDetailItem, setWalkDetailItem] = useState();
   const [commentList, setCommentList] = useState([]);
+  const [NewcommentList, setNewCommentList] = useState([]);
   const [newComment, setNewComment] = useState('');
   const [access, setAccess] = useState(null);
   const userState = useRecoilValue(userInfoAtom);
   const { openAlert, AlertComponent } = useAlertControl();
   const navigate = useNavigate();
-  const params = useParams();
+  const { id, commentId } = useParams();
+  const isAccessAllowed = access === userState.accountname;
+  console.log('isAccessAllowed', isAccessAllowed);
+  console.log('access', access);
 
+  // -------- 게시물
+  // 게시물 상세
   useEffect(() => {
     getWalkDetail(id).then(res => {
       setWalkDetailItem(res.data.post);
@@ -35,32 +40,8 @@ export default function WalkDetailPage() {
     });
   }, []);
 
-  // 댓글 조회
-  useEffect(() => {
-    getCommentList(id).then(res => {
-      setCommentList(res.data.comments);
-      console.log('resresresresresres', res);
-    });
-  }, []);
+  // 게시물 삭제
 
-  // 댓글 등록
-  const handleChangeComment = e => {
-    setNewComment(e.target.value);
-  };
-
-  const handleSubmitComment = async () => {
-    if (newComment.trim() === '') {
-      alert('댓글 내용을 입력해주세요.');
-      return;
-    }
-
-    try {
-      const response = await uploadComment(id, newComment);
-      setNewComment('');
-    } catch (error) {
-      console.error('댓글 작성 실패:', error);
-    }
-  };
   const handleModal = event => {
     //walkEditPage로 아래의 값을 이동시켜주는 로직입니다
     if (event.target.textContent === '수정') {
@@ -78,44 +59,6 @@ export default function WalkDetailPage() {
     }
   };
 
-  // 댓글 삭제
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await getCommentList(commentId);
-  //       console.log('어카운트네임==' + userState.accountname);
-  //       console.log('ㄹ리스폰스스스스', response);
-  //       // console.log('데이터확인==' + response.data.comments.author.accountname);
-  //       setAccess(response.data.comment.author.accoutname);
-  //     } catch (error) {
-  //       console.error('데이터를 불러오는 중 오류 발생:', error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, [commentId]);
-
-  const isAccessAllowed = access === userState.accountname;
-  console.log('isAccessAllowed', isAccessAllowed);
-  console.log('access', access);
-
-  const deleteCommentReq = async () => {
-    await deleteComment(id, commentId);
-    navigate(-1);
-  };
-
-  const reportCommentReq = async () => {
-    await reportCommentReq(id, commentId);
-    console.log('댓글을 신고 완료했습니다.');
-  };
-
-  const handledeleteComment = event => {
-    if (event.target.textContent === '삭제') {
-      deleteCommentReq();
-    }
-  };
-
   const deletePostReq = async () => {
     await deletePost(id);
     navigate(-1);
@@ -124,6 +67,61 @@ export default function WalkDetailPage() {
   const handledelete = event => {
     if (event.target.textContent === '삭제') {
       deletePostReq();
+    }
+  };
+
+  // -------- 댓글
+  // 댓글 조회
+  useEffect(() => {
+    getCommentList(id).then(res => {
+      setCommentList(res.data.comments);
+    });
+  }, []);
+
+  // 댓글 등록
+
+  // const handleEnterPress = e => {
+  //   if (e.key === 'Enter' && !e.shiftKey) {
+  //     e.preventDefault();
+  //     handleSubmitComment();
+  //   }
+  // };
+
+  const handleChangeComment = e => {
+    setNewComment(e.target.value);
+  };
+
+  const handleSubmitComment = async () => {
+    if (newComment.trim() === '') {
+      alert('댓글 내용을 입력해주세요.');
+      return;
+    }
+
+    try {
+      const response = await uploadComment(id, newComment);
+      const newCommentObj = {
+        ...response.data.comment,
+      };
+
+      // 새 댓글을 댓글 목록에 추가
+      setCommentList(prevComments => [...prevComments, newCommentObj]);
+      setNewComment('');
+    } catch (error) {
+      console.error('댓글 작성 실패', error);
+    }
+  };
+
+  // 댓글 삭제 및 신고
+  const handledeleteComment = async (commentId, commentMode) => {
+    try {
+      if (commentMode === 'delete') {
+        await deleteComment(id, commentId);
+        setCommentList(commentList.filter(comment => comment.id !== commentId));
+      } else if (commentMode === 'report') {
+        await reportComment(id, commentId);
+      }
+    } catch (error) {
+      console.error('댓글 처리 중 오류가 발생했습니다.', error);
     }
   };
 
@@ -148,6 +146,7 @@ export default function WalkDetailPage() {
         placeholder="댓글을 남겨보세요"
         onChange={handleChangeComment}
         onSubmit={handleSubmitComment}
+        // onEnterPress={handleEnterPress}
       />
       <AlertComponent>
         <Alert
