@@ -27,7 +27,7 @@ export default function FollowItem({ item }) {
   return (
     <>
       <FollowItemContainer>
-        <Link to={`/profile/${item.accountname}`} className="userInfo">
+        <Link to={`/yourProfile/${item.accountname}`} className="userInfo">
           <FollowItemImage src={item.image} />
           <FollowItemUser>{item.username}</FollowItemUser>
         </Link>
