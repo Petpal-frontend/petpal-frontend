@@ -20,7 +20,6 @@ import Alert from '../../components/Common/Modal/Alert';
 export default function WalkDetailPage() {
   const [walkDetailItem, setWalkDetailItem] = useState();
   const [commentList, setCommentList] = useState([]);
-  const [NewcommentList, setNewCommentList] = useState([]);
   const [newComment, setNewComment] = useState('');
   const [access, setAccess] = useState(null);
   const userState = useRecoilValue(userInfoAtom);
@@ -91,10 +90,10 @@ export default function WalkDetailPage() {
     setNewComment(e.target.value);
   };
 
-  const handleSubmitComment = async () => {
+  const handleSubmitComment = async e => {
+    e.preventDefault();
     if (newComment.trim() === '') {
       alert('댓글 내용을 입력해주세요.');
-      return;
     }
 
     try {
@@ -104,7 +103,7 @@ export default function WalkDetailPage() {
       };
 
       // 새 댓글을 댓글 목록에 추가
-      setCommentList(prevComments => [...prevComments, newCommentObj]);
+      setCommentList(prevComments => [newCommentObj, ...prevComments]);
       setNewComment('');
     } catch (error) {
       console.error('댓글 작성 실패', error);

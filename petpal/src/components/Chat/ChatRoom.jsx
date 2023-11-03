@@ -88,7 +88,7 @@ export default function ChatRoom() {
             </label>
             <input type="file" id="uploadImgBtn" className="a11y-hidden" />
           </UploadImgBtn>
-          <MessageForm>
+          {/* <MessageForm>
             <form>
               <label htmlFor="message" className="a11y-hidden">
                 메시지 작성하기
@@ -102,7 +102,7 @@ export default function ChatRoom() {
                 <img src="./images/icon-arrow-up.svg" alt="메시지 보내기" />
               </button>
             </form>
-          </MessageForm>
+          </MessageForm> */}
         </MessageWrap>
       </StyledLayout>
     </>
