@@ -27,12 +27,15 @@ import { Link, useParams } from 'react-router-dom';
 // import FollowButton from '../Follow/FollowButton';
 import { deleteFollow, postFollow } from '../../api/follow';
 import { FollowItemButton } from '../Follow/FollowButtonStyle';
+import { useRecoilValue } from 'recoil';
+import { userInfoAtom } from '../../atoms/AtomUserState';
 
 export default function YourProfile({ yourData, yourProduct, yourPost }) {
   const [isFollow, setIsFollow] = useState(yourData.profile.isfollow);
   const [followerCount, setFollowerCount] = useState(
     yourData.profile.followerCount,
   );
+  const userInfo = useRecoilValue(userInfoAtom);
   console.log('isFollow', isFollow);
   console.log('followerCount', yourData.profile.followerCount);
 
@@ -93,30 +96,16 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
           </Link>
         </ProfileContainer>
         <Username>{yourData.profile.username}</Username>
-        <ButtonContainer>
-          {/* {yourData.profile.isfollow ? (
-            <Button
-              type="button"
-              size="xs"
-              variant="white"
-              children="팔로우 취소"
-            />
-          ) : (
-            <Button
-              type="button"
-              size="xs"
-              variant="primary"
-              children="팔로우"
-            />
-          )} */}
-          {/* <FollowButton item={yourData.profile} /> */}
-          <FollowItemButton
-            onClick={isFollow ? fetchDeleteFollowData : fetchPostFollowData}
-            className={isFollow ? 'follow' : ''}
-          >
-            {isFollow ? '취소' : '팔로우'}
-          </FollowItemButton>
-        </ButtonContainer>
+        {userInfo.accountname !== yourData.profile.accountname ? (
+          <ButtonContainer>
+            <FollowItemButton
+              onClick={isFollow ? fetchDeleteFollowData : fetchPostFollowData}
+              className={isFollow ? 'follow' : ''}
+            >
+              {isFollow ? '취소' : '팔로우'}
+            </FollowItemButton>
+          </ButtonContainer>
+        ) : null}
       </ItemListContainer>
       <ListContainer>
         <H3>판매 중인 상품</H3>

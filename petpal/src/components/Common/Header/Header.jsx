@@ -1,13 +1,18 @@
 import { useNavigate } from 'react-router-dom';
-import { HeaderTitleSpan, HeaderContainer, PostStyle } from './HeaderStyle';
+import {
+  HeaderTitleSpan,
+  HeaderContainer,
+  PostStyle,
+  HeaderTitleInnerSpan,
+} from './HeaderStyle';
 import ImageButton from '../Button/ImageButton/ImageButton';
 import Button from '../Button/SubmitButton/Button';
 import SearchBar from '../../SearchBar/SearchBar';
-import { useState } from 'react';
 import useModalControl from '../Modal/useModalControl';
 import backBtn from '../../../assets/image/backBtn.svg';
-import hamburgerBtn from '../../../assets/image/hamburger.svg';
 import { Modal } from '../Modal/Modal';
+import { useRecoilValue } from 'recoil';
+import { userInfoAtom } from '../../../atoms/AtomUserState';
 
 function BackButton({ type }) {
   const navigate = useNavigate();
@@ -25,7 +30,8 @@ function BackButton({ type }) {
       type === 'careDetail' ||
       type === 'myCareDetail' ||
       type === 'posting' ||
-      type === 'chatRoom'
+      type === 'chatRoom' ||
+      type === 'follow'
     ) {
       navigate(-1);
     }
@@ -37,8 +43,15 @@ function BackButton({ type }) {
 }
 
 function HeaderTitle({ type, title }) {
-  return type === 'list' || type === 'post' || type === 'posting' ? (
+  const userState = useRecoilValue(userInfoAtom);
+
+  return type === 'post' || type === 'posting' || type === 'follow' ? (
     <HeaderTitleSpan>{title}</HeaderTitleSpan>
+  ) : type === 'list' ? (
+    <HeaderTitleSpan>
+      {title}
+      <HeaderTitleInnerSpan>📍{userState.intro}</HeaderTitleInnerSpan>
+    </HeaderTitleSpan>
   ) : null;
 }
 
@@ -66,7 +79,7 @@ export default function Header({ type, title, onClick, onChange, handleFunc }) {
   }
 
   switch (type) {
-    case 'list':
+    case ('list', 'follow'):
       return (
         <HeaderContainer
           type={type}
