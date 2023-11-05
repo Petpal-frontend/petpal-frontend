@@ -124,7 +124,12 @@ export default function CareDetailPage() {
       ) : (
         <Header type="careDetail" onClick={handleModal} />
       )}
-      {careDetailItem && <WalkDetailItem walkDetailItem={careDetailItem} />}
+      {careDetailItem && (
+        <WalkDetailItem
+          walkDetailItem={careDetailItem}
+          commentNum={commentList.length}
+        />
+      )}
       {commentList && (
         <Comment
           comments={commentList}

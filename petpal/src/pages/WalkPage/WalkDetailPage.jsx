@@ -25,7 +25,7 @@ export default function WalkDetailPage() {
   const userState = useRecoilValue(userInfoAtom);
   const { openAlert, AlertComponent } = useAlertControl();
   const navigate = useNavigate();
-  const { id, commentId } = useParams();
+  const { id } = useParams();
   const isAccessAllowed = access === userState.accountname;
   console.log('isAccessAllowed', isAccessAllowed);
   console.log('access', access);
@@ -131,7 +131,12 @@ export default function WalkDetailPage() {
         <Header type="walkDetail" onClick={handleModal} />
       )}
 
-      {walkDetailItem && <WalkDetailItem walkDetailItem={walkDetailItem} />}
+      {walkDetailItem && (
+        <WalkDetailItem
+          walkDetailItem={walkDetailItem}
+          commentNum={commentList.length}
+        />
+      )}
       {commentList && (
         <Comment
           comments={commentList}

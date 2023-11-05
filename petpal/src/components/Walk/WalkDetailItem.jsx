@@ -22,7 +22,8 @@ import { Link } from 'react-router-dom';
 // export default function WalkDetailItem({ location, walkDetailItem }) {
 // 컴포넌트 분리 및 재사용 고려해서 다시 수정 예정 -> 산책, 돌보미 재사용
 
-export default function WalkDetailItem({ walkDetailItem }) {
+export default function WalkDetailItem({ walkDetailItem, commentNum }) {
+  console.log('comment', commentNum);
   const imageArr = walkDetailItem.image
     ? walkDetailItem.image.split(',')
     : null;
@@ -118,10 +119,10 @@ export default function WalkDetailItem({ walkDetailItem }) {
                 }}
               />
               <InfoSpan>{likeCount}</InfoSpan>
-            </InfoGroup>	
+            </InfoGroup>
             <InfoGroup className="likeAndChat">
               <ChatImg />
-              <InfoSpan>{walkDetailItem.commentCount}</InfoSpan>
+              <InfoSpan>{commentNum ? commentNum : 0}</InfoSpan>
             </InfoGroup>
           </LikeAndChat>
         </PostBottom>
