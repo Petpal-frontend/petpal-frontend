@@ -156,6 +156,7 @@ export default function Router() {
             path="/feed"
             element={
               <>
+                <ScrollToTop />
                 <Feed />
                 <NavBar />
               </>

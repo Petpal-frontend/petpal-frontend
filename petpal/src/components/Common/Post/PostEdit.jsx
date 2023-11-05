@@ -92,6 +92,16 @@ export default function PostEdit({
       const response = await updatePost(beforePostData.post.id, postData);
       await console.log('response:::', response.data);
 
+      if (!content) {
+        alert('게시글 내용을 입력해주세요.');
+        return;
+      }
+
+      if (selectedImages.length === 0) {
+        alert('이미지를 업로드해주세요.');
+        return;
+      }
+
       if (response.status === 200) {
         alert('게시글이 수정되었습니다.');
         if (type === 'walk') {
@@ -124,7 +134,7 @@ export default function PostEdit({
         <UserImg
           src={myProfile}
           alt="프로필 이미지"
-          style={{ width: '60px', height: '60px', border: 'none'}}
+          style={{ width: '60px', height: '60px', border: 'none' }}
         />
 
         <form onSubmit={onSubmit}>
