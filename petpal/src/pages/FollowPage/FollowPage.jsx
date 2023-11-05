@@ -38,8 +38,9 @@ export default function FollowerPage() {
 
   return (
     <>
+		
       <Header
-        type="list"
+        type="follow"
         title={followPage === 'follower' ? 'Followers' : 'Followings'}
       />
       <FollowList

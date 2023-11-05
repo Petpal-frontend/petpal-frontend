@@ -36,6 +36,14 @@ export const HeaderTitleSpan = styled.span`
   margin: 0 auto;
 `;
 
+export const HeaderTitleInnerSpan = styled.span`
+  color: gray;
+  font-size: var(--font-size-md);
+  letter-spacing: 0.02rem;
+  font-weight: 500;
+  margin: 0 10px;
+`;
+
 export const PostStyle = styled.article`
   position: relative;
 
