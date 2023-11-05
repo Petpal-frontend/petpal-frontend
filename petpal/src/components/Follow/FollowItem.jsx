@@ -8,20 +8,20 @@ import {
 import FollowButton from './FollowButton';
 
 export default function FollowItem({ item }) {
-  const [isFollow, setIsFollow] = useState(item.isfollow);
-  console.log('isFollow', isFollow);
+  // const [isFollow, setIsFollow] = useState(item.isfollow);
+  // console.log('isFollow', isFollow);
 
-  /* 팔로우 */
-  const fetchPostFollowData = async () => {
-    await postFollow(item.accountname); // 해당 유저의 accountname
-    setIsFollow(!isFollow);
-  };
+  // /* 팔로우 */
+  // const fetchPostFollowData = async () => {
+  //   await postFollow(item.accountname); // 해당 유저의 accountname
+  //   setIsFollow(!isFollow);
+  // };
 
-  /* 언팔로우 */
-  const fetchDeleteFollowData = async () => {
-    await deleteFollow(item.accountname); // 해당 유저의 accountname
-    setIsFollow(!isFollow);
-  };
+  // /* 언팔로우 */
+  // const fetchDeleteFollowData = async () => {
+  //   await deleteFollow(item.accountname); // 해당 유저의 accountname
+  //   setIsFollow(!isFollow);
+  // };
 
   return (
     <>
