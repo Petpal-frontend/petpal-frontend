@@ -63,6 +63,8 @@ export const DescArea = styled.div`
 
 export const ProfileArea = styled.div`
   margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
 
   .profileInfo {
     width: fit-content;
