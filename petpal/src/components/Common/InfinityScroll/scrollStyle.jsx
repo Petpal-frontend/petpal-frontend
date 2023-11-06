@@ -24,7 +24,7 @@ export const ScrollImageButton = styled.div`
     }
   }
   &.feedImageStyle {
-    width: 250px;
+    width: 240px;
     height: 300px;
   }
 `;
