@@ -164,7 +164,7 @@ export default function Router() {
           />
           <Route path="/search" element={<Search />} />
           <Route path="/chatList" element={<ChatList />} />
-          <Route path="/chatRoom/:chatId" element={<ChatRoom />} />
+          <Route path="/chatRoom/:username" element={<ChatRoom />} />
           <Route
             path="/profile"
             element={

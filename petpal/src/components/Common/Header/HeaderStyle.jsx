@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   padding: 0 20px;
   background-color: white;
-  width: inherit;
+  width: 520px;
   height: 60px;
   position: fixed;
   top: 0;
