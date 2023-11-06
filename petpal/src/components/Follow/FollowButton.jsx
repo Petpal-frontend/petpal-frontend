@@ -23,7 +23,7 @@ export default function FollowButton({ item }) {
       onClick={isFollow ? fetchDeleteFollowData : fetchPostFollowData}
       className={isFollow ? 'follow' : ''}
     >
-      {isFollow ? '취소' : '팔로우'}
+      {isFollow ? '팔로잉' : '팔로우'}
     </FollowItemButton>
   );
 }

@@ -10,6 +10,7 @@ import walkImg from '../../assets/image/homepageButton/walkButton.png';
 import careImg from '../../assets/image/homepageButton/careButton.png';
 import searchBtn from '../../assets/image/icon-search.svg';
 import { getAllUserList } from '../../api/searchApi';
+import preUserImg from '../../assets/image/tajaCat.gif';
 
 export default function HomePage() {
   const [users, setUsers] = useState([]);
@@ -27,7 +28,15 @@ export default function HomePage() {
     fetchData();
   }, []);
 
-  const filteredUsers = users.filter(v => v.accountname.includes('petpal_'));
+  // 감귤마켓 프로필 혹은 로컬데이터, 이상한 문자(\")가 들어간 이미지 필터링
+  const filteredUsers = users.filter(
+    v =>
+      v.accountname.includes('petpal_') &&
+      v.image !== 'https://api.mandarin.weniv.co.kr/Ellipse.png' &&
+      v.image.includes('https://api.mandarin.weniv.co.kr/') &&
+      !v.image.includes('"'),
+  );
+  console.log('filter: ', filteredUsers);
 
   const buttons = [
     {
@@ -78,7 +87,13 @@ export default function HomePage() {
       {/* <InfiniteScroll imageData={imageData} className="homeImageStyle" /> */}
       {filteredUsers.length !== 0 ? (
         <InfiniteScroll imageData={filteredUsers} className="homeImageStyle" />
-      ) : null}
+      ) : (
+        <img
+          src={preUserImg}
+          alt="user preview loading"
+          style={{ width: '100%' }}
+        />
+      )}
     </>
   );
 }
