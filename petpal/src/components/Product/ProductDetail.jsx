@@ -12,6 +12,7 @@ import {
   ChatBtnArea,
 } from './ProductDetailStyle';
 import { getProductDetail } from '../../api/product';
+import Button from '../Common/Button/SubmitButton/Button';
 
 export default function ProductDetail({ ProductDetail }) {
   const { productId } = useParams();
@@ -75,6 +76,13 @@ export default function ProductDetail({ ProductDetail }) {
                   <span>{formatDateTime(updatedAt)}</span>
                 </span>
               </Link>
+              <Button
+                onClick={handleChatClick}
+                type="button"
+                children="채팅하기"
+                size="xs"
+                variant="primary"
+              />
             </ProfileArea>
             <TextArea>
               <strong className="productTitle">
@@ -89,11 +97,6 @@ export default function ProductDetail({ ProductDetail }) {
               <span className="productDesc">{ProductDetail.product.link}</span>
             </TextArea>
           </DescArea>
-          <ChatBtnArea>
-            <div onClick={handleChatClick} className="chatBtn">
-              채팅하기
-            </div>
-          </ChatBtnArea>
         </MainWrap>
       </StyledLayout>
     </>
