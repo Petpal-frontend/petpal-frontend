@@ -31,6 +31,7 @@ function BackButton({ type }) {
       type === 'myCareDetail' ||
       type === 'posting' ||
       type === 'chatRoom' ||
+      type === 'search' ||
       type === 'follow'
     ) {
       navigate(-1);
