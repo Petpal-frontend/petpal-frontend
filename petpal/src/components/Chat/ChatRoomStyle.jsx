@@ -3,8 +3,6 @@ import prevImg from '../../assets/image/prev.svg';
 import moreImg from '../../assets/image/icon-more-vertical2.svg';
 
 export const StyledLayout = styled.div`
-  padding-top: 100px 0;
-  min-height: 100vh;
   position: relative;
 
   .a11y-hidden {
@@ -59,7 +57,7 @@ export const MoreBtn = styled.button`
 
 export const MainWrap = styled.div`
   height: 100vh;
-  padding: 14px 22px 60px;
+  padding: 80px 22px 60px;
   background-color: #f2f2f2;
 `;
 

@@ -12,8 +12,13 @@ export default function ChatRoomPage() {
   const location = useLocation();
   const { username } = useParams();
 
-  // 현재 선택된 채팅방의 메시지 설정
+  // 선택된 채팅방의 메시지 설정
   useEffect(() => {
+
+    const filteredMessages = dummyMessages.filter(
+      message => message.username === username,
+    );
+    setMessages(filteredMessages);
     if (
       username === undefined ||
       username === '식빵맘' ||
@@ -34,6 +39,7 @@ export default function ChatRoomPage() {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
+        console.log('!!!!!', reader.result);
         const newImageMessage = {
           id: messages.length + 1,
           text: [],
