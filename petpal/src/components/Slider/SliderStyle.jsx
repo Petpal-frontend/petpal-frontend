@@ -41,5 +41,6 @@ export const SlideNumber = styled.div`
   border-radius: 40px;
   text-align: center;
   color: #adadad;
-  line-height: 27.4px;
+  font-size: 14px;
+  line-height: 24px;
 `;

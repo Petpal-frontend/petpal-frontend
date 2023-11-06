@@ -14,7 +14,7 @@ import {
 export default function ChatRoom({ messages }) {
   return (
     <StyledLayout>
-      <HeaderWrap>
+      {/* <HeaderWrap>
         <h1 className="a11y-hidden">채팅창</h1>
         <div>
           <PrevBtn>
@@ -23,7 +23,7 @@ export default function ChatRoom({ messages }) {
           <HeaderContent>식빵맘</HeaderContent>
         </div>
         <MoreBtn />
-      </HeaderWrap>
+      </HeaderWrap> */}
       <MainWrap>
         {messages.map(message => (
           <ChatBox
