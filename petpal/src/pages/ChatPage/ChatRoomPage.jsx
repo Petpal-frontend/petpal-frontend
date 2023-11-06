@@ -39,7 +39,7 @@ export default function ChatRoomPage() {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        console.log('!!!!!', reader.result);
+        // console.log('!!!!!', reader.result);
         const newImageMessage = {
           id: messages.length + 1,
           text: [],

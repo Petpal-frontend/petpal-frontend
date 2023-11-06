@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 const InfiniteScroll = ({ imageData, className }) => {
   const { pathname } = useLocation();
 
-  console.log('data: ', imageData);
+  // console.log('data: ', imageData);
 
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
 
@@ -30,7 +30,7 @@ const InfiniteScroll = ({ imageData, className }) => {
     },
   );
 
-  console.log('!!!initialImageUrls', initialImageUrls);
+  // console.log('!!!initialImageUrls', initialImageUrls);
   const [imageUrls, setImageUrls] = useState(initialImageUrls);
 
   const addContent = () => {

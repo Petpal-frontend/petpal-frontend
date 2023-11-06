@@ -135,7 +135,6 @@ export default function MyProfile({ myData, myProduct, myPost }) {
               {myData.user.username}님의 게시글이 없습니다.
             </WarningMessage>
           )}
-          {console.log(myData)}
         </PostItemContainer>
       </ListContainer>
     </ComponentLayout>

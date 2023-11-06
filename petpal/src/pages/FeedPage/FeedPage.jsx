@@ -24,7 +24,7 @@ export default function FeedPage() {
     fetchData();
   }, []);
 
-  console.log(feedData);
+  // console.log(feedData);
 
   // const imageData = [
   //   '1698572201904.jpeg',

@@ -60,7 +60,7 @@ export default function Post({
         ),
       );
 
-      console.log(imgUpload);
+      // console.log(imgUpload);
     } catch (error) {
       console.error(error);
     }
@@ -91,7 +91,7 @@ export default function Post({
 
       // await console.log(postData);
       const response = await uploadPost(postData);
-      await console.log('response:::', response.data);
+      // await console.log('response:::', response.data);
       if (response.status === 200) {
         alert('게시글 등록이 완료되었습니다. 게시글 목록으로 이동합니다.');
         if (type === 'walk') {
@@ -149,7 +149,7 @@ export default function Post({
             placeholder={placeholder}
             onChange={e => {
               setContent(e.target.value);
-              console.log(content);
+              // console.log(content);
             }}
             required
           />

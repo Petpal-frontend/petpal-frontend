@@ -29,8 +29,7 @@ export default function ProfileEditForm({ beforeUserData }) {
   const [selectedImage, setSelectedImage] = useState();
   const [intro, setIntro] = useState(beforeUserData.intro);
   const navigate = useNavigate();
-  console.log();
-  console.log('asdad' + beforeUserData.image);
+
   const handleImageUpload = event => {
     const file = event.target.files[0];
     if (file) {
@@ -101,10 +100,10 @@ export default function ProfileEditForm({ beforeUserData }) {
           image: `https://api.mandarin.weniv.co.kr/${imgPath}`,
         });
       }
-      
+
       const response = await putMyProfile(userData);
-      console.log(response);
-      console.log(response.data);
+      // console.log(response);
+      // console.log(response.data);
       alert('프로필 수정 성공');
 
       if (response.status === 200) {

@@ -36,8 +36,8 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
     yourData.profile.followerCount,
   );
   const userInfo = useRecoilValue(userInfoAtom);
-  console.log('isFollow', isFollow);
-  console.log('followerCount', yourData.profile.followerCount);
+  // console.log('isFollow', isFollow);
+  // console.log('followerCount', yourData.profile.followerCount);
 
   /* 팔로우 */
   const fetchPostFollowData = async () => {

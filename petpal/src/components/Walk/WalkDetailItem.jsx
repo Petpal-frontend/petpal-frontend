@@ -24,8 +24,7 @@ import { getWalkDetail } from '../../api/walk';
 
 export default function WalkDetailItem({ walkDetailItem, commentNum }) {
   const { id } = useParams();
-  console.log('dfdfdfdf∂' + id);
-  console.log('comment', commentNum);
+
   const imageArr = walkDetailItem.image
     ? walkDetailItem.image.split(',')
     : null;
@@ -52,11 +51,11 @@ export default function WalkDetailItem({ walkDetailItem, commentNum }) {
     return `${start.toLocaleDateString()}`;
   };
 
-  useEffect(() => {
-    console.log(isLiked);
-    console.log(likeCount);
-    console.log(walkDetailItem.heartCount);
-  }, [isLiked, likeCount]);
+  // useEffect(() => {
+  //   console.log(isLiked);
+  //   console.log(likeCount);
+  //   console.log(walkDetailItem.heartCount);
+  // }, [isLiked, likeCount]);
 
   const handleChatClick = async username => {
     try {
@@ -70,7 +69,7 @@ export default function WalkDetailItem({ walkDetailItem, commentNum }) {
   };
 
   return (
-    <ComponentLayout className='detailComponent'>
+    <ComponentLayout className="detailComponent">
       <DetailContainer>
         <PostTop>
           <Link

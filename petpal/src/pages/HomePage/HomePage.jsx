@@ -36,7 +36,7 @@ export default function HomePage() {
       v.image.includes('https://api.mandarin.weniv.co.kr/') &&
       !v.image.includes('"'),
   );
-  console.log('filter: ', filteredUsers);
+  // console.log('filter: ', filteredUsers);
 
   const buttons = [
     {

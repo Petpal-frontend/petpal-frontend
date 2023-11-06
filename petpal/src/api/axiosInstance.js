@@ -37,7 +37,7 @@ tokenInstance.interceptors.request.use(
     return config;
   },
   error => {
-    console.log(error.message);
+    console.error(error.message);
     return Promise.reject(error);
   },
 );

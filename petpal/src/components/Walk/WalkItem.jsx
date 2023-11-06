@@ -28,9 +28,9 @@ export default function WalkItem({
   useEffect(() => {
     getWalkDetail(id).then(res => {
       setIsHearted(res.data.post.hearted);
-      console.log('resresresresresres', isHearted);
+      // console.log('resresresresresres', isHearted);
     });
-  }, []);
+  }, [id]);
   return (
     <StyledLink to={`/walkDetail/${id}`}>
       <ItemContainer>

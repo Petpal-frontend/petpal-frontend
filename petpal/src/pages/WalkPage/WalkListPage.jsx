@@ -18,7 +18,6 @@ export default function WalkListPage() {
       setLoading(false);
     };
     fetchData();
-    console.log(postList);
   }, []);
   const walkList = postList.filter(
     post =>
@@ -28,7 +27,6 @@ export default function WalkListPage() {
       post.content !== 'petpal_walk_됐나요?' &&
       post.content !== 'petpal_walk_zzzz',
   );
-  console.log(walkList);
 
   return (
     <>

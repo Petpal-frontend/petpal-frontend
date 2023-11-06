@@ -58,7 +58,7 @@ export default function LoginPage() {
         return navigate(`/`);
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
       alert('회원정보가 일치하지않습니다.');
     }
   };
