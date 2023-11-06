@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Header from '../../components/Common/Header/Header';
 import BottomInput from '../../components/Common/Input/BottomInput/BottomInput';
 import ChatRoom from '../../components/Chat/ChatRoom';
@@ -7,32 +7,18 @@ import { dummyMessages } from '../../mock/dummyChat';
 
 export default function ChatRoomPage() {
   const inputFileRef = useRef(null);
-  const [currentChatId, setCurrentChatId] = useState();
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
-  const [image, setImage] = useState(null);
-  const { chatId } = useParams();
+  const location = useLocation();
 
+  // 현재 선택된 채팅방의 메시지 설정
   useEffect(() => {
-    const chatData = dummyMessages.find(
-      chat => chat.chatId === parseInt(chatId),
-    );
-    if (chatData) {
-      setMessages(chatData.message);
-    }
-  }, [chatId]);
+    setMessages(dummyMessages);
+  }, []);
 
   const handleTextChange = event => {
     setNewMessage(event.target.value);
   };
-
-  useEffect(() => {
-    // 현재 선택된 채팅방의 메시지를 설정합니다.
-    const chatData = dummyMessages.find(chat => chat.chatId === currentChatId);
-    if (chatData) {
-      setMessages(chatData.message);
-    }
-  }, [currentChatId]);
 
   // 이미지 업로드
   const handleImageChange = event => {
@@ -63,8 +49,8 @@ export default function ChatRoomPage() {
   // 채팅 입력
   const handleSubmit = event => {
     event.preventDefault();
-    if (!newMessage.trim() && !image) {
-      alert('메시지를 입력하거나 이미지를 선택해주세요.');
+    if (!newMessage.trim()) {
+      alert('메시지를 입력하세요.');
       return;
     }
 

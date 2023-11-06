@@ -9,7 +9,7 @@ export const ScrollContainer = styled.div`
 `;
 
 export const ScrollImageButton = styled.div`
-  margin-bottom: 8px;
+  margin-bottom: 15px;
 
   img {
     width: 100%;

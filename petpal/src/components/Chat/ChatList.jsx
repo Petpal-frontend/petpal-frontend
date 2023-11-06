@@ -24,31 +24,29 @@ export default function ChatList() {
         </HeaderWrap>
         <MainWrap>
           <ul>
-            {dummyMessages.map(chat => {
-              const lastMessage = chat.message[chat.message.length - 1]; // 마지막 메시지
-              const firstText = lastMessage.text[0];
+            {dummyMessages.map(item => {
+              const lastText = item.text[item.text.length - 1]; // 마지막 메시지
               return (
-                <ChatLi key={chat.chatId}>
-                  <Link to={`/chatRoom/${chat.chatId}`}>
+                <ChatLi key={item.id}>
+                  <Link to={`/chatRoom/${encodeURIComponent(item.username)}`}>
                     {/* 채팅 온 상대방 프로필 이미지 */}
-                    {lastMessage.profileImg && (
+                    {item.profileImg && (
                       <span className="profileImg">
-                        <img src={lastMessage.profileImg} alt="프로필 이미지" />
+                        <img src={item.profileImg} alt="프로필 이미지" />
                       </span>
                     )}
                     {/* 상대방 닉네임, 메세지 내용, 시간 */}
                     <span className="text">
-                      <strong>{lastMessage.user}</strong>
-                      <span className="chat">{firstText}</span>
+                      <strong>{item.username}</strong>
+                      <span className="chat">{lastText}</span>
                     </span>
-                    <span className="date">{lastMessage.time}</span>
+                    <span className="date">{item.time}</span>
                   </Link>
                 </ChatLi>
               );
             })}
           </ul>
         </MainWrap>
-
         <NavBar />
       </StyledLayout>
     </>
