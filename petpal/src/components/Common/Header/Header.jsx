@@ -79,7 +79,23 @@ export default function Header({ type, title, onClick, onChange, handleFunc }) {
   }
 
   switch (type) {
-    case ('list', 'follow'):
+    case 'list':
+      return (
+        <HeaderContainer
+          type={type}
+          style={{ borderBottom: '1px solid #dbdbdb' }}
+        >
+          <BackButton type={type} />
+          <HeaderTitle type={type} title={title} />
+          <div
+            style={{
+              width: '29px',
+              height: '17.5px',
+            }}
+          />
+        </HeaderContainer>
+      );
+    case 'follow':
       return (
         <HeaderContainer
           type={type}
