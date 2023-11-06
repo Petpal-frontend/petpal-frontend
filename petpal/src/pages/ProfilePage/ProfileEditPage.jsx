@@ -14,13 +14,13 @@ export default function ProfileEditPage() {
       try {
         const data = await getMyProfile(userState);
         setBeforeUserData(data.data.user);
-        console.log(beforeUserData);
+        // console.log(beforeUserData);
       } catch (err) {
         console.error(err);
       }
     };
     fetchData();
-  }, []);
+  }, [userState]);
 
   return (
     <>

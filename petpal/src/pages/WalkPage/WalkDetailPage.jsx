@@ -27,8 +27,8 @@ export default function WalkDetailPage() {
   const navigate = useNavigate();
   const { id } = useParams();
   const isAccessAllowed = access === userState.accountname;
-  console.log('isAccessAllowed', isAccessAllowed);
-  console.log('access', access);
+  // console.log('isAccessAllowed', isAccessAllowed);
+  // console.log('access', access);
 
   // -------- 게시물
   // 게시물 상세
@@ -37,7 +37,7 @@ export default function WalkDetailPage() {
       setWalkDetailItem(res.data.post);
       setAccess(res.data.post.author.accountname);
     });
-  }, []);
+  }, [id]);
 
   // 게시물 삭제
 
@@ -75,7 +75,7 @@ export default function WalkDetailPage() {
     getCommentList(id).then(res => {
       setCommentList(res.data.comments);
     });
-  }, []);
+  }, [id]);
 
   // 댓글 등록
 

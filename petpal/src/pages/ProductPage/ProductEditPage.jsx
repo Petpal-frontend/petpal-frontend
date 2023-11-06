@@ -15,7 +15,7 @@ export default function ProductEditPage() {
   );
   const [imageFile, setImageFile] = useState(product.itemImage ?? '');
   const [previewImage, setPreviewImage] = useState(product.itemImage ?? '');
-  console.log('produ===' + JSON.stringify(product));
+  // console.log('produ===' + JSON.stringify(product));
   const handleTitleChange = e => {
     setProductTitle(e.target.value);
   };

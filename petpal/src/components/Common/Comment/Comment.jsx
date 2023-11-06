@@ -29,7 +29,7 @@ export default function Comment({ comments, handledeleteComment }) {
     openAlert();
   };
 
-  console.log('userStateuserState', userState);
+  // console.log('userStateuserState', userState);
   const elapsedTime = date => {
     const start = new Date(date);
     const end = new Date();

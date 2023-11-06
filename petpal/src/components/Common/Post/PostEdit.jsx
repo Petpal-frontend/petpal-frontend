@@ -41,7 +41,7 @@ export default function PostEdit({
 
   const navigate = useNavigate();
 
-  imageArr ? console.log('hihihihihih', imageArr) : console.log('byebye');
+  // imageArr ? console.log('hihihihihih', imageArr) : console.log('byebye');
   const handleImageChange = async e => {
     const selectedFiles = Array.from(e.target.files);
 
@@ -70,7 +70,7 @@ export default function PostEdit({
         ),
       );
 
-      console.log(imgUpload);
+      // console.log(imgUpload);
     } catch (error) {
       console.error(error);
     }
@@ -90,7 +90,7 @@ export default function PostEdit({
 
       // await console.log(postData);
       const response = await updatePost(beforePostData.post.id, postData);
-      await console.log('response:::', response.data);
+      // await console.log('response:::', response.data);
 
       if (!content) {
         alert('게시글 내용을 입력해주세요.');
@@ -158,7 +158,7 @@ export default function PostEdit({
             placeholder={placeholder}
             onChange={e => {
               setContent(e.target.value);
-              console.log(content);
+              // console.log(content);
             }}
           />
 

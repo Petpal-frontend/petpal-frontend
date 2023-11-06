@@ -108,10 +108,10 @@ export default function SignUpForm() {
         const imgData = new FormData();
         imgData.append('image', selectedImage);
         const imageUpload = await uploadImg(imgData);
-        console.log(imageUpload);
+        // console.log(imageUpload);
         const imagePath = imageUpload.data.filename;
-        console.log('iiii==' + imagePath);
-        console.log('eeee' + imageUpload.data.filename);
+        // console.log('iiii==' + imagePath);
+        // console.log('eeee' + imageUpload.data.filename);
         baseImage = `https://api.mandarin.weniv.co.kr/${imagePath}`;
       }
       const userData = {
@@ -126,15 +126,15 @@ export default function SignUpForm() {
       };
 
       const isEmailValid = await checkEmailExist(userData);
-      console.log(isEmailValid);
-      console.log(isEmailValid.data.message);
+      // console.log(isEmailValid);
+      // console.log(isEmailValid.data.message);
 
       if (isEmailValid.data.message === '사용 가능한 이메일 입니다.') {
         setWarningMessage('');
         setValidCheck(!validCheck);
         const response = await postSignUp(userData);
-        console.log(response);
-        console.log(response.data);
+        // console.log(response);
+        // console.log(response.data);
         alert('회원가입성공');
 
         if (response.status === 200) {
@@ -144,7 +144,7 @@ export default function SignUpForm() {
         isEmailValid.data.message === '이미 가입된 이메일 주소 입니다.'
       ) {
         setWarningMessage(isEmailValid.data.message);
-        console.log(warningMessage);
+        // console.log(warningMessage);
       }
     } catch (err) {
       console.error(err);

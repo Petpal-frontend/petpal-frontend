@@ -18,7 +18,6 @@ export default function WalkListPage() {
       setLoading(false);
     };
     fetchData();
-    console.log(postList);
   }, []);
 
   const walkList = postList.filter(
@@ -27,7 +26,6 @@ export default function WalkListPage() {
       post.content.includes('petpal_walk') &&
       post.author.intro === userInfo.intro,
   );
-  console.log(walkList);
 
   return (
     <>
