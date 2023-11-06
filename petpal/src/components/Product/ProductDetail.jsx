@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { StyledLayout } from './ProductDetailStyle';
 import { HeaderWrap } from './ProductDetailStyle';
 import { PrevBtn, MoreBtn } from './ProductDetailStyle';
@@ -11,8 +11,10 @@ import {
   TextArea,
   ChatBtnArea,
 } from './ProductDetailStyle';
+import { getProductDetail } from '../../api/product';
 
 export default function ProductDetail({ ProductDetail }) {
+  const { productId } = useParams();
   //시간 계산 로직입니다
   function formatDateTime(dateTimeString) {
     const options = {
@@ -29,6 +31,18 @@ export default function ProductDetail({ ProductDetail }) {
     );
     return formattedDate;
   }
+
+  const handleChatClick = async username => {
+    try {
+      const response = await getProductDetail(productId);
+      const username = response.data.product.author.username;
+      // 페이지 이동
+      window.location.href = `/chatRoom/${username}`;
+    } catch (error) {
+      console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
+    }
+  };
+
   const updatedAt = ProductDetail.product.updatedAt;
   return (
     <>
@@ -76,9 +90,9 @@ export default function ProductDetail({ ProductDetail }) {
             </TextArea>
           </DescArea>
           <ChatBtnArea>
-            <Link to={`/chatRoom`} className="chatBtn">
+            <div onClick={handleChatClick} className="chatBtn">
               채팅하기
-            </Link>
+            </div>
           </ChatBtnArea>
         </MainWrap>
       </StyledLayout>
