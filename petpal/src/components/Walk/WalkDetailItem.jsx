@@ -70,7 +70,7 @@ export default function WalkDetailItem({ walkDetailItem, commentNum }) {
   };
 
   return (
-    <ComponentLayout>
+    <ComponentLayout className='detailComponent'>
       <DetailContainer>
         <PostTop>
           <Link
