@@ -34,6 +34,7 @@ import HomePage from './HomePage/HomePage';
 
 import NavBar from '../components/Common/NavBar/NavBar';
 import YourProfile from '../pages/ProfilePage/YourProfilePage';
+import ChatRoomPage from './ChatPage/ChatRoomPage';
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -164,7 +165,7 @@ export default function Router() {
           />
           <Route path="/search" element={<Search />} />
           <Route path="/chatList" element={<ChatList />} />
-          <Route path="/chatRoom/:username" element={<ChatRoom />} />
+          <Route path="/chatRoom/:username" element={<ChatRoomPage />} />
           <Route
             path="/profile"
             element={

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import prevImg from '../../assets/image/prev.svg';
 import moreImg from '../../assets/image/icon-more-vertical2.svg';
 
-
 export const StyledLayout = styled.div`
   min-height: 100vh;
   position: relative;
@@ -47,6 +46,7 @@ export const MoreBtn = styled.button`
 `;
 
 export const MainWrap = styled.div`
+  padding-top: 60px;
   ul {
     // navBar(60px) + gap(40px) == 100px
     padding: 22px 15px 100px;
@@ -56,6 +56,7 @@ export const MainWrap = styled.div`
   }
 `;
 export const ChatLi = styled.li`
+  position: relative;
   margin-bottom: 20px;
   color: #767676;
 
@@ -120,4 +121,17 @@ export const ChatLi = styled.li`
     top: 0;
     border-radius: 50%;
   }
+`;
+
+export const UnreadDot = styled.div`
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #f15846;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 `;

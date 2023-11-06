@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Header from '../../components/Common/Header/Header';
 import BottomInput from '../../components/Common/Input/BottomInput/BottomInput';
 import ChatRoom from '../../components/Chat/ChatRoom';
@@ -9,12 +9,15 @@ export default function ChatRoomPage() {
   const inputFileRef = useRef(null);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
-  const location = useLocation();
+  const { username } = useParams();
 
-  // 현재 선택된 채팅방의 메시지 설정
+  // 선택된 채팅방의 메시지 설정
   useEffect(() => {
-    setMessages(dummyMessages);
-  }, []);
+    const filteredMessages = dummyMessages.filter(
+      message => message.username === username,
+    );
+    setMessages(filteredMessages);
+  }, [username]);
 
   const handleTextChange = event => {
     setNewMessage(event.target.value);
@@ -26,6 +29,7 @@ export default function ChatRoomPage() {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
+        console.log('!!!!!', reader.result);
         const newImageMessage = {
           id: messages.length + 1,
           text: [],
@@ -82,7 +86,7 @@ export default function ChatRoomPage() {
 
   return (
     <div>
-      <Header type="chatRoom" tite="" />
+      <Header type="chatRoom" title={username} />
       <ChatRoom messages={messages} />
       <BottomInput
         id="chat"
