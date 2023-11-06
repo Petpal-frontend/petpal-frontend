@@ -96,7 +96,7 @@ export default function ChatRoomPage() {
 
   return (
     <div>
-      {/* <Header type="chatRoom" title="식빵맘" /> */}
+      <Header type="chatRoom" tite="" />
       <ChatRoom messages={messages} />
       <BottomInput
         id="chat"

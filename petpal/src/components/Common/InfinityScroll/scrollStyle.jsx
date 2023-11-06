@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 export const ScrollContainer = styled.div`
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 0 15px;
 `;
 
 export const ScrollImageButton = styled.div`
@@ -15,10 +17,10 @@ export const ScrollImageButton = styled.div`
     // object-fit: cover;
   }
   &.homeImageStyle {
-    width: 240px;
+    width: 230px;
     height: 200px;
     img {
-      border-radius: 10px;
+      border-radius: 5pt;
     }
   }
   &.feedImageStyle {

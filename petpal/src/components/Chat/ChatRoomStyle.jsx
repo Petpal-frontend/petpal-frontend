@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import prevImg from '../../assets/image/prev.svg';
 import moreImg from '../../assets/image/icon-more-vertical2.svg';
 
@@ -58,7 +58,7 @@ export const MoreBtn = styled.button`
 `;
 
 export const MainWrap = styled.div`
-  min-height: calc(100vh - 136px);
+  height: 100vh;
   padding: 14px 22px 60px;
   background-color: #f2f2f2;
 `;
@@ -127,7 +127,7 @@ export const ChatBox = styled.div`
     order: 1;
   }
   &.me .time {
-    order: 0;
+    order: -1;
   }
 `;
 
