@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import Header from '../../components/Common/Header/Header';
 import BottomInput from '../../components/Common/Input/BottomInput/BottomInput';
 import ChatRoom from '../../components/Chat/ChatRoom';
@@ -9,14 +9,24 @@ export default function ChatRoomPage() {
   const inputFileRef = useRef(null);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
+  const location = useLocation();
   const { username } = useParams();
 
   // 선택된 채팅방의 메시지 설정
   useEffect(() => {
+
     const filteredMessages = dummyMessages.filter(
       message => message.username === username,
     );
     setMessages(filteredMessages);
+    if (
+      username === undefined ||
+      username === '식빵맘' ||
+      username === '애쉬삼촌' ||
+      username === '안녕하시개'
+    ) {
+      setMessages(dummyMessages);
+    }
   }, [username]);
 
   const handleTextChange = event => {
