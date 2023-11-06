@@ -14,19 +14,19 @@ export default function ChatRoomPage() {
 
   // 선택된 채팅방의 메시지 설정
   useEffect(() => {
-
     const filteredMessages = dummyMessages.filter(
       message => message.username === username,
     );
     setMessages(filteredMessages);
-    if (
-      username === undefined ||
-      username === '식빵맘' ||
-      username === '애쉬삼촌' ||
-      username === '안녕하시개'
-    ) {
-      setMessages(dummyMessages);
-    }
+
+    // if (
+    //   username === undefined ||
+    //   username === '식빵맘' ||
+    //   username === '애쉬삼촌' ||
+    //   username === '안녕하시개'
+    // ) {
+    //   setMessages(dummyMessages);
+    // }
   }, [username]);
 
   const handleTextChange = event => {
