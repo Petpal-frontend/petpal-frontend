@@ -79,6 +79,7 @@ export default function Router() {
               <>
                 <ScrollToTop />
                 <ProductDetail />
+                <NavBar />
               </>
             }
           />
