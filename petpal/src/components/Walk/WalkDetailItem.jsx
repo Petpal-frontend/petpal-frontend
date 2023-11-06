@@ -17,12 +17,14 @@ import { LikeAndChat } from './WalkItemStyle';
 import { ChatImg, LikeImg } from '../Common/SpanImg/SpanImgStyle';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 import { likePost, unlikePost } from '../../api/post';
-import { Link } from 'react-router-dom';
-
+import { Link, useParams } from 'react-router-dom';
+import { getWalkDetail } from '../../api/walk';
 // export default function WalkDetailItem({ location, walkDetailItem }) {
 // 컴포넌트 분리 및 재사용 고려해서 다시 수정 예정 -> 산책, 돌보미 재사용
 
 export default function WalkDetailItem({ walkDetailItem, commentNum }) {
+  const { id } = useParams();
+  console.log('dfdfdfdf∂' + id);
   console.log('comment', commentNum);
   const imageArr = walkDetailItem.image
     ? walkDetailItem.image.split(',')
@@ -55,6 +57,18 @@ export default function WalkDetailItem({ walkDetailItem, commentNum }) {
     console.log(likeCount);
     console.log(walkDetailItem.heartCount);
   }, [isLiked, likeCount]);
+
+  const handleChatClick = async username => {
+    try {
+      const response = await getWalkDetail(id);
+      const username = response.data.post.author.username;
+      // 페이지 이동
+      window.location.href = `/chatRoom/${username}`;
+    } catch (error) {
+      console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
+    }
+  };
+
   return (
     <ComponentLayout>
       <DetailContainer>
@@ -78,6 +92,7 @@ export default function WalkDetailItem({ walkDetailItem, commentNum }) {
             </UserInfoBox>
           </Link>
           <Button
+            onClick={handleChatClick}
             type="button"
             children="채팅하기"
             size="xs"

@@ -46,9 +46,22 @@ const SIZES = {
   `,
 };
 
-export default function Button({ type, size, variant, children, disabled }) {
+export default function Button({
+  onClick,
+  type,
+  size,
+  variant,
+  children,
+  disabled,
+}) {
   return (
-    <StyledButton type={type} size={size} variant={variant} disabled={disabled}>
+    <StyledButton
+      onClick={onClick}
+      type={type}
+      size={size}
+      variant={variant}
+      disabled={disabled}
+    >
       <span>{children}</span>
     </StyledButton>
   );

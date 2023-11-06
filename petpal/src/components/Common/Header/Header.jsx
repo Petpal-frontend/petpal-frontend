@@ -55,6 +55,10 @@ function HeaderTitle({ type, title }) {
   ) : null;
 }
 
+function HeaderSub({ title }) {
+  return <HeaderTitleSpan>{title}</HeaderTitleSpan>;
+}
+
 export default function Header({ type, title, onClick, onChange, handleFunc }) {
   const { openModal, ModalComponent } = useModalControl();
   const navigate = useNavigate();
@@ -238,17 +242,7 @@ export default function Header({ type, title, onClick, onChange, handleFunc }) {
       return (
         <HeaderContainer type={type}>
           <BackButton type={type} />
-          <HeaderTitle type={type} title={title} />
-          <PostStyle>
-            <button
-              className="postMoreButton"
-              aria-label="PostMoreBtn"
-              onClick={() => {
-                openModal();
-              }}
-            />
-          </PostStyle>
-          <DetailModal onClick={onClick} />
+          <HeaderSub title={title} />
         </HeaderContainer>
       );
     default:
