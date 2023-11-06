@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter,
   Routes,
   Route,
   Outlet,
   useLocation,
+  Navigate,
 } from 'react-router-dom';
 import Home from './HomePage/HomePage';
 import Login from './LoginPage/LoginPage';
@@ -35,6 +36,10 @@ import HomePage from './HomePage/HomePage';
 import NavBar from '../components/Common/NavBar/NavBar';
 import YourProfile from '../pages/ProfilePage/YourProfilePage';
 import ChatRoomPage from './ChatPage/ChatRoomPage';
+
+import { userInfoAtom } from '../atoms/AtomUserState';
+import { useRecoilValue } from 'recoil';
+
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -46,6 +51,14 @@ function ScrollToTop() {
 }
 
 export default function Router() {
+  const userState = useRecoilValue(userInfoAtom);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // userState를 이용하여 로그인 상태를 확인하고 isLoggedIn 상태 업데이트
+    setIsLoggedIn(userState && userState.username);
+  }, [userState]);
+
   return (
     <>
       <BrowserRouter>
@@ -55,7 +68,8 @@ export default function Router() {
             element={
               <>
                 <ScrollToTop />
-                <SplashPage />
+                {isLoggedIn ? <SplashPage /> : <Navigate to="/login" />}
+                {/* <SplashPage /> */}
                 {/* <Home /> */}
                 {/* <NavBar /> */}
               </>
