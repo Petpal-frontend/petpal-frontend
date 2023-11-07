@@ -82,7 +82,7 @@ PW: 123123
 - 게시글, 사용자 데이터 개수에 따른 무한 스크롤 여부 및 보여 줄 데이터 상태관리
   
 ### API
-- API 초기 설정을 위한 axios instances 생성
+- API 사용을 위한 axios instances 생성
 <br/>
 
 ### 류경민
