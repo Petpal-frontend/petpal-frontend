@@ -195,9 +195,10 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/c9ed5017-92bb-4938-8fd7-8203f1efe7c8' height='480px'/>  |
     
 ### 3) 게시물
+#### 산책메이트, 돌보미
 | 게시물 목록 페이지 | 게시물 상세 페이지 | 게시물 작성 페이지 |
 | :---: | :---: | :---: |
-| <img src='' height='480px'/> | <img src='' height='480px'/> | <img src='' height='480px'/> |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/b0108255-9f03-4636-be94-d84022e73463' height='380px'/>  <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/1f8f88ce-be23-4c24-b0e8-50912210e2ab' height='380px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/8d528176-c57c-410f-a31c-e155f6de16af' height='380px'/> <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/87e0f66c-97e9-4482-94da-1604adfb4ee2' height='380px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/d58df0c3-b183-435b-9557-7786b8b23b24' height='380px'/> <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/7023499a-0934-4d26-b5e0-15d8d9798ae0' height='380px'/> |
 
 | 게시물 수정 페이지 | 게시물, 댓글 삭제 | 좋아요, 댓글 기능 |
 | :---: | :---: | :---: |
