@@ -29,13 +29,12 @@ export default function ProfilePage() {
         setUserData(profileResponse.data);
         setUserProductData(productResponse.data);
         setUserPostData(postResponse.data);
-        console.log(userData);
         setLoading(false);
+        console.log(userState);
       } catch (error) {
         console.error('데이터를 불러오는 중 오류 발생:', error);
       }
     };
-
     fetchData();
   }, [userState.token, userState.accountname]);
 
