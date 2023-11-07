@@ -8,8 +8,6 @@ export default function FollowButton({ item }) {
   const userInfo = useRecoilValue(userInfoAtom);
   const [isFollow, setIsFollow] = useState(item.isfollow);
 
-  // console.log('isFollow', isFollow);
-
   /* 팔로우 */
   const fetchPostFollowData = async () => {
     const data = await postFollow(item.accountname); // 해당 유저의 accountname

@@ -22,11 +22,8 @@ export default function ProductDetailPage({ product }) {
     const fetchData = async () => {
       try {
         const response = await getProductDetail(productId);
-        // console.log('어카운트네임==' + userState.accountname);
-        // console.log('데이터확인==' + response.data.product.author.accountname);
         setAccess(response.data.product.author.accountname);
         setUserProductData(response.data);
-        console.log('ress=====' + JSON.stringify(response.data.product));
       } catch (error) {
         console.error('데이터를 불러오는 중 오류 발생:', error);
       }
@@ -35,10 +32,10 @@ export default function ProductDetailPage({ product }) {
     fetchData();
   }, [productId]);
 
-  // console.log('sdsd==' + userProductData.product.link);
-  //계정 주인과 일치하는지
+  // 접속되어있는 계정과 일치하는지 검증
   const isAccessAllowed = access === userState.accountname;
-  //productEditPage로 아래의 값을 이동시켜주는 로직입니다
+
+  //productEditPage로 state값과 함께 이동
   const handleModal = event => {
     if (event.target.textContent === '수정') {
       navigate('/productEdit', {
@@ -74,7 +71,6 @@ export default function ProductDetailPage({ product }) {
       ) : (
         <Header type="productDetail" onClick={handleModal} />
       )}
-      {/* <Header type="productDetail" title="" /> */}
       {userProductData && <ProductDetail ProductDetail={userProductData} />}
       <AlertComponent>
         <Alert

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ItemListContainer } from '../Common/Layout/LayoutStyle';
-import Button from '../Common/Button/SubmitButton/Button';
 import { getProductDetail } from '../../api/product';
 import { getCareDetail } from '../../api/care';
 import {
@@ -24,7 +23,6 @@ import {
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 import profileImg from '../../assets/image/profile.png';
 import { Link, useParams } from 'react-router-dom';
-// import FollowButton from '../Follow/FollowButton';
 import { deleteFollow, postFollow } from '../../api/follow';
 import { FollowItemButton } from '../Follow/FollowButtonStyle';
 import { useRecoilValue } from 'recoil';
@@ -36,8 +34,6 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
     yourData.profile.followerCount,
   );
   const userInfo = useRecoilValue(userInfoAtom);
-  // console.log('isFollow', isFollow);
-  // console.log('followerCount', yourData.profile.followerCount);
 
   /* 팔로우 */
   const fetchPostFollowData = async () => {
@@ -58,7 +54,6 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
   const handleProductClick = async productId => {
     try {
       const response = await getProductDetail(productId);
-      // 페이지 이동
       window.location.href = `/productDetail/${productId}`;
     } catch (error) {
       console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
@@ -68,14 +63,11 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
   const handlePostClick = async postId => {
     try {
       const response = await getCareDetail(postId);
-      // const path = response.data.post.content;
       const path = response.data.post.content.includes('petpal_walk')
         ? `/walkDetail/${postId}`
         : `/careDetail/${postId}`;
 
       window.location.href = path;
-      // 페이지 이동
-      // window.location.href = `/walkDetail/${postId}`;
     } catch (error) {
       console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
     }

@@ -14,7 +14,7 @@ import { userInfoAtom } from '../../../atoms/AtomUserState';
 import useAlertControl from '../Modal/useAlertControl';
 import Alert from '../Modal/Alert';
 import { Link } from 'react-router-dom';
-import moreBtn from '../../../assets/image/icon-more-vertical.svg'
+import moreBtn from '../../../assets/image/icon-more-vertical.svg';
 
 export default function Comment({ comments, handledeleteComment }) {
   const reversedComments = comments.slice().reverse();
@@ -29,7 +29,6 @@ export default function Comment({ comments, handledeleteComment }) {
     openAlert();
   };
 
-  // console.log('userStateuserState', userState);
   const elapsedTime = date => {
     const start = new Date(date);
     const end = new Date();

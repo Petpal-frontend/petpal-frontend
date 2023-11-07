@@ -7,16 +7,13 @@ export const NavBarWrap = styled.nav`
   position: fixed;
   bottom: 0;
 `;
-
 export const NavBarUl = styled.ul`
   display: flex;
   align-items: center;
   background-color: #fff;
-
   li {
     width: 20%;
   }
-
   li a {
     padding: 11px 0;
     text-decoration: none;
@@ -26,17 +23,14 @@ export const NavBarUl = styled.ul`
     gap: 4px;
   }
 `;
-
 export const IconImg = styled.img`
   width: 24px;
   height: 24px;
 `;
-
 export const IconInfo = styled.span`
   color: #242424;
   font-size: 10px;
 `;
-
 export const ModalOverlay = styled.div`
   position: fixed;
   top: 0;

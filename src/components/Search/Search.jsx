@@ -3,14 +3,11 @@ import { Link } from 'react-router-dom';
 import { MainWrap, ProductLi } from './SearchStyle';
 
 export default function Search({ users, inputValue }) {
-  // console.log(users);
-
   return (
     <MainWrap>
       <ul>
         {inputValue ? (
           users.map((el, i) => {
-            // console.log('users== ' + users[i].accountname);
             const splitedWord = el.username.split(inputValue);
             return (
               <ProductLi key={i}>

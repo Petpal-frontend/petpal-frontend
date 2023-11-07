@@ -28,7 +28,6 @@ export default function WalkItem({
   useEffect(() => {
     getWalkDetail(id).then(res => {
       setIsHearted(res.data.post.hearted);
-      // console.log('resresresresresres', isHearted);
     });
   }, [id]);
   return (
@@ -41,7 +40,6 @@ export default function WalkItem({
         )}
         <ItemContentDiv>
           <ItemContent>{content.split('petpal_walk_')}</ItemContent>
-          {/* 컴포넌트로 분리 예정 -> 산책, 돌보미 재사용 */}
           <InfoDiv>
             <InfoGroup>
               <UserImg user={author} />

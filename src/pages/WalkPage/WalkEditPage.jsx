@@ -14,7 +14,6 @@ export default function WalkEditPage() {
       try {
         const response = await getWalkDetail(post.id);
         setBeforePostData(response.data);
-        // console.log('데이터 불러오기 성공:', response.data);
       } catch (err) {
         console.error('데이터 불러오기 실패:', err);
       }

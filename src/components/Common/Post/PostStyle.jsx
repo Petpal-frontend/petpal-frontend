@@ -4,7 +4,7 @@ export const PostContainer = styled.div`
   position: relative;
   display: flex;
   padding: 1rem;
-  height: 100vh;	
+  height: 100vh;
 `;
 export const PostContent = styled.textarea`
   width: 420px;
@@ -19,7 +19,6 @@ export const PostContent = styled.textarea`
     font-size: var(--font-size-lg);
   }
 `;
-
 export const ImgUploadButton = styled.img`
   cursor: pointer;
   position: absolute;
@@ -28,7 +27,6 @@ export const ImgUploadButton = styled.img`
   bottom: 10%;
   right: 20px;
 `;
-
 export const SelectedImage = styled.img`
   width: 126px;
   height: 126px;

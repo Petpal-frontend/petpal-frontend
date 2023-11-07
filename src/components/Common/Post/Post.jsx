@@ -43,13 +43,6 @@ export default function Post({
 
     try {
       const imgUpload = await uploadImgs(formData);
-
-      // imgUpload.data.forEach(data => {
-      //   setSelectedImages(prevImgFiles => [
-      //     ...prevImgFiles,
-      //     `https://api.mandarin.weniv.co.kr/${data.filename}`,
-      //   ]);
-      // });
       if (selectedFiles.length > 3) {
         alert('이미지는 최대 3개까지 선택할 수 있습니다.');
         return;
@@ -59,8 +52,6 @@ export default function Post({
           data => `https://api.mandarin.weniv.co.kr/${data.filename}`,
         ),
       );
-
-      // console.log(imgUpload);
     } catch (error) {
       console.error(error);
     }
@@ -89,9 +80,7 @@ export default function Post({
         },
       };
 
-      // await console.log(postData);
       const response = await uploadPost(postData);
-      // await console.log('response:::', response.data);
       if (response.status === 200) {
         alert('게시글 등록이 완료되었습니다. 게시글 목록으로 이동합니다.');
         if (type === 'walk') {
@@ -126,7 +115,6 @@ export default function Post({
           alt="프로필 이미지"
           style={{ width: '60px', height: '60px', border: 'none' }}
         />
-
         <form onSubmit={onSubmit}>
           <label htmlFor={id} className="a11yHidden">
             {label}
@@ -143,17 +131,14 @@ export default function Post({
             onChange={handleImageChange}
             required
           />
-
           <PostContent
             value={value}
             placeholder={placeholder}
             onChange={e => {
               setContent(e.target.value);
-              // console.log(content);
             }}
             required
           />
-
           {selectedImages &&
             selectedImages.map((imageUrl, index) => (
               <SelectedImage
