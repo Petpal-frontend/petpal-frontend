@@ -199,9 +199,13 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 | :---: | :---: | :---: |
 | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/b0108255-9f03-4636-be94-d84022e73463' height='380px'/>  <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/1f8f88ce-be23-4c24-b0e8-50912210e2ab' height='380px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/8d528176-c57c-410f-a31c-e155f6de16af' height='380px'/> <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/87e0f66c-97e9-4482-94da-1604adfb4ee2' height='380px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/d58df0c3-b183-435b-9557-7786b8b23b24' height='380px'/> <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/7023499a-0934-4d26-b5e0-15d8d9798ae0' height='380px'/> |
 
-| 게시물 수정 페이지 | 게시물 삭제 | 좋아요, 댓글 기능 |
-| :---: | :---: | :---: |
-| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/3c9b35ec-84fd-4060-a2e5-cea3a34c4f98' height='480px'/>  | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/55b292fc-b191-4359-aa42-94cda84f7e2c' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/81c86621-ba94-4029-a3e9-960a8e9b99b2' height='380px'/> <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/dd0a9211-8289-4f9f-81bc-46c6d97d1d79' height='380px'/>|
+| 게시물 수정 페이지 | 게시물 삭제 |
+| :---: | :---: |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/3c9b35ec-84fd-4060-a2e5-cea3a34c4f98' height='480px'/>  | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/55b292fc-b191-4359-aa42-94cda84f7e2c' height='480px'/> |
+
+ | 좋아요 기능 | 댓글 기능 |
+| :---: | :---: |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/81c86621-ba94-4029-a3e9-960a8e9b99b2' height='480px'/> |  <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/dd0a9211-8289-4f9f-81bc-46c6d97d1d79' height='480px'/> |
 
 | 댓글 신고 |
 | :---: |
