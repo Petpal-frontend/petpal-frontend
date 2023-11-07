@@ -44,7 +44,7 @@ export const ItemContentDiv = styled.div`
 export const ItemContent = styled.h3`
   line-height: 1.2em; // 글자 윗부분 잘려서 넣어줘야됨
   word-break: break-all;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   margin: 10px;
   overflow: hidden;

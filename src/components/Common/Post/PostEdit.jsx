@@ -6,6 +6,7 @@ import {
   PostContent,
   ImgUploadButton,
   SelectedImage,
+  PostDiv,
 } from './PostStyle';
 import {
   HeaderContent,
@@ -17,6 +18,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { uploadImg, uploadImgs } from '../../../api/imageApi';
 import myProfile from '../../../assets/image/profile-img4.svg';
 import uploadChat from '../../../assets/image/chat-upload-btn.svg';
+import CustomAlert from '../../../pages/LoginPage/CustomAlert';
 
 export default function PostEdit({
   id,
@@ -38,6 +40,8 @@ export default function PostEdit({
       ? beforePostData.post.content.split('petpal_walk_').join('')
       : beforePostData.post.content.split('petpal_care_').join(''),
   );
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
 
   const handleImageChange = async e => {
     const selectedFiles = Array.from(e.target.files);
@@ -48,7 +52,8 @@ export default function PostEdit({
     try {
       const imgUpload = await uploadImgs(formData);
       if (selectedFiles.length > 3) {
-        alert('이미지는 최대 3개까지 선택할 수 있습니다.');
+        setAlertMessage('이미지는 3장 이하로 업로드 가능합니다.');
+        setShowAlert(true);
         return;
       }
       setSelectedImages(
@@ -73,28 +78,40 @@ export default function PostEdit({
       };
       const response = await updatePost(beforePostData.post.id, postData);
       if (!content) {
-        alert('게시글 내용을 입력해주세요.');
+        setAlertMessage('게시글 내용을 입력해주세요.');
+        setShowAlert(true);
         return;
       }
       if (selectedImages.length === 0) {
-        alert('이미지를 업로드해주세요.');
+        setAlertMessage('이미지를 업로드해주세요.');
+        setShowAlert(true);
         return;
       }
       if (response.status === 200) {
-        alert('게시글이 수정되었습니다.');
-        if (type === 'walk') {
-          navigate('/walkList');
-        }
-        if (type === 'care') {
-          navigate('/careList');
-        }
+        setAlertMessage(
+          '게시글 등록이 완료되었습니다. 게시글 목록으로 이동합니다.',
+        );
+        setShowAlert(true);
+        setTimeout(() => {
+          if (type === 'walk') {
+            navigate('/walkList');
+          }
+          if (type === 'care') {
+            navigate('/careList');
+          }
+        }, 2000);
       }
     } catch (err) {
       console.error(err);
     }
   };
+
+  const closeAlert = () => {
+    setShowAlert(false);
+  };
+
   return (
-    <>
+    <PostContainer>
       <HeaderWrap>
         <h1 className="a11y-hidden">게시글 등록 작성</h1>
         <PrevBtn>
@@ -107,7 +124,7 @@ export default function PostEdit({
           수정하기
         </UploadBtn>
       </HeaderWrap>
-      <PostContainer>
+      <PostDiv>
         <UserImg
           src={myProfile}
           alt="프로필 이미지"
@@ -144,7 +161,8 @@ export default function PostEdit({
               />
             ))}
         </form>
-      </PostContainer>
-    </>
+      </PostDiv>
+      {showAlert && <CustomAlert message={alertMessage} onClose={closeAlert} />}
+    </PostContainer>
   );
 }

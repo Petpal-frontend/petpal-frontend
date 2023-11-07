@@ -77,13 +77,16 @@ export const ProfileArea = styled.div`
 
   .profileImg {
     display: block;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
+    // width: 44px;
+    // height: 44px;
+    // border-radius: 50%;
   }
 
   .profileImg img {
-    width: 100%;
+    // width: 100%;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
   }
 
   .userInfo {
