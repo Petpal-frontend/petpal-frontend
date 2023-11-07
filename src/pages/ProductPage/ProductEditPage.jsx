@@ -15,7 +15,7 @@ export default function ProductEditPage() {
   );
   const [imageFile, setImageFile] = useState(product.itemImage ?? '');
   const [previewImage, setPreviewImage] = useState(product.itemImage ?? '');
-  // console.log('produ===' + JSON.stringify(product));
+
   const handleTitleChange = e => {
     setProductTitle(e.target.value);
   };
@@ -59,17 +59,11 @@ export default function ProductEditPage() {
             'https://api.mandarin.weniv.co.kr/' + imageUpload.data.filename,
         };
       }
-      // console.log('ewqeqd+===' + product);
-      //   console.log(imageUpload.data.filename);
       const response = await updateProduct(product.id, updatedProduct);
-      // console.log('Producid', product.id);
-      // console.log('Product uploaded response:', response);
-      // console.log('updatedProduct:', updatedProduct);
       alert('상품이 수정되었습니다.');
       navigate('/productList');
     } catch (error) {
       console.error('Error uploading product:', error);
-      // TODO: 오류 처리, 사용자에게 알리기 등
     }
   };
 

@@ -102,8 +102,6 @@ export default function ProfileEditForm({ beforeUserData }) {
       }
 
       const response = await putMyProfile(userData);
-      // console.log(response);
-      // console.log(response.data);
       alert('프로필 수정 성공');
 
       if (response.status === 200) {

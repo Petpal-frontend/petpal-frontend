@@ -15,16 +15,4 @@ export const HomeHeaderStyle = styled.div`
   .searchBtn img {
     width: 100%;
   }
-
-  // .searchBar {
-  //   width: 376px;
-  //   height: 46px;
-  //   line-height: 46px;
-  //   border-radius: 4px;
-  //   color: #a4a4a4;
-  //   text-indent: 16px;
-  //   font-size: 14px;
-  //   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.05);
-  //   cursor: text;
-  // }
 `;

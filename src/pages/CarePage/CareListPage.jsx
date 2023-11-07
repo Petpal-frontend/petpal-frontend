@@ -18,7 +18,6 @@ export default function CareListPage() {
       setLoading(false);
     };
     fetchData();
-    // console.log(postList);
   }, []);
 
   const careList = postList.filter(

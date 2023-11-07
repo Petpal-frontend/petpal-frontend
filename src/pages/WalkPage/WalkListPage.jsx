@@ -24,6 +24,7 @@ export default function WalkListPage() {
       post.author.accountname.includes('petpal_') &&
       post.content.includes('petpal_walk') &&
       post.author.intro === userInfo.intro &&
+      // 주어진 api목록에 이메일 찾기,삭제가 없어 아래와같이 불가피하게 보여지는 content 필터
       post.content !== 'petpal_walk_됐나요?' &&
       post.content !== 'petpal_walk_zzzz',
   );

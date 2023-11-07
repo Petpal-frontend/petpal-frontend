@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { InfoGroup, InfoSpan } from '../Common/Layout/LayoutStyle';
 import {
   DetailContainer,
@@ -19,8 +19,6 @@ import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 import { likePost, unlikePost } from '../../api/post';
 import { Link, useParams } from 'react-router-dom';
 import { getWalkDetail } from '../../api/walk';
-// export default function WalkDetailItem({ location, walkDetailItem }) {
-// 컴포넌트 분리 및 재사용 고려해서 다시 수정 예정 -> 산책, 돌보미 재사용
 
 export default function WalkDetailItem({ walkDetailItem, commentNum }) {
   const { id } = useParams();
@@ -51,17 +49,10 @@ export default function WalkDetailItem({ walkDetailItem, commentNum }) {
     return `${start.toLocaleDateString()}`;
   };
 
-  // useEffect(() => {
-  //   console.log(isLiked);
-  //   console.log(likeCount);
-  //   console.log(walkDetailItem.heartCount);
-  // }, [isLiked, likeCount]);
-
   const handleChatClick = async username => {
     try {
       const response = await getWalkDetail(id);
       const username = response.data.post.author.username;
-      // 페이지 이동
       window.location.href = `/chatRoom/${username}`;
     } catch (error) {
       console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
@@ -109,7 +100,6 @@ export default function WalkDetailItem({ walkDetailItem, commentNum }) {
         <PostBottom>
           <LikeAndChat>
             <InfoGroup className="likeAndChat">
-              {/* <LikeImg like={walkDetailItem.hearted} /> */}
               <LikeImg
                 like={isLiked}
                 onClick={async () => {

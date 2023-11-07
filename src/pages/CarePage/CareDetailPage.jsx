@@ -36,7 +36,7 @@ export default function CareDetailPage() {
   const isAccessAllowed = access === userState.accountname;
 
   const handleModal = event => {
-    //careEditPage로 아래의 값을 이동시켜주는 로직입니다
+    //careEditPage로 state의 값을 가지고 이동
     if (event.target.textContent === '수정') {
       navigate('/careEdit', {
         state: {
@@ -72,7 +72,6 @@ export default function CareDetailPage() {
   }, []);
 
   // 댓글 등록
-
   const handleEnterPress = event => {
     if (event.key === 'Enter' && !event.shiftKey) {
       handleSubmitComment(event);

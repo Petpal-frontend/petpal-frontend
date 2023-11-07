@@ -1,5 +1,4 @@
 import axios from 'axios';
-import setTokenInterceptors from './interseptor';
 
 export const URL = 'https://api.mandarin.weniv.co.kr/';
 
@@ -33,7 +32,6 @@ tokenInstance.interceptors.request.use(
         Authorization: `Bearer ${token}`,
       };
     }
-    // console.log('intercepter2', config);
     return config;
   },
   error => {
@@ -41,5 +39,3 @@ tokenInstance.interceptors.request.use(
     return Promise.reject(error);
   },
 );
-
-// setTokenInterceptors(tokenInstance);

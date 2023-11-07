@@ -27,13 +27,11 @@ export const updatePost = async (postId, postData) => {
 };
 
 /* 게시글 좋아요 */
-// POST /post/:post_id/heart
 export const likePost = async postId => {
   const response = await tokenInstance.post(`/post/${postId}/heart`);
 };
 
 /* 게시글 좋아요 취소 */
-// DELETE /post/:post_id/unheart
 export const unlikePost = async postId => {
   const response = await tokenInstance.delete(`/post/${postId}/unheart`);
 };

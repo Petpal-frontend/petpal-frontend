@@ -18,7 +18,6 @@ const ImageUploader = () => {
         const data = await response.blob();
         const imageUrl = URL.createObjectURL(data);
         setSelectedImage(imageUrl);
-        // console.log('Image upload successful:', data);
       } catch (error) {
         console.error('Error uploading image:', error);
       }

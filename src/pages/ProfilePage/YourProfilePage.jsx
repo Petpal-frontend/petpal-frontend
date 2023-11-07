@@ -14,7 +14,7 @@ export default function YourProfilePage() {
   const [yourData, setYourData] = useState();
   const [yourProduct, setYourProduct] = useState();
   const [yourPost, setYourPost] = useState();
-	
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -26,9 +26,6 @@ export default function YourProfilePage() {
         setYourData(yourDataRes.data);
         setYourProduct(yourProductRes.data);
         setYourPost(yourPostRes.data);
-        // console.log('2222', yourData);
-        // console.log('3333', yourProduct);
-        // console.log('4444', yourPost);
         setLoading(false);
       } catch (err) {
         console.error(err);

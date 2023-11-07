@@ -28,7 +28,7 @@ export default function HomePage() {
     fetchData();
   }, []);
 
-  // 감귤마켓 프로필 혹은 로컬데이터, 이상한 문자(\")가 들어간 이미지 필터링
+  // 주어진 기본 프로필 혹은 로컬데이터, 이상한 문자(\")가 들어간 이미지 필터링
   const filteredUsers = users.filter(
     v =>
       v.accountname.includes('petpal_') &&
@@ -36,8 +36,6 @@ export default function HomePage() {
       v.image.includes('https://api.mandarin.weniv.co.kr/') &&
       !v.image.includes('"'),
   );
-  // console.log('filter: ', filteredUsers);
-
   const buttons = [
     {
       to: '/productList',
@@ -46,23 +44,6 @@ export default function HomePage() {
     { to: '/walkList', image: walkImg },
     { to: '/careList', image: careImg },
   ];
-
-  // const imageData = [
-  //   '1698572022537.jpeg',
-  //   '1698571951485.jpeg',
-  //   '1698571922466.jpeg',
-  //   '1698571938881.jpeg',
-  //   '1698572063667.jpeg',
-  //   '1698571964117.jpeg',
-  //   '1698571982647.jpeg',
-  //   '1698571998553.jpeg',
-  //   '1698571896561.jpeg',
-  //   '1698572010820.jpeg',
-  //   '1698572201904.jpeg',
-  //   '1698572034168.jpeg',
-  //   '1698572046653.jpeg',
-  //   '1698572148559.jpeg',
-  // ];
 
   return (
     <>
@@ -84,7 +65,6 @@ export default function HomePage() {
       >
         우리 귀여운 집사님 보고가세요!
       </p>
-      {/* <InfiniteScroll imageData={imageData} className="homeImageStyle" /> */}
       {filteredUsers.length !== 0 ? (
         <InfiniteScroll imageData={filteredUsers} className="homeImageStyle" />
       ) : (

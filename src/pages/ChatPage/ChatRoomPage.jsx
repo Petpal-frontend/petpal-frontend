@@ -18,15 +18,6 @@ export default function ChatRoomPage() {
       message => message.username === username,
     );
     setMessages(filteredMessages);
-
-    // if (
-    //   username === undefined ||
-    //   username === '식빵맘' ||
-    //   username === '애쉬삼촌' ||
-    //   username === '안녕하시개'
-    // ) {
-    //   setMessages(dummyMessages);
-    // }
   }, [username]);
 
   const handleTextChange = event => {
@@ -39,7 +30,6 @@ export default function ChatRoomPage() {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        // console.log('!!!!!', reader.result);
         const newImageMessage = {
           id: messages.length + 1,
           text: [],
@@ -67,7 +57,6 @@ export default function ChatRoomPage() {
       alert('메시지를 입력하세요.');
       return;
     }
-
     if (newMessage.trim() !== '') {
       const newTextMessage = {
         id: messages.length + 1,

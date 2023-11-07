@@ -39,7 +39,7 @@ export default function LoginPage() {
       const response = await postLogin(userData);
       if (response.status === 200) {
         const token = response.data.user.token;
-        // 로컬스토리지에 토큰 저장하기.
+        // 로컬스토리지에 토큰 저장
         localStorage.setItem('token', token);
 
         const atomUserInfo = response.data.user;

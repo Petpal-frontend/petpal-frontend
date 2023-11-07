@@ -36,12 +36,12 @@ export default function SignUpForm() {
   const [validCheck, setValidCheck] = useState(false); // 이메일 유효성 체크
   const [warningMessage, setWarningMessage] = useState(''); // response의 message
 
-  //받아온 주소값 짤라서 intro에 넣어줌
+  // 받아온 주소값 split 후 setIntro
   const handleAddressSelect = address => {
     setIntro(address.split(' ')[0]);
   };
 
-  //accountname에 petpal_ + 현재시각(절대 안겹치게 했어요) 부여해주는 로직
+  // accountname에 petpal_ + 현재시각 부여
   useEffect(() => {
     const generateUniqueAccountname = () => {
       const currentTime = new Date();
@@ -70,12 +70,12 @@ export default function SignUpForm() {
     const generatedAccountname = generateUniqueAccountname();
     setAccountname(generatedAccountname);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // 빈 배열을 전달하여 마운트될 때 한 번만 실행되도록 함
+  }, []);
 
   const handleImageUpload = event => {
     const file = event.target.files[0];
     if (file) {
-      //감귤마켓 api에 허용된 확장자
+      // 주어진 api에 허용된 확장자
       const allowedExtensions = [
         'jpg',
         'jpeg',
@@ -100,7 +100,7 @@ export default function SignUpForm() {
   };
 
   const handleSignUp = async e => {
-    // 기본 냥이 이미지 URL
+    // 기본 펫팔 프로필 이미지 URL
     let baseImage = 'https://api.mandarin.weniv.co.kr/1698598137638.jpg';
     try {
       e.preventDefault();
@@ -108,10 +108,7 @@ export default function SignUpForm() {
         const imgData = new FormData();
         imgData.append('image', selectedImage);
         const imageUpload = await uploadImg(imgData);
-        // console.log(imageUpload);
         const imagePath = imageUpload.data.filename;
-        // console.log('iiii==' + imagePath);
-        // console.log('eeee' + imageUpload.data.filename);
         baseImage = `https://api.mandarin.weniv.co.kr/${imagePath}`;
       }
       const userData = {
@@ -126,15 +123,11 @@ export default function SignUpForm() {
       };
 
       const isEmailValid = await checkEmailExist(userData);
-      // console.log(isEmailValid);
-      // console.log(isEmailValid.data.message);
 
       if (isEmailValid.data.message === '사용 가능한 이메일 입니다.') {
         setWarningMessage('');
         setValidCheck(!validCheck);
         const response = await postSignUp(userData);
-        // console.log(response);
-        // console.log(response.data);
         alert('회원가입성공');
 
         if (response.status === 200) {
@@ -144,7 +137,6 @@ export default function SignUpForm() {
         isEmailValid.data.message === '이미 가입된 이메일 주소 입니다.'
       ) {
         setWarningMessage(isEmailValid.data.message);
-        // console.log(warningMessage);
       }
     } catch (err) {
       console.error(err);
