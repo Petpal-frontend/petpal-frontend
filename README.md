@@ -1,4 +1,3 @@
-<div align="center">
   <h1>PetPal 🐾</h1>
 
   <img src="https://github.com/Petpal-frontend/petpal-frontend/blob/main/src/assets/image/tajaCat.gif" />
@@ -73,6 +72,7 @@ PW: 123123
 - Recoil: 간편한 전역 상태 관리와 접근을 위해 사용했습니다.  
 - Axios: 간편한 HTTP 요청을 위해 사용했습니다.  
 - styled-components: 스타일 캡슐화로 코드의 가독성과 유지보수 향상을 위해 사용했습니다.
+- react-router-dom: 페이지 라우팅을 위해 사용
 
 <br/>
 
@@ -183,29 +183,30 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 ### 1) 홈
 | 스플래시 페이지 | 회원가입 페이지 | 로그인 페이지 |
 | :---: | :---: | :---: |
-| gif | gif | gif |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/b4dab298-bf46-4689-93d9-e8d892597608' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/ef07189e-1604-4647-9631-97cc4b9b16e1' height='480px' /> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/67a9a6a8-f5aa-4b0b-be2d-8dd2838bf7cb' height='480px'/> |
 
 | 홈 페이지 | 검색 페이지 |
 | :---: | :---: |
-| gif | gif |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/cc6822d7-2e4a-44d7-b47c-7662756994e3' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/f0b3ed18-3bdb-4b6b-92f2-7b6031f8ca94' height='480px'/> |
 
 ### 2) 피드
 | 피드 페이지 |
 | :---: |
-| gif |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/c9ed5017-92bb-4938-8fd7-8203f1efe7c8' height='480px'/>  |
     
 ### 3) 게시물
+#### 산책메이트, 돌보미
 | 게시물 목록 페이지 | 게시물 상세 페이지 | 게시물 작성 페이지 |
 | :---: | :---: | :---: |
-| gif | gif | gif |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/b0108255-9f03-4636-be94-d84022e73463' height='380px'/>  <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/1f8f88ce-be23-4c24-b0e8-50912210e2ab' height='380px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/8d528176-c57c-410f-a31c-e155f6de16af' height='380px'/> <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/87e0f66c-97e9-4482-94da-1604adfb4ee2' height='380px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/d58df0c3-b183-435b-9557-7786b8b23b24' height='380px'/> <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/7023499a-0934-4d26-b5e0-15d8d9798ae0' height='380px'/> |
 
-| 게시물 수정 페이지 | 게시물, 댓글 삭제 | 좋아요, 댓글 기능 |
+| 게시물 수정 페이지 | 게시물 삭제 | 좋아요, 댓글 기능 |
 | :---: | :---: | :---: |
-| gif | gif | gif |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/3c9b35ec-84fd-4060-a2e5-cea3a34c4f98' height='480px'/>  | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/55b292fc-b191-4359-aa42-94cda84f7e2c' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/81c86621-ba94-4029-a3e9-960a8e9b99b2' height='380px'/> <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/dd0a9211-8289-4f9f-81bc-46c6d97d1d79' height='380px'/>|
 
 | 댓글 신고 |
 | :---: |
-| gif |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/5a54379a-7129-4f5c-96f1-d827bfc21cfe' height='380px'/> |
 
 ### 4) 채팅
 | 채팅 목록 페이지 | 채팅방 페이지 |
@@ -233,7 +234,8 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
   - 설명
 
 기능 개발
-  - 설명
+  - 초기 폴더구조 세팅 및 환경설정
+  - 각 페이지 라우터 연결
 
 기타.. (프로젝트 총괄 및 문서화, 컴포넌트 리팩토링 및 중복 제거 등..)
   - 설명
@@ -272,39 +274,44 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 ### 류경민
 화면 개발
   - 프로젝트 로고 및 UI 디자인
-  - 로그인, 회원가입, 게시물 작성 UI
+  - 로그인, 회원가입, 게시물 작성, 404 페이지 UI
+  - Submit 버튼, 댓글 및 채팅 입력 Input 공통 컴포넌트
 
 기능 개발
   - 댓글
       - 댓글 등록, 삭제 기능 구현
   - 채팅
       - 채팅 리스트 데이터 렌더링 구현
-      - 채팅 룸 사용자가 입력한 텍스트 및 이미지 렌더링 구현
+      - 채팅 룸 사용자 입력 텍스트 및 이미지 렌더링 구현
 <br/>
 
 ### 최지완
 
 화면 개발
-- home
-- feed
+- 홈 페이지
+- 스플래시 페이지
+- 피드 페이지
+- 공통컴포넌트UI(modal, alert..)
 
-구현 기능
-- 로그인 및 회원가입
-  - login: 등록한 이메일 주소와 비밀번호로 로그인할 수 있는 기능을 구현, 사용자가 올바른 계정 정보를 입력하면 로그인에 성공합니다.
-  - signup: 애플리케이션에 새로운 계정을 등록할 수 있는 기능을 구현, 사용자에게 올바른 형식의 이메일과 비밀번호 등의 정보를 받아 계정이 생성됩니다.
-
-- 사용자 경험 개선기능
-  - modal: 사용자에게 특정 정보를 입력하거나 추가 작업을 수행할 수 있는 팝업 창을 구현하여 현재 화면의 작업을 일시적으로 중단시키고 사용자의 주의를 집중시키도록 했습니다.
-  - alert: 중요한 정보를 알리기 위해 표시되는 메시지 창으로 사용자에게 다음행동에 대한 의사를 물을 때, 사용했습니다.
-  - loading: 데이터나 콘텐츠를 불러오는 동안 로딩 상태를 시각적으로 나타내는 인디케이터를 구현했습니다.
-  - slider: 이미지나 콘텐츠를 순차적으로 나열하여 보여주는 UI 요소를 구하여, 사용자에게 더욱 다양한 콘텐츠를 확인할 수 있도록 했습니다.
-  - infinity scroll: 사용자가 스크롤을 내리면 자동으로 다음 페이지의 데이터를 불러와 화면에 표시되도록 했습니다.
-  - map: 지도 서비스를 애플리케이션에 통합하여 특정 장소를 검색하여 그 정보를 저장할 수 있도록 했습니다.
-  - splash: 사용자가 앱을 실행하면 초기 설정 및 데이터 로딩 등의 작업을 수행하는 동안 가장 먼저 스플래시 화면이 표시됩니다.
-
+기능 개발
+- 사용자 인증
+  - 로그인
+  - 로그아웃
+  - 회원가입
+- 게시글
+  - 상품 리스트, 상세, 작성, 수정 기능 구현
+- 공통 컴포넌트
+  - modal
+  - alert
+  - loading
+  - slider
+  - infinity scroll
+  - map
+  - splash
+  - tooltip
 - 상태관리
-  - recoil atom: 로그인 한 유저의 정보를 저장하여 애플리케이션 전체의 상태를 효율적으로 관리했습니다.
-  
+  - recoil atom으로 전역 데이터 관리
+ 
 <br/>
 
 ### 최현아
@@ -357,8 +364,16 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 <br/>
 
 ## 12. 리팩토링 목표
-- 목표1
-
+- 맵 api의 고도화
+  - 현재 펫팔은 사용자들에게 주소를 입력받아 위치정보를 사용하고 있습니다. 향후에는 Google Maps나 OpenStreetMap과 같은 다양한 맵 API를 도입하여 사용자들에게 더 나은 서비스를 제공할 계획입니다.
+    이를 통해 사용자들에게는 실시간 위치 정보 제공 및 시설 검색과 같은 기능을 제공할 수 있게 될 것이며 이러한 업그레이드를 통해 펫팔의 사용성과 가치를 높여, 사용자들에게 더 편리하고 유용한 경험을 제공할 것입니다.
+- 코드 스타일 통일
+  - 프로젝트 내에서 일관 된 코드스타일을 적용하여 가독성을 향상 시키고 협업을 더욱 원활하게 만들 것입니다.
+- 재사용성 높이기
+  - 코드를 더욱 모듈화 하고 재사용 가능한 함수 컴포넌트로 구성함으로써, 코드 중복을 최소화하고 유지보수를 쉽게 만들 것입니다.
+- 웹 접근성 향상 계획
+  - 펫팔은 시각, 청각, 지체, 인지적 장애 등 다양한 장애를 가진 사용자들이 애플리케이션을 이용할 때 불편함 없이 사용할 수 있도록 개선할 예정입니다.
+    스크린 리더와 호환되는 텍스트와 레이아웃을 구현하고, 키보드 사용이 가능한 네비게이션 기능을 추가하여 사용자들에게 다양한 장애에 관계없이 쉽고 편리하게 펫팔의 서비스를 제공할 것입니다.
 <br/>
 <br/>
 
