@@ -19,14 +19,22 @@ import moreBtn from '../../../assets/image/icon-more-vertical.svg';
 export default function Comment({ comments, handledeleteComment }) {
   const reversedComments = comments.slice().reverse();
   const userState = useRecoilValue(userInfoAtom);
-  const { openAlert, AlertComponent } = useAlertControl();
+  const { openAlert, closeAlert, AlertComponent } = useAlertControl();
   const [selectedCommentId, setSelectedCommentId] = useState(null);
+  const [isDelete, setIsDelete] = useState(false);
 
   // '더 보기' 버튼 클릭 처리 함수
-  const handleMoreButtonClick = commentId => {
-    // 선택된 댓글의 ID를 상태에 저장
-    setSelectedCommentId(commentId);
-    openAlert();
+  const handleMoreButtonClick = (commentId, item) => {
+    if (item && item.author) {
+      // 선택된 댓글의 ID를 상태에 저장
+      setSelectedCommentId(commentId);
+      openAlert();
+      if (item.author.accountname === userState.accountname) {
+        setIsDelete(true);
+      } else {
+        setIsDelete(false);
+      }
+    }
   };
 
   const elapsedTime = date => {
@@ -70,26 +78,33 @@ export default function Comment({ comments, handledeleteComment }) {
             </CommentTime>
             <CommentText>{item.content}</CommentText>
           </CommentContent>
-          <MoreButton onClick={() => handleMoreButtonClick(item.id)}>
+          <MoreButton onClick={() => handleMoreButtonClick(item.id, item)}>
             <ButtonImg src={moreBtn} />
           </MoreButton>
-          {item.author.accountname === userState.accountname ? (
-            <AlertComponent>
-              <Alert
-                alertMsg={'댓글을 삭제하시겠습니까?'}
-                choice={['취소', '삭제']}
-                handleFunc={() => handledeleteComment(item.id, 'delete')}
-              />
-            </AlertComponent>
-          ) : (
-            <AlertComponent>
-              <Alert
-                alertMsg={'댓글을 신고하시겠습니까?'}
-                choice={['취소', '신고']}
-                handleFunc={() => handledeleteComment(item.id, 'report')}
-              />
-            </AlertComponent>
-          )}
+          {selectedCommentId === item.id &&
+            (isDelete ? (
+              <AlertComponent>
+                <Alert
+                  alertMsg={'댓글을 삭제하시겠습니까?'}
+                  choice={['취소', '삭제']}
+                  handleFunc={e => {
+                    if (e.target.textContent === '삭제') {
+                      handledeleteComment(item.id, 'delete');
+                    } else {
+                      openAlert(false);
+                    }
+                  }}
+                />
+              </AlertComponent>
+            ) : (
+              <AlertComponent>
+                <Alert
+                  alertMsg={'댓글을 신고하시겠습니까?'}
+                  choice={['취소', '신고']}
+                  handleFunc={() => handledeleteComment(item.id, 'report')}
+                />
+              </AlertComponent>
+            ))}
         </CommentContainer>
       ))}
     </CommentsContainer>
