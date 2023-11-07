@@ -6,7 +6,7 @@ export const LoginContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 920px;
   background-color: #fffad0;
   width: calc(100% + 30px);
   margin: 0 0 0 -15px;
@@ -14,9 +14,10 @@ export const LoginContainer = styled.div`
 
 export const LoginLogo = styled.img`
   position: absolute;
-  top: 22%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 15%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+	margin: 0 20px auto;
 `;
 
 // 로그인 폼 입력
