@@ -28,7 +28,6 @@ export default function CareItem({
   useEffect(() => {
     getCareDetail(id).then(res => {
       setIsHearted(res.data.post.hearted);
-      // console.log('resresresresresres', isHearted);
     });
   }, [id]);
 

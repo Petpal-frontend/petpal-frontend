@@ -33,7 +33,6 @@ export default function MyProfile({ myData, myProduct, myPost }) {
   const handleProductClick = async productId => {
     try {
       const response = await getProductDetail(productId);
-      // 페이지 이동
       window.location.href = `/productDetail/${productId}`;
     } catch (error) {
       console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
@@ -43,14 +42,11 @@ export default function MyProfile({ myData, myProduct, myPost }) {
   const handlePostClick = async postId => {
     try {
       const response = await getCareDetail(postId);
-      // const path = response.data.post.content;
       const path = response.data.post.content.includes('petpal_walk')
         ? `/walkDetail/${postId}`
         : `/careDetail/${postId}`;
 
       window.location.href = path;
-      // 페이지 이동
-      // window.location.href = `/walkDetail/${postId}`;
     } catch (error) {
       console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
     }
@@ -58,7 +54,7 @@ export default function MyProfile({ myData, myProduct, myPost }) {
 
   return (
     <ComponentLayout>
-      {/* 컴포넌트로 분리 예정 -> 내 프로필, 상대 프로필 재사용 */}
+      {/* 내 프로필, 상대 프로필 재사용 */}
       <ItemListContainer>
         <ProfileContainer>
           <Link to={`/profile/${userInfo.accountname}/follower`}>
@@ -91,7 +87,7 @@ export default function MyProfile({ myData, myProduct, myPost }) {
           </Link>
         </ButtonContainer>
       </ItemListContainer>
-      {/* 컴포넌트로 분리 예정 -> 내 프로필, 상대 프로필 재사용 */}
+      {/* 내 프로필, 상대 프로필 재사용 */}
       <ListContainer>
         <H3>판매 중인 상품</H3>
         <ProductItemContainer>

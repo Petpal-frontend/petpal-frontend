@@ -20,7 +20,6 @@ export const LoginLogo = styled.img`
 `;
 
 // 로그인 폼 입력
-
 export const LoginInput = styled.input`
   display: flex;
   flex-direction: column;
@@ -61,7 +60,6 @@ export const LoginBtn = styled.button`
 `;
 
 // 회원가입 화면으로 연결
-
 export const SignUpLink = styled(Link)`
   margin-top: 27px;
   margin-bottom: 75px;
@@ -70,7 +68,6 @@ export const SignUpLink = styled(Link)`
 `;
 
 // sns 로그인
-
 export const P = styled.p`
   display: flex;
   color: #767676;

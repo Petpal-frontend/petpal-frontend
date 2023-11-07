@@ -10,7 +10,6 @@ export default function ProductList() {
   const [loading, setLoading] = useState(true);
 
   const userInfo = useRecoilValue(userInfoAtom);
-  console.log('myInfo', userInfo);
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -43,7 +42,6 @@ export default function ProductList() {
       console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);
     }
   };
-  // console.log(filteredProducts[0]._id);
   return (
     <StyledLayout>
       <MainWrap>

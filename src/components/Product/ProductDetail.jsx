@@ -16,7 +16,7 @@ import Button from '../Common/Button/SubmitButton/Button';
 
 export default function ProductDetail({ ProductDetail }) {
   const { productId } = useParams();
-  //시간 계산 로직입니다
+  //시간 계산로직
   function formatDateTime(dateTimeString) {
     const options = {
       year: 'numeric',
@@ -37,7 +37,6 @@ export default function ProductDetail({ ProductDetail }) {
     try {
       const response = await getProductDetail(productId);
       const username = response.data.product.author.username;
-      // 페이지 이동
       window.location.href = `/chatRoom/${username}`;
     } catch (error) {
       console.error('상품 상세 정보를 불러오는 중 오류 발생:', error);

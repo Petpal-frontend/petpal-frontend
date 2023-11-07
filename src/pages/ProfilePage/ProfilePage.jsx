@@ -23,12 +23,9 @@ export default function ProfilePage() {
     const fetchData = async () => {
       setLoading(true);
       try {
-        console.log(userState);
         const profileResponse = await getMyProfile(userState.token);
         const productResponse = await getMyProduct(userState.accountname);
         const postResponse = await getMyPost(userState.accountname);
-        // console.log('어카운트네임!==' + userState.accountname);
-        // console.log('데이터확인!==' + postResponse.data.post[0].content);
         setUserData(profileResponse.data);
         setUserProductData(productResponse.data);
         setUserPostData(postResponse.data);

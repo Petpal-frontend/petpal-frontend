@@ -27,8 +27,6 @@ export default function WalkDetailPage() {
   const navigate = useNavigate();
   const { id } = useParams();
   const isAccessAllowed = access === userState.accountname;
-  // console.log('isAccessAllowed', isAccessAllowed);
-  // console.log('access', access);
 
   // -------- 게시물
   // 게시물 상세
@@ -40,9 +38,8 @@ export default function WalkDetailPage() {
   }, [id]);
 
   // 게시물 삭제
-
   const handleModal = event => {
-    //walkEditPage로 아래의 값을 이동시켜주는 로직입니다
+    //walkEditPage로 state값과 함께 이동
     if (event.target.textContent === '수정') {
       navigate('/walkEdit', {
         state: {
@@ -78,7 +75,6 @@ export default function WalkDetailPage() {
   }, [id]);
 
   // 댓글 등록
-
   const handleEnterPress = event => {
     if (event.key === 'Enter' && !event.shiftKey) {
       handleSubmitComment(event);

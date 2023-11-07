@@ -31,7 +31,7 @@ export default function PostEdit({
   const imageArr = beforePostData.post.image
     ? beforePostData.post.image.split(',')
     : [];
-
+  const navigate = useNavigate();
   const [selectedImages, setSelectedImages] = useState(imageArr);
   const [content, setContent] = useState(
     type === 'walk'
@@ -39,27 +39,14 @@ export default function PostEdit({
       : beforePostData.post.content.split('petpal_care_').join(''),
   );
 
-  const navigate = useNavigate();
-
-  // imageArr ? console.log('hihihihihih', imageArr) : console.log('byebye');
   const handleImageChange = async e => {
     const selectedFiles = Array.from(e.target.files);
-
     const formData = new FormData();
     selectedFiles.forEach(file => {
       formData.append('image', file);
     });
-
     try {
       const imgUpload = await uploadImgs(formData);
-
-      // imgUpload.data.forEach(data => {
-      //   setSelectedImages(prevImgFiles => [
-      //     ...prevImgFiles,
-      //     `https://api.mandarin.weniv.co.kr/${data.filename}`,
-      //   ]);
-      // });
-
       if (selectedFiles.length > 3) {
         alert('이미지는 최대 3개까지 선택할 수 있습니다.');
         return;
@@ -69,15 +56,12 @@ export default function PostEdit({
           data => `https://api.mandarin.weniv.co.kr/${data.filename}`,
         ),
       );
-
-      // console.log(imgUpload);
     } catch (error) {
       console.error(error);
     }
   };
   const appendFlagContent =
     type === 'walk' ? `petpal_walk_${content}` : `petpal_care_${content}`;
-
   const uploadData = async e => {
     try {
       e.preventDefault();
@@ -87,21 +71,15 @@ export default function PostEdit({
           content: appendFlagContent,
         },
       };
-
-      // await console.log(postData);
       const response = await updatePost(beforePostData.post.id, postData);
-      // await console.log('response:::', response.data);
-
       if (!content) {
         alert('게시글 내용을 입력해주세요.');
         return;
       }
-
       if (selectedImages.length === 0) {
         alert('이미지를 업로드해주세요.');
         return;
       }
-
       if (response.status === 200) {
         alert('게시글이 수정되었습니다.');
         if (type === 'walk') {
@@ -115,7 +93,6 @@ export default function PostEdit({
       console.error(err);
     }
   };
-
   return (
     <>
       <HeaderWrap>
@@ -136,7 +113,6 @@ export default function PostEdit({
           alt="프로필 이미지"
           style={{ width: '60px', height: '60px', border: 'none' }}
         />
-
         <form onSubmit={onSubmit}>
           <label htmlFor={id} className="a11yHidden">
             {label}
@@ -152,16 +128,13 @@ export default function PostEdit({
             multiple
             onChange={handleImageChange}
           />
-
           <PostContent
             value={content}
             placeholder={placeholder}
             onChange={e => {
               setContent(e.target.value);
-              // console.log(content);
             }}
           />
-
           {selectedImages &&
             selectedImages.map((imageUrl, index) => (
               <SelectedImage

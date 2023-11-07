@@ -30,7 +30,6 @@ export default function ProductPostPage() {
       setImageFile(file);
     }
   };
-  // console.log('image= ' + JSON.stringify(imageFile));
 
   const handleProductUpload = async () => {
     try {
@@ -47,14 +46,11 @@ export default function ProductPostPage() {
             'https://api.mandarin.weniv.co.kr/' + imageUpload.data.filename,
         },
       };
-      // console.log(imageUpload.data.filename);
-      const response = await uploadProduct(product); // uploadProduct 함수를 사용하여 API 호출
-      // console.log('Product uploaded response:', response);
+      const response = await uploadProduct(product);
       alert('상품이 등록되었습니다.');
       navigate(-1);
     } catch (error) {
       console.error('Error uploading product:', error);
-      // TODO: 오류 처리, 사용자에게 알리기 등
     }
   };
 

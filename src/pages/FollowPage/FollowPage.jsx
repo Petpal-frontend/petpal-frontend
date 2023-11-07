@@ -3,12 +3,7 @@ import { useParams } from 'react-router-dom';
 import Header from '../../components/Common/Header/Header';
 import FollowList from '../../components/Follow/FollowList';
 import NavBar from '../../components/Common/NavBar/NavBar';
-import {
-  getFollowers,
-  getFollowings,
-  postFollow,
-  deleteFollow,
-} from '../../api/follow';
+import { getFollowers, getFollowings } from '../../api/follow';
 
 export default function FollowerPage() {
   const userAccountName = useParams().accountname;
@@ -38,7 +33,6 @@ export default function FollowerPage() {
 
   return (
     <>
-		
       <Header
         type="follow"
         title={followPage === 'follower' ? 'Followers' : 'Followings'}

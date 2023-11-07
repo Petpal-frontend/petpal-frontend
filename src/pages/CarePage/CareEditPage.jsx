@@ -6,7 +6,6 @@ import { getCareDetail } from '../../api/care';
 export default function CareEditPage() {
   const location = useLocation();
   const { post } = location.state;
-
   const [beforePostData, setBeforePostData] = useState();
 
   useEffect(() => {
@@ -14,7 +13,6 @@ export default function CareEditPage() {
       try {
         const response = await getCareDetail(post.id);
         setBeforePostData(response.data);
-        // console.log('데이터 불러오기 성공:', response.data);
       } catch (err) {
         console.error('데이터 불러오기 실패:', err);
       }
