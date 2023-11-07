@@ -182,25 +182,25 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 ### 1) 홈
 | 스플래시 페이지 | 회원가입 페이지 | 로그인 페이지 |
 | :---: | :---: | :---: |
-| gif | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/ef07189e-1604-4647-9631-97cc4b9b16e1' height='480px' /> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/67a9a6a8-f5aa-4b0b-be2d-8dd2838bf7cb' height='480px'/> |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/b4dab298-bf46-4689-93d9-e8d892597608' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/ef07189e-1604-4647-9631-97cc4b9b16e1' height='480px' /> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/67a9a6a8-f5aa-4b0b-be2d-8dd2838bf7cb' height='480px'/> |
 
 | 홈 페이지 | 검색 페이지 |
 | :---: | :---: |
-| gif | gif |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/cc6822d7-2e4a-44d7-b47c-7662756994e3' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/f0b3ed18-3bdb-4b6b-92f2-7b6031f8ca94' height='480px'/> |
 
 ### 2) 피드
 | 피드 페이지 |
 | :---: |
-| gif |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/c9ed5017-92bb-4938-8fd7-8203f1efe7c8' height='480px'/>  |
     
 ### 3) 게시물
 | 게시물 목록 페이지 | 게시물 상세 페이지 | 게시물 작성 페이지 |
 | :---: | :---: | :---: |
-| gif | gif | gif |
+| <img src='' height='480px'/> | <img src='' height='480px'/> | <img src='' height='480px'/> |
 
 | 게시물 수정 페이지 | 게시물, 댓글 삭제 | 좋아요, 댓글 기능 |
 | :---: | :---: | :---: |
-| gif | gif | gif |
+| <img src='' height='480px'/>  | <img src='' height='480px'/> | <img src='' height='480px'/>  |
 
 | 댓글 신고 |
 | :---: |
