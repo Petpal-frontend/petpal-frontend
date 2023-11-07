@@ -32,11 +32,10 @@ PW: 123123
 <br/>
 
 ## 2. 팀원 소개
-| 김소리 | 류경민 | 최지완 | 최현아 |
+| 리더 | 리더 | 리더 | 리더 |
 | :---: | :---: | :---: | :---: |
-| <img src="https://github.com/Petpal-frontend/petpal-frontend/blob/main/src/assets/image/tajaCat.gif" /> | <img src="https://github.com/Petpal-frontend/petpal-frontend/blob/main/src/assets/image/tajaCat.gif" /> | <img src="https://github.com/Petpal-frontend/petpal-frontend/blob/main/src/assets/image/tajaCat.gif" /> | <img src="https://github.com/Petpal-frontend/petpal-frontend/blob/main/src/assets/image/tajaCat.gif" /> |
-| [🔗 sorikikikim](https://github.com/sorikikikim) | [🔗 kmryuuu](https://github.com/kmryuuu)  | [🔗 jiwanchoi](https://github.com/jiwanchoi)   | [🔗 hhyunn](https://github.com/hhyunn)  |
-| 담당 | 담당 | 담당 | 담당 |
+| <img src="https://avatars.githubusercontent.com/u/73383923?v=4" /> | <img src="https://avatars.githubusercontent.com/u/138556024?v=4" /> | <img src="https://avatars.githubusercontent.com/u/54405518?v=4" /> | <img src="https://avatars.githubusercontent.com/u/110486454?v=4" /> |
+| [🔗 김소리](https://github.com/sorikikikim) | [🔗 류경민](https://github.com/kmryuuu)  | [🔗 최지완](https://github.com/jiwanchoi)   | [🔗 최현아](https://github.com/hhyunn)  |
 
 <br/>
 <br/>
@@ -271,7 +270,16 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 <br/>
 
 ### 류경민
+화면 개발
+  - 프로젝트 로고 및 UI 디자인
+  - 로그인, 회원가입, 게시물 작성 UI
 
+기능 개발
+  - 댓글
+      - 댓글 등록, 삭제 기능 구현
+  - 채팅
+      - 채팅 리스트 데이터 렌더링 구현
+      - 채팅 룸 사용자가 입력한 텍스트 및 이미지 렌더링 구현
 <br/>
 
 ### 최지완
