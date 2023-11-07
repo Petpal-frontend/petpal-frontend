@@ -206,8 +206,7 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 
 | 댓글 신고 |
 | :---: |
-| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/5a54379a-7129-4f5c-96f1-d827bfc21cfe' height='380px'/>
- |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/5a54379a-7129-4f5c-96f1-d827bfc21cfe' height='380px'/> |
 
 ### 4) 채팅
 | 채팅 목록 페이지 | 채팅방 페이지 |
