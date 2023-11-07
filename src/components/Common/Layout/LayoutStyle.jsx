@@ -4,10 +4,10 @@ import styled from 'styled-components';
 export const ComponentLayout = styled.div`
   padding: 60px 0;
 
-	&.detailComponent {
-		padding-bottom: 0;
-	}
-	`;
+  &.detailComponent {
+    padding-bottom: 0;
+  }
+`;
 
 // 리스트 형식의 컴포넌트들을 감싸는 컨테이너 -> 산책, 돌보미, 쇼핑
 export const ItemListContainer = styled.div`
@@ -15,6 +15,7 @@ export const ItemListContainer = styled.div`
   flex-direction: column;
   align-items: center;
   letter-spacing: 0.5px;
+  padding-top: 15px;
 `;
 
 // 리스트 형식 내 각 아이템 컴포넌트를 감싸는 컨테이너 -> 산책, 돌보미
