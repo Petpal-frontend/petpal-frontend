@@ -209,18 +209,18 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/5a54379a-7129-4f5c-96f1-d827bfc21cfe' height='380px'/> |
 
 ### 4) 채팅
-| 채팅 목록 페이지 | 채팅방 페이지 |
+| 채팅 목록 페이지 | 채팅방 페이지 | 수정 필요 |
 | :---: | :---: |
-| gif | gif |
+| gif | gif | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/8cc5f724-92e2-49e8-8e98-9a9e93a1ae06' height='480px'/> |
 
 ### 5) 프로필
 | 프로필 페이지 | 프로필 수정 페이지 | 팔로워/팔로잉 페이지 |
 | :---: | :---: | :---: |
-| gif | gif | gif |
+|  <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/352cf1bb-efe5-4d9f-ace9-23b6446994da' height='480px'/> |  <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/63a9ddb7-5bfe-44f3-a080-3e843d79fa24' height='480px'/> |  <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/c070f835-f0ba-4316-9b2e-1f9a8c553cd9' height='480px'/> |
 
 | 로그아웃 기능 |
 | :---: |
-| gif |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/6a5f7d79-9f04-484b-96b8-c80259de1a51' height='480px'/> |
 
 <br/>
 <br/>
