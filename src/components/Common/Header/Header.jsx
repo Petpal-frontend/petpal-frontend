@@ -14,7 +14,7 @@ import { Modal } from '../Modal/Modal';
 import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../../atoms/AtomUserState';
 import { TooltipStyle } from '../Tooltip/ToolStyle';
-import iBtn from '../../../assets/image/i-icon.svg';
+import iBtn from '../../../assets/image/info.png';
 function BackButton({ type }) {
   const navigate = useNavigate();
 
@@ -67,7 +67,7 @@ function HeaderTitle({ type, title }) {
         </HeaderTitleInnerSpan>
       </TooltipStyle>
     </HeaderTitleSpan>
-  ) : null;
+  ) : null;	
 }
 
 function HeaderSub({ title }) {

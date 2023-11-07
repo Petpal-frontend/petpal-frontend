@@ -50,7 +50,7 @@ export default function Post({
     try {
       const imgUpload = await uploadImgs(formData);
       if (selectedFiles.length > 3) {
-        setAlertMessage('이미지는 3장 이하로 업로드 가능합니다.');
+        setAlertMessage('게시글 내용을 입력해주세요.');
         setShowAlert(true);
         return;
       }
@@ -119,7 +119,11 @@ export default function Post({
         <h1 className="a11y-hidden">게시글 등록 작성</h1>
         <div>
           <PrevBtn>
-            <Link to="/walkList"></Link>
+            {type === 'walk' ? (
+              <Link to="/walkList"></Link>
+            ) : (
+              <Link to="/careList"></Link>
+            )}
           </PrevBtn>
           <HeaderContent>{title}</HeaderContent>
         </div>

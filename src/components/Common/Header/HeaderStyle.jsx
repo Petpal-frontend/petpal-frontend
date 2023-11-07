@@ -42,6 +42,8 @@ export const HeaderTitleInnerSpan = styled.span`
   letter-spacing: 0.02rem;
   font-weight: 500;
   margin: 0 10px;
+	display: flex;
+	align-items: center;
 `;
 
 export const PostStyle = styled.article`

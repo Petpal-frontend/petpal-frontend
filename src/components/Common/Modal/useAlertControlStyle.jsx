@@ -23,5 +23,5 @@ export const AlertContainer = styled.div`
   animation: ${fadeIn} 0.3s ease-in;
   z-index: 999;
   width: 520px;
-  height: 100vh;
+  height: 100%;
 `;
