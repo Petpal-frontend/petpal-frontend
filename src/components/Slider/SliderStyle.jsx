@@ -20,7 +20,7 @@ export const ImageContainer = styled.div`
   // margin: 0 0px;
   // width: 410px;
   width: calc(100% - 10px);
-  height: 371px;
+  // height: 371px;
   position: relative;
 `;
 
