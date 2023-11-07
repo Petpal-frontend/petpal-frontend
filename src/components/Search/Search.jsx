@@ -23,7 +23,7 @@ export default function Search({ users, inputValue }) {
                             el
                           ) : (
                             <React.Fragment key={i}>
-                              <span style={{ color: '#B3BEDC' }}>
+                              <span style={{ color: '#274BA9' }}>
                                 {inputValue}
                               </span>
                               {el}
