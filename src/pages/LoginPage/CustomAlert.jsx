@@ -18,9 +18,8 @@ export default CustomAlert;
 export const StyledAlert = styled.div`
   position: absolute;
   top: 0;
-  left: 0;
   width: 520px;
-  min-height: 920px; // 모바일에서는 920px 웹에서는 100%
+  min-height: 100%; // 모바일에서는 920px 웹에서는 100%
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
