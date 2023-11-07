@@ -47,13 +47,13 @@ export default function ProductDetail({ ProductDetail }) {
   return (
     <>
       <StyledLayout>
-        <HeaderWrap>
+        {/* <HeaderWrap>
           <h1 className="a11y-hidden">쇼핑하기 상품 상세</h1>
           <PrevBtn>
             <Link to="/productList"></Link>
           </PrevBtn>
           <MoreBtn />
-        </HeaderWrap>
+        </HeaderWrap> */}
         <MainWrap>
           <ImgArea>
             <img src={ProductDetail.product.itemImage} alt="상품 이미지" />

@@ -50,7 +50,8 @@ export const SearchBtn = styled.button`
   cursor: pointer;
   position: absolute;
   top: 13px;
-  left: 388px;
+  // left: 388px;
+  right: 6px;
   width: 32px;
   height: 32px;
   background: none;

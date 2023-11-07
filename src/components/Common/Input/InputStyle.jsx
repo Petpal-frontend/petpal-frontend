@@ -23,4 +23,11 @@ export const StyledInput = styled.input`
   &:focus {
     outline: none;
   }
+
+  &.signUpInput,
+  &.signUpAddress,
+  &.profileEditInput,
+  &.profileEditAddress {
+    width: 100%;
+  }
 `;

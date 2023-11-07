@@ -11,6 +11,7 @@ export default function Input({
   placeholder,
   onChange,
   onClick,
+  className,
 }) {
   return (
     <InputContainer>
@@ -25,6 +26,7 @@ export default function Input({
         placeholder={placeholder}
         onChange={onChange}
         onClick={onClick}
+        className={className}
       />
     </InputContainer>
   );

@@ -32,10 +32,13 @@ export const ModalContainer = styled.div`
   justify-content: center;
   animation: ${fadeIn} 0.3s ease-in;
   z-index: 999;
-  width: 520px;
+  // width: 520px;
+  max-width: 520px;
+  width: 100%;
   height: 100%;
 `;
 
 export const ModalContent = styled.div`
+  width: 100%;
   animation: ${moveTop} 0.8s ease-in-out forwards;
 `;

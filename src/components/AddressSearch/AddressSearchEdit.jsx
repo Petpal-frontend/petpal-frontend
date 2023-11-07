@@ -3,7 +3,11 @@ import DaumPostcode from 'react-daum-postcode';
 import Modal from 'react-modal';
 import Input from '../Common/Input/Input';
 
-export default function AddressSearchEdit({ onAddressSelect, beforeAddress }) {
+export default function AddressSearchEdit({
+  onAddressSelect,
+  beforeAddress,
+  className,
+}) {
   const [roadAddress, setRoadAddress] = useState(beforeAddress);
   const [isOpen, setIsOpen] = useState(false);
   const completeHandler = data => {
@@ -32,7 +36,12 @@ export default function AddressSearchEdit({ onAddressSelect, beforeAddress }) {
 
   return (
     <div>
-      <Input value={roadAddress} readOnly onClick={openModal} />
+      <Input
+        value={roadAddress}
+        readOnly
+        onClick={openModal}
+        className={className}
+      />
       <Modal
         isOpen={isOpen}
         ariaHideApp={false}

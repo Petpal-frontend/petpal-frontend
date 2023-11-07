@@ -5,7 +5,9 @@ export const PostTop = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 15px;
-  width: 520px;
+  // width: 520px;
+  max-width: 520px;
+  width: 100%;
 `;
 
 export const UserInfoBox = styled.div`
@@ -32,7 +34,9 @@ export const PostContent = styled.p`
 
 export const Divider = styled.div`
   border-top: 1px solid #dbdbdb;
-  width: 520px;
+  // width: 520px;
+  max-width: 520px;
+  width: 100%;
 `;
 
 export const DetailContainer = styled.div`

@@ -151,7 +151,7 @@ export default function ProfileEditForm({ beforeUserData }) {
               onChange={handleImageUpload}
             />
           </ProfileImgBox>
-          <form onSubmit={handleProfileEdit}>
+          <form onSubmit={handleProfileEdit} className="profileEditForm">
             <Input
               id="userNameSignUp"
               type="text"
@@ -161,6 +161,7 @@ export default function ProfileEditForm({ beforeUserData }) {
               onChange={e => {
                 setUsername(e.target.value);
               }}
+              className="profileEditInput"
             />
             <AddressBox>
               <StyledLabel label="주소">주소</StyledLabel>
@@ -168,6 +169,7 @@ export default function ProfileEditForm({ beforeUserData }) {
                 <AddressSearchEdit
                   onAddressSelect={handleAddressSelect}
                   beforeAddress={intro}
+                  className="profileEditAddress"
                 />
               )}
               <SearchBtn type="button">
@@ -179,6 +181,7 @@ export default function ProfileEditForm({ beforeUserData }) {
               size="lg"
               variant="primary"
               disabled={!username || !intro}
+              className="profileEditBtn"
             >
               프로필 설정
             </Button>

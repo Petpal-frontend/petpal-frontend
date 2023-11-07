@@ -3,7 +3,7 @@ import DaumPostcode from 'react-daum-postcode';
 import Modal from 'react-modal';
 import Input from '../Common/Input/Input';
 
-function AddressSearch({ onAddressSelect }) {
+function AddressSearch({ onAddressSelect, className }) {
   const [roadAddress, setRoadAddress] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const completeHandler = data => {
@@ -37,6 +37,7 @@ function AddressSearch({ onAddressSelect }) {
         readOnly
         placeholder="주소"
         onClick={openModal}
+        className={className}
       />
       <Modal
         isOpen={isOpen}
