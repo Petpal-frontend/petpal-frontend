@@ -305,6 +305,7 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
   - infinity scroll
   - map
   - splash
+  - tooltip
 - 상태관리
   - recoil atom
  
