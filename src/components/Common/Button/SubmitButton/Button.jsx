@@ -53,6 +53,7 @@ export default function Button({
   variant,
   children,
   disabled,
+  className,
 }) {
   return (
     <StyledButton
@@ -61,6 +62,7 @@ export default function Button({
       size={size}
       variant={variant}
       disabled={disabled}
+      className={className}
     >
       <span>{children}</span>
     </StyledButton>
@@ -88,5 +90,10 @@ const StyledButton = styled.button`
     opacity: 0.5;
     --button-color: var(--color-white);
     --button-background: var(--color-button-bg);
+  }
+
+  &.signUpBtn,
+  &.profileEditBtn {
+    width: 100%;
   }
 `;

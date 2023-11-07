@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { WalkItemImage, LikeAndChat } from './WalkItemStyle';
+import { WalkItemImage, LikeAndChat, WalkItemBox } from './WalkItemStyle';
 import {
   InfoDiv,
   InfoGroup,
@@ -33,11 +33,13 @@ export default function WalkItem({
   return (
     <StyledLink to={`/walkDetail/${id}`}>
       <ItemContainer>
-        {imageArr ? (
-          <WalkItemImage src={imageArr[0]} alt={content} />
-        ) : (
-          <WalkItemImage src={defaultImg} alt={content} />
-        )}
+        <WalkItemBox>
+          {imageArr ? (
+            <WalkItemImage src={imageArr[0]} alt={content} />
+          ) : (
+            <WalkItemImage src={defaultImg} alt={content} />
+          )}
+        </WalkItemBox>
         <ItemContentDiv>
           <ItemContent>{content.split('petpal_walk_')}</ItemContent>
           <InfoDiv>

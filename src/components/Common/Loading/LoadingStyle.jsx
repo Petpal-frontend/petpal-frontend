@@ -2,8 +2,11 @@ import styled from 'styled-components';
 
 export const Background = styled.div`
   position: absolute;
-  width: 520px;
-  height: 100vh;
+  // width: 520px;
+  // height: 100vh;
+  max-width: 520px;
+  width: 100%;
+  min-height: 100vh;
   margin: 0 auto;
   background: #ffffffb7;
   z-index: 999;

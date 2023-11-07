@@ -13,22 +13,30 @@ export const ComponentLayout = styled.div`
 export const ItemListContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
+  gap: 10px;
   letter-spacing: 0.5px;
-  padding-top: 15px;
+  // padding-top: 15px;
+  padding: 15px 0;
+
+  &.profile {
+    align-items: center;
+  }
 `;
 
 // 리스트 형식 내 각 아이템 컴포넌트를 감싸는 컨테이너 -> 산책, 돌보미
 export const ItemContainer = styled.div`
-  margin: 10px auto;
-  padding: 10px;
-  width: 468px;
+  // margin: 10px auto;
+  // padding: 10px;
+  // width: 468px;
   height: 120px;
+  padding: 0 14px;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.04);
   text-align: center;
   border-radius: 5px;
   display: flex;
   align-items: center;
+  gap: 15px;
   cursor: pointer;
 `;
 
@@ -37,8 +45,10 @@ export const ItemContentDiv = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  margin: 0 15px;
-  width: 80%;
+  // margin: 0 15px;
+  // width: 80%;
+  width: 100%;
+  gap: 16px;
 `;
 
 export const ItemContent = styled.h3`
@@ -46,7 +56,7 @@ export const ItemContent = styled.h3`
   word-break: break-all;
   font-size: 18px;
   font-weight: 600;
-  margin: 10px;
+  // margin: 10px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -59,15 +69,16 @@ export const ItemContent = styled.h3`
 export const InfoDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 90%;
-  margin: 10px auto;
+  // width: 90%;
+  width: 100%;
+  // margin: 10px auto;
 `;
 
 export const InfoGroup = styled.div`
   display: flex;
   align-items: center;
   gap: 6px;
-  width: 200px;
+  // width: 200px;
 `;
 
 export const InfoSpan = styled.span`
@@ -81,10 +92,20 @@ export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  // height: 100vh;
+  min-height: calc(100vh - 120px);
+
+  &.signUpContainer {
+    padding: 60px 0;
+  }
+
+  .signUpForm,
+  .profileEditForm {
+    width: 82%;
+  }
 `;
 
 export const H1 = styled.h1`
   font-size: var(--font-size-xl);
-  margin-top: 40px;
+  // margin-top: 40px;
 `;

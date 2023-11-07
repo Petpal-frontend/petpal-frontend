@@ -55,7 +55,7 @@ export default function MyProfile({ myData, myProduct, myPost }) {
   return (
     <ComponentLayout>
       {/* 내 프로필, 상대 프로필 재사용 */}
-      <ItemListContainer>
+      <ItemListContainer className="profile">
         <ProfileContainer>
           <Link to={`/profile/${userInfo.accountname}/follower`}>
             <FollowNum>{myData.user.followerCount}</FollowNum>

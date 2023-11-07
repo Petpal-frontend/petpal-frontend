@@ -9,7 +9,7 @@ import {
 } from '../Common/Layout/LayoutStyle';
 import { UserImg, LikeImg, ChatImg } from '../Common/SpanImg/SpanImgStyle';
 import { StyledLink } from '../Common/Text/StyledLink';
-import { CareInfoDiv, CareItemImage } from './CareItemStyle';
+import { CareInfoDiv, CareItemBox, CareItemImage } from './CareItemStyle';
 import defaultImg from '../../assets/image/profile.png';
 import { getCareDetail } from '../../api/care';
 
@@ -53,11 +53,13 @@ export default function CareItem({
             </LikeAndChat>
           </CareInfoDiv>
         </ItemContentDiv>
-        {imageArr ? (
-          <CareItemImage src={imageArr[0]} alt="img" />
-        ) : (
-          <CareItemImage src={defaultImg} alt="img" />
-        )}
+        <CareItemBox>
+          {imageArr ? (
+            <CareItemImage src={imageArr[0]} alt="img" />
+          ) : (
+            <CareItemImage src={defaultImg} alt="img" />
+          )}
+        </CareItemBox>
       </ItemContainer>
     </StyledLink>
   );
