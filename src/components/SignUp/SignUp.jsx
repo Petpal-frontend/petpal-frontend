@@ -177,7 +177,7 @@ export default function SignUpForm() {
           onChange={handleImageUpload}
         />
       </ProfileImgBox>
-      <form onSubmit={handleSignUp} className="signUpForm">
+      <form onSubmit={handleSignUp}>
         <Input
           id="userNameSignUp"
           type="text"
@@ -186,7 +186,6 @@ export default function SignUpForm() {
           onChange={e => {
             setUsername(e.target.value);
           }}
-          className="signUpInput"
         />
         <Input
           id="emailSignUp"
@@ -196,7 +195,6 @@ export default function SignUpForm() {
           onChange={e => {
             setEmail(e.target.value);
           }}
-          className="signUpInput"
         />
         {warningMessage && (
           <div
@@ -206,29 +204,9 @@ export default function SignUpForm() {
               marginBottom: '15px',
               marginTop: '-10px',
             }}
-          />
-          <AddressBox>
-            <StyledLabel label="주소">주소</StyledLabel>
-            <AddressSearch onAddressSelect={handleAddressSelect} />
-            <SearchBtn type="button">
-              <Search className="a11yHidden">검색</Search>
-            </SearchBtn>
-          </AddressBox>
-          <Button
-            type="submit"
-            size="lg"
-            variant="primary"
-            disabled={!username || !email || !password || !intro}
           >
-            펫팔하러 GO!
-          </Button>
-        </form>
-        <LinkWrapper>
-          <LoginLink to="/login">로그인</LoginLink>
-          <MainLink to="/">메인으로 돌아가기</MainLink>
-        </LinkWrapper>
-        {showAlert && (
-          <CustomAlert message={alertMessage} onClose={closeAlert} />
+            {warningMessage}
+          </div>
         )}
         <Input
           id="passwordSignUp"
@@ -238,14 +216,10 @@ export default function SignUpForm() {
           onChange={e => {
             setPassword(e.target.value);
           }}
-          className="signUpInput"
         />
         <AddressBox>
           <StyledLabel label="주소">주소</StyledLabel>
-          <AddressSearch
-            onAddressSelect={handleAddressSelect}
-            className="signUpAddress"
-          />
+          <AddressSearch onAddressSelect={handleAddressSelect} />
           <SearchBtn type="button">
             <Search className="a11yHidden">검색</Search>
           </SearchBtn>
@@ -255,7 +229,6 @@ export default function SignUpForm() {
           size="lg"
           variant="primary"
           disabled={!username || !email || !password || !intro}
-          className="signUpBtn"
         >
           펫팔하러 GO!
         </Button>
@@ -264,7 +237,7 @@ export default function SignUpForm() {
         <LoginLink to="/login">로그인</LoginLink>
         <MainLink to="/">메인으로 돌아가기</MainLink>
       </LinkWrapper>
+      {showAlert && <CustomAlert message={alertMessage} onClose={closeAlert} />}
     </FormContainer>
-
   );
 }
