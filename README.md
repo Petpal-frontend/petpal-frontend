@@ -3,7 +3,7 @@
 
   <img src="https://github.com/Petpal-frontend/petpal-frontend/blob/main/src/assets/image/tajaCat.gif" />
 
-  <h3>펫팔 한줄로 pr</h3>
+  <h3>펫팔, 펫과 펜팔, 두근두근 우리만의 소통 시작 </h3>
 </div>
 
 <br/>
@@ -13,7 +13,7 @@
 
 ### 테스트 계정
 ```
-ID: petpal@gmail.com
+ID: petpal@test.com
 PW: 123123
 ```
 
