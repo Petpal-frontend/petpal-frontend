@@ -7,7 +7,7 @@ export const ComponentLayout = styled.div`
 	&.detailComponent {
 		padding-bottom: 0;
 	}
-`;
+	`;
 
 // 리스트 형식의 컴포넌트들을 감싸는 컨테이너 -> 산책, 돌보미, 쇼핑
 export const ItemListContainer = styled.div`
@@ -43,7 +43,7 @@ export const ItemContentDiv = styled.div`
 export const ItemContent = styled.h3`
   line-height: 1.2em; // 글자 윗부분 잘려서 넣어줘야됨
   word-break: break-all;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   margin: 10px;
   overflow: hidden;

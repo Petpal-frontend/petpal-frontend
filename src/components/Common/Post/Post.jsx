@@ -7,6 +7,7 @@ import {
   PostContent,
   ImgUploadButton,
   SelectedImage,
+  PostDiv,
 } from './PostStyle';
 import {
   HeaderContent,
@@ -19,6 +20,7 @@ import { uploadPost } from '../../../api/post';
 import { uploadImgs } from '../../../api/imageApi';
 import myProfile from '../../../assets/image/profile-img4.svg';
 import uploadChat from '../../../assets/image/chat-upload-btn.svg';
+import CustomAlert from '../../../pages/LoginPage/CustomAlert';
 
 export default function Post({
   id,
@@ -31,6 +33,10 @@ export default function Post({
 }) {
   const [selectedImages, setSelectedImages] = useState([]);
   const [content, setContent] = useState('');
+
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+
   const navigate = useNavigate();
 
   const handleImageChange = async e => {
@@ -44,7 +50,8 @@ export default function Post({
     try {
       const imgUpload = await uploadImgs(formData);
       if (selectedFiles.length > 3) {
-        alert('이미지는 최대 3개까지 선택할 수 있습니다.');
+        setAlertMessage('이미지는 3장 이하로 업로드 가능합니다.');
+        setShowAlert(true);
         return;
       }
       setSelectedImages(
@@ -65,12 +72,14 @@ export default function Post({
       e.preventDefault();
       // 필수 입력 필드인 content와 selectedImages 검사
       if (!content) {
-        alert('게시글 내용을 입력해주세요.');
+        setAlertMessage('게시글 내용을 입력해주세요.');
+        setShowAlert(true);
         return;
       }
 
       if (selectedImages.length === 0) {
-        alert('이미지를 업로드해주세요.');
+        setAlertMessage('이미지를 업로드해주세요.');
+        setShowAlert(true);
         return;
       }
       const postData = {
@@ -82,21 +91,30 @@ export default function Post({
 
       const response = await uploadPost(postData);
       if (response.status === 200) {
-        alert('게시글 등록이 완료되었습니다. 게시글 목록으로 이동합니다.');
-        if (type === 'walk') {
-          navigate('/walkList');
-        }
-        if (type === 'care') {
-          navigate('/careList');
-        }
+        setAlertMessage(
+          '게시글 등록이 완료되었습니다. 게시글 목록으로 이동합니다.',
+        );
+        setShowAlert(true);
+        setTimeout(() => {
+          if (type === 'walk') {
+            navigate('/walkList');
+          }
+          if (type === 'care') {
+            navigate('/careList');
+          }
+        }, 2000);
       }
     } catch (err) {
       console.error(err);
     }
   };
 
+  const closeAlert = () => {
+    setShowAlert(false);
+  };
+
   return (
-    <>
+    <PostContainer>
       <HeaderWrap>
         <h1 className="a11y-hidden">게시글 등록 작성</h1>
         <div>
@@ -109,7 +127,7 @@ export default function Post({
           업로드
         </UploadBtn>
       </HeaderWrap>
-      <PostContainer>
+      <PostDiv>
         <UserImg
           src={myProfile}
           alt="프로필 이미지"
@@ -148,7 +166,8 @@ export default function Post({
               />
             ))}
         </form>
-      </PostContainer>
-    </>
+      </PostDiv>
+      {showAlert && <CustomAlert message={alertMessage} onClose={closeAlert} />}
+    </PostContainer>
   );
 }

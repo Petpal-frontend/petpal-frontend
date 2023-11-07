@@ -19,7 +19,7 @@ import imgLogo from '../../assets/image/logo.svg';
 import imgNaver from '../../assets/image/naver.svg';
 import imgGoogle from '../../assets/image/google.svg';
 import imgKakao from '../../assets/image/kakao.svg';
-import Button from '../../components/Common/Button/SubmitButton/Button';
+import CustomAlert from './CustomAlert';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -123,7 +123,7 @@ export default function LoginPage() {
         </Link>
       </SnsLoginList>
 
-      {showAlert && (
+      {/* {showAlert && (
         <StyledAlert>
           <div className="alertContent">
             <p>{alertMessage}</p>
@@ -135,7 +135,9 @@ export default function LoginPage() {
             />
           </div>
         </StyledAlert>
-      )}
+      )} */}
+
+      {showAlert && <CustomAlert message={alertMessage} onClose={closeAlert} />}
     </LoginContainer>
   );
 }

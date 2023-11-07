@@ -11,6 +11,7 @@ import {
   FormArea,
 } from './ProductPostStyle';
 import imgUpload from '../../assets/image/icon-upload-img.svg';
+import CustomAlert from '../../pages/LoginPage/CustomAlert';
 
 export default function ProductPost(props) {
   const {
@@ -25,18 +26,43 @@ export default function ProductPost(props) {
     onUploadClick,
   } = props;
 
+  // const handleUploadClick = () => {
+  //   if (!productTitle) {
+  //     alert('상품명을 입력해주세요.');
+  //   } else if (!productPrice) {
+  //     alert('가격을 입력해주세요.');
+  //   } else if (!productDescription) {
+  //     alert('상품 설명을 입력해주세요.');
+  //   } else if (!imageFile) {
+  //     alert('이미지를 업로드해주세요.');
+  //   } else {
+  //     onUploadClick();
+  //   }
+  // };
+
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+
   const handleUploadClick = () => {
     if (!productTitle) {
-      alert('상품명을 입력해주세요.');
+      setAlertMessage('상품명을 입력해주세요.');
+      setShowAlert(true);
     } else if (!productPrice) {
-      alert('가격을 입력해주세요.');
+      setAlertMessage('가격을 입력해주세요.');
+      setShowAlert(true);
     } else if (!productDescription) {
-      alert('상품 설명을 입력해주세요.');
+      setAlertMessage('상품 설명을 입력해주세요.');
+      setShowAlert(true);
     } else if (!imageFile) {
-      alert('이미지를 업로드해주세요.');
+      setAlertMessage('이미지를 업로드해주세요.');
+      setShowAlert(true);
     } else {
       onUploadClick();
     }
+  };
+
+  const closeAlert = () => {
+    setShowAlert(false);
   };
 
   return (
@@ -119,6 +145,22 @@ export default function ProductPost(props) {
             </form>
           </FormArea>
         </MainWrap>
+        {/* {showAlert && (
+          <StyledAlert>
+            <div className="alertContent">
+              <p>{alertMessage}</p>
+              <Button
+                children="확인"
+                size="xs"
+                variant="primary"
+                onClick={closeAlert}
+              />
+            </div>
+          </StyledAlert>
+        )} */}
+        {showAlert && (
+          <CustomAlert message={alertMessage} onClose={closeAlert} />
+        )}
       </StyledLayout>
     </>
   );
