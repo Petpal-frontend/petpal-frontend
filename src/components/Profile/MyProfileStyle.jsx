@@ -19,6 +19,8 @@ export const UserProfileImage = styled.img`
   border-radius: 50%;
   margin: 17px;
   object-fit: cover;
+	border: 1px solid #d3d3d35e;
+
 `;
 
 export const Username = styled.h2`
