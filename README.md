@@ -207,8 +207,7 @@ petpal-frontend                     # git 저장소 # 여기서 git 작업을 �
 <br/>
 
 ## 7. Git Branch 전략 - Github Flow
-# 프로젝트 Gitflow 전략
-
+## 프로젝트 Gitflow 전략
 이 프로젝트는 Gitflow 전략을 따라 개발 및 관리됩니다. 
 Gitflow는 Git을 사용한 협업 개발을 위한 전략으로, 팀 구성원 간의 업무 분담, 기능 개발, 버그 수정, 출시 및 유지 보수를 효과적으로 관리하기 위한 일련의 규칙과 프로세스를 제공합니다.
 
