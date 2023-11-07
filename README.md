@@ -1,7 +1,6 @@
   <h1>PetPal 🐾</h1>
 
-  <img src="https://github.com/Petpal-frontend/petpal-frontend/blob/main/src/assets/image/tajaCat.gif" />
-
+ ![intro](https://github.com/Petpal-frontend/petpal-frontend/assets/138556024/999251f8-781f-489b-b432-7128e366c7d6)
   <h3>펫팔, 펫과 펜팔, 두근두근 우리만의 소통 시작 </h3>
 </div>
 
