@@ -9,7 +9,7 @@ export const LoginContainer = styled.div`
   min-height: 920px;
 	width: 520px;
   background-color: #fffad0;
-  width: calc(100% + 30px);
+  width: 520px;
   position: relative;
 `;
 
