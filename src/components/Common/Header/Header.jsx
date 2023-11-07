@@ -13,7 +13,8 @@ import backBtn from '../../../assets/image/backBtn.svg';
 import { Modal } from '../Modal/Modal';
 import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../../atoms/AtomUserState';
-
+import { TooltipStyle } from '../Tooltip/ToolStyle';
+import iBtn from '../../../assets/image/info.png';
 function BackButton({ type }) {
   const navigate = useNavigate();
 
@@ -51,9 +52,22 @@ function HeaderTitle({ type, title }) {
   ) : type === 'list' ? (
     <HeaderTitleSpan>
       {title}
-      <HeaderTitleInnerSpan>📍{userState.intro}</HeaderTitleInnerSpan>
+      <TooltipStyle>
+        <span className="tooltiptext">
+          지역은 프로필수정에서 변경가능합니다.
+        </span>
+        {/* <HeaderTitleInnerSpan>📍{userState.intro}</HeaderTitleInnerSpan> */}
+        <HeaderTitleInnerSpan>
+          {userState.intro}
+          <img
+            src={iBtn}
+            alt="i icon"
+            style={{ marginLeft: '3px', width: '15px', height: '15px' }}
+          />
+        </HeaderTitleInnerSpan>
+      </TooltipStyle>
     </HeaderTitleSpan>
-  ) : null;
+  ) : null;	
 }
 
 function HeaderSub({ title }) {

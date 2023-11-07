@@ -1,8 +1,24 @@
 import styled from 'styled-components';
 
+// export const PostContainer = styled.div`
+//   position: relative;
+//   display: flex;
+// 	flex-direction: column;
+//   padding: 1rem;
+//   height: 950px;
+// `;
+
+// export const PostDiv = styled.div`
+//   position: relative;
+//   display: flex;
+//   padding: 1rem;
+//   height: 900px;
+// `;
+
 export const PostContainer = styled.div`
   position: relative;
   display: flex;
+	flex-direction: column;
   padding: 1rem;
   // height: 100vh;
   // min-height: 100vh;
@@ -11,7 +27,16 @@ export const PostContainer = styled.div`
   form {
     width: 100%;
   }
+//   height: 950px;
 `;
+
+export const PostDiv = styled.div`
+  position: relative;
+  display: flex;
+  padding: 1rem;
+  height: 900px;
+`;
+
 export const PostContent = styled.textarea`
   // width: 420px;
   width: 100%;

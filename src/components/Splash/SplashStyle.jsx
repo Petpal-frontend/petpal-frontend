@@ -7,6 +7,9 @@ export const SplashBg = styled.div`
   max-width: 520px;
   width: 100%;
   min-height: 100vh;
+  // min-height: 920px;
+  
+
 
   background-color: #fffad0;
   animation: fadein 1.5s ease-in-out;

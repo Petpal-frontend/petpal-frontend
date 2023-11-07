@@ -22,6 +22,7 @@ import AddressSearch from '../AddressSearch/AddressSearch';
 import { FormContainer, H1 } from '../Common/Layout/LayoutStyle';
 import imgProfileBtn from '../../assets/image/profile-btn.svg';
 import profileImg from '../../assets/image/profile.svg';
+import CustomAlert from '../../pages/LoginPage/CustomAlert';
 
 export default function SignUpForm() {
   const navigate = useNavigate();
@@ -35,6 +36,9 @@ export default function SignUpForm() {
   const [intro, setIntro] = useState('');
   const [validCheck, setValidCheck] = useState(false); // 이메일 유효성 체크
   const [warningMessage, setWarningMessage] = useState(''); // response의 message
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
 
   // 받아온 주소값 split 후 setIntro
   const handleAddressSelect = address => {
@@ -92,13 +96,23 @@ export default function SignUpForm() {
       if (allowedExtensions.includes(extension)) {
         setSelectedImage(file);
       } else {
-        alert(
+        // alert(
+        //   '올바른 이미지 유형을 선택하세요 (.jpg, .jpeg, .png, .gif, .bmp, .tif, .heic).',
+        // );
+        setAlertMessage(
           '올바른 이미지 유형을 선택하세요 (.jpg, .jpeg, .png, .gif, .bmp, .tif, .heic).',
         );
+        setShowAlert(true);
       }
     }
   };
 
+  const closeAlert = () => {
+    setShowAlert(false);
+    if (isSuccess) {
+      navigate('/login');
+    }
+  };
   const handleSignUp = async e => {
     // 기본 펫팔 프로필 이미지 URL
     let baseImage = 'https://api.mandarin.weniv.co.kr/1698598137638.jpg';
@@ -128,10 +142,11 @@ export default function SignUpForm() {
         setWarningMessage('');
         setValidCheck(!validCheck);
         const response = await postSignUp(userData);
-        alert('회원가입성공');
 
         if (response.status === 200) {
-          return navigate(`/login`);
+          setAlertMessage('회원가입 성공');
+          setShowAlert(true);
+          setIsSuccess(true);
         }
       } else if (
         isEmailValid.data.message === '이미 가입된 이메일 주소 입니다.'
@@ -191,9 +206,29 @@ export default function SignUpForm() {
               marginBottom: '15px',
               marginTop: '-10px',
             }}
+          />
+          <AddressBox>
+            <StyledLabel label="주소">주소</StyledLabel>
+            <AddressSearch onAddressSelect={handleAddressSelect} />
+            <SearchBtn type="button">
+              <Search className="a11yHidden">검색</Search>
+            </SearchBtn>
+          </AddressBox>
+          <Button
+            type="submit"
+            size="lg"
+            variant="primary"
+            disabled={!username || !email || !password || !intro}
           >
-            {warningMessage}
-          </div>
+            펫팔하러 GO!
+          </Button>
+        </form>
+        <LinkWrapper>
+          <LoginLink to="/login">로그인</LoginLink>
+          <MainLink to="/">메인으로 돌아가기</MainLink>
+        </LinkWrapper>
+        {showAlert && (
+          <CustomAlert message={alertMessage} onClose={closeAlert} />
         )}
         <Input
           id="passwordSignUp"
@@ -230,5 +265,6 @@ export default function SignUpForm() {
         <MainLink to="/">메인으로 돌아가기</MainLink>
       </LinkWrapper>
     </FormContainer>
+
   );
 }

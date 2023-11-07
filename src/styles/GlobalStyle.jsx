@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: #F2F2F2;
-    font-family: 'Pretendard', sans-serif;
+    font-family: 'SUIT';
   }
   
   #root {
@@ -46,6 +46,7 @@ const GlobalStyle = createGlobalStyle`
     max-width: 520px;
     width: 100%;
     min-height: 100vh;
+
     margin: 0 auto;
     background-color: #fff;
 }

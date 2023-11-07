@@ -22,6 +22,8 @@ import { putMyProfile } from '../../api/profile';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilValue, useRecoilState } from 'recoil';
 import { userInfoAtom } from '../../atoms/AtomUserState';
+import CustomAlert from '../../pages/LoginPage/CustomAlert';
+
 export default function ProfileEditForm({ beforeUserData }) {
   const [username, setUsername] = useState(beforeUserData.username);
   const [userState, setUserState] = useRecoilState(userInfoAtom);
@@ -29,6 +31,9 @@ export default function ProfileEditForm({ beforeUserData }) {
   const [selectedImage, setSelectedImage] = useState();
   const [intro, setIntro] = useState(beforeUserData.intro);
   const navigate = useNavigate();
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const handleImageUpload = event => {
     const file = event.target.files[0];
@@ -50,12 +55,14 @@ export default function ProfileEditForm({ beforeUserData }) {
         setImage(URL.createObjectURL(file));
         setSelectedImage(file);
       } else {
-        alert(
+        setAlertMessage(
           '올바른 이미지 유형(.jpg, .jpeg, .png, .gif, .bmp, .tif, .heic)을 선택하세요.',
         );
+        setShowAlert(true);
       }
     }
   };
+
   const handleAddressSelect = address => {
     setIntro(address.split(' ')[0]);
   };
@@ -102,13 +109,21 @@ export default function ProfileEditForm({ beforeUserData }) {
       }
 
       const response = await putMyProfile(userData);
-      alert('프로필 수정 성공');
+      setAlertMessage('프로필 수정 성공');
+      setShowAlert(true);
 
       if (response.status === 200) {
-        return navigate(`/profile`);
+        setIsSuccess(true);
       }
     } catch (err) {
       console.error(err);
+    }
+  };
+
+  const closeAlert = () => {
+    setShowAlert(false);
+    if (isSuccess) {
+      navigate('/profile');
     }
   };
 
@@ -172,6 +187,9 @@ export default function ProfileEditForm({ beforeUserData }) {
             </Button>
           </form>
         </FormContainer>
+        {showAlert && (
+          <CustomAlert message={alertMessage} onClose={closeAlert} />
+        )}
       </ComponentLayout>
     </>
   );

@@ -6,6 +6,7 @@ export const LoginContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   // height: 100vh;
   background-color: #fffad0;
   // width: calc(100% + 30px);
@@ -16,13 +17,19 @@ export const LoginContainer = styled.div`
   form {
     width: 100%;
   }
+  //  min-height: 920px;
+  // 	width: 520px;
+  //   background-color: #fffad0;
+  //   width: 520px;
+  //   position: relative;
 `;
 
 export const LoginLogo = styled.img`
   position: absolute;
-  top: 22%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 15%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  margin: 0 20px auto;
 `;
 
 // 로그인 폼 입력
@@ -86,3 +93,4 @@ export const SnsLoginList = styled.div`
   gap: 50px;
   margin-top: 38px;
 `;
+
