@@ -11,13 +11,12 @@ export default function ChatList() {
         <MainWrap>
           <ul>
             {dummyMessages.map((item, index) => {
-              const lastText = item.text[item.text.length - 1];
               const firstText = item.text[0];
               return (
                 <ChatLi key={item.id}>
                   <Link to={`/chatRoom/${encodeURIComponent(item.username)}`}>
-                    {/* 채팅 상대방 프로필 이미지 */}
                     {index === 1 && <UnreadDot />}
+                    {/* 채팅 상대방 프로필 이미지 */}
                     {item.profileImg && (
                       <span className="profileImg">
                         <img src={item.profileImg} alt="프로필 이미지" />
