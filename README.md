@@ -205,7 +205,7 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 
  | 좋아요 기능 | 댓글 작성, 삭제 기능 | 댓글 신고 |
 | :---: | :---: | :---: |
-| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/81c86621-ba94-4029-a3e9-960a8e9b99b2' height='480px'/> |  <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/dd0a9211-8289-4f9f-81bc-46c6d97d1d79' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/5a54379a-7129-4f5c-96f1-d827bfc21cfe' height='380px'/> |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/81c86621-ba94-4029-a3e9-960a8e9b99b2' height='480px'/> |  <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/dd0a9211-8289-4f9f-81bc-46c6d97d1d79' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/5a54379a-7129-4f5c-96f1-d827bfc21cfe' height='480px'/> |
 
 ### 4) 채팅
 | 채팅 목록 페이지 | 채팅방 페이지 | 수정 필요 |
