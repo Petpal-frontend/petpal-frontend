@@ -1,4 +1,3 @@
-<div align="center">
   <h1>PetPal 🐾</h1>
 
   <img src="https://github.com/Petpal-frontend/petpal-frontend/blob/main/src/assets/image/tajaCat.gif" />
@@ -183,7 +182,7 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 ### 1) 홈
 | 스플래시 페이지 | 회원가입 페이지 | 로그인 페이지 |
 | :---: | :---: | :---: |
-| gif | gif | [gif](http://www.giphy.com/gifs/353035Z32O8Uljytpw) |
+| gif | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/ef07189e-1604-4647-9631-97cc4b9b16e1' height='480px' /> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/67a9a6a8-f5aa-4b0b-be2d-8dd2838bf7cb' height='480px'/> |
 
 | 홈 페이지 | 검색 페이지 |
 | :---: | :---: |
