@@ -6,7 +6,7 @@ export const LoginContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 920px;
+  min-height: 950px;
   background-color: #fffad0;
   width: calc(100% + 30px);
   margin: 0 0 0 -15px;
