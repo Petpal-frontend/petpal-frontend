@@ -89,7 +89,7 @@ export default function PostEdit({
       }
       if (response.status === 200) {
         setAlertMessage(
-          '게시글 등록이 완료되었습니다. 게시글 목록으로 이동합니다.',
+          '게시글 수정이 완료되었습니다. 게시글 목록으로 이동합니다.',
         );
         setShowAlert(true);
         setTimeout(() => {
