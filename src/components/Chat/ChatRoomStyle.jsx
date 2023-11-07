@@ -43,7 +43,7 @@ export const PrevBtn = styled.p`
 export const HeaderContent = styled.h2`
   font-size: 18px;
   font-weight: 700;
-  font-family: Pretendard;
+  // font-family: Pretendard;
 `;
 export const MoreBtn = styled.button`
   padding: 30px;

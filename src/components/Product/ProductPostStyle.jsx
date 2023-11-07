@@ -42,7 +42,7 @@ export const PrevBtn = styled.p`
 export const HeaderContent = styled.h2`
   font-size: 18px;
   font-weight: 700;
-  font-family: Pretendard;
+  // font-family: Pretendard;
 `;
 export const UploadBtn = styled.button`
   width: 89px;

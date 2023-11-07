@@ -5,6 +5,10 @@ import './font.css';
 const GlobalStyle = createGlobalStyle`
   ${reset};
 
+  h1, h2, h3, button, div, span {
+    font-family: 'SUIT';
+   }
+
   :root {
     /* Signature Color */
     --color-primary: #27489D;
