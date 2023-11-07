@@ -210,7 +210,7 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 
 ### 4) 채팅
 | 채팅 목록 페이지 | 채팅방 페이지 | 수정 필요 |
-| :---: | :---: |
+| :---: | :---: | :---: |
 | gif | gif | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/8cc5f724-92e2-49e8-8e98-9a9e93a1ae06' height='480px'/> |
 
 ### 5) 프로필
