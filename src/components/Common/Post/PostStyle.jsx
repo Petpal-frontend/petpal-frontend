@@ -3,8 +3,16 @@ import styled from 'styled-components';
 export const PostContainer = styled.div`
   position: relative;
   display: flex;
+	flex-direction: column;
   padding: 1rem;
-  height: 100vh;
+  height: 950px;
+`;
+
+export const PostDiv = styled.div`
+  position: relative;
+  display: flex;
+  padding: 1rem;
+  height: 900px;
 `;
 export const PostContent = styled.textarea`
   width: 420px;

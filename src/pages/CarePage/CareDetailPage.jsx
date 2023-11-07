@@ -18,7 +18,7 @@ import {
 } from '../../api/commentApi';
 
 export default function CareDetailPage() {
-  const { id, commentId } = useParams();
+  const { id } = useParams();
   const [access, setAccess] = useState(null);
   const [careDetailItem, setCareDetailItem] = useState();
   const [commentList, setCommentList] = useState([]);
@@ -69,7 +69,7 @@ export default function CareDetailPage() {
     getCommentList(id).then(res => {
       setCommentList(res.data.comments);
     });
-  }, []);
+  }, [id]);
 
   // 댓글 등록
   const handleEnterPress = event => {
@@ -115,7 +115,6 @@ export default function CareDetailPage() {
       console.error('댓글 처리 중 오류가 발생했습니다.', error);
     }
   };
-
   return (
     <>
       {isAccessAllowed ? (

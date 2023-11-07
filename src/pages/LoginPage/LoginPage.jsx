@@ -12,17 +12,23 @@ import {
   SignUpLink,
   P,
   SnsLoginList,
+  StyledAlert,
 } from './LoginPageStyle';
 import { useRecoilState } from 'recoil';
 import imgLogo from '../../assets/image/logo.svg';
 import imgNaver from '../../assets/image/naver.svg';
 import imgGoogle from '../../assets/image/google.svg';
 import imgKakao from '../../assets/image/kakao.svg';
+import CustomAlert from './CustomAlert';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [userInfo, setUserInfo] = useRecoilState(userInfoAtom);
+
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const navigate = useNavigate();
 
@@ -54,12 +60,26 @@ export default function LoginPage() {
           token: atomUserInfo.token,
           refreshToken: atomUserInfo.refreshToken,
         });
-        alert('로그인 성공');
-        return navigate(`/`);
+        // alert('로그인 성공');
+        // return navigate(`/`);
+
+        setAlertMessage('로그인 성공');
+        setShowAlert(true);
+        setIsLoggedIn(true);
       }
     } catch (err) {
       console.error(err);
-      alert('회원정보가 일치하지않습니다.');
+      // alert('회원정보가 일치하지않습니다.');
+      setAlertMessage('회원정보가 일치하지 않습니다.');
+      setShowAlert(true);
+      setIsLoggedIn(false);
+    }
+  };
+
+  const closeAlert = () => {
+    setShowAlert(false);
+    if (isLoggedIn) {
+      navigate('/');
     }
   };
 
@@ -102,6 +122,22 @@ export default function LoginPage() {
           <img src={imgKakao} alt="카카오 계정으로 로그인" />
         </Link>
       </SnsLoginList>
+
+      {/* {showAlert && (
+        <StyledAlert>
+          <div className="alertContent">
+            <p>{alertMessage}</p>
+            <Button
+              children="확인"
+              size="xs"
+              variant="primary"
+              onClick={closeAlert}
+            />
+          </div>
+        </StyledAlert>
+      )} */}
+
+      {showAlert && <CustomAlert message={alertMessage} onClose={closeAlert} />}
     </LoginContainer>
   );
 }

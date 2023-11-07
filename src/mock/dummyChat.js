@@ -2,7 +2,7 @@ export const dummyMessages = [
   {
     id: 1,
     username: 'I am 말티즈',
-    text: ['오늘 산책 갈래?', 'My 주인한테 물었더니 ok 했어서 물어봤어요~'],
+    text: ['오늘 산책 갈래?', 'My 주인한테 물어봤더니 ok 했어요~'],
     profileImg:
       'https://img.dmitory.com/img/202211/10e/71N/10e71Notk2Wg4gUcmU2GqG.webp',
     time: '2023.11.02',

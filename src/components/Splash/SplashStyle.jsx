@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SplashBg = styled.div`
   position: relative;
   width: 520px;
-  min-height: 940px;
+  min-height: 920px;
 
   background-color: #fffad0;
   animation: fadein 1.5s ease-in-out;

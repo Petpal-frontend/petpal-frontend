@@ -36,12 +36,12 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: #F2F2F2;
-    font-family: 'Pretendard', sans-serif;
+    font-family: 'SUIT';
   }
   
   #root {
     width: 520px;
-    min-height: 920px; 최소 높이를 대략 920px로 지정 
+    min-height: 920px; /*최소 높이를 대략 920px로 지정*/
     height: auto; /* 추가되는 요소에 따라 자동으로 늘어남 */
     margin: 0 auto;
     background-color: #fff;
