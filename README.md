@@ -62,6 +62,7 @@ PW: 123123
 | **컨벤션** | ESLint, Prettier |
 | **협업** | Git, GitHub, Notion, Discord, Figma |
 | **IDE** | VSCode |
+| **배포** | netlify |
 
 <br/>
 
