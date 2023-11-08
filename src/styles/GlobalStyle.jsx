@@ -5,6 +5,10 @@ import './font.css';
 const GlobalStyle = createGlobalStyle`
   ${reset};
 
+  h1, h2, h3, button, div, span {
+    font-family: 'SUIT';
+   }
+
   :root {
     /* Signature Color */
     --color-primary: #27489D;
@@ -40,9 +44,13 @@ const GlobalStyle = createGlobalStyle`
   }
   
   #root {
-    width: 520px;
-    min-height: 920px; /*최소 높이를 대략 920px로 지정*/
-    height: auto; /* 추가되는 요소에 따라 자동으로 늘어남 */
+    // width: 520px;
+    // min-height: 920px; /* 최소 높이를 대략 920px로 지정 */ 
+    // height: auto; /* 추가되는 요소에 따라 자동으로 늘어남 */
+    max-width: 520px;
+    width: 100%;
+    min-height: 100vh;
+
     margin: 0 auto;
     background-color: #fff;
 }

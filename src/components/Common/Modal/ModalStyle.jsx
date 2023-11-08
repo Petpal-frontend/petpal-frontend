@@ -5,7 +5,9 @@ export const ModalStyle = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 520px;
+  // width: 520px;
+  // max-width: 520px;
+  // width: 100%;
   left: 26px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -18,6 +20,10 @@ export const ModalStyle = styled.div`
     margin: 18px 0;
     background: #dbdbdb;
     border-radius: 5px;
+  }
+
+  ul {
+    width: 100%;
   }
 
   button {
@@ -35,7 +41,9 @@ export const ModalStyle = styled.div`
   .settingComponent {
     padding-left: 24px;
     line-height: 46px;
-    width: 520px;
+    // width: 520px;
+    // max-width: 520px;
+    width: 100%;
 
     height: 46px;
     left: 26px;

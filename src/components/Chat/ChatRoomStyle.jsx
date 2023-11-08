@@ -43,7 +43,7 @@ export const PrevBtn = styled.p`
 export const HeaderContent = styled.h2`
   font-size: 18px;
   font-weight: 700;
-  font-family: Pretendard;
+  // font-family: Pretendard;
 `;
 export const MoreBtn = styled.button`
   padding: 30px;
@@ -56,9 +56,10 @@ export const MoreBtn = styled.button`
 `;
 
 export const MainWrap = styled.div`
-  height: 100vh;
+  // height: 100vh;
   padding: 80px 22px 60px;
-  background-color: #f2f2f2;
+  background-color: #fffad0;
+  min-height: 100vh;
 `;
 
 export const ChatBox = styled.div`
@@ -88,6 +89,7 @@ export const ChatBox = styled.div`
     border-radius: 0 20px 20px;
     background-color: #fff;
     font-size: 14px;
+    word-wrap: break-word;
   }
 
   .image {

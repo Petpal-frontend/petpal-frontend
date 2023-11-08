@@ -159,89 +159,91 @@ export default function SignUpForm() {
   };
 
   return (
-    <>
-      <FormContainer>
-        <H1>이메일로 회원가입</H1>
-        <ProfileImgBox>
-          <ProfileImg
-            src={selectedImage ? URL.createObjectURL(selectedImage) : image}
-            alt="프로필 이미지"
-          />
-          <label htmlFor="profileImageUpload">
-            <ProfileUpload src={imgProfileBtn} alt="사진 업로드 버튼 이미지" />
-          </label>
-          <input
-            type="file"
-            id="profileImageUpload"
-            accept="image/*"
-            style={{ display: 'none' }}
-            onChange={handleImageUpload}
-          />
-        </ProfileImgBox>
-        <form onSubmit={handleSignUp}>
-          <Input
-            id="userNameSignUp"
-            type="text"
-            label="닉네임"
-            placeholder="2~10자 이내여야 합니다."
-            onChange={e => {
-              setUsername(e.target.value);
+    <FormContainer className="signUpContainer">
+      <H1>이메일로 회원가입</H1>
+      <ProfileImgBox>
+        <ProfileImg
+          src={selectedImage ? URL.createObjectURL(selectedImage) : image}
+          alt="프로필 이미지"
+        />
+        <label htmlFor="profileImageUpload">
+          <ProfileUpload src={imgProfileBtn} alt="사진 업로드 버튼 이미지" />
+        </label>
+        <input
+          type="file"
+          id="profileImageUpload"
+          accept="image/*"
+          style={{ display: 'none' }}
+          onChange={handleImageUpload}
+        />
+      </ProfileImgBox>
+      <form onSubmit={handleSignUp} className="signUpForm">
+        <Input
+          id="userNameSignUp"
+          type="text"
+          label="닉네임"
+          placeholder="2~10자 이내여야 합니다."
+          onChange={e => {
+            setUsername(e.target.value);
+          }}
+          className="signUpInput"
+        />
+        <Input
+          id="emailSignUp"
+          type="text"
+          label="이메일"
+          placeholder="이메일을 입력해 주세요."
+          onChange={e => {
+            setEmail(e.target.value);
+          }}
+          className="signUpInput"
+        />
+        {warningMessage && (
+          <div
+            style={{
+              color: 'red',
+              fontSize: '12px',
+              marginBottom: '15px',
+              marginTop: '-10px',
             }}
-          />
-          <Input
-            id="emailSignUp"
-            type="text"
-            label="이메일"
-            placeholder="이메일을 입력해 주세요."
-            onChange={e => {
-              setEmail(e.target.value);
-            }}
-          />
-          {warningMessage && (
-            <div
-              style={{
-                color: 'red',
-                fontSize: '12px',
-                marginBottom: '15px',
-                marginTop: '-10px',
-              }}
-            >
-              {warningMessage}
-            </div>
-          )}
-          <Input
-            id="passwordSignUp"
-            type="password"
-            label="비밀번호"
-            placeholder="비밀번호를 입력해 주세요."
-            onChange={e => {
-              setPassword(e.target.value);
-            }}
-          />
-          <AddressBox>
-            <StyledLabel label="주소">주소</StyledLabel>
-            <AddressSearch onAddressSelect={handleAddressSelect} />
-            <SearchBtn type="button">
-              <Search className="a11yHidden">검색</Search>
-            </SearchBtn>
-          </AddressBox>
-          <Button
-            type="submit"
-            size="lg"
-            variant="primary"
-            disabled={!username || !email || !password || !intro}
           >
-            펫팔하러 GO!
-          </Button>
-        </form>
-        <LinkWrapper>
-          <LoginLink to="/login">로그인</LoginLink>
-          <MainLink to="/">메인으로 돌아가기</MainLink>
-        </LinkWrapper>
-        {showAlert && (
-          <CustomAlert message={alertMessage} onClose={closeAlert} />
+            {warningMessage}
+          </div>
         )}
-      </FormContainer>
-    </>
+        <Input
+          id="passwordSignUp"
+          type="password"
+          label="비밀번호"
+          placeholder="비밀번호를 입력해 주세요."
+          onChange={e => {
+            setPassword(e.target.value);
+          }}
+          className="signUpInput"
+        />
+        <AddressBox>
+          <StyledLabel label="주소">주소</StyledLabel>
+          <AddressSearch
+            onAddressSelect={handleAddressSelect}
+            className="signUpAddress"
+          />
+          <SearchBtn type="button">
+            <Search className="a11yHidden">검색</Search>
+          </SearchBtn>
+        </AddressBox>
+        <Button
+          type="submit"
+          size="lg"
+          variant="primary"
+          disabled={!username || !email || !password || !intro}
+          className="signUpBtn"
+        >
+          펫팔하러 GO!
+        </Button>
+      </form>
+      <LinkWrapper>
+        <LoginLink to="/login">로그인</LoginLink>
+        <MainLink to="/">메인으로 돌아가기</MainLink>
+      </LinkWrapper>
+    </FormContainer>
   );
 }

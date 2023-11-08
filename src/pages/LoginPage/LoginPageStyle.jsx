@@ -6,11 +6,22 @@ export const LoginContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 920px;
-	width: 520px;
+
+  // height: 100vh;
   background-color: #fffad0;
-  width: 520px;
-  position: relative;
+  // width: calc(100% + 30px);
+  // margin: 0 0 0 -15px;
+  padding: 0 60px;
+  min-height: 100vh;
+
+  form {
+    width: 100%;
+  }
+  //  min-height: 920px;
+  // 	width: 520px;
+  //   background-color: #fffad0;
+  //   width: 520px;
+  //   position: relative;
 `;
 
 export const LoginLogo = styled.img`
@@ -26,7 +37,8 @@ export const LoginInput = styled.input`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 400px;
+  // width: 400px;
+  width: 100%;
   padding: 23px 0px;
   margin-top: 239px;
   border: 1px solid #dbdbdb;
@@ -50,7 +62,8 @@ export const LoginInput = styled.input`
 
 export const LoginBtn = styled.button`
   cursor: pointer;
-  width: 400px;
+  // width: 400px;
+  width: 100%;
   height: 60px;
   margin-top: 38px;
   background-color: #27489d;

@@ -74,7 +74,7 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
   };
   return (
     <ComponentLayout>
-      <ItemListContainer>
+      <ItemListContainer className="profile">
         <ProfileContainer>
           <Link to={`/profile/${userAccountName}/follower`}>
             {/* <FollowNum>{yourData.profile.followerCount}</FollowNum> */}

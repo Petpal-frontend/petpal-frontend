@@ -124,7 +124,7 @@ export default function Router() {
               <>
                 <ScrollToTop />
                 <WalkDetail />
-                <NavBar />
+                {/* <NavBar /> */}
               </>
             }
           />
