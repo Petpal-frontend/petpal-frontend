@@ -32,7 +32,7 @@ PW: 123123
 ## 2. 팀원 소개
 | 리더 | 리더 | 리더 | 리더 |
 | :---: | :---: | :---: | :---: |
-| <img src="https://avatars.githubusercontent.com/u/73383923?v=4" /> | <img src="https://avatars.githubusercontent.com/u/138556024?v=4" /> | <img src="https://avatars.githubusercontent.com/u/54405518?v=4" /> | <img src="https://avatars.githubusercontent.com/u/110486454?v=4" /> |
+| <img src="https://avatars.githubusercontent.com/u/73383923?v=4" /> | <img src="https://avatars.githubusercontent.com/u/138556024?s=400&u=c59a7dfd776d2944acc017d76dcbeed71d1174bf&v=4" /> | <img src="https://avatars.githubusercontent.com/u/54405518?v=4" /> | <img src="https://avatars.githubusercontent.com/u/110486454?v=4" /> |
 | [🔗 김소리](https://github.com/sorikikikim) | [🔗 류경민](https://github.com/kmryuuu)  | [🔗 최지완](https://github.com/jiwanchoi)   | [🔗 최현아](https://github.com/hhyunn)  |
 
 <br/>
