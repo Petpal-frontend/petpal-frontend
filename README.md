@@ -333,7 +333,7 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 
 ## 10. 핵심 코드
 <details>
-<summary>홈, 피드 무한 스크롤</summary>
+<summary>홈, 피드 무한 스크롤 구현</summary>
 
 <!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
 ```
@@ -444,6 +444,68 @@ const InfiniteScroll = ({ imageData, className }) => {
 };
 
 export default InfiniteScroll;
+```
+
+</details>
+
+<details>
+<summary>react-daum-postcode 사용</summary>
+
+<!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
+
+```
+import React, { useState } from 'react';
+import DaumPostcode from 'react-daum-postcode';
+import Modal from 'react-modal';
+import Input from '../Common/Input/Input';
+
+function AddressSearch({ onAddressSelect, className }) {
+  const [roadAddress, setRoadAddress] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+  const completeHandler = data => {
+    setRoadAddress(data.roadAddress);
+    setIsOpen(false);
+    onAddressSelect(data.roadAddress);
+  };
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  return (
+    <div>
+      <Input
+        value={roadAddress}
+        readOnly
+        placeholder="주소"
+        onClick={openModal}
+        className={className}
+      />
+      <Modal
+        isOpen={isOpen}
+        ariaHideApp={false}
+        //바깥 클릭하면 꺼지도록
+        onRequestClose={() => setIsOpen(false)}
+      >
+        <DaumPostcode onComplete={completeHandler} height="100%" />
+      </Modal>
+      <br />
+    </div>
+  );
+}
+
+export default AddressSearch;
+```
+
+</details>
+
+<details>
+<summary>반응형 구현 - 🔨코드는 추후 리팩토링 시 레이아웃 획일화를 진행하여 올릴 예정🔨</summary>
+
+<!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
+
+```
+진행중
 ```
 
 </details>
