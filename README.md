@@ -342,24 +342,33 @@ import { ScrollContainer, ScrollImageButton } from './scrollStyle';
 import { Link, useLocation } from 'react-router-dom';
 
 const InfiniteScroll = ({ imageData, className }) => {
+  // useLocation을 사용하여 현재 경로(pathname)를 가져옵니다 -> 홈/피드 구분 위함
   const { pathname } = useLocation();
 
+	// 모든 이미지가 로딩되었는지를 추적
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
 
+	// 스크롤링 하기 전 초기에 로드되는 이미지 객체 배열 생성
+  // 데이터가 10개 미만인 경우 -> 데이터의 개수만큼 
+  // 데이터가 10개 이상인 경우 -> 10개
+  // => 스크롤링 전 초기 상태에는 0 ~ 10개의 데이터가 로드됩니다. 
   const initialImageUrls = Array.from(
-    // 최대 10개 이미지 또는 이미지 수만큼
     { length: Math.min(10, imageData.length) },
     (_, index) => {
-      // 이미지 있는 게시물만
+      // 이미지 있는 게시물만 처리
       if (imageData[index]) {
-        // 이미지 여러개 일 때 처리
+        // 이미지가 1개 이상인 경우 무조건 배열로 처리해줌 -> 게시글의 이미지가 문자열로 담겨있기 때문에
         let imageArr = imageData[index].image.split(',');
         return {
+					// 첫번째 이미지만 담기
           image: imageArr[0],
+					// path가 /인 경우 home에서 보여줄 이미지의 accountname을 -> 추후 프로필이미지 GET
+					// 그 외의 경우에는 게시글의 accountname을 저장 -> 추후 피드 GET
           accountname:
             pathname === '/'
               ? imageData[index].accountname
               : imageData[index].author.accountname,
+					// id도 동일
           id: pathname === '/' ? imageData[index]._id : imageData[index].id,
         };
       }
@@ -367,13 +376,14 @@ const InfiniteScroll = ({ imageData, className }) => {
     },
   );
 
+	// 현재 렌더링되는 이미지 URL을 추적
   const [imageUrls, setImageUrls] = useState(initialImageUrls);
 
+	// 초기 이미지를 로딩 후 스크롤이 맨 아래로 도달했을 때 새 이미지를 추가하는 역할
+  // 초기 이미지 로직과 동일함
   const addContent = () => {
     const imageIndex = imageUrls.length % imageData.length;
-    // 이미지 있는 게시물만
     if (imageData[imageIndex]) {
-      // 이미지 여러개 일 때 처리
       const newImageArr = imageData[imageIndex].image.split(',');
       const newImageUrl = {
         image: newImageArr[0],
@@ -390,24 +400,28 @@ const InfiniteScroll = ({ imageData, className }) => {
     }
   };
 
+	// 스크롤이 맨 아래에 닿는 경우 체크
   const checkScroll = () => {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = window.innerHeight + window.scrollY;
     if (scrollTop >= scrollHeight - 100) {
-      // 스크롤이 맨 아래로 도달했을 때 이미지 추가
+      // 스크롤이 맨 아래로 도달했을 때 이미지 추가하는 addContent 호출
       addContent();
     }
   };
 
   useEffect(() => {
+		// 가져온 데이터와 지금까지 보여준 이미지 데이터 길이가 같을 경우
     if (imageUrls.length === imageData.length) {
-      // 모든 이미지가 로딩되면 스크롤 이벤트 제거
+			// 모든 이미지 로드 여부를 true로 변경
       setAllImagesLoaded(true);
     } else {
+			// 그렇지 않으면 스크롤 이벤트 유지
       window.addEventListener('scroll', checkScroll);
     }
 
     return () => {
+			// 모든 이미지가 로딩되면 스크롤 이벤트 제거
       window.removeEventListener('scroll', checkScroll);
     };
     //eslint-disable-next-line react-hooks/exhaustive-deps
@@ -415,8 +429,11 @@ const InfiniteScroll = ({ imageData, className }) => {
 
   return (
     <ScrollContainer style={{ paddingBottom: allImagesLoaded ? '70px' : '0' }}>
+			{/* 렌더링 부분에서는 위에서 처리한 이미지 imageUrls를 
+				 ScrollContainer 내에 매핑하여 이미지를 화면에 렌더링합니다 */}
       {imageUrls.length > 0 ? (
         imageUrls.map((item, index) => (
+					// pathname에 따라 보여줄 데이터와 위치가 결정됩니다.
           <ScrollImageButton key={index} className={className}>
             <Link
               to={
