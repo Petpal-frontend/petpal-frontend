@@ -34,8 +34,10 @@ export default function SignUpForm() {
   const [image, setImage] = useState(profileImg);
   const [selectedImage, setSelectedImage] = useState(null);
   const [intro, setIntro] = useState('');
+
   const [validCheck, setValidCheck] = useState(false); // 이메일 유효성 체크
   const [warningMessage, setWarningMessage] = useState(''); // response의 message
+
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
@@ -113,6 +115,7 @@ export default function SignUpForm() {
       navigate('/login');
     }
   };
+
   const handleSignUp = async e => {
     // 기본 펫팔 프로필 이미지 URL
     let baseImage = 'https://api.mandarin.weniv.co.kr/1698598137638.jpg';
@@ -244,6 +247,7 @@ export default function SignUpForm() {
         <LoginLink to="/login">로그인</LoginLink>
         <MainLink to="/">메인으로 돌아가기</MainLink>
       </LinkWrapper>
+      {showAlert && <CustomAlert message={alertMessage} onClose={closeAlert} />}
     </FormContainer>
   );
 }
