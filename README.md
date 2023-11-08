@@ -36,13 +36,7 @@ PW: 123123
 <br/>
 <br/>
 
-## 3. 역할 분담
-![image](https://github.com/Petpal-frontend/petpal-frontend/assets/138556024/da7c4e50-c5f7-4dd9-b369-9cff6351277a)
-
-<br/>
-<br/>
-
-## 4. 개발 일정
+## 3. 개발 일정
 | 기간 |  |
 | :---: | :---: |
 | 2023.10.12 - 2023.10.19 | 프로젝트 기획 및 디자인 |
@@ -54,7 +48,7 @@ PW: 123123
 <br/>
 <br/>
 
-## 5. 기술 스택 및 개발 환경
+## 4. 기술 스택 및 개발 환경
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=recoil&logoColor=white" /> <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" /> <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=ffd35b" /> <img src="https://img.shields.io/badge/javascript-F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=20232a" />  
 | 구분 |  |
 | :---: | --- |
@@ -120,7 +114,7 @@ PW: 123123
 <br/>
 <br/>
 
-## 6. 폴더 구조
+## 5. 폴더 구조
 ```
 petpal-frontend                     # git 저장소 # 여기서 git 작업을 해야합니다.  
 └── 📁 petpal                       # react 프로젝트 # 여기서 npm start를 해야합니다.  
@@ -151,13 +145,13 @@ petpal-frontend                     # git 저장소 # 여기서 git 작업을 �
 <br/>
 <br/>
 
-## 7. Git Branch 전략 - Git + Github Flow
+## 6. Git Branch 전략 - Git + Github Flow
 ### 프로젝트 Gitflow 전략
 이 프로젝트는 Git flow와 Github flow 전략을 함께 사용해 개발 및 관리했습니다. 
-팀 구성원 간의 업무 분담, 기능 개발, 버그 수정, 출시 및 유지 보수를 효과적으로 관리하기 위한 일련의 규칙과 프로세스를 제공합니다.
+팀 구성원 간의 업무 분담, 기능 개발, 버그 수정, 출시 및 유지 보수를 효과적으로 관리하기 위한 일련의 규칙과 프로세스를 지켰습니다.
 
 ### Gitflow 개요
-Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
+main, dev, feature/기능명 브랜치를 사용했습니다.
 
 - **main**: 안정적인 프로덕션 버전을 관리하는 브랜치입니다.
 - **dev**: 다음 릴리스를 위한 개발 중인 기능을 통합하는 브랜치입니다.
@@ -172,6 +166,12 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 2. 기능 개발이 완료되면, `dev` 브랜치로 Pull Request를 생성하고 코드 리뷰를 진행합니다.
 3. 코드 리뷰 및 변경 사항 반영 후, `dev` 브랜치로 병합합니다.
 4. 주기적으로 프로젝트의 안정적인 상태를 유지하기 위해 `dev` 브랜치를 `main` 브랜치로 병합하여 새로운 프로덕션 버전을 배포합니다.
+
+<br/>
+<br/>
+
+## 7. 역할 분담
+![image](https://github.com/Petpal-frontend/petpal-frontend/assets/138556024/da7c4e50-c5f7-4dd9-b369-9cff6351277a)
 
 <br/>
 <br/>
