@@ -489,6 +489,8 @@ function AddressSearch({ onAddressSelect, className }) {
 
   return (
     <div>
+      {/* 컴포넌트를 렌더링한 곳에서 사용자가 주소를 입력하려면 버튼 또는 링크와 같은 UI 요소를 만들어서 DaumPostcode 컴포넌트를 열도록 유도해야 합니다.
+저희는 readOnly 옵션이 적용된 Input 컴포넌트를 클릭 시 팝업을 열어서 주소를 입력받을 수 있습니다. */}
       <Input
         value={roadAddress}
         readOnly
@@ -502,6 +504,8 @@ function AddressSearch({ onAddressSelect, className }) {
         //바깥 클릭하면 꺼지도록
         onRequestClose={() => setIsOpen(false)}
       >
+        {/* 모달 내에 DaumPostcode 컴포넌트를 렌더링 합니다. 'onComplete' prop은 Daum 우편번호 서비스에서 주소 입력이 완료되면 실행할 함수를 지정합니다.
+이 함수에는 선택한 주소 정보가 전달되어 저장합니다.*/}
         <DaumPostcode onComplete={completeHandler} height="100%" />
       </Modal>
       <br />
@@ -510,6 +514,7 @@ function AddressSearch({ onAddressSelect, className }) {
 }
 
 export default AddressSearch;
+
 ```
 
 </details>
