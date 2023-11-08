@@ -39,7 +39,7 @@ PW: 123123
 <br/>
 
 ## 3. 역할 분담
-!이미지 넣을 곳!
+![image](https://github.com/Petpal-frontend/petpal-frontend/assets/138556024/da7c4e50-c5f7-4dd9-b369-9cff6351277a)
 
 <br/>
 <br/>
