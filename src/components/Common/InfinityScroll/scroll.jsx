@@ -75,7 +75,10 @@ const InfiniteScroll = ({ imageData, className }) => {
   }, [imageUrls]);
 
   return (
-    <ScrollContainer style={{ paddingBottom: allImagesLoaded ? '70px' : '0' }}>
+    <ScrollContainer
+      style={{ paddingBottom: allImagesLoaded ? '70px' : '0' }}
+      className={className}
+    >
       {imageUrls.length > 0 ? (
         imageUrls.map((item, index) => (
           <ScrollImageButton key={index} className={className}>
