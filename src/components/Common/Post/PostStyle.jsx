@@ -18,23 +18,24 @@ import styled from 'styled-components';
 export const PostContainer = styled.div`
   position: relative;
   display: flex;
-	flex-direction: column;
+  flex-direction: column;
   padding: 1rem;
   // height: 100vh;
   // min-height: 100vh;
-  min-height: calc(100vh - 60px);
+  // min-height: calc(100vh - 60px);
 
   form {
     width: 100%;
   }
-//   height: 950px;
+  //   height: 950px;
 `;
 
 export const PostDiv = styled.div`
   position: relative;
   display: flex;
   padding: 1rem;
-  height: 900px;
+  // height: 900px;
+  min-height: calc(100vh - 60px - 2rem);
 `;
 
 export const PostContent = styled.textarea`

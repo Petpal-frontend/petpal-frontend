@@ -30,7 +30,8 @@ export const ItemContainer = styled.div`
   // padding: 10px;
   // width: 468px;
   height: 120px;
-  padding: 0 14px;
+  // padding: 0 14px;
+  padding: 0 30px;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.04);
   text-align: center;
   border-radius: 5px;
