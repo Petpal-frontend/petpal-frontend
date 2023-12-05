@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import Login from '../../components/Login/Login';
 import { postLogin } from '../../api/loginApi';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -12,14 +11,13 @@ import {
   SignUpLink,
   P,
   SnsLoginList,
-  StyledAlert,
 } from './LoginPageStyle';
 import { useRecoilState } from 'recoil';
 import imgLogo from '../../assets/image/logo.svg';
 import imgNaver from '../../assets/image/naver.svg';
 import imgGoogle from '../../assets/image/google.svg';
 import imgKakao from '../../assets/image/kakao.svg';
-import CustomAlert from './CustomAlert';
+import CustomAlert from '../../components/Common/CustomAlert/CustomAlert';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');

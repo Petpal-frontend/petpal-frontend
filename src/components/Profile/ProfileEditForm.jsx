@@ -22,7 +22,7 @@ import { putMyProfile } from '../../api/profile';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilValue, useRecoilState } from 'recoil';
 import { userInfoAtom } from '../../atoms/AtomUserState';
-import CustomAlert from '../../pages/LoginPage/CustomAlert';
+import CustomAlert from '../Common/CustomAlert/CustomAlert';
 
 export default function ProfileEditForm({ beforeUserData }) {
   const [username, setUsername] = useState(beforeUserData.username);

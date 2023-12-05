@@ -18,7 +18,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { uploadImg, uploadImgs } from '../../../api/imageApi';
 import myProfile from '../../../assets/image/profile-img4.svg';
 import uploadChat from '../../../assets/image/chat-upload-btn.svg';
-import CustomAlert from '../../../pages/LoginPage/CustomAlert';
+import CustomAlert from '../CustomAlert/CustomAlert';
 
 export default function PostEdit({
   id,

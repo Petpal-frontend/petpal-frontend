@@ -1,19 +1,4 @@
-import React from 'react';
-import Button from '../../components/Common/Button/SubmitButton/Button'; // 필요한 버튼 컴포넌트를 가져옵니다.
 import styled from 'styled-components';
-
-function CustomAlert({ message, onClose }) {
-  return (
-    <StyledAlert>
-      <div className="alertContent">
-        <p>{message}</p>
-        <Button children="확인" size="xs" variant="primary" onClick={onClose} />
-      </div>
-    </StyledAlert>
-  );
-}
-
-export default CustomAlert;
 
 export const StyledAlert = styled.div`
   position: absolute;
@@ -37,7 +22,7 @@ export const StyledAlert = styled.div`
     flex-direction: column;
     text-align: center;
     width: 45%;
-		line-height: 1.3em;
+    line-height: 1.3em;
 
     p {
       margin: 15px 0;
