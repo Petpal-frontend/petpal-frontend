@@ -12,8 +12,6 @@ export const CareItemBox = styled.p`
   width: 90px;
   height: 90px;
   border-radius: 10px;
-  // margin-right: 15px;
-  // object-fit: cover;
   overflow: hidden;
   flex-shrink: 0;
 `;

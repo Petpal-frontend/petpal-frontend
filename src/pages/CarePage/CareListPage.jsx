@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import CareList from '../../components/Care/CareItemList';
 import Header from '../../components/Common/Header/Header';
+import PostList from '../../components/Walk/PostList';
 import { getCareList } from '../../api/care';
 import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../atoms/AtomUserState';
@@ -31,7 +31,7 @@ export default function CareListPage() {
     <>
       {loading ? <Loading /> : null}
       <Header type="list" title="돌보미" />
-      {careList && <CareList careItemList={careList} />}
+      {careList && <PostList postList={careList} postType="care" />}
     </>
   );
 }

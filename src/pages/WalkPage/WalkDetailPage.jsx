@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../atoms/AtomUserState';
 import Header from '../../components/Common/Header/Header';
-import WalkDetailItem from '../../components/Walk/WalkDetailItem';
+import ItemDetail from '../../components/Walk/ItemDetail';
 import BottomInput from '../../components/Common/Input/BottomInput/BottomInput';
 import { getWalkDetail } from '../../api/walk';
 import {
@@ -128,8 +128,8 @@ export default function WalkDetailPage() {
       )}
 
       {walkDetailItem && (
-        <WalkDetailItem
-          walkDetailItem={walkDetailItem}
+        <ItemDetail
+          itemDetail={walkDetailItem}
           commentNum={commentList.length}
         />
       )}

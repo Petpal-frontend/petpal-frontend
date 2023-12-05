@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { LikeAndChat } from '../Walk/WalkItemStyle';
+import { LikeAndChat } from '../Walk/PostListItemStyle';
 import {
   InfoGroup,
   InfoSpan,

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../components/Common/Header/Header';
-import WalkItemList from '../../components/Walk/WalkItemList';
-import { getWalkList } from '../../api/walk';
+import PostList from '../../components/Walk/PostList';
+import { getWalkList } from '../../api/walkAndCare';
 import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../atoms/AtomUserState';
 import Loading from '../../components/Common/Loading/Loading';
@@ -33,7 +33,7 @@ export default function WalkListPage() {
     <>
       {loading ? <Loading /> : null}
       <Header type="list" title="산책메이트" />
-      {walkList && <WalkItemList walkList={walkList} />}
+      {walkList && <PostList postList={walkList} postType="walk" />}
     </>
   );
 }

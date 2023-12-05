@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../components/Common/Header/Header';
-import WalkDetailItem from '../../components/Walk/WalkDetailItem';
+import WalkDetailItem from '../../components/Walk/ItemDetail';
 import BottomInput from '../../components/Common/Input/BottomInput/BottomInput';
 import Comment from '../../components/Common/Comment/Comment';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -124,7 +124,7 @@ export default function CareDetailPage() {
       )}
       {careDetailItem && (
         <WalkDetailItem
-          walkDetailItem={careDetailItem}
+          itemDetail={careDetailItem}
           commentNum={commentList.length}
         />
       )}
