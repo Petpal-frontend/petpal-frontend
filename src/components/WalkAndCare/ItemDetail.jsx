@@ -10,7 +10,7 @@ import {
   UserInfoBox,
   PostTime,
   NameAndTimeBox,
-} from './WalkDetailItemStyle';
+} from './ItemDetailStyle';
 import Button from '../Common/Button/SubmitButton/Button';
 import { UserImg, Username } from '../Common/Userinfo/UserInfoStyle';
 import { LikeAndChat } from './PostListItemStyle';
@@ -18,7 +18,7 @@ import { ChatImg, LikeImg } from '../Common/SpanImg/SpanImgStyle';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 import { likePost, unlikePost } from '../../api/post';
 import { Link, useParams } from 'react-router-dom';
-import { getWalkDetail } from '../../api/walk';
+import { getPostDetail } from '../../api/post';
 
 export default function ItemDetail({ itemDetail, commentNum }) {
   const { id } = useParams();
@@ -49,7 +49,7 @@ export default function ItemDetail({ itemDetail, commentNum }) {
 
   const handleChatClick = async username => {
     try {
-      const response = await getWalkDetail(id);
+      const response = await getPostDetail(id);
       const username = response.data.post.author.username;
       window.location.href = `/chatRoom/${username}`;
     } catch (error) {

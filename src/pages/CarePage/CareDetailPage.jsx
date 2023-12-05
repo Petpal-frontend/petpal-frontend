@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../components/Common/Header/Header';
-import WalkDetailItem from '../../components/Walk/ItemDetail';
+import ItemDetail from '../../components/WalkAndCare/ItemDetail';
 import BottomInput from '../../components/Common/Input/BottomInput/BottomInput';
 import Comment from '../../components/Common/Comment/Comment';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getCareDetail } from '../../api/care';
+import { getPostDetail } from '../../api/post';
 import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../atoms/AtomUserState';
 import useAlertControl from '../../components/Common/Modal/useAlertControl';
@@ -28,7 +28,7 @@ export default function CareDetailPage() {
   const { openAlert, AlertComponent } = useAlertControl();
 
   useEffect(() => {
-    getCareDetail(id).then(res => {
+    getPostDetail(id).then(res => {
       setCareDetailItem(res.data.post);
       setAccess(res.data.post.author.accountname);
     });
@@ -123,7 +123,7 @@ export default function CareDetailPage() {
         <Header type="careDetail" onClick={handleModal} />
       )}
       {careDetailItem && (
-        <WalkDetailItem
+        <ItemDetail
           itemDetail={careDetailItem}
           commentNum={commentList.length}
         />

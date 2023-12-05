@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from '../../components/Common/Header/Header';
-import PostList from '../../components/Walk/PostList';
-import { getCareList } from '../../api/care';
+import PostList from '../../components/WalkAndCare/PostList';
+import { getPostList } from '../../api/post';
 import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../atoms/AtomUserState';
 import Loading from '../../components/Common/Loading/Loading';
@@ -13,7 +13,7 @@ export default function CareListPage() {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const data = await getCareList();
+      const data = await getPostList();
       setPostList(data.data.posts);
       setLoading(false);
     };

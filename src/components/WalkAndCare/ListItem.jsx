@@ -11,7 +11,7 @@ import {
 import { UserImg, LikeImg, ChatImg } from '../Common/SpanImg/SpanImgStyle';
 import { StyledLink } from '../Common/Text/StyledLink';
 import defaultImg from '../../assets/image/profile.png';
-import { getWalkDetail } from '../../api/walk';
+import { getPostDetail } from '../../api/post';
 
 const ItemBoxComponent = ({ imageArr, content }) => (
   <ItemBox>
@@ -70,7 +70,7 @@ export default function ListItem({
   const imageArr = image ? image.split(',') : null;
 
   useEffect(() => {
-    getWalkDetail(id).then(res => {
+    getPostDetail(id).then(res => {
       setIsHearted(res.data.post.hearted);
     });
   }, [id]);
