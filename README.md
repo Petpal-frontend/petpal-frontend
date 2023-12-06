@@ -15,7 +15,6 @@ ID: petpal@test.com
 PW: 123123
 ```
 
-<br/>
 
 ## 1. 서비스 소개
 반려동물을 사랑하는 이들을 위한 온라인 커뮤니티, 펫팔을 소개합니다!
@@ -30,19 +29,18 @@ PW: 123123
 <br/>
 
 ## 2. 팀원 소개
-| 리더 | 리더 | 리더 | 리더 |
+| [🔗 김소리](https://github.com/sorikikikim) | [🔗 류경민](https://github.com/kmryuuu) | [🔗 최지완](https://github.com/jiwanchoi) | [🔗 최현아](https://github.com/hhyunn) |
 | :---: | :---: | :---: | :---: |
 | <img src="https://avatars.githubusercontent.com/u/73383923?v=4" /> | <img src="https://avatars.githubusercontent.com/u/138556024?s=400&u=c59a7dfd776d2944acc017d76dcbeed71d1174bf&v=4" /> | <img src="https://avatars.githubusercontent.com/u/54405518?v=4" /> | <img src="https://avatars.githubusercontent.com/u/110486454?v=4" /> |
-| [🔗 김소리](https://github.com/sorikikikim) | [🔗 류경민](https://github.com/kmryuuu)  | [🔗 최지완](https://github.com/jiwanchoi)   | [🔗 최현아](https://github.com/hhyunn)  |
-
 <br/>
 <br/>
 
 ## 3. 역할 분담
-!이미지 넣을 곳!
+![image](https://github.com/Petpal-frontend/petpal-frontend/assets/138556024/da7c4e50-c5f7-4dd9-b369-9cff6351277a)
 
 <br/>
 <br/>
+
 
 ## 4. 개발 일정
 | 기간 |  |
@@ -64,6 +62,7 @@ PW: 123123
 | **컨벤션** | ESLint, Prettier |
 | **협업** | Git, GitHub, Notion, Discord, Figma |
 | **IDE** | VSCode |
+| **배포** | netlify |
 
 <br/>
 
@@ -153,13 +152,13 @@ petpal-frontend                     # git 저장소 # 여기서 git 작업을 �
 <br/>
 <br/>
 
-## 7. Git Branch 전략 - Github Flow
+## 7. Git Branch 전략 - Git + Github Flow
 ### 프로젝트 Gitflow 전략
-이 프로젝트는 Gitflow 전략을 따라 개발 및 관리됩니다. 
-Gitflow는 Git을 사용한 협업 개발을 위한 전략으로, 팀 구성원 간의 업무 분담, 기능 개발, 버그 수정, 출시 및 유지 보수를 효과적으로 관리하기 위한 일련의 규칙과 프로세스를 제공합니다.
+이 프로젝트는 Git flow와 Github flow 전략을 함께 사용해 개발 및 관리했습니다. 
+팀 구성원 간의 업무 분담, 기능 개발, 버그 수정, 출시 및 유지 보수를 효과적으로 관리하기 위한 일련의 규칙과 프로세스를 지켰습니다.
 
 ### Gitflow 개요
-Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
+main, dev, feature/기능명 브랜치를 사용했습니다.
 
 - **main**: 안정적인 프로덕션 버전을 관리하는 브랜치입니다.
 - **dev**: 다음 릴리스를 위한 개발 중인 기능을 통합하는 브랜치입니다.
@@ -174,6 +173,7 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 2. 기능 개발이 완료되면, `dev` 브랜치로 Pull Request를 생성하고 코드 리뷰를 진행합니다.
 3. 코드 리뷰 및 변경 사항 반영 후, `dev` 브랜치로 병합합니다.
 4. 주기적으로 프로젝트의 안정적인 상태를 유지하기 위해 `dev` 브랜치를 `main` 브랜치로 병합하여 새로운 프로덕션 버전을 배포합니다.
+
 
 <br/>
 <br/>
@@ -208,9 +208,9 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/81c86621-ba94-4029-a3e9-960a8e9b99b2' height='480px'/> |  <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/dd0a9211-8289-4f9f-81bc-46c6d97d1d79' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/5a54379a-7129-4f5c-96f1-d827bfc21cfe' height='480px'/> |
 
 ### 4) 채팅
-| 채팅 목록 페이지 | 채팅방 페이지 | 수정 필요 |
-| :---: | :---: | :---: |
-| gif | gif | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/8cc5f724-92e2-49e8-8e98-9a9e93a1ae06' height='480px'/> |
+| 채팅 목록, 채팅방 페이지 |
+| :---: |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/32a5f8f9-2afd-47f1-9c7a-1a4a250d3fd8' height='480px'/> |
 
 ### 5) 프로필
 | 프로필 페이지 | 프로필 수정 페이지 | 팔로워/팔로잉 페이지 |
@@ -226,18 +226,11 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 
 ## 9. 상세 담당 업무
 ### 공통
-디자인
-  - 설명
-
-화면 개발
-  - 설명
+아이디어 도출
 
 기능 개발
   - 초기 폴더구조 세팅 및 환경설정
   - 각 페이지 라우터 연결
-
-기타.. (프로젝트 총괄 및 문서화, 컴포넌트 리팩토링 및 중복 제거 등..)
-  - 설명
 
 <br/>
 
@@ -340,10 +333,202 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 
 ## 10. 핵심 코드
 <details>
-<summary>더보기</summary>
+<summary>홈, 피드 무한 스크롤 구현</summary>
 
 <!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
-자세한 내용은 더보기 버튼으로 가려둘 수 있음
+```
+import React, { useEffect, useState } from 'react';
+import { ScrollContainer, ScrollImageButton } from './scrollStyle';
+import { Link, useLocation } from 'react-router-dom';
+
+const InfiniteScroll = ({ imageData, className }) => {
+  // useLocation을 사용하여 현재 경로(pathname)를 가져옵니다 -> 홈/피드 구분 위함
+  const { pathname } = useLocation();
+
+	// 모든 이미지가 로딩되었는지를 추적
+  const [allImagesLoaded, setAllImagesLoaded] = useState(false);
+
+	// 스크롤링 하기 전 초기에 로드되는 이미지 객체 배열 생성
+  // 데이터가 10개 미만인 경우 -> 데이터의 개수만큼 
+  // 데이터가 10개 이상인 경우 -> 10개
+  // => 스크롤링 전 초기 상태에는 0 ~ 10개의 데이터가 로드됩니다. 
+  const initialImageUrls = Array.from(
+    { length: Math.min(10, imageData.length) },
+    (_, index) => {
+      // 이미지 있는 게시물만 처리
+      if (imageData[index]) {
+        // 이미지가 1개 이상인 경우 무조건 배열로 처리해줌 -> 게시글의 이미지가 문자열로 담겨있기 때문에
+        let imageArr = imageData[index].image.split(',');
+        return {
+					// 첫번째 이미지만 담기
+          image: imageArr[0],
+					// path가 /인 경우 home에서 보여줄 이미지의 accountname을 -> 추후 프로필이미지 GET
+					// 그 외의 경우에는 게시글의 accountname을 저장 -> 추후 피드 GET
+          accountname:
+            pathname === '/'
+              ? imageData[index].accountname
+              : imageData[index].author.accountname,
+					// id도 동일
+          id: pathname === '/' ? imageData[index]._id : imageData[index].id,
+        };
+      }
+      return null;
+    },
+  );
+
+	// 현재 렌더링되는 이미지 URL을 추적
+  const [imageUrls, setImageUrls] = useState(initialImageUrls);
+
+	// 초기 이미지를 로딩 후 스크롤이 맨 아래로 도달했을 때 새 이미지를 추가하는 역할
+  // 초기 이미지 로직과 동일함
+  const addContent = () => {
+    const imageIndex = imageUrls.length % imageData.length;
+    if (imageData[imageIndex]) {
+      const newImageArr = imageData[imageIndex].image.split(',');
+      const newImageUrl = {
+        image: newImageArr[0],
+        accountname:
+          pathname === '/'
+            ? `${imageData[imageIndex].accountname}`
+            : `${imageData[imageIndex].author.accountname}`,
+        id:
+          pathname === '/'
+            ? `${imageData[imageIndex]._id}`
+            : `${imageData[imageIndex].id}`,
+      };
+      setImageUrls([...imageUrls, newImageUrl]);
+    }
+  };
+
+	// 스크롤이 맨 아래에 닿는 경우 체크
+  const checkScroll = () => {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.innerHeight + window.scrollY;
+    if (scrollTop >= scrollHeight - 100) {
+      // 스크롤이 맨 아래로 도달했을 때 이미지 추가하는 addContent 호출
+      addContent();
+    }
+  };
+
+  useEffect(() => {
+		// 가져온 데이터와 지금까지 보여준 이미지 데이터 길이가 같을 경우
+    if (imageUrls.length === imageData.length) {
+			// 모든 이미지 로드 여부를 true로 변경
+      setAllImagesLoaded(true);
+    } else {
+			// 그렇지 않으면 스크롤 이벤트 유지
+      window.addEventListener('scroll', checkScroll);
+    }
+
+    return () => {
+			// 모든 이미지가 로딩되면 스크롤 이벤트 제거
+      window.removeEventListener('scroll', checkScroll);
+    };
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [imageUrls]);
+
+  return (
+    <ScrollContainer style={{ paddingBottom: allImagesLoaded ? '70px' : '0' }}>
+			{/* 렌더링 부분에서는 위에서 처리한 이미지 imageUrls를 
+				 ScrollContainer 내에 매핑하여 이미지를 화면에 렌더링합니다 */}
+      {imageUrls.length > 0 ? (
+        imageUrls.map((item, index) => (
+					// pathname에 따라 보여줄 데이터와 위치가 결정됩니다.
+          <ScrollImageButton key={index} className={className}>
+            <Link
+              to={
+                pathname === '/'
+                  ? `/yourProfile/${item.accountname}`
+                  : `/walkDetail/${item.id}`
+              }
+            >
+              <img
+                src={item.image}
+                alt={
+                  pathname === '/'
+                    ? `프로필 이미지 ${index}`
+                    : `게시글 이미지 ${index}`
+                }
+              />
+            </Link>
+          </ScrollImageButton>
+        ))
+      ) : (
+        <h1>팔로잉 중인 사용자의 게시물이 없습니다.</h1>
+      )}
+    </ScrollContainer>
+  );
+};
+
+export default InfiniteScroll;
+```
+
+</details>
+
+<details>
+<summary>react-daum-postcode 사용</summary>
+
+<!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
+
+```
+import React, { useState } from 'react';
+import DaumPostcode from 'react-daum-postcode';
+import Modal from 'react-modal';
+import Input from '../Common/Input/Input';
+
+function AddressSearch({ onAddressSelect, className }) {
+  const [roadAddress, setRoadAddress] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+  const completeHandler = data => {
+    setRoadAddress(data.roadAddress);
+    setIsOpen(false);
+    onAddressSelect(data.roadAddress);
+  };
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  return (
+    <div>
+      // 컴포넌트를 렌더링한 곳에서 사용자가 주소를 입력하려면 버튼 또는 링크와 같은 UI 요소를 만들어서 DaumPostcode 컴포넌트를 열도록 유도해야 합니다.
+저희는 readOnly 옵션이 적용된 Input 컴포넌트를 클릭 시 팝업을 열어서 주소를 입력받을 수 있습니다. 
+      <Input
+        value={roadAddress}
+        readOnly
+        placeholder="주소"
+        onClick={openModal}
+        className={className}
+      />
+      <Modal
+        isOpen={isOpen}
+        ariaHideApp={false}
+        //바깥 클릭하면 꺼지도록
+        onRequestClose={() => setIsOpen(false)}
+      >
+        // 모달 내에 DaumPostcode 컴포넌트를 렌더링 합니다. 'onComplete' prop은 Daum 우편번호 서비스에서 주소 입력이 완료되면 실행할 함수를 지정합니다.
+이 함수에는 선택한 주소 정보가 전달되어 저장합니다.
+        <DaumPostcode onComplete={completeHandler} height="100%" />
+      </Modal>
+      <br />
+    </div>
+  );
+}
+
+export default AddressSearch;
+
+```
+
+</details>
+
+<details>
+<summary>반응형 구현 - 🔨코드는 추후 리팩토링 시 레이아웃 획일화를 진행하여 올릴 예정🔨</summary>
+
+<!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
+
+```
+진행중
+```
 
 </details>
 
@@ -352,13 +537,24 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 
 ## 11. 트러블 슈팅
 <details>
-<summary>API 호출 및 데이터 처리 오류</summary>
+ <summary>공통되고 한정적인 API를 사용하여 데이터 중복 및 데이터 필드의 한계</summary>
+<br/>
+<br/>
+- 주소 필드로 사용 (intro): API에 'intro' 파트에 주소 정보를 추가했습니다. 이 주소 정보는 사용자에게 표시되며, 특정 위치의 지리적 정보를 나타냅니다. 이 주소 정보를 통해 사용자들은 서비스 내에서 원하는 위치를 식별하고 선택할 수 있습니다.
+<br/>
+<br/>
+- 고유 id: API에서 고유 ID를 사용하여 개별 데이터 레코드를 식별합니다. 이 ID에 'petpal_'이라는 접두어를 추가함으로써, 해당 ID가 PetPal 애플리케이션에서 생성된 것임을 명확히합니다. 이로써 다른 시스템 또는 데이터베이스에서 유사한 ID와 혼동되는 것을 방지합니다.
+<br/>
+<br/>
+- accountname 구분 (초단위 시간): 'accountname' 필드는 사용자의 계정 이름을 나타내며, PetPal 내에서 사용자를 식별합니다. 초단위까지의 시간 정보를 'accountname'에 추가함으로써, 동일한 시간에 계정을 생성한 여러 사용자에 대한 중복을 피하고 사용자의 계정 이름이 고유하도록 보장합니다.
 
 <!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
-
+<!--
 서버에서 데이터를 불러오거나 처리하는 과정에서 오류가 발생할 수 있습니다. 이러한 오류는 네트워크 요청 중에 서버에서 반환되는 상태 코드가 예상치 못한 오류 상태 코드인 경우 또는 서버에서 오류 메시지를 반환하는 경우 발생할 수 있습니다.
+ -->
 
-해결 방법:
+
+<!-- 해결 방법:
 
 네트워크 요청 오류 처리:
 
@@ -373,14 +569,13 @@ Gitflow 전략은 다음과 같은 주요 브랜치를 사용합니다:
 데이터를 서버로 보내기 전에 클라이언트 측에서 데이터의 유효성을 검사합니다.
 이러한 검사는 입력 데이터의 형식, 범위, 값의 유효성을 확인하고, 서버로 전송하기 전에 잘못된 데이터가 없도록 보장합니다.
 서버에서도 데이터 유효성 검사를 수행하여, 클라이언트에서 확인한 데이터가 서버에서도 검증되고 처리될 수 있도록 합니다.
-이러한 접근 방식은 API 호출 및 데이터 처리 오류를 방지하고, 오류가 발생했을 때 사용자와 개발자가 이를 이해하고 적절하게 대응할 수 있도록 도움을 줍니다.
+이러한 접근 방식은 API 호출 및 데이터 처리 오류를 방지하고, 오류가 발생했을 때 사용자와 개발자가 이를 이해하고 적절하게 대응할 수 있도록 도움을 줍니다. -->
 
 </details>
-
 <br/>
 <br/>
 
-## 12. 리팩토링 목표
+## 12. 리팩토링 목표 => 라이트하우스로 수치화, 조금 더 세분화 된 지역구
 - 맵 api의 고도화
   - 현재 펫팔은 사용자들에게 주소를 입력받아 위치정보를 사용하고 있습니다. 향후에는 Google Maps나 OpenStreetMap과 같은 다양한 맵 API를 도입하여 사용자들에게 더 나은 서비스를 제공할 계획입니다.
     이를 통해 사용자들에게는 실시간 위치 정보 제공 및 시설 검색과 같은 기능을 제공할 수 있게 될 것이며 이러한 업그레이드를 통해 펫팔의 사용성과 가치를 높여, 사용자들에게 더 편리하고 유용한 경험을 제공할 것입니다.

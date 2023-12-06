@@ -1,16 +1,15 @@
 import React from 'react';
 import { ItemListContainer } from '../Common/Layout/LayoutStyle';
-import ListItem from './ListItem';
+import CareItem from './CareItem';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 import WriteButton from '../Common/Button/WriteButton/WriteButton';
 
-export default function PostList({ postList, postType }) {
+export default function CareList({ careItemList }) {
   return (
     <ComponentLayout>
       <ItemListContainer>
-        {postList.map((item, index) => (
-          <ListItem
-            postType={postType}
+        {careItemList.map((item, index) => (
+          <CareItem
             key={index}
             id={item._id}
             author={item.author}
@@ -21,7 +20,7 @@ export default function PostList({ postList, postType }) {
           />
         ))}
       </ItemListContainer>
-      <WriteButton type={postType} />
+      <WriteButton />
     </ComponentLayout>
   );
 }

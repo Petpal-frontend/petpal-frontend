@@ -1,10 +1,17 @@
 import { tokenInstance } from './axiosInstance';
 
+/* 상품 리스트 가져오기 */
+export const getProductList = async () => {
+  const response = await tokenInstance.get(`/product?limit=1000`);
+  return response.data;
+};
+
 /* 상품 등록하기 */
 export const uploadProduct = async product => {
   const response = await tokenInstance.post(`/product`, product);
   return response;
 };
+
 /* user의 상품 리스트 가져오기 */
 export const getMyProduct = async accountname => {
   const response = await tokenInstance.get(`/product/${accountname}`);
