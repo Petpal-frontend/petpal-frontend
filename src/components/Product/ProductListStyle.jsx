@@ -85,16 +85,19 @@ export const AddBtn = styled.p`
   position: fixed;
   right: 20px;
   bottom: 106px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 
   a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
     color: inherit;
     text-decoration: none;
   }
 
-  &::before {
+  a::before {
     content: '';
     display: inline-block;
     width: 10px;
