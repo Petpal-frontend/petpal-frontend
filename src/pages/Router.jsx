@@ -7,6 +7,7 @@ import {
   useLocation,
   Navigate,
 } from 'react-router-dom';
+import Main from './MainPage/MainPage';
 import Home from './HomePage/HomePage';
 import Login from './LoginPage/LoginPage';
 import Signup from './SignupPage/SignupPage';
@@ -58,7 +59,6 @@ export default function Router() {
     // userState를 이용하여 로그인 상태를 확인하고 isLoggedIn 상태 업데이트
     setIsLoggedIn(userState && userState.username);
   }, [userState]);
-
   return (
     <>
       <BrowserRouter>
@@ -68,7 +68,13 @@ export default function Router() {
             element={
               <>
                 <ScrollToTop />
-                {isLoggedIn ? <SplashPage /> : <Navigate to="/login" />}
+                {/* {isLoggedIn ? <Main /> : <Navigate to="/login" />} */}
+                {isLoggedIn === '' ? (
+                  <SplashPage />
+                ) : isLoggedIn ? (
+                  <Main />
+                ) : null}
+
                 {/* <SplashPage /> */}
                 {/* <Home /> */}
                 {/* <NavBar /> */}
