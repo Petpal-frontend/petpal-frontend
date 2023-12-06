@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { StyledLayout, MainWrap, ProductLi, AddBtn } from './ProductListStyle';
+import { StyledLayout, MainWrap, ProductLi } from './ProductListStyle';
 import { getProductList } from '../../api/productListApi';
 import { getProductDetail } from '../../api/product';
 import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../atoms/AtomUserState';
 import Loading from '../Common/Loading/Loading';
+import WriteButton from '../Common/Button/WriteButton/WriteButton';
 export default function ProductList() {
   const [loading, setLoading] = useState(true);
 
@@ -63,11 +63,7 @@ export default function ProductList() {
           })}
         </ul>
       </MainWrap>
-      <AddBtn>
-        <Link to="/productPost" className="">
-          글쓰기
-        </Link>
-      </AddBtn>
+      <WriteButton />
     </StyledLayout>
   );
 }
