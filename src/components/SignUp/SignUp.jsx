@@ -22,7 +22,7 @@ import AddressSearch from '../AddressSearch/AddressSearch';
 import { FormContainer, H1 } from '../Common/Layout/LayoutStyle';
 import imgProfileBtn from '../../assets/image/profile-btn.svg';
 import profileImg from '../../assets/image/profile.svg';
-import CustomAlert from '../../pages/LoginPage/CustomAlert';
+import CustomAlert from '../Common/CustomAlert/CustomAlert';
 
 export default function SignUpForm() {
   const navigate = useNavigate();

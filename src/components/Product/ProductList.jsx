@@ -63,7 +63,7 @@ export default function ProductList() {
           })}
         </ul>
       </MainWrap>
-      <WriteButton />
+      <WriteButton type="product" />
     </StyledLayout>
   );
 }

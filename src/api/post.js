@@ -35,3 +35,22 @@ export const likePost = async postId => {
 export const unlikePost = async postId => {
   const response = await tokenInstance.delete(`/post/${postId}/unheart`);
 };
+
+
+export const getPostList = async () => {
+  try {
+    const response = await tokenInstance.get('post?limit=1000	&skip=Number');
+    return response;
+  } catch (err) {
+    return null;
+  }
+};
+
+export const getPostDetail = async id => {
+  try {
+    const response = await tokenInstance.get(`post/${id}`);
+    return response;
+  } catch (err) {
+    return null;
+  }
+};

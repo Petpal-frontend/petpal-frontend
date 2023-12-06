@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PostEdit from '../../components/Common/Post/PostEdit';
-import { getWalkDetail } from '../../api/walk';
+import { getPostDetail } from '../../api/post';
 import { useLocation } from 'react-router-dom';
 
 export default function WalkEditPage() {
@@ -12,7 +12,7 @@ export default function WalkEditPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getWalkDetail(post.id);
+        const response = await getPostDetail(post.id);
         setBeforePostData(response.data);
       } catch (err) {
         console.error('데이터 불러오기 실패:', err);

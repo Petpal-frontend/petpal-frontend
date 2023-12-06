@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PostEdit from '../../components/Common/Post/PostEdit';
 import { useLocation } from 'react-router-dom';
-import { getCareDetail } from '../../api/care';
+import { getPostDetail } from '../../api/post';
 
 export default function CareEditPage() {
   const location = useLocation();
@@ -11,7 +11,7 @@ export default function CareEditPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getCareDetail(post.id);
+        const response = await getPostDetail(post.id);
         setBeforePostData(response.data);
       } catch (err) {
         console.error('데이터 불러오기 실패:', err);

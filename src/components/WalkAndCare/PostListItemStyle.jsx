@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
-export const WalkItemBox = styled.p`
+export const ItemBox = styled.p`
   width: 90px;
   height: 90px;
   border-radius: 10px;
-  // margin-left: 15px;
   overflow: hidden;
   flex-shrink: 0;
 `;
 
-export const WalkItemImage = styled.img`
+export const ItemImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;

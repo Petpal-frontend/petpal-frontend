@@ -11,7 +11,7 @@ import {
   FormArea,
 } from './ProductPostStyle';
 import imgUpload from '../../assets/image/icon-upload-img.svg';
-import CustomAlert from '../../pages/LoginPage/CustomAlert';
+import CustomAlert from '../Common/CustomAlert/CustomAlert';
 
 export default function ProductPost(props) {
   const {
