@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ItemListContainer } from '../Common/Layout/LayoutStyle';
 import { getProductDetail } from '../../api/product';
-import { getCareDetail } from '../../api/care';
+import { getPostDetail } from '../../api/post';
 import {
   ButtonContainer,
   Description,
@@ -62,7 +62,7 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
 
   const handlePostClick = async postId => {
     try {
-      const response = await getCareDetail(postId);
+      const response = await getPostDetail(postId);
       const path = response.data.post.content.includes('petpal_walk')
         ? `/walkDetail/${postId}`
         : `/careDetail/${postId}`;

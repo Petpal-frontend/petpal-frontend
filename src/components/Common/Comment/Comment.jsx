@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   CommentContainer,
   CommentContent,
@@ -7,6 +9,7 @@ import {
   CommentTime,
   MoreButton,
   ButtonImg,
+  StyledToastContainer,
 } from './CommentStyle';
 import { UserImg, Username } from '../Userinfo/UserInfoStyle';
 import { useRecoilValue } from 'recoil';
@@ -22,20 +25,6 @@ export default function Comment({ comments, handledeleteComment }) {
   const { openAlert, closeAlert, AlertComponent } = useAlertControl();
   const [selectedCommentId, setSelectedCommentId] = useState(null);
   const [isDelete, setIsDelete] = useState(false);
-
-  // '더 보기' 버튼 클릭 처리 함수
-  const handleMoreButtonClick = (commentId, item) => {
-    if (item && item.author) {
-      // 선택된 댓글의 ID를 상태에 저장
-      setSelectedCommentId(commentId);
-      openAlert();
-      if (item.author.accountname === userState.accountname) {
-        setIsDelete(true);
-      } else {
-        setIsDelete(false);
-      }
-    }
-  };
 
   const elapsedTime = date => {
     const start = new Date(date);
@@ -56,57 +45,87 @@ export default function Comment({ comments, handledeleteComment }) {
     return `${start.toLocaleDateString()}`;
   };
 
+  // '더 보기' 버튼 클릭 처리 함수
+  const handleMoreButtonClick = (commentId, item) => {
+    if (item && item.author) {
+      // 선택된 댓글의 ID를 상태에 저장
+      setSelectedCommentId(commentId);
+      openAlert();
+      if (item.author.accountname === userState.accountname) {
+        setIsDelete(true);
+      } else {
+        setIsDelete(false);
+      }
+    }
+  };
+
+  const TOAST = {
+    position: toast.POSITION.BOTTOM_CENTER,
+    autoClose: 1000,
+    closeButton: false,
+    icon: false,
+    hideProgressBar: true,
+    progress: undefined,
+  };
+
   return (
-    <CommentsContainer>
-      {reversedComments.map((item, index) => (
-        <CommentContainer key={index}>
-          <Link
-            to={`/yourProfile/${item.author.accountname}`}
-            className="profileInfo"
-          >
-            <UserImg src={item.author.image} alt="프로필 이미지" />
-          </Link>
-          <CommentContent>
+    <>
+      <StyledToastContainer />
+      <CommentsContainer>
+        {reversedComments.map((item, index) => (
+          <CommentContainer key={index}>
             <Link
               to={`/yourProfile/${item.author.accountname}`}
               className="profileInfo"
             >
-              <Username>{item.author.username}</Username>
+              <UserImg src={item.author.image} alt="프로필 이미지" />
             </Link>
-            <CommentTime>
-              {`· ${elapsedTime(new Date(item.createdAt))}`}
-            </CommentTime>
-            <CommentText>{item.content}</CommentText>
-          </CommentContent>
-          <MoreButton onClick={() => handleMoreButtonClick(item.id, item)}>
-            <ButtonImg src={moreBtn} />
-          </MoreButton>
-          {selectedCommentId === item.id &&
-            (isDelete ? (
-              <AlertComponent>
-                <Alert
-                  alertMsg={'댓글을 삭제하시겠습니까?'}
-                  choice={['취소', '삭제']}
-                  handleFunc={e => {
-                    if (e.target.textContent === '삭제') {
-                      handledeleteComment(item.id, 'delete');
-                    } else {
-                      openAlert(false);
-                    }
-                  }}
-                />
-              </AlertComponent>
-            ) : (
-              <AlertComponent>
-                <Alert
-                  alertMsg={'댓글을 신고하시겠습니까?'}
-                  choice={['취소', '신고']}
-                  handleFunc={() => handledeleteComment(item.id, 'report')}
-                />
-              </AlertComponent>
-            ))}
-        </CommentContainer>
-      ))}
-    </CommentsContainer>
+            <CommentContent>
+              <Link
+                to={`/yourProfile/${item.author.accountname}`}
+                className="profileInfo"
+              >
+                <Username>{item.author.username}</Username>
+              </Link>
+              <CommentTime>
+                {`· ${elapsedTime(new Date(item.createdAt))}`}
+              </CommentTime>
+              <CommentText>{item.content}</CommentText>
+            </CommentContent>
+            <MoreButton onClick={() => handleMoreButtonClick(item.id, item)}>
+              <ButtonImg src={moreBtn} />
+            </MoreButton>
+            {selectedCommentId === item.id &&
+              (isDelete ? (
+                <AlertComponent>
+                  <Alert
+                    alertMsg={'댓글을 삭제하시겠습니까?'}
+                    choice={['취소', '삭제']}
+                    handleFunc={e => {
+                      if (e.target.textContent === '삭제') {
+                        handledeleteComment(item.id, 'delete');
+                        toast.success('✅ 댓글이 삭제되었습니다.', TOAST);
+                      } else {
+                        openAlert(false);
+                      }
+                    }}
+                  />
+                </AlertComponent>
+              ) : (
+                <AlertComponent>
+                  <Alert
+                    alertMsg={'댓글을 신고하시겠습니까?'}
+                    choice={['취소', '신고']}
+                    handleFunc={() => {
+                      handledeleteComment(item.id, 'report');
+                      toast.success('🚨 댓글이 신고되었습니다.', TOAST);
+                    }}
+                  />
+                </AlertComponent>
+              ))}
+          </CommentContainer>
+        ))}
+      </CommentsContainer>
+    </>
   );
 }

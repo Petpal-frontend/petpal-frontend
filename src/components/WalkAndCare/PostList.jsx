@@ -1,16 +1,16 @@
 import React from 'react';
 import { ItemListContainer } from '../Common/Layout/LayoutStyle';
-import WalkItem from './WalkItem';
+import ListItem from './ListItem';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
-import { AddBtn } from '../Product/ProductListStyle';
-import { Link } from 'react-router-dom';
+import WriteButton from '../Common/Button/WriteButton/WriteButton';
 
-export default function WalkItemList({ walkList }) {
+export default function PostList({ postList, postType }) {
   return (
     <ComponentLayout>
       <ItemListContainer>
-        {walkList.map((item, index) => (
-          <WalkItem
+        {postList.map((item, index) => (
+          <ListItem
+            postType={postType}
             key={index}
             id={item._id}
             author={item.author}
@@ -21,11 +21,7 @@ export default function WalkItemList({ walkList }) {
           />
         ))}
       </ItemListContainer>
-      <AddBtn>
-        <Link to="/walkPost" className="">
-          글쓰기
-        </Link>
-      </AddBtn>
+      <WriteButton type={postType} />
     </ComponentLayout>
   );
 }

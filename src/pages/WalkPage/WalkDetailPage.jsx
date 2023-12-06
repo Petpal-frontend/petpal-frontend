@@ -3,9 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../atoms/AtomUserState';
 import Header from '../../components/Common/Header/Header';
-import WalkDetailItem from '../../components/Walk/WalkDetailItem';
+import ItemDetail from '../../components/WalkAndCare/ItemDetail';
 import BottomInput from '../../components/Common/Input/BottomInput/BottomInput';
-import { getWalkDetail } from '../../api/walk';
+import { getPostDetail } from '../../api/post';
 import {
   getCommentList,
   uploadComment,
@@ -31,7 +31,7 @@ export default function WalkDetailPage() {
   // -------- 게시물
   // 게시물 상세
   useEffect(() => {
-    getWalkDetail(id).then(res => {
+    getPostDetail(id).then(res => {
       setWalkDetailItem(res.data.post);
       setAccess(res.data.post.author.accountname);
     });
@@ -128,8 +128,8 @@ export default function WalkDetailPage() {
       )}
 
       {walkDetailItem && (
-        <WalkDetailItem
-          walkDetailItem={walkDetailItem}
+        <ItemDetail
+          itemDetail={walkDetailItem}
           commentNum={commentList.length}
         />
       )}

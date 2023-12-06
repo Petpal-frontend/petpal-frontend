@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../components/Common/Header/Header';
-import WalkItemList from '../../components/Walk/WalkItemList';
-import { getWalkList } from '../../api/walk';
+import PostList from '../../components/WalkAndCare/PostList';
+import { getPostList } from '../../api/post';
 import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../atoms/AtomUserState';
 import Loading from '../../components/Common/Loading/Loading';
+
 export default function WalkListPage() {
   const [loading, setLoading] = useState(true);
   const userInfo = useRecoilValue(userInfoAtom);
@@ -13,7 +14,7 @@ export default function WalkListPage() {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const data = await getWalkList();
+      const data = await getPostList();
       setPostList(data.data.posts);
       setLoading(false);
     };
@@ -33,7 +34,7 @@ export default function WalkListPage() {
     <>
       {loading ? <Loading /> : null}
       <Header type="list" title="산책메이트" />
-      {walkList && <WalkItemList walkList={walkList} />}
+      {walkList && <PostList postList={walkList} postType="walk" />}
     </>
   );
 }

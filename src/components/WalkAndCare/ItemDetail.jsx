@@ -10,25 +10,23 @@ import {
   UserInfoBox,
   PostTime,
   NameAndTimeBox,
-} from './WalkDetailItemStyle';
+} from './ItemDetailStyle';
 import Button from '../Common/Button/SubmitButton/Button';
 import { UserImg, Username } from '../Common/Userinfo/UserInfoStyle';
-import { LikeAndChat } from './WalkItemStyle';
+import { LikeAndChat } from './PostListItemStyle';
 import { ChatImg, LikeImg } from '../Common/SpanImg/SpanImgStyle';
 import { ComponentLayout } from '../Common/Layout/LayoutStyle';
 import { likePost, unlikePost } from '../../api/post';
 import { Link, useParams } from 'react-router-dom';
-import { getWalkDetail } from '../../api/walk';
+import { getPostDetail } from '../../api/post';
 
-export default function WalkDetailItem({ walkDetailItem, commentNum }) {
+export default function ItemDetail({ itemDetail, commentNum }) {
   const { id } = useParams();
 
-  const imageArr = walkDetailItem.image
-    ? walkDetailItem.image.split(',')
-    : null;
+  const imageArr = itemDetail.image ? itemDetail.image.split(',') : null;
 
-  const [isLiked, setIsLiked] = useState(walkDetailItem.hearted);
-  const [likeCount, setLikeCount] = useState(walkDetailItem.heartCount);
+  const [isLiked, setIsLiked] = useState(itemDetail.hearted);
+  const [likeCount, setLikeCount] = useState(itemDetail.heartCount);
 
   const elapsedTime = date => {
     const start = new Date(date);
@@ -51,7 +49,7 @@ export default function WalkDetailItem({ walkDetailItem, commentNum }) {
 
   const handleChatClick = async username => {
     try {
-      const response = await getWalkDetail(id);
+      const response = await getPostDetail(id);
       const username = response.data.post.author.username;
       window.location.href = `/chatRoom/${username}`;
     } catch (error) {
@@ -64,19 +62,19 @@ export default function WalkDetailItem({ walkDetailItem, commentNum }) {
       <DetailContainer>
         <PostTop>
           <Link
-            to={`/yourProfile/${walkDetailItem.author.accountname}`}
+            to={`/yourProfile/${itemDetail.author.accountname}`}
             className="profileInfo"
           >
             <UserInfoBox>
               <UserImg
-                src={walkDetailItem.author.image}
+                src={itemDetail.author.image}
                 style={{ width: '50px', height: '50px' }}
                 alt="프로필 이미지"
               />
               <NameAndTimeBox>
-                <Username>{walkDetailItem.author.username}</Username>
+                <Username>{itemDetail.author.username}</Username>
                 <PostTime>
-                  {`${elapsedTime(new Date(walkDetailItem.createdAt))}`}
+                  {`${elapsedTime(new Date(itemDetail.createdAt))}`}
                 </PostTime>
               </NameAndTimeBox>
             </UserInfoBox>
@@ -93,9 +91,9 @@ export default function WalkDetailItem({ walkDetailItem, commentNum }) {
           ? imageArr.map(img => <PostImage src={img} alt="Post" />)
           : null}
         <PostContent>
-          {walkDetailItem.content.includes('petpal_walk_')
-            ? walkDetailItem.content.split('petpal_walk_')
-            : walkDetailItem.content.split('petpal_care_')}
+          {itemDetail.content.includes('petpal_walk_')
+            ? itemDetail.content.split('petpal_walk_')
+            : itemDetail.content.split('petpal_care_')}
         </PostContent>
         <PostBottom>
           <LikeAndChat>
@@ -105,7 +103,7 @@ export default function WalkDetailItem({ walkDetailItem, commentNum }) {
                 onClick={async () => {
                   if (isLiked) {
                     try {
-                      await unlikePost(walkDetailItem.id);
+                      await unlikePost(itemDetail.id);
                       setIsLiked(false);
                       setLikeCount(likeCount - 1);
                     } catch (error) {
@@ -113,7 +111,7 @@ export default function WalkDetailItem({ walkDetailItem, commentNum }) {
                     }
                   } else {
                     try {
-                      await likePost(walkDetailItem.id);
+                      await likePost(itemDetail.id);
                       setIsLiked(true);
                       setLikeCount(likeCount + 1);
                     } catch (error) {

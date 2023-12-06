@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import CareList from '../../components/Care/CareItemList';
 import Header from '../../components/Common/Header/Header';
-import { getCareList } from '../../api/care';
+import PostList from '../../components/WalkAndCare/PostList';
+import { getPostList } from '../../api/post';
 import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../atoms/AtomUserState';
 import Loading from '../../components/Common/Loading/Loading';
@@ -13,7 +13,7 @@ export default function CareListPage() {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const data = await getCareList();
+      const data = await getPostList();
       setPostList(data.data.posts);
       setLoading(false);
     };
@@ -31,7 +31,7 @@ export default function CareListPage() {
     <>
       {loading ? <Loading /> : null}
       <Header type="list" title="돌보미" />
-      {careList && <CareList careItemList={careList} />}
+      {careList && <PostList postList={careList} postType="care" />}
     </>
   );
 }
