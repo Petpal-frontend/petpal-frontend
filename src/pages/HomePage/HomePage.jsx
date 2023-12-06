@@ -34,6 +34,7 @@ export default function HomePage() {
       v.accountname.includes('petpal_') &&
       v.image !== 'https://api.mandarin.weniv.co.kr/Ellipse.png' &&
       v.image.includes('https://api.mandarin.weniv.co.kr/') &&
+      !v.image.includes('https://api.mandarin.weniv.co.kr/1698598137638.jpg') &&
       !v.image.includes('"'),
   );
   const buttons = [
