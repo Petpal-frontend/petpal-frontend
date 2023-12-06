@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyledLayout, MainWrap, ProductLi } from './ProductListStyle';
-import { getProductList } from '../../api/productListApi';
+import { getProductList } from '../../api/product';
 import { getProductDetail } from '../../api/product';
 import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../atoms/AtomUserState';
