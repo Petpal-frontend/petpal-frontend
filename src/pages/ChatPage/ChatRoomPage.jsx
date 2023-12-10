@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Header from '../../components/Common/Header/Header';
 import BottomInput from '../../components/Common/Input/BottomInput/BottomInput';
 import ChatRoom from '../../components/Chat/ChatRoom';
@@ -9,7 +9,6 @@ export default function ChatRoomPage() {
   const inputFileRef = useRef(null);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
-  const location = useLocation();
   const { username } = useParams();
 
   // 선택된 채팅방의 메시지 설정
