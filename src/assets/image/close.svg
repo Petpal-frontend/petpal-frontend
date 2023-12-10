@@ -4,9 +4,10 @@
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="40" height="40" viewBox="0 0 600.000000 600.000000"
  preserveAspectRatio="xMidYMid meet">
+<circle cx="300" cy="300" r="200" fill="#27489D"/> <!-- Add this line for the circle background -->
 
 <g transform="translate(0.000000,600.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
+fill="white" stroke="none">
 <path d="M2685 5410 c-552 -72 -1027 -303 -1409 -686 -390 -389 -626 -882
 -686 -1432 -16 -144 -8 -491 15 -622 132 -775 611 -1419 1314 -1765 204 -101
 468 -183 691 -215 213 -31 522 -29 728 5 384 65 749 223 1067 464 128 97 339
