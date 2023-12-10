@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import Header from '../Header/Header';
 import { UserImg } from '../Userinfo/UserInfoStyle';
-
+import closeIcon from '../../../assets/image/close.svg';
+import ImageButton from '../Button/ImageButton/ImageButton';
 import {
   PostContainer,
   PostContent,
   ImgUploadButton,
   SelectedImage,
   PostDiv,
+  ImageContainer,
 } from './PostStyle';
 import {
   HeaderContent,
@@ -50,7 +52,7 @@ export default function Post({
     try {
       const imgUpload = await uploadImgs(formData);
       if (selectedFiles.length > 3) {
-        setAlertMessage('게시글 내용을 입력해주세요.');
+        setAlertMessage('이미지는 최대 3개까지만 등록 가능합니다');
         setShowAlert(true);
         return;
       }
@@ -82,6 +84,7 @@ export default function Post({
         setShowAlert(true);
         return;
       }
+
       const postData = {
         post: {
           image: selectedImages.toString(),
@@ -111,6 +114,12 @@ export default function Post({
 
   const closeAlert = () => {
     setShowAlert(false);
+  };
+
+  const handleCancelImage = index => {
+    const updatedImages = [...selectedImages];
+    updatedImages.splice(index, 1);
+    setSelectedImages(updatedImages);
   };
 
   return (
@@ -161,14 +170,39 @@ export default function Post({
             }}
             required
           />
-          {selectedImages &&
-            selectedImages.map((imageUrl, index) => (
-              <SelectedImage
-                key={index}
-                src={imageUrl}
-                alt={`미리 보기 이미지 ${index + 1}`}
-              />
-            ))}
+          <ImageContainer>
+            {selectedImages &&
+              selectedImages.map((imageUrl, index) => (
+                <div
+                  key={index}
+                  style={{
+                    position: 'relative',
+                  }}
+                >
+                  <SelectedImage
+                    key={index}
+                    src={imageUrl}
+                    alt={`미리 보기 이미지 ${index + 1}`}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => handleCancelImage(index)}
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      right: -10,
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <ImageButton src={closeIcon} alt="취소" />
+                  </button>
+                </div>
+              ))}
+          </ImageContainer>
         </form>
       </PostDiv>
       {showAlert && <CustomAlert message={alertMessage} onClose={closeAlert} />}
