@@ -15,7 +15,7 @@ import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../../atoms/AtomUserState';
 import { TooltipStyle } from '../Tooltip/ToolStyle';
 import iBtn from '../../../assets/image/info.png';
-function BackButton({ type }) {
+function BackButton({ type, post }) {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
@@ -30,12 +30,18 @@ function BackButton({ type }) {
       type === 'myWalkDetail' ||
       type === 'careDetail' ||
       type === 'myCareDetail' ||
-      type === 'posting' ||
       type === 'chatRoom' ||
       type === 'search' ||
       type === 'follow'
     ) {
       navigate(-1);
+    } else if (type === 'posting') {
+      if (post === 'walk') {
+        navigate('/walkList');
+      }
+      if (post === 'care') {
+        navigate('/careList');
+      }
     }
   };
 
@@ -67,14 +73,21 @@ function HeaderTitle({ type, title }) {
         </HeaderTitleInnerSpan>
       </TooltipStyle>
     </HeaderTitleSpan>
-  ) : null;	
+  ) : null;
 }
 
 function HeaderSub({ title }) {
   return <HeaderTitleSpan>{title}</HeaderTitleSpan>;
 }
 
-export default function Header({ type, title, onClick, onChange, handleFunc }) {
+export default function Header({
+  type,
+  title,
+  onClick,
+  onChange,
+  handleFunc,
+  post,
+}) {
   const { openModal, ModalComponent } = useModalControl();
   const navigate = useNavigate();
 
@@ -140,9 +153,15 @@ export default function Header({ type, title, onClick, onChange, handleFunc }) {
     case 'posting':
       return (
         <HeaderContainer type={type}>
-          <BackButton type={type} />
+          <BackButton type={type} post={post} />
           <HeaderTitle type={type} title={title} />
-          <Button type="submit" size="xs" variant="primary" children="업로드" />
+          <Button
+            type="submit"
+            size="xs"
+            variant="primary"
+            children="업로드"
+            onClick={onClick}
+          />
         </HeaderContainer>
       );
     case 'feed':

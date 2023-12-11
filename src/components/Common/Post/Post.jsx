@@ -21,101 +21,103 @@ import { uploadImgs } from '../../../api/imageApi';
 import myProfile from '../../../assets/image/profile-img4.svg';
 import uploadChat from '../../../assets/image/chat-upload-btn.svg';
 import CustomAlert from '../CustomAlert/CustomAlert';
+import { ComponentLayout } from '../Layout/LayoutStyle';
 
 export default function Post({
   id,
-  title,
-  type,
-  label,
-  value,
-  placeholder,
+  handleImageChange,
+  setContent,
+  selectedImages,
+  showAlert,
+  alertMessage,
+  closeAlert,
   onSubmit,
 }) {
-  const [selectedImages, setSelectedImages] = useState([]);
-  const [content, setContent] = useState('');
+  // const [selectedImages, setSelectedImages] = useState([]);
+  // const [content, setContent] = useState('');
 
-  const [showAlert, setShowAlert] = useState(false);
-  const [alertMessage, setAlertMessage] = useState('');
+  // const [showAlert, setShowAlert] = useState(false);
+  // const [alertMessage, setAlertMessage] = useState('');
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleImageChange = async e => {
-    const selectedFiles = Array.from(e.target.files);
+  // const handleImageChange = async e => {
+  //   const selectedFiles = Array.from(e.target.files);
 
-    const formData = new FormData();
-    selectedFiles.forEach(file => {
-      formData.append('image', file);
-    });
+  //   const formData = new FormData();
+  //   selectedFiles.forEach(file => {
+  //     formData.append('image', file);
+  //   });
 
-    try {
-      const imgUpload = await uploadImgs(formData);
-      if (selectedFiles.length > 3) {
-        setAlertMessage('게시글 내용을 입력해주세요.');
-        setShowAlert(true);
-        return;
-      }
-      setSelectedImages(
-        imgUpload.data.map(
-          data => `https://api.mandarin.weniv.co.kr/${data.filename}`,
-        ),
-      );
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  //   try {
+  //     const imgUpload = await uploadImgs(formData);
+  //     if (selectedFiles.length > 3) {
+  //       setAlertMessage('게시글 내용을 입력해주세요.');
+  //       setShowAlert(true);
+  //       return;
+  //     }
+  //     setSelectedImages(
+  //       imgUpload.data.map(
+  //         data => `https://api.mandarin.weniv.co.kr/${data.filename}`,
+  //       ),
+  //     );
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
-  const appendFlagContent =
-    type === 'walk' ? `petpal_walk_${content}` : `petpal_care_${content}`;
+  // const appendFlagContent =
+  //   type === 'walk' ? `petpal_walk_${content}` : `petpal_care_${content}`;
 
-  const uploadData = async e => {
-    try {
-      e.preventDefault();
-      // 필수 입력 필드인 content와 selectedImages 검사
-      if (!content) {
-        setAlertMessage('게시글 내용을 입력해주세요.');
-        setShowAlert(true);
-        return;
-      }
+  // const uploadData = async e => {
+  //   try {
+  //     e.preventDefault();
+  //     // 필수 입력 필드인 content와 selectedImages 검사
+  //     if (!content) {
+  //       setAlertMessage('게시글 내용을 입력해주세요.');
+  //       setShowAlert(true);
+  //       return;
+  //     }
 
-      if (selectedImages.length === 0) {
-        setAlertMessage('이미지를 업로드해주세요.');
-        setShowAlert(true);
-        return;
-      }
-      const postData = {
-        post: {
-          image: selectedImages.toString(),
-          content: appendFlagContent,
-        },
-      };
+  //     if (selectedImages.length === 0) {
+  //       setAlertMessage('이미지를 업로드해주세요.');
+  //       setShowAlert(true);
+  //       return;
+  //     }
+  //     const postData = {
+  //       post: {
+  //         image: selectedImages.toString(),
+  //         content: appendFlagContent,
+  //       },
+  //     };
 
-      const response = await uploadPost(postData);
-      if (response.status === 200) {
-        setAlertMessage(
-          '게시글 등록이 완료되었습니다. 게시글 목록으로 이동합니다.',
-        );
-        setShowAlert(true);
-        setTimeout(() => {
-          if (type === 'walk') {
-            navigate('/walkList');
-          }
-          if (type === 'care') {
-            navigate('/careList');
-          }
-        }, 2000);
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  //     const response = await uploadPost(postData);
+  //     if (response.status === 200) {
+  //       setAlertMessage(
+  //         '게시글 등록이 완료되었습니다. 게시글 목록으로 이동합니다.',
+  //       );
+  //       setShowAlert(true);
+  //       setTimeout(() => {
+  //         if (type === 'walk') {
+  //           navigate('/walkList');
+  //         }
+  //         if (type === 'care') {
+  //           navigate('/careList');
+  //         }
+  //       }, 2000);
+  //     }
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
-  const closeAlert = () => {
-    setShowAlert(false);
-  };
+  // const closeAlert = () => {
+  //   setShowAlert(false);
+  // };
 
   return (
-    <PostContainer>
-      <HeaderWrap>
+    <ComponentLayout className="detailComponent">
+      {/* <HeaderWrap>
         <h1 className="a11y-hidden">게시글 등록 작성</h1>
         <div>
           <PrevBtn>
@@ -130,7 +132,7 @@ export default function Post({
         <UploadBtn onClick={uploadData} type="submit">
           업로드
         </UploadBtn>
-      </HeaderWrap>
+      </HeaderWrap> */}
       <PostDiv>
         <UserImg
           src={myProfile}
@@ -139,7 +141,7 @@ export default function Post({
         />
         <form onSubmit={onSubmit}>
           <label htmlFor={id} className="a11yHidden">
-            {label}
+            이미지 업로드 버튼
           </label>
           <label htmlFor={id}>
             <ImgUploadButton src={uploadChat} />
@@ -154,8 +156,7 @@ export default function Post({
             required
           />
           <PostContent
-            value={value}
-            placeholder={placeholder}
+            placeholder="게시글 입력하기..."
             onChange={e => {
               setContent(e.target.value);
             }}
@@ -172,6 +173,6 @@ export default function Post({
         </form>
       </PostDiv>
       {showAlert && <CustomAlert message={alertMessage} onClose={closeAlert} />}
-    </PostContainer>
+    </ComponentLayout>
   );
 }
