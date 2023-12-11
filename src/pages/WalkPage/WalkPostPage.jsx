@@ -81,6 +81,12 @@ export default function WalkPostPage() {
     setShowAlert(false);
   };
 
+  const handleCancelImage = index => {
+    const updatedImages = [...selectedImages];
+    updatedImages.splice(index, 1);
+    setSelectedImages(updatedImages);
+  };
+
   return (
     <>
       <Header
@@ -97,6 +103,7 @@ export default function WalkPostPage() {
         showAlert={showAlert}
         alertMessage={alertMessage}
         closeAlert={closeAlert}
+        handleCancelImage={handleCancelImage}
       />
     </>
   );
