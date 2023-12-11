@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { uploadImgs } from '../../api/imageApi';
 import { uploadPost } from '../../api/post';
 
-export default function CarePostPage({ id, placeholder }) {
+export default function CarePostPage() {
   const [selectedImages, setSelectedImages] = useState([]);
   const [content, setContent] = useState('');
   const [showAlert, setShowAlert] = useState(false);
@@ -24,7 +24,7 @@ export default function CarePostPage({ id, placeholder }) {
     try {
       const imgUpload = await uploadImgs(formData);
       if (selectedFiles.length > 3) {
-        setAlertMessage('게시글 내용을 입력해주세요.');
+        setAlertMessage('이미지는 최대 3개까지만 등록 가능합니다.');
         setShowAlert(true);
         return;
       }
@@ -80,7 +80,7 @@ export default function CarePostPage({ id, placeholder }) {
   const closeAlert = () => {
     setShowAlert(false);
   };
-	
+
   return (
     <>
       <Header
