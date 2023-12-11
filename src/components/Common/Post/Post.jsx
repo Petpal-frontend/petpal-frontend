@@ -1,36 +1,28 @@
 import React, { useState } from 'react';
-import Header from '../Header/Header';
 import { UserImg } from '../Userinfo/UserInfoStyle';
 import closeIcon from '../../../assets/image/close.svg';
 import ImageButton from '../Button/ImageButton/ImageButton';
+
 import {
-  PostContainer,
   PostContent,
   ImgUploadButton,
   SelectedImage,
   PostDiv,
   ImageContainer,
 } from './PostStyle';
-import {
-  HeaderContent,
-  HeaderWrap,
-  PrevBtn,
-  UploadBtn,
-} from '../../Product/ProductPostStyle';
-import { Link, useNavigate } from 'react-router-dom';
-import { uploadPost } from '../../../api/post';
-import { uploadImgs } from '../../../api/imageApi';
 import myProfile from '../../../assets/image/profile-img4.svg';
 import uploadChat from '../../../assets/image/chat-upload-btn.svg';
 import CustomAlert from '../CustomAlert/CustomAlert';
+import { ComponentLayout } from '../Layout/LayoutStyle';
 
 export default function Post({
   id,
-  title,
-  type,
-  label,
-  value,
-  placeholder,
+  handleImageChange,
+  setContent,
+  selectedImages,
+  showAlert,
+  alertMessage,
+  closeAlert,
   onSubmit,
 }) {
   const [selectedImages, setSelectedImages] = useState([]);
@@ -121,25 +113,8 @@ export default function Post({
     updatedImages.splice(index, 1);
     setSelectedImages(updatedImages);
   };
-
   return (
-    <PostContainer>
-      <HeaderWrap>
-        <h1 className="a11y-hidden">게시글 등록 작성</h1>
-        <div>
-          <PrevBtn>
-            {type === 'walk' ? (
-              <Link to="/walkList"></Link>
-            ) : (
-              <Link to="/careList"></Link>
-            )}
-          </PrevBtn>
-          <HeaderContent>{title}</HeaderContent>
-        </div>
-        <UploadBtn onClick={uploadData} type="submit">
-          업로드
-        </UploadBtn>
-      </HeaderWrap>
+    <ComponentLayout className="detailComponent">
       <PostDiv>
         <UserImg
           src={myProfile}
@@ -148,7 +123,7 @@ export default function Post({
         />
         <form onSubmit={onSubmit}>
           <label htmlFor={id} className="a11yHidden">
-            {label}
+            이미지 업로드 버튼
           </label>
           <label htmlFor={id}>
             <ImgUploadButton src={uploadChat} />
@@ -163,8 +138,7 @@ export default function Post({
             required
           />
           <PostContent
-            value={value}
-            placeholder={placeholder}
+            placeholder="게시글 입력하기..."
             onChange={e => {
               setContent(e.target.value);
             }}
@@ -206,6 +180,6 @@ export default function Post({
         </form>
       </PostDiv>
       {showAlert && <CustomAlert message={alertMessage} onClose={closeAlert} />}
-    </PostContainer>
+    </ComponentLayout>
   );
 }
