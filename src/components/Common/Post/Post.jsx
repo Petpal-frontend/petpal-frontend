@@ -92,7 +92,7 @@ export default function Post({
                       alignItems: 'center',
                     }}
                   >
-                    <ImageButton src={closeIcon} alt="취소" />
+                    <ImageButton src={closeIcon} alt="취소버튼" />
                   </button>
                 </div>
               ))}
