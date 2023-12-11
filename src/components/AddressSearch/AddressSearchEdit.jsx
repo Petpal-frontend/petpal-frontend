@@ -23,7 +23,7 @@ export default function AddressSearchEdit({
     },
     content: {
       margin: 'auto',
-      width: '520px',
+      maxWidth: '520px',
       height: '444px',
       padding: '0',
       overflow: 'hidden',
