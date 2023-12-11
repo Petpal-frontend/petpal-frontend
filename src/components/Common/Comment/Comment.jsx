@@ -116,9 +116,11 @@ export default function Comment({ comments, handledeleteComment }) {
                   <Alert
                     alertMsg={'댓글을 신고하시겠습니까?'}
                     choice={['취소', '신고']}
-                    handleFunc={() => {
-                      handledeleteComment(item.id, 'report');
-                      toast.success('🚨 댓글이 신고되었습니다.', TOAST);
+                    handleFunc={e => {
+                      if (e.target.textContent === '신고') {
+                        handledeleteComment(item.id, 'report');
+                        toast.success('🚨 댓글이 신고되었습니다.', TOAST);
+                      }
                     }}
                   />
                 </AlertComponent>
