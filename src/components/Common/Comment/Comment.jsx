@@ -22,7 +22,7 @@ import moreBtn from '../../../assets/image/icon-more-vertical.svg';
 export default function Comment({ comments, handledeleteComment }) {
   const reversedComments = comments.slice().reverse();
   const userState = useRecoilValue(userInfoAtom);
-  const { openAlert, closeAlert, AlertComponent } = useAlertControl();
+  const { openAlert, AlertComponent } = useAlertControl();
   const [selectedCommentId, setSelectedCommentId] = useState(null);
   const [isDelete, setIsDelete] = useState(false);
 

@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { StyledLayout, MainWrap, ChatBox } from './ChatRoomStyle';
 
 export default function ChatRoom({ messages }) {
+  // 채팅 입력 시 자동으로 scroll 맨 밑으로 이동
+  const scrollRef = useRef(null);
+
+  const scrollToBottom = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
   return (
     <StyledLayout>
       <MainWrap>
@@ -34,6 +47,8 @@ export default function ChatRoom({ messages }) {
             )}
           </React.Fragment>
         ))}
+        {/* 채팅 입력 될 때마다 맨 밑으로 스크롤 */}
+        <div ref={scrollRef} />
       </MainWrap>
     </StyledLayout>
   );
