@@ -45,10 +45,9 @@ export const MoreBtn = styled.button`
 `;
 
 export const MainWrap = styled.div`
-  padding: 10px 0 114px;
+  padding: 60px 0 100px;
 `;
 export const ImgArea = styled.p`
-  aspect-ratio: 390/312;
   margin-bottom: 22px;
 
   img {
