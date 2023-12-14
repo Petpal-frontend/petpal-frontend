@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollContainer, ScrollImageButton } from './scrollStyle';
+import {
+  ScrollContainer,
+  ScrollImageButton,
+  BlankWrapper,
+  BlankImg,
+  BlankH1,
+  BlankP,
+  BalnkTextBox,
+} from './scrollStyle';
+import blankFeed from '../../../assets/image/icon-feed-blank.png';
 import { Link, useLocation } from 'react-router-dom';
 
 const InfiniteScroll = ({ imageData, className }) => {
@@ -101,7 +110,13 @@ const InfiniteScroll = ({ imageData, className }) => {
           </ScrollImageButton>
         ))
       ) : (
-        <h1>팔로잉 중인 사용자의 게시물이 없습니다.</h1>
+        <BlankWrapper>
+          <BlankImg src={blankFeed} />
+          <BalnkTextBox>
+            <BlankH1>팔로잉 중인 사용자의 게시물이 없습니다.</BlankH1>
+            <BlankP>먼저 작성해보는건 어때요?</BlankP>
+          </BalnkTextBox>
+        </BlankWrapper>
       )}
     </ScrollContainer>
   );
