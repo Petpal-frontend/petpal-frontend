@@ -21,6 +21,7 @@ export default function WalkDetailPage() {
   const [walkDetailItem, setWalkDetailItem] = useState();
   const [commentList, setCommentList] = useState([]);
   const [newComment, setNewComment] = useState('');
+  const [postComment, setPostComment] = useState(false);
   const [access, setAccess] = useState(null);
   const userState = useRecoilValue(userInfoAtom);
   const { openAlert, AlertComponent } = useAlertControl();
@@ -42,7 +43,7 @@ export default function WalkDetailPage() {
       window.scrollTo(0, document.body.scrollHeight);
     };
     handleScrollToBottom();
-  }, [commentList]);
+  }, [postComment]);
 
   // 게시물 삭제
   const handleModal = event => {
@@ -107,6 +108,7 @@ export default function WalkDetailPage() {
       // 새 댓글을 댓글 목록에 추가
       setCommentList(prevComments => [newCommentObj, ...prevComments]);
       setNewComment('');
+      setPostComment(true);
     } catch (error) {
       console.error('댓글 작성 실패', error);
     }
