@@ -35,6 +35,13 @@ export default function CareDetailPage() {
   }, [id]);
   const isAccessAllowed = access === userState.accountname;
 
+  useEffect(() => {
+    const handleScrollToBottom = () => {
+      window.scrollTo(0, document.body.scrollHeight);
+    };
+    handleScrollToBottom();
+  }, [commentList]);
+
   const handleModal = event => {
     //careEditPage로 state의 값을 가지고 이동
     if (event.target.textContent === '수정') {

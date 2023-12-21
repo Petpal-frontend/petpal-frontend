@@ -37,6 +37,13 @@ export default function WalkDetailPage() {
     });
   }, [id]);
 
+  useEffect(() => {
+    const handleScrollToBottom = () => {
+      window.scrollTo(0, document.body.scrollHeight);
+    };
+    handleScrollToBottom();
+  }, [commentList]);
+
   // 게시물 삭제
   const handleModal = event => {
     //walkEditPage로 state값과 함께 이동

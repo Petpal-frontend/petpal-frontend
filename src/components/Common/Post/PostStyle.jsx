@@ -1,33 +1,14 @@
 import styled from 'styled-components';
 
-// export const PostContainer = styled.div`
-//   position: relative;
-//   display: flex;
-// 	flex-direction: column;
-//   padding: 1rem;
-//   height: 950px;
-// `;
-
-// export const PostDiv = styled.div`
-//   position: relative;
-//   display: flex;
-//   padding: 1rem;
-//   height: 900px;
-// `;
-
 export const PostContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  // height: 100vh;
-  // min-height: 100vh;
-  // min-height: calc(100vh - 60px);
 
   form {
     width: 100%;
   }
-  //   height: 950px;
 `;
 
 export const PostDiv = styled.div`
@@ -35,11 +16,11 @@ export const PostDiv = styled.div`
   display: flex;
   padding: 1rem;
   // height: 900px;
+  // maxWidth: 200px
   min-height: calc(100vh - 60px - 2rem);
 `;
 
 export const PostContent = styled.textarea`
-  // width: 420px;
   width: 100%;
   height: 50%;
   border: none;
@@ -52,6 +33,12 @@ export const PostContent = styled.textarea`
     font-size: var(--font-size-lg);
   }
 `;
+
+export const ImageContainer = styled.div`
+  padding-top: 50px;
+  display: flex;
+`;
+
 export const ImgUploadButton = styled.img`
   cursor: pointer;
   position: absolute;
@@ -61,9 +48,10 @@ export const ImgUploadButton = styled.img`
   right: 20px;
 `;
 export const SelectedImage = styled.img`
+  display: flex;
   width: 126px;
   height: 126px;
-  margin-right: 10px;
   border: 0.8px solid #dbdbdb;
   border-radius: 10%;
+  object-fit: cover;
 `;
