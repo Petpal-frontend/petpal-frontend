@@ -60,7 +60,7 @@ function HeaderTitle({ type, title }) {
       {title}
       <TooltipStyle>
         <span className="tooltiptext">
-          지역은 프로필수정에서 변경가능합니다.
+          지역은 프로필 수정에서 변경 가능합니다.
         </span>
         {/* <HeaderTitleInnerSpan>📍{userState.intro}</HeaderTitleInnerSpan> */}
         <HeaderTitleInnerSpan>

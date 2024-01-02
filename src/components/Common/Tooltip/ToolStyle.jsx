@@ -5,10 +5,10 @@ export const TooltipStyle = styled.div`
   display: inline-block;
   transition: top 0.5s ease-in;
   cursor: pointer;
-  //   border-bottom: 1px solid black;
+
   .tooltiptext {
     visibility: hidden;
-    width: 150px;
+    width: 136px;
     text-align: center;
     border-radius: 6px;
     position: absolute;
@@ -18,23 +18,42 @@ export const TooltipStyle = styled.div`
     transition: opacity 0.3s;
     background-color: #ffe76980; /* 배경 색상을 여기에 추가하세요 */
     padding: 10px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     color: black; /* 툴팁 텍스트 색상을 여기에 추가하세요 */
 
     &:after {
       content: '';
       position: absolute;
-      left: 0;
-      top: 90%;
+      left: 3px;
+      top: 76%;
       width: 0;
       height: 0;
-      border: 10px solid transparent;
+      border: 7px solid transparent;
       border-right-color: #ffe76980;
       border-left: 0;
       border-top: 0;
       margin-top: -5px;
       margin-left: -10px;
+      transform: rotate(-3deg);
+    }
+
+    @media all and (min-width: 360px) and (max-width: 439px) {
+      width: 90px;
+      bottom: -156%;
+
+      &:after {
+        top: 59%;
+      }
+    }
+    @media all and (min-width: 320px) and (max-width: 359px) {
+      width: 76px;
+      bottom: -306%;
+      word-break: keep-all;
+
+      &:after {
+        top: 41%;
+      }
     }
   }
 
