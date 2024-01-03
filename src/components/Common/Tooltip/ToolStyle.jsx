@@ -1,53 +1,46 @@
 import styled from 'styled-components';
 
 export const TooltipStyle = styled.div`
-  position: relative;
   display: inline-block;
-  transition: top 0.5s ease-in;
   cursor: pointer;
-  //   border-bottom: 1px solid black;
+
   .tooltiptext {
     visibility: hidden;
-    width: 150px;
-    text-align: center;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 999;
-    bottom: -80%;
-    opacity: 0;
-    transition: opacity 0.3s;
-    background-color: #ffe76980; /* 배경 색상을 여기에 추가하세요 */
+    width: 26%;
     padding: 10px;
-    font-size: 14px;
+    border-radius: 6px;
+    background-color: #ffe76980;
+    color: black;
+    text-align: center;
+    font-size: 12px;
     font-weight: 500;
-    color: black; /* 툴팁 텍스트 색상을 여기에 추가하세요 */
+    word-break: keep-all;
+    position: absolute;
+    left: calc(51% + ${props => props.titleWidth}px / 2);
+    top: 7px;
+    z-index: 999;
 
     &:after {
       content: '';
       position: absolute;
-      left: 0;
-      top: 90%;
-      width: 0;
-      height: 0;
-      border: 10px solid transparent;
+      left: -7px;
+      top: 28px;
+      border: 7px solid transparent;
       border-right-color: #ffe76980;
       border-left: 0;
       border-top: 0;
-      margin-top: -5px;
-      margin-left: -10px;
+      transform: rotate(-3deg);
     }
   }
 
   &:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
-    left: 70px;
-    animation-duration: 0.5s;
-    animation-name: fadeout;
+    animation: fadeout 0.5s;
   }
 
   @keyframes fadeout {
-    // fade-out시 opacity를 흐릿하다가 선명하기 만들자
+    // fade-out시 opacity를 흐릿하다가 선명하게 만들자
     0% {
       opacity: 0;
     }
