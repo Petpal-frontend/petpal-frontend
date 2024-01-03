@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export const TooltipStyle = styled.div`
-  position: relative;
   display: inline-block;
   cursor: pointer;
 
   .tooltiptext {
     visibility: hidden;
-    width: 136px;
+    width: 26%;
     padding: 10px;
     border-radius: 6px;
     background-color: #ffe76980;
@@ -15,9 +14,10 @@ export const TooltipStyle = styled.div`
     text-align: center;
     font-size: 12px;
     font-weight: 500;
+    word-break: keep-all;
     position: absolute;
-    left: 70px;
-    top: -15px;
+    left: calc(51% + ${props => props.titleWidth}px / 2);
+    top: 7px;
     z-index: 999;
 
     &:after {
@@ -30,14 +30,6 @@ export const TooltipStyle = styled.div`
       border-left: 0;
       border-top: 0;
       transform: rotate(-3deg);
-    }
-
-    @media all and (min-width: 360px) and (max-width: 439px) {
-      width: 90px;
-    }
-    @media all and (min-width: 320px) and (max-width: 359px) {
-      width: 76px;
-      word-break: keep-all;
     }
   }
 

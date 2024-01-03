@@ -15,6 +15,7 @@ import { useRecoilValue } from 'recoil';
 import { userInfoAtom } from '../../../atoms/AtomUserState';
 import { TooltipStyle } from '../Tooltip/ToolStyle';
 import iBtn from '../../../assets/image/info.png';
+import { useEffect, useRef, useState } from 'react';
 function BackButton({ type, post }) {
   const navigate = useNavigate();
 
@@ -53,12 +54,18 @@ function BackButton({ type, post }) {
 function HeaderTitle({ type, title }) {
   const userState = useRecoilValue(userInfoAtom);
 
+  const [titleWidth, setTitleWidth] = useState('');
+  const titleSpan = useRef(null);
+  useEffect(() => {
+    setTitleWidth(titleSpan.current.offsetWidth);
+  }, [titleWidth]);
+
   return type === 'post' || type === 'posting' || type === 'follow' ? (
     <HeaderTitleSpan>{title}</HeaderTitleSpan>
   ) : type === 'list' ? (
-    <HeaderTitleSpan>
+    <HeaderTitleSpan ref={titleSpan}>
       {title}
-      <TooltipStyle>
+      <TooltipStyle titleWidth={titleWidth}>
         <span className="tooltiptext">
           지역은 프로필 수정에서 변경 가능합니다.
         </span>
