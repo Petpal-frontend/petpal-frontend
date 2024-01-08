@@ -55,7 +55,7 @@ function HeaderTitle({ type, title }) {
   const userState = useRecoilValue(userInfoAtom);
 
   const [titleWidth, setTitleWidth] = useState('');
-  const titleSpan = useRef(null);
+  const titleSpan = useRef([]);
   useEffect(() => {
     setTitleWidth(titleSpan.current.offsetWidth);
   }, [titleWidth]);
