@@ -11,6 +11,7 @@ import {
   SignUpLink,
   P,
   SnsLoginList,
+  TestCheckBox,
 } from './LoginPageStyle';
 import { useRecoilState } from 'recoil';
 import imgLogo from '../../assets/image/logo.svg';
@@ -27,6 +28,8 @@ export default function LoginPage() {
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const [isChecked, setIsChecked] = useState(false);
 
   const navigate = useNavigate();
 
@@ -89,6 +92,7 @@ export default function LoginPage() {
           label="이메일"
           type="email"
           placeholder="이메일"
+          value={email}
           className="radiusTop"
           onChange={e => {
             setEmail(e.target.value);
@@ -98,11 +102,30 @@ export default function LoginPage() {
           label="비밀번호"
           type="password"
           placeholder="비밀번호"
+          value={password}
           className="radiusBottom inputTop"
           onChange={e => {
             setPassword(e.target.value);
           }}
         />
+        <TestCheckBox>
+          <input type="checkbox" id="testChkBox" name="testChkBox" />
+          <label
+            htmlFor="testChkBox"
+            onClick={() => {
+              setIsChecked(prev => !prev);
+              console.log(isChecked);
+
+              // setEmail(isChecked ? 'petpal@test.com' : '');
+              // setPassword(isChecked ? '123123' : '');
+              setEmail(isChecked ? '' : 'petpal@test.com');
+              setPassword(isChecked ? '' : '123123');
+            }}
+            className={isChecked ? 'checked' : ''}
+          >
+            펫팔 체험하기
+          </label>
+        </TestCheckBox>
         <LoginBtn type="submit" onClick={handleLogin}>
           로그인
         </LoginBtn>

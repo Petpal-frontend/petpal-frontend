@@ -10,9 +10,7 @@ export const CommentContainer = styled.div`
 export const CommentsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 15px 15px 100px 15px;
-  overflow-y: auto;
-  max-height: 500px;
+  padding: 15px 15px 60px 15px;
 `;
 
 export const CommentContent = styled.div`

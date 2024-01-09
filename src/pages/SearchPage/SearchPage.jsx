@@ -4,10 +4,13 @@ import Header from '../../components/Common/Header/Header';
 import Search from '../../components/Search/Search';
 import NavBar from '../../components/Common/NavBar/NavBar';
 import { getUserList } from '../../api/searchApi';
+import useDebounce from '../../hooks/useDebounce';
 
 export default function SearchPage() {
   const [inputValue, setInputValue] = useState('');
   const [users, setUsers] = useState([]);
+
+  const debouncedSearchText = useDebounce(inputValue, 300);
 
   const handleChangeInput = e => {
     setInputValue(e.target.value);
@@ -15,21 +18,23 @@ export default function SearchPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getUserList(inputValue);
+      const data = await getUserList(debouncedSearchText);
       setUsers(data);
     };
 
     fetchData();
-  }, [inputValue]);
+  }, [debouncedSearchText]);
 
   const filteredUsers = users.filter(
-    v => v.username.includes(inputValue) && v.accountname.includes('petpal_'),
+    v =>
+      v.username.includes(debouncedSearchText) &&
+      v.accountname.includes('petpal_'),
   );
 
   return (
     <StyledLayout>
       <Header type="search" onChange={handleChangeInput} />
-      <Search users={filteredUsers} inputValue={inputValue} />
+      <Search users={filteredUsers} inputValue={debouncedSearchText} />
       <NavBar />
     </StyledLayout>
   );

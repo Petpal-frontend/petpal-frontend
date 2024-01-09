@@ -24,6 +24,7 @@ export const LikeImg = styled.button`
   background-image: url(${props =>
     props.like === true ? redHeartUrl : whiteHeartUrl});
   ${spanImgStyle}
+  cursor: pointer;
 `;
 
 export const ChatImg = styled.span`

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import checkbox from '../../assets/image/icon-checkbox.svg';
+import checkboxfill from '../../assets/image/icon-checkbox-fill.svg';
 
 export const LoginContainer = styled.div`
   display: flex;
@@ -18,7 +20,7 @@ export const LoginContainer = styled.div`
     width: 100%;
   }
   //  min-height: 920px;
-  // 	width: 520px;
+  //  width: 520px;
   //   background-color: #fffad0;
   //   width: 520px;
   //   position: relative;
@@ -60,6 +62,36 @@ export const LoginInput = styled.input`
   }
 `;
 
+export const TestCheckBox = styled.div`
+  margin-top: 12px;
+  position: relative;
+
+  input {
+    display: none;
+  }
+
+  label {
+    padding-left: 24px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  label::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url(${checkbox});
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+  }
+
+  label.checked::before {
+    background-image: url(${checkboxfill});
+  }
+`;
+
 export const LoginBtn = styled.button`
   cursor: pointer;
   // width: 400px;
@@ -93,4 +125,3 @@ export const SnsLoginList = styled.div`
   gap: 50px;
   margin-top: 38px;
 `;
-
