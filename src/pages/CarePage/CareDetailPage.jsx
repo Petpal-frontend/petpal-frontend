@@ -23,6 +23,7 @@ export default function CareDetailPage() {
   const [careDetailItem, setCareDetailItem] = useState();
   const [commentList, setCommentList] = useState([]);
   const [newComment, setNewComment] = useState('');
+  const [postComment, setPostComment] = useState(false);
   const userState = useRecoilValue(userInfoAtom);
   const navigate = useNavigate();
   const { openAlert, AlertComponent } = useAlertControl();
@@ -40,7 +41,7 @@ export default function CareDetailPage() {
       window.scrollTo(0, document.body.scrollHeight);
     };
     handleScrollToBottom();
-  }, [commentList]);
+  }, [postComment]);
 
   const handleModal = event => {
     //careEditPage로 state의 값을 가지고 이동
@@ -104,6 +105,7 @@ export default function CareDetailPage() {
       // 새 댓글을 댓글 목록에 추가
       setCommentList(prevComments => [newCommentObj, ...prevComments]);
       setNewComment('');
+      setPostComment(true);
     } catch (error) {
       console.error('댓글 작성 실패', error);
     }
