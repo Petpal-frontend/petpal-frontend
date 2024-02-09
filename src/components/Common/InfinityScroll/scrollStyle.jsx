@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const ScrollContainer = styled.div`
   padding-top: 20px;
@@ -47,6 +47,7 @@ export const BlankWrapper = styled.div`
   position: relative;
   text-align: center;
   margin-top: 30%;
+  background-color: #fff;
 `;
 
 export const BlankImg = styled.img`
@@ -58,11 +59,16 @@ export const BlankImg = styled.img`
   transform: translate(-50%, -50%);
 `;
 
-export const BalnkTextBox = styled.div`
+export const BlankTextBox = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 50%;
   gap: 10px;
+  ${({ postBoxStyle }) =>
+    postBoxStyle &&
+    css`
+      margin-top: -10%;
+    `}
 `;
 export const BlankH1 = styled.h1`
   font-weight: 600;
