@@ -70,7 +70,7 @@ PW: 123123
 - Recoil: 간편한 전역 상태 관리와 접근을 위해 사용했습니다.  
 - Axios: 간편한 HTTP 요청을 위해 사용했습니다.  
 - styled-components: 스타일 캡슐화로 코드의 가독성과 유지보수 향상을 위해 사용했습니다.
-- react-router-dom: 페이지 라우팅을 위해 사용
+- react-router-dom: 페이지 라우팅을 위해 사용했습니다.
 
 <br/>
 
