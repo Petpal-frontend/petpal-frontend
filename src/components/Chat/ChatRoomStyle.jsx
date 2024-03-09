@@ -109,7 +109,7 @@ export const ChatBox = styled.div`
     align-self: flex-end;
     margin-left: 6px;
     color: #767676;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
   }
 

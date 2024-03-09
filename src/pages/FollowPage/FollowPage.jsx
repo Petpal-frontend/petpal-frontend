@@ -4,6 +4,7 @@ import Header from '../../components/Common/Header/Header';
 import FollowList from '../../components/Follow/FollowList';
 import NavBar from '../../components/Common/NavBar/NavBar';
 import { getFollowers, getFollowings } from '../../api/follow';
+import { Helmet } from 'react-helmet-async';
 
 export default function FollowerPage() {
   const userAccountName = useParams().accountname;
@@ -33,6 +34,18 @@ export default function FollowerPage() {
 
   return (
     <>
+      <Helmet>
+        <title>
+          {followPage === 'follower'
+            ? '팔로워 목록 | Petpal'
+            : '팔로잉 목록 | Petpal'}{' '}
+        </title>
+        {followPage === 'follower' ? (
+          <meta name="description" content="펫팔의 팔로워 목록 페이지" />
+        ) : (
+          <meta name="description" content="펫팔의 팔로잉 목록 페이지" />
+        )}
+      </Helmet>
       <Header
         type="follow"
         title={followPage === 'follower' ? 'Followers' : 'Followings'}

@@ -75,7 +75,7 @@ function HeaderTitle({ type, title }) {
           {userState.intro}
           <img
             src={iBtn}
-            alt="i icon"
+            alt="information icon"
             style={{ marginLeft: '3px', width: '15px', height: '15px' }}
           />
         </HeaderTitleInnerSpan>

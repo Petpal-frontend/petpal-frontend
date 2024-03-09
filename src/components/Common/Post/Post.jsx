@@ -38,7 +38,7 @@ export default function Post({
             이미지 업로드 버튼
           </label>
           <label htmlFor={id}>
-            <ImgUploadButton src={uploadChat} />
+            <ImgUploadButton src={uploadChat} alt="게시글 업로드 이미지" />
           </label>
           <input
             type="file"

@@ -44,7 +44,7 @@ const SimpleSlider = () => {
         {items.map((item, index) => (
           <div key={item.id}>
             <ImageContainer>
-              <Image src={item.image} />
+              <Image src={item.image} alt="슬라이드 이미지" />
               <SlideNumber>
                 {index + 1} / {items.length}
               </SlideNumber>
