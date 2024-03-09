@@ -20,6 +20,7 @@ export default function WalkListPage() {
     };
     fetchData();
   }, []);
+	
   const walkList = postList.filter(
     post =>
       post.author.accountname.includes('petpal_') &&

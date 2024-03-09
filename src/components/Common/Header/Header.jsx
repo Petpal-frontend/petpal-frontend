@@ -33,7 +33,8 @@ function BackButton({ type, post }) {
       type === 'myCareDetail' ||
       type === 'chatRoom' ||
       type === 'search' ||
-      type === 'follow'
+      type === 'follow' ||
+      type === 'edit'
     ) {
       navigate(-1);
     } else if (type === 'posting') {
@@ -53,14 +54,15 @@ function BackButton({ type, post }) {
 
 function HeaderTitle({ type, title }) {
   const userState = useRecoilValue(userInfoAtom);
-
+  
   const [titleWidth, setTitleWidth] = useState('');
   const titleSpan = useRef([]);
   useEffect(() => {
     setTitleWidth(titleSpan.current.offsetWidth);
   }, [titleWidth]);
 
-  return type === 'post' || type === 'posting' || type === 'follow' ? (
+   return type === 'post' || type === 'posting' || type === 'follow' || type === 'edit' ? (
+
     <HeaderTitleSpan>{title}</HeaderTitleSpan>
   ) : type === 'list' ? (
     <HeaderTitleSpan ref={titleSpan}>
@@ -167,6 +169,20 @@ export default function Header({
             size="xs"
             variant="primary"
             children="업로드"
+            onClick={onClick}
+          />
+        </HeaderContainer>
+      );
+    case 'edit':
+      return (
+        <HeaderContainer type={type}>
+          <BackButton type={type} post={post} />
+          <HeaderTitle type={type} title={title} />
+          <Button
+            type="submit"
+            size="xs"
+            variant="primary"
+            children="수정하기"
             onClick={onClick}
           />
         </HeaderContainer>

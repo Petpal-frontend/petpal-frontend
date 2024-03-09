@@ -37,6 +37,7 @@ export const PostContent = styled.textarea`
 export const ImageContainer = styled.div`
   padding-top: 50px;
   display: flex;
+  gap: 10px;
 `;
 
 export const ImgUploadButton = styled.img`
