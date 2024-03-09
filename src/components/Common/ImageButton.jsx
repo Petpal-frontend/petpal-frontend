@@ -9,14 +9,18 @@ import {
 export const ImageButtons = ({ buttons }) => {
   return (
     <Container>
-      <LeftImageButton to={buttons[0].to} backgroundimage={buttons[0].image} />
+      <LeftImageButton
+        to={buttons[0].to}
+        backgroundimage={buttons[0].image}
+        aria-label={buttons[0].text}
+      />
       <RightContainer>
         {buttons.slice(1).map((button, index) => (
           <ImageButton
             key={index}
             to={button.to}
             backgroundimage={button.image}
-            alt={button.alt}
+            aria-label={button.text}
           />
         ))}
       </RightContainer>

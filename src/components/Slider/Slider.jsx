@@ -13,9 +13,9 @@ import slide2 from '../../assets/image/slide2.jpg';
 import slide3 from '../../assets/image/slide3.jpg';
 
 const items = [
-  { id: 1, image: slide1 },
-  { id: 2, image: slide2 },
-  { id: 3, image: slide3 },
+  { id: 1, image: slide1, alt: '산책 메이트 홍보 이미지' },
+  { id: 2, image: slide2, alt: '쇼핑하기 홍보 이미지' },
+  { id: 3, image: slide3, alt: '돌보미 홍보 이미지' },
 ];
 
 const SimpleSlider = () => {
@@ -44,7 +44,7 @@ const SimpleSlider = () => {
         {items.map((item, index) => (
           <div key={item.id}>
             <ImageContainer>
-              <Image src={item.image} alt="슬라이드 이미지" />
+              <Image src={item.image} alt={item.alt} />
               <SlideNumber>
                 {index + 1} / {items.length}
               </SlideNumber>
