@@ -47,23 +47,13 @@ export default function Post({
             accept="image/*"
             multiple
             onChange={handleImageChange}
-            required
           />
           <PostContent
             placeholder="게시글 입력하기..."
             onChange={e => {
               setContent(e.target.value);
             }}
-            required
           />
-          {/* {selectedImages &&
-            selectedImages.map((imageUrl, index) => (
-              <SelectedImage
-                key={index}
-                src={imageUrl}
-                alt={`미리 보기 이미지 ${index + 1}`}
-              />
-            ))} */}
           <ImageContainer>
             {selectedImages &&
               selectedImages.map((imageUrl, index) => (
