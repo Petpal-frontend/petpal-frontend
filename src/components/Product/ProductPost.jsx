@@ -72,7 +72,7 @@ export default function ProductPost(props) {
           <h1 className="a11y-hidden">쇼핑하기 상품 등록 작성</h1>
           <div>
             <PrevBtn>
-              <Link to="/productList"></Link>
+              <Link to="/productList" aria-label="상품 목록으로 이동"></Link>
             </PrevBtn>
             <HeaderContent>상품 등록</HeaderContent>
           </div>

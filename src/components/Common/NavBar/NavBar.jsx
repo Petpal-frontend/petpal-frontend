@@ -82,7 +82,7 @@ export default function NavBar({ onClick }) {
                 >
                   <IconImg
                     src={pathname === el.path ? el.fillImage : el.image}
-                    alt={el.name}
+                    alt={`${el.name} 아이콘`}
                   />
                   <IconInfo>{el.name}</IconInfo>
                 </Link>

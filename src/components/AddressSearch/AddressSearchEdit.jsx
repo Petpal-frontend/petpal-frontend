@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DaumPostcode from 'react-daum-postcode';
 import Modal from 'react-modal';
 import Input from '../Common/Input/Input';
+import { StyledLabel } from '../Common/Input/InputStyle';
 
 export default function AddressSearchEdit({
   onAddressSelect,
@@ -36,7 +37,12 @@ export default function AddressSearchEdit({
 
   return (
     <div>
+      <StyledLabel id="주소" htmlFor="address">
+        주소
+      </StyledLabel>
       <Input
+        id="address"
+        labelledby="주소"
         value={roadAddress}
         readOnly
         onClick={openModal}

@@ -56,6 +56,7 @@ export const SearchBtn = styled.button`
   height: 32px;
   background: none;
   border: none;
+  margin: 10px;
   &::before {
     content: '';
     display: block;

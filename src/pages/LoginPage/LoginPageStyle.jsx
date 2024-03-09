@@ -28,7 +28,7 @@ export const LoginContainer = styled.div`
 
 export const LoginLogo = styled.img`
   position: absolute;
-  top: 15%;
+  top: 12%;
   // left: 50%;
   // transform: translate(-50%, -50%);
   margin: 0 20px auto;
@@ -117,7 +117,7 @@ export const SignUpLink = styled(Link)`
 // sns 로그인
 export const P = styled.p`
   display: flex;
-  color: #767676;
+  color: #6d6d6d;
 `;
 
 export const SnsLoginList = styled.div`

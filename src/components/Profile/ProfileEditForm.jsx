@@ -164,7 +164,6 @@ export default function ProfileEditForm({ beforeUserData }) {
               className="profileEditInput"
             />
             <AddressBox>
-              <StyledLabel label="주소">주소</StyledLabel>
               {intro && (
                 <AddressSearchEdit
                   onAddressSelect={handleAddressSelect}

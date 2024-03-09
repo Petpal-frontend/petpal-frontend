@@ -28,7 +28,7 @@ export const Username = styled.h2`
 `;
 
 export const FollowSpan = styled.p`
-  color: #aaa;
+  color: #6d6d6d;
   font-size: 12px;
   font-weight: 500;
 `;
