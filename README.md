@@ -593,6 +593,14 @@ export default AddressSearch;
 <br/>
 <br/>
 
+### 리팩토링 진행
+Lighthouse 수치를 통해 파악 후 개선을 진행하였습니다. 
+#### 홈 화면
+- 개선 전
+<img width="542" alt="image" src="https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/42b5f7ab-a57d-4f99-8485-320a2ff637e3">
+- 개선 후 면
+
+
 ## 13. 프로젝트 관련 문서
 #### 👉 [Notion](https://www.notion.so/1-6beb92665ec04f3d87bc385de664104f)
 #### 👉 [기능 명세서](https://www.notion.so/44dffa0cf42348fc80a5312a5c165e6c)
