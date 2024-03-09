@@ -61,8 +61,7 @@ function HeaderTitle({ type, title }) {
     setTitleWidth(titleSpan.current.offsetWidth);
   }, [titleWidth]);
 
-   return type === 'post' || type === 'posting' || type === 'follow' || type === 'edit' ? (
-
+  return type === 'post' || type === 'posting' || type === 'follow' || type === 'edit' ? (
     <HeaderTitleSpan>{title}</HeaderTitleSpan>
   ) : type === 'list' ? (
     <HeaderTitleSpan ref={titleSpan}>
