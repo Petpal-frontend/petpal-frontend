@@ -41,9 +41,10 @@ export default function HomePage() {
     {
       to: '/productList',
       image: productImg,
+      alt: '쇼핑하기',
     },
-    { to: '/walkList', image: walkImg },
-    { to: '/careList', image: careImg },
+    { to: '/walkList', image: walkImg, alt: '산책 메이트' },
+    { to: '/careList', image: careImg, alt: '돌보미' },
   ];
 
   return (

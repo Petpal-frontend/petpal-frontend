@@ -40,6 +40,7 @@ import ChatRoomPage from './ChatPage/ChatRoomPage';
 
 import { userInfoAtom } from '../atoms/AtomUserState';
 import { useRecoilValue } from 'recoil';
+import { Helmet } from 'react-helmet-async';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -70,9 +71,24 @@ export default function Router() {
                 <ScrollToTop />
                 {/* {isLoggedIn ? <Main /> : <Navigate to="/login" />} */}
                 {isLoggedIn === '' ? (
-                  <SplashPage />
+                  <>
+                    <Helmet>
+                      <title>스플래쉬 | Petpal</title>
+                      <meta
+                        name="description"
+                        content="페이지의 컨텐츠가 로딩 중 입니다."
+                      />
+                    </Helmet>
+                    <SplashPage />
+                  </>
                 ) : isLoggedIn ? (
-                  <Main />
+                  <>
+                    <Helmet>
+                      <title>메인페이지 | Petpal </title>
+                      <meta name="description" content="펫팔의 메인페이지" />
+                    </Helmet>
+                    <Main />
+                  </>
                 ) : null}
 
                 {/* <SplashPage /> */}
@@ -81,12 +97,38 @@ export default function Router() {
               </>
             }
           />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/login"
+            element={
+              <>
+                <Helmet>
+                  <title>로그인 | Petpal </title>
+                  <meta name="description" content="펫팔의 로그인 페이지" />
+                </Helmet>
+                <Login />
+              </>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <>
+                <Helmet>
+                  <title>회원가입 | Petpal </title>
+                  <meta name="description" content="펫팔의 회원가입 페이지" />
+                </Helmet>
+                <Signup />
+              </>
+            }
+          />
           <Route
             path="/productList"
             element={
               <>
+                <Helmet>
+                  <title>상품 목록 | Petpal </title>
+                  <meta name="description" content="펫팔의 상품 목록 페이지" />
+                </Helmet>
                 <ScrollToTop />
                 <ProductList />
                 <NavBar />
@@ -97,6 +139,13 @@ export default function Router() {
             path="/productDetail/:productId"
             element={
               <>
+                <Helmet>
+                  <title>상품 상세 보기 | Petpal </title>
+                  <meta
+                    name="description"
+                    content="펫팔의 상품 상세 보기 페이지"
+                  />
+                </Helmet>
                 <ScrollToTop />
                 <ProductDetail />
                 <NavBar />
@@ -108,6 +157,13 @@ export default function Router() {
             path="/productPost"
             element={
               <>
+                <Helmet>
+                  <title>상품 게시글 쓰기 | Petpal </title>
+                  <meta
+                    name="description"
+                    content="펫팔의 상품 게시글 쓰기 페이지"
+                  />
+                </Helmet>
                 <ScrollToTop />
                 <ProductPost />
               </>
@@ -118,6 +174,13 @@ export default function Router() {
             path="/walkList"
             element={
               <>
+                <Helmet>
+                  <title>산책 메이트 목록 | Petpal </title>
+                  <meta
+                    name="description"
+                    content="펫팔의 산책 메이트 목록 페이지"
+                  />
+                </Helmet>
                 <ScrollToTop />
                 <WalkList />
                 <NavBar />
@@ -128,6 +191,13 @@ export default function Router() {
             path="/walkDetail/:id"
             element={
               <>
+                <Helmet>
+                  <title>산책 메이트 상세 보기| Petpal </title>
+                  <meta
+                    name="description"
+                    content="펫팔의 산책 메이트 상세 보기 페이지"
+                  />
+                </Helmet>
                 <ScrollToTop />
                 <WalkDetail />
                 {/* <NavBar /> */}
@@ -138,6 +208,13 @@ export default function Router() {
             path="/walkPost"
             element={
               <>
+                <Helmet>
+                  <title>산책 메이트 게시글 쓰기 | Petpal </title>
+                  <meta
+                    name="description"
+                    content="펫팔의 산책 메이트 게시글 쓰기 페이지"
+                  />
+                </Helmet>
                 <ScrollToTop />
                 <WalkPost />
               </>
@@ -148,6 +225,13 @@ export default function Router() {
             path="/careList"
             element={
               <>
+                <Helmet>
+                  <title>돌보미 목록 | Petpal </title>
+                  <meta
+                    name="description"
+                    content="펫팔의 돌보미 목록 페이지"
+                  />
+                </Helmet>
                 <ScrollToTop />
                 <CareList />
                 <NavBar />
@@ -158,6 +242,13 @@ export default function Router() {
             path="/careDetail/:id"
             element={
               <>
+                <Helmet>
+                  <title>돌보미 상세 보기 | Petpal </title>
+                  <meta
+                    name="description"
+                    content="펫팔의 돌보미 상세 보기 페이지"
+                  />
+                </Helmet>
                 <ScrollToTop />
                 <CareDetail />
               </>
@@ -167,6 +258,13 @@ export default function Router() {
             path="/carePost"
             element={
               <>
+                <Helmet>
+                  <title>돌보미 게시글 쓰기 | Petpal </title>
+                  <meta
+                    name="description"
+                    content="펫팔의 게시글 쓰기 페이지"
+                  />
+                </Helmet>
                 <ScrollToTop />
                 <CarePost />
               </>
@@ -178,19 +276,63 @@ export default function Router() {
             path="/feed"
             element={
               <>
+                <Helmet>
+                  <title>회원 프로필 피드 | Petpal </title>
+                  <meta name="description" content="펫팔의 피드 페이지" />
+                </Helmet>
                 <ScrollToTop />
                 <Feed />
                 <NavBar />
               </>
             }
           />
-          <Route path="/search" element={<Search />} />
-          <Route path="/chatList" element={<ChatList />} />
-          <Route path="/chatRoom/:username" element={<ChatRoomPage />} />
+          <Route
+            path="/search"
+            element={
+              <>
+                <Helmet>
+                  <title>사용자 검색 | Petpal </title>
+                  <meta
+                    name="description"
+                    content="펫팔의 사용자 검색 페이지"
+                  />
+                </Helmet>
+                <Search />
+              </>
+            }
+          />
+          <Route
+            path="/chatList"
+            element={
+              <>
+                <Helmet>
+                  <title>채팅 목록 | Petpal </title>
+                  <meta name="description" content="펫팔의 채팅 목록 페이지" />
+                </Helmet>
+                <ChatList />
+              </>
+            }
+          />
+          <Route
+            path="/chatRoom/:username"
+            element={
+              <>
+                <Helmet>
+                  <title>채팅방 | Petpal </title>
+                  <meta name="description" content="펫팔의 채팅방 페이지" />
+                </Helmet>
+                <ChatRoomPage />
+              </>
+            }
+          />
           <Route
             path="/profile"
             element={
               <>
+                <Helmet>
+                  <title>마이프로필 | Petpal </title>
+                  <meta name="description" content="펫팔의 마이프로필 페이지" />
+                </Helmet>
                 <ScrollToTop />
                 <Profile />
                 <NavBar />
@@ -201,6 +343,13 @@ export default function Router() {
             path="/profileEdit"
             element={
               <>
+                <Helmet>
+                  <title>프로필 수정 | Petpal </title>
+                  <meta
+                    name="description"
+                    content="펫팔의 프로필 수정 페이지"
+                  />
+                </Helmet>
                 <ProfileEdit />
                 <NavBar />
               </>
@@ -211,6 +360,13 @@ export default function Router() {
             path="/yourProfile/:accountname"
             element={
               <>
+                <Helmet>
+                  <title>사용자 프로필 | Petpal </title>
+                  <meta
+                    name="description"
+                    content="펫팔의 사용자 프로필 페이지"
+                  />
+                </Helmet>
                 <ScrollToTop />
                 <YourProfile />
                 <NavBar />
@@ -220,7 +376,18 @@ export default function Router() {
           <Route path="/profile/:accountname" element={<Outlet />}>
             <Route path=":follow/" element={<Follow />} />
           </Route>
-          <Route path="/404error" element={<Page404 />} />
+          <Route
+            path="/404error"
+            element={
+              <>
+                <Helmet>
+                  <title>404 페이지 | Petpal </title>
+                  <meta name="description" content="펫팔의 404 에러 페이지" />
+                </Helmet>
+                <Page404 />
+              </>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>
