@@ -19,8 +19,7 @@ export const UserProfileImage = styled.img`
   border-radius: 50%;
   margin: 17px;
   object-fit: cover;
-	border: 1px solid #d3d3d35e;
-
+  border: 1px solid #d3d3d35e;
 `;
 
 export const Username = styled.h2`
@@ -30,7 +29,7 @@ export const Username = styled.h2`
 
 export const FollowSpan = styled.p`
   color: #aaa;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
 `;
 export const FollowNum = styled.p`
@@ -94,7 +93,7 @@ export const Title = styled.span`
 `;
 
 export const Description = styled.p`
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   line-height: 156.836%;
 `;
