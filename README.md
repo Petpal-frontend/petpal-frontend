@@ -603,5 +603,4 @@ Lighthouse 수치를 통해 파악 후 개선을 진행하였습니다.
 
 ## 13. 프로젝트 관련 문서
 #### 👉 [Notion](https://www.notion.so/1-6beb92665ec04f3d87bc385de664104f)
-#### 👉 [기능 명세서](https://www.notion.so/44dffa0cf42348fc80a5312a5c165e6c)
 #### 👉 [Figma](https://www.figma.com/files/team/1294159315441165760)
