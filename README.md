@@ -572,7 +572,7 @@ export default AddressSearch;
 
 </details>
 <details>
- <summary><b>Recoil 상태가 페이지 새로 고침 시 초기화되는 문제</b></summary>
+ <summary><b>Recoil 상태가 새로고침 할 때마다 초기화되는 현상</b></summary>
  <br/>
 
 - 로그인 상태를 관리하는 Recoil 상태가 페이지 새로 고침 시 초기화되는 문제에 직면했습니다. 이를 해결하기 위해 LocalStorage에 Recoil 상태를 저장하고 동기화하기 위해 recoil-persist 라이브러리를 사용했습니다. recoil-persist를 통해 페이지 새로 고침이나 이동과 같은 상황에서도 Recoil 상태를 유지하여 문제를 해결할 수 있었습니다.
