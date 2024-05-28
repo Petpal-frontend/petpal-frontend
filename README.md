@@ -70,7 +70,7 @@ PW: 123123
 - Recoil: 간편한 전역 상태 관리와 접근을 위해 사용했습니다.  
 - Axios: 간편한 HTTP 요청을 위해 사용했습니다.  
 - styled-components: 스타일 캡슐화로 코드의 가독성과 유지보수 향상을 위해 사용했습니다.
-- react-router-dom: 페이지 라우팅을 위해 사용
+- react-router-dom: 페이지 라우팅을 위해 사용했습니다.
 
 <br/>
 
@@ -283,7 +283,7 @@ main, dev, feature/기능명 브랜치를 사용했습니다.
 - 홈 페이지
 - 스플래시 페이지
 - 피드 페이지
-- 공통컴포넌트UI(modal, alert..)
+- 공통 컴포넌트 UI (modal, alert..)
 
 기능 개발
 - 사용자 인증
@@ -333,8 +333,9 @@ main, dev, feature/기능명 브랜치를 사용했습니다.
 
 ## 10. 핵심 코드
 <details>
-<summary>홈, 피드 무한 스크롤 구현</summary>
-
+<summary><b>홈, 피드 무한 스크롤 구현</b></summary>
+<br/>
+	
 <!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
 ```
 import React, { useEffect, useState } from 'react';
@@ -466,7 +467,8 @@ export default InfiniteScroll;
 </details>
 
 <details>
-<summary>react-daum-postcode 사용</summary>
+<summary><b>react-daum-postcode 사용</b></summary>
+<br/>
 
 <!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
 
@@ -522,7 +524,8 @@ export default AddressSearch;
 </details>
 
 <details>
-<summary>반응형 구현 - 🔨코드는 추후 리팩토링 시 레이아웃 획일화를 진행하여 올릴 예정🔨</summary>
+<summary><b>반응형 구현 - 🔨코드는 추후 리팩토링 시 레이아웃 획일화를 진행하여 올릴 예정🔨</b></summary>
+<br/>
 
 <!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
 
@@ -537,16 +540,12 @@ export default AddressSearch;
 
 ## 11. 트러블 슈팅
 <details>
- <summary>공통되고 한정적인 API를 사용하여 데이터 중복 및 데이터 필드의 한계</summary>
-<br/>
-<br/>
-- 주소 필드로 사용 (intro): API에 'intro' 파트에 주소 정보를 추가했습니다. 이 주소 정보는 사용자에게 표시되며, 특정 위치의 지리적 정보를 나타냅니다. 이 주소 정보를 통해 사용자들은 서비스 내에서 원하는 위치를 식별하고 선택할 수 있습니다.
-<br/>
-<br/>
-- 고유 id: API에서 고유 ID를 사용하여 개별 데이터 레코드를 식별합니다. 이 ID에 'petpal_'이라는 접두어를 추가함으로써, 해당 ID가 PetPal 애플리케이션에서 생성된 것임을 명확히합니다. 이로써 다른 시스템 또는 데이터베이스에서 유사한 ID와 혼동되는 것을 방지합니다.
-<br/>
-<br/>
-- accountname 구분 (초단위 시간): 'accountname' 필드는 사용자의 계정 이름을 나타내며, PetPal 내에서 사용자를 식별합니다. 초단위까지의 시간 정보를 'accountname'에 추가함으로써, 동일한 시간에 계정을 생성한 여러 사용자에 대한 중복을 피하고 사용자의 계정 이름이 고유하도록 보장합니다.
+ <summary><b>공통되고 한정적인 API를 사용하여 데이터 중복 및 데이터 필드의 한계</b></summary>
+ <br/>
+
+- <b>주소 필드로 사용 (intro):</b> API에 'intro' 파트에 주소 정보를 추가했습니다. 이 주소 정보는 사용자에게 표시되며, 특정 위치의 지리적 정보를 나타냅니다. 이 주소 정보를 통해 사용자들은 서비스 내에서 원하는 위치를 식별하고 선택할 수 있습니다.
+- <b>고유 id:</b> API에서 고유 ID를 사용하여 개별 데이터 레코드를 식별합니다. 이 ID에 'petpal_'이라는 접두어를 추가함으로써, 해당 ID가 PetPal 애플리케이션에서 생성된 것임을 명확히합니다. 이로써 다른 시스템 또는 데이터베이스에서 유사한 ID와 혼동되는 것을 방지합니다.
+- <b>accountname 구분 (초단위 시간):</b> 'accountname' 필드는 사용자의 계정 이름을 나타내며, PetPal 내에서 사용자를 식별합니다. 초단위까지의 시간 정보를 'accountname'에 추가함으로써, 동일한 시간에 계정을 생성한 여러 사용자에 대한 중복을 피하고 사용자의 계정 이름이 고유하도록 보장합니다.
 
 <!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
 <!--
@@ -572,6 +571,14 @@ export default AddressSearch;
 이러한 접근 방식은 API 호출 및 데이터 처리 오류를 방지하고, 오류가 발생했을 때 사용자와 개발자가 이를 이해하고 적절하게 대응할 수 있도록 도움을 줍니다. -->
 
 </details>
+<details>
+ <summary><b>Recoil 상태가 새로고침 할 때마다 초기화되는 현상</b></summary>
+ <br/>
+
+- 로그인 상태를 관리하는 Recoil 상태가 페이지 새로 고침 시 초기화되는 문제에 직면했습니다. 이를 해결하기 위해 LocalStorage에 Recoil 상태를 저장하고 동기화하기 위해 recoil-persist 라이브러리를 사용했습니다. recoil-persist를 통해 페이지 새로 고침이나 이동과 같은 상황에서도 Recoil 상태를 유지하여 문제를 해결할 수 있었습니다.
+- 그러나 민감한 정보를 LocalStorage에 저장할 경우 보안 문제가 발생할 수 있습니다. 이를 해결하기 위해 SessionStorage를 사용하여 브라우저 Session이 종료될 때 데이터가 자동으로 삭제되도록 설정하는 방법이 있습니다. 그러나 이 경우에는 사용자의 로그인 상태를 계속 유지하기 어려울 수 있습니다.
+- 이에, 민감한 정보를 암호화하여 저장하고, 필요할 때 복호화하여 사용하여 보안을 강화하고 사용자의 로그인 상태를 지속적으로 유지할 수 있는 방법에 대해 고려할 수 있었습니다.
+</details>
 <br/>
 <br/>
 
@@ -591,9 +598,18 @@ export default AddressSearch;
 - 성능 최적화
   - 웹 애플리케이션의 성능을 개선하기 위해 코드, 이미지, 데이터 요청 및 렌더링 프로세스를 최적화할 것입니다. 이를 통해 빠른 페이지 로딩 및 서비스의 성능이 향상될 것입니다.
 <br/>
+
+### 리팩토링 진행
+Lighthouse 수치를 통해 파악 후 개선을 진행하였습니다. 
+#### 홈 화면
+- 개선 전
+<img width="542" alt="image" src="https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/42b5f7ab-a57d-4f99-8485-320a2ff637e3">
 <br/>
+<br/>
+
+- 개선 후 면
+
 
 ## 13. 프로젝트 관련 문서
 #### 👉 [Notion](https://www.notion.so/1-6beb92665ec04f3d87bc385de664104f)
-#### 👉 [기능 명세서](https://www.notion.so/44dffa0cf42348fc80a5312a5c165e6c)
 #### 👉 [Figma](https://www.figma.com/files/team/1294159315441165760)
