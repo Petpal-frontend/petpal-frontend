@@ -16,6 +16,7 @@ export const ImageButtons = ({ buttons }) => {
             key={index}
             to={button.to}
             backgroundimage={button.image}
+            alt={button.alt}
           />
         ))}
       </RightContainer>

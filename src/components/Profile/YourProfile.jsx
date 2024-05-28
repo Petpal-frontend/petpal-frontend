@@ -105,7 +105,7 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
           {yourProduct.data > 0 ? (
             yourProduct.product.map((item, index) => (
               <ItemDiv key={index} onClick={() => handleProductClick(item.id)}>
-                <img src={item.itemImage} alt="productImage" />
+                <img src={item.itemImage} alt={`${index}번 상품 이미지`} />
                 <TextSection>
                   <Title>{item.itemName}</Title>
                   <Description>
@@ -130,7 +130,7 @@ export default function YourProfile({ yourData, yourProduct, yourPost }) {
               return (
                 <Image
                   src={imageArr[0]}
-                  alt="postImage"
+                  alt={`${index}번 게시글 이미지`}
                   key={index}
                   onClick={() => handlePostClick(item.id)}
                 />

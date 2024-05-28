@@ -29,7 +29,7 @@ export const IconImg = styled.img`
 `;
 export const IconInfo = styled.span`
   color: #242424;
-  font-size: 10px;
+  font-size: 12px;
 `;
 export const ModalOverlay = styled.div`
   position: fixed;

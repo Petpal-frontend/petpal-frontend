@@ -7,7 +7,7 @@ const HomeHeaderLogo = () => {
   return (
     <HomeHeaderLogoStyle>
       <Link to="/">
-        <img src={homeLogo} alt="petpal" />
+        <img src={homeLogo} alt="petpal 로고" />
       </Link>
     </HomeHeaderLogoStyle>
   );

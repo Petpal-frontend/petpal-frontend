@@ -93,7 +93,7 @@ export default function Comment({ comments, handledeleteComment }) {
               <CommentText>{item.content}</CommentText>
             </CommentContent>
             <MoreButton onClick={() => handleMoreButtonClick(item.id, item)}>
-              <ButtonImg src={moreBtn} />
+              <ButtonImg src={moreBtn} alt='더보기 버튼' />
             </MoreButton>
             {selectedCommentId === item.id &&
               (isDelete ? (
