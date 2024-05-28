@@ -38,7 +38,7 @@ export default function Post({
             이미지 업로드 버튼
           </label>
           <label htmlFor={id}>
-            <ImgUploadButton src={uploadChat} />
+            <ImgUploadButton src={uploadChat} alt="게시글 업로드 이미지" />
           </label>
           <input
             type="file"
@@ -47,23 +47,13 @@ export default function Post({
             accept="image/*"
             multiple
             onChange={handleImageChange}
-            required
           />
           <PostContent
             placeholder="게시글 입력하기..."
             onChange={e => {
               setContent(e.target.value);
             }}
-            required
           />
-          {/* {selectedImages &&
-            selectedImages.map((imageUrl, index) => (
-              <SelectedImage
-                key={index}
-                src={imageUrl}
-                alt={`미리 보기 이미지 ${index + 1}`}
-              />
-            ))} */}
           <ImageContainer>
             {selectedImages &&
               selectedImages.map((imageUrl, index) => (
