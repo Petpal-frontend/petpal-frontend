@@ -112,7 +112,7 @@ const InfiniteScroll = ({ imageData, className }) => {
       ) : (
         <BlankWrapper>
           <BlankImg src={blankFeed} alt='빈 페이지' />
-          <BalnkTextBox>
+          <BlankTextBox>
             <BlankH1>팔로잉 중인 사용자의 게시물이 없습니다.</BlankH1>
             <BlankP>먼저 작성해보는건 어때요?</BlankP>
           </BlankTextBox>
