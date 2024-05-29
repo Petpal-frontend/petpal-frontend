@@ -1,22 +1,25 @@
-  <h1>PetPal 🐾</h1>
+ <h1>PetPal 🐾</h1>
 
- ![intro](https://github.com/Petpal-frontend/petpal-frontend/assets/138556024/999251f8-781f-489b-b432-7128e366c7d6)
+![intro](https://github.com/Petpal-frontend/petpal-frontend/assets/138556024/999251f8-781f-489b-b432-7128e366c7d6)
+
   <h3>펫팔, 펫과 펜팔, 두근두근 우리만의 소통 시작 </h3>
 </div>
 
 <br/>
 
 ### 배포 링크
+
 👉 [PetPal 바로가기](https://petpalofficial.netlify.app/)
 
 ### 테스트 계정
+
 ```
 ID: petpal@test.com
 PW: 123123
 ```
 
-
 ## 1. 서비스 소개
+
 반려동물을 사랑하는 이들을 위한 온라인 커뮤니티, 펫팔을 소개합니다!
 
 펫팔은 지역 기반 서비스를 활용해 내가 사는 동네 근처에서 필요한 용품을 중고로 사거나 판매할 수 있고,
@@ -29,36 +32,40 @@ PW: 123123
 <br/>
 
 ## 2. 팀원 소개
-| [🔗 김소리](https://github.com/sorikikikim) | [🔗 류경민](https://github.com/kmryuuu) | [🔗 최지완](https://github.com/jiwanchoi) | [🔗 최현아](https://github.com/hhyunn) |
-| :---: | :---: | :---: | :---: |
+
+|            [🔗 김소리](https://github.com/sorikikikim)             |                                       [🔗 류경민](https://github.com/kmryuuu)                                        |             [🔗 최지완](https://github.com/jiwanchoi)              |               [🔗 최현아](https://github.com/hhyunn)                |
+| :----------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------: | :-----------------------------------------------------------------: |
 | <img src="https://avatars.githubusercontent.com/u/73383923?v=4" /> | <img src="https://avatars.githubusercontent.com/u/138556024?s=400&u=c59a7dfd776d2944acc017d76dcbeed71d1174bf&v=4" /> | <img src="https://avatars.githubusercontent.com/u/54405518?v=4" /> | <img src="https://avatars.githubusercontent.com/u/110486454?v=4" /> |
+
 <br/>
 <br/>
 
 ## 3. 역할 분담
+
 ![image](https://github.com/Petpal-frontend/petpal-frontend/assets/138556024/da7c4e50-c5f7-4dd9-b369-9cff6351277a)
 
 <br/>
 <br/>
 
-
 ## 4. 개발 일정
-| 기간 |  |
-| :---: | :---: |
+
+|          기간           |                         |
+| :---------------------: | :---------------------: |
 | 2023.10.12 - 2023.10.19 | 프로젝트 기획 및 디자인 |
-| 2023.10.15 - 2023.10.18 | 프로젝트 기초 세팅 |
-| 2023.10.19 - 2023.10.29 | 페이지 마크업 |
-| 2023.10.30 - 2023.11.05 | 기능 구현 |
-| 2023.11.06 - | 리팩토링 |
+| 2023.10.15 - 2023.10.18 |   프로젝트 기초 세팅    |
+| 2023.10.19 - 2023.10.29 |      페이지 마크업      |
+| 2023.10.30 - 2023.11.05 |        기능 구현        |
+|      2023.11.06 -       |        리팩토링         |
 
 <br/>
 <br/>
 
 ## 5. 기술 스택 및 개발 환경
+
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=recoil&logoColor=white" /> <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" /> <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=ffd35b" /> <img src="https://img.shields.io/badge/javascript-F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=20232a" />  
-| 구분 |  |
+| 구분 | |
 | :---: | --- |
-| **사용 기술** | 프론트엔드: React, Recoil, Axios, styled-components, JavaScript <br/> 백엔드: 제공된 API 사용  |
+| **사용 기술** | 프론트엔드: React, Recoil, Axios, styled-components, JavaScript <br/> 백엔드: 제공된 API 사용 |
 | **컨벤션** | ESLint, Prettier |
 | **협업** | Git, GitHub, Notion, Discord, Figma |
 | **IDE** | VSCode |
@@ -67,15 +74,18 @@ PW: 123123
 <br/>
 
 ### 라이브러리 사용 이유
-- Recoil: 간편한 전역 상태 관리와 접근을 위해 사용했습니다.  
-- Axios: 간편한 HTTP 요청을 위해 사용했습니다.  
+
+- Recoil: 간편한 전역 상태 관리와 접근을 위해 사용했습니다.
+- Axios: 간편한 HTTP 요청을 위해 사용했습니다.
 - styled-components: 스타일 캡슐화로 코드의 가독성과 유지보수 향상을 위해 사용했습니다.
 - react-router-dom: 페이지 라우팅을 위해 사용했습니다.
 
 <br/>
 
 ### 컨벤션
+
 #### eslint
+
 ```
 {
   "extends": ["react-app", "prettier"],
@@ -91,6 +101,7 @@ PW: 123123
 ```
 
 #### prettier
+
 ```
 {
   "singleQuote": true,
@@ -104,6 +115,7 @@ PW: 123123
 ```
 
 #### 커밋 컨벤션
+
 ```
 ✨ Feat: 기능 추가, 삭제, 변경
 🐛 Fix: 버그, 오류 수정
@@ -122,11 +134,12 @@ PW: 123123
 <br/>
 
 ## 6. 폴더 구조
+
 ```
-petpal-frontend                     # git 저장소 # 여기서 git 작업을 해야합니다.  
-└── 📁 petpal                       # react 프로젝트 # 여기서 npm start를 해야합니다.  
-    ├── 📁 node_modules             # 의존성 모듈  
-    ├── 📁 public                   # 정적 파일 (index.html, 이미지 등)  
+petpal-frontend                     # git 저장소 # 여기서 git 작업을 해야합니다.
+└── 📁 petpal                       # react 프로젝트 # 여기서 npm start를 해야합니다.
+    ├── 📁 node_modules             # 의존성 모듈
+    ├── 📁 public                   # 정적 파일 (index.html, 이미지 등)
     │   ├── favicon.ico
     │   └── index.html
     ├── 📁 src                      # 소스 코드
@@ -139,13 +152,13 @@ petpal-frontend                     # git 저장소 # 여기서 git 작업을 �
     │    ├── 📁 styles              # 전역으로 적용할 css 파일들이 포함된 폴더
     │    │   ├── fonts.css
     │    │   └── GlobalStyle.jsx
-    │    ├── App.js                 # 루트 앱 컴포넌트  
-    │    └── index.js               # 앱 진입점  
+    │    ├── App.js                 # 루트 앱 컴포넌트
+    │    └── index.js               # 앱 진입점
     ├── .eslintrc.json              # eslint 설정 파일
     ├── .gitignore                  # Git으로 추적하지 않을 파일/폴더 목록
     ├── .prettierrc                 # prettier 설정 파일
     ├── package-lock.json           # 의존성 버전 잠금
-    ├── package.json                # 프로젝트 설정 및 의존성  
+    ├── package.json                # 프로젝트 설정 및 의존성
     └── README.md                   # 프로젝트 문서
 ```
 
@@ -153,11 +166,14 @@ petpal-frontend                     # git 저장소 # 여기서 git 작업을 �
 <br/>
 
 ## 7. Git Branch 전략 - Git + Github Flow
+
 ### 프로젝트 Gitflow 전략
-이 프로젝트는 Git flow와 Github flow 전략을 함께 사용해 개발 및 관리했습니다. 
+
+이 프로젝트는 Git flow와 Github flow 전략을 함께 사용해 개발 및 관리했습니다.
 팀 구성원 간의 업무 분담, 기능 개발, 버그 수정, 출시 및 유지 보수를 효과적으로 관리하기 위한 일련의 규칙과 프로세스를 지켰습니다.
 
 ### Gitflow 개요
+
 main, dev, feature/기능명 브랜치를 사용했습니다.
 
 - **main**: 안정적인 프로덕션 버전을 관리하는 브랜치입니다.
@@ -165,82 +181,97 @@ main, dev, feature/기능명 브랜치를 사용했습니다.
 - **feature/**: 새로운 기능 개발을 위한 브랜치입니다.
 
 이번 개발 기간동안에는 사용하지 못했지만 리펙토링 기간에는 다음의 브랜치를 활성화 할 예정입니다.
+
 - **bugfix/**: 버그 수정을 위한 브랜치입니다.
 - **hotfix/**: 긴급한 버그 수정을 위한 브랜치입니다.
 
 ### 작업 흐름
+
 1. 프로젝트에 참여하기 전, 개발자는 `dev` 브랜치로부터 새로운 `feature/기능명` 브랜치를 생성합니다.
 2. 기능 개발이 완료되면, `dev` 브랜치로 Pull Request를 생성하고 코드 리뷰를 진행합니다.
 3. 코드 리뷰 및 변경 사항 반영 후, `dev` 브랜치로 병합합니다.
 4. 주기적으로 프로젝트의 안정적인 상태를 유지하기 위해 `dev` 브랜치를 `main` 브랜치로 병합하여 새로운 프로덕션 버전을 배포합니다.
 
-
 <br/>
 <br/>
 
 ## 8. 주요 기능
+
 ### 1) 홈
-| 스플래시 페이지 | 회원가입 페이지 | 로그인 페이지 |
-| :---: | :---: | :---: |
+
+|                                                           스플래시 페이지                                                           |                                                           회원가입 페이지                                                            |                                                            로그인 페이지                                                            |
+| :---------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
 | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/b4dab298-bf46-4689-93d9-e8d892597608' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/ef07189e-1604-4647-9631-97cc4b9b16e1' height='480px' /> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/67a9a6a8-f5aa-4b0b-be2d-8dd2838bf7cb' height='480px'/> |
 
-| 홈 페이지 | 검색 페이지 |
-| :---: | :---: |
+|                                                              홈 페이지                                                              |                                                             검색 페이지                                                             |
+| :---------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
 | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/cc6822d7-2e4a-44d7-b47c-7662756994e3' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/f0b3ed18-3bdb-4b6b-92f2-7b6031f8ca94' height='480px'/> |
 
 ### 2) 피드
-| 피드 페이지 |
-| :---: |
-| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/c9ed5017-92bb-4938-8fd7-8203f1efe7c8' height='480px'/>  |
-    
+
+|                                                             피드 페이지                                                             |
+| :---------------------------------------------------------------------------------------------------------------------------------: |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/c9ed5017-92bb-4938-8fd7-8203f1efe7c8' height='480px'/> |
+
 ### 3) 게시물
+
 #### 산책메이트, 돌보미
-| 게시물 목록 페이지 | 게시물 상세 페이지 | 게시물 작성 페이지 |
-| :---: | :---: | :---: |
-| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/b0108255-9f03-4636-be94-d84022e73463' height='380px'/>  <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/1f8f88ce-be23-4c24-b0e8-50912210e2ab' height='380px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/8d528176-c57c-410f-a31c-e155f6de16af' height='380px'/> <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/87e0f66c-97e9-4482-94da-1604adfb4ee2' height='380px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/d58df0c3-b183-435b-9557-7786b8b23b24' height='380px'/> <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/7023499a-0934-4d26-b5e0-15d8d9798ae0' height='380px'/> |
 
-| 게시물 수정 페이지 | 게시물 삭제 |
-| :---: | :---: |
-| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/3c9b35ec-84fd-4060-a2e5-cea3a34c4f98' height='480px'/>  | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/55b292fc-b191-4359-aa42-94cda84f7e2c' height='480px'/> |
+|                                                                                                                           게시물 목록 페이지                                                                                                                            |                                                                                                                           게시물 상세 페이지                                                                                                                            |                                                                                                                           게시물 작성 페이지                                                                                                                            |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/b0108255-9f03-4636-be94-d84022e73463' height='380px'/> <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/1f8f88ce-be23-4c24-b0e8-50912210e2ab' height='380px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/8d528176-c57c-410f-a31c-e155f6de16af' height='380px'/> <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/87e0f66c-97e9-4482-94da-1604adfb4ee2' height='380px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/d58df0c3-b183-435b-9557-7786b8b23b24' height='380px'/> <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/7023499a-0934-4d26-b5e0-15d8d9798ae0' height='380px'/> |
 
- | 좋아요 기능 | 댓글 작성, 삭제 기능 | 댓글 신고 |
-| :---: | :---: | :---: |
-| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/81c86621-ba94-4029-a3e9-960a8e9b99b2' height='480px'/> |  <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/dd0a9211-8289-4f9f-81bc-46c6d97d1d79' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/5a54379a-7129-4f5c-96f1-d827bfc21cfe' height='480px'/> |
+|                                                         게시물 수정 페이지                                                          |                                                             게시물 삭제                                                             |
+| :---------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/3c9b35ec-84fd-4060-a2e5-cea3a34c4f98' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/55b292fc-b191-4359-aa42-94cda84f7e2c' height='480px'/> |
+
+|                                                             좋아요 기능                                                             |                                                        댓글 작성, 삭제 기능                                                         |                                                              댓글 신고                                                              |
+| :---------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/81c86621-ba94-4029-a3e9-960a8e9b99b2' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/dd0a9211-8289-4f9f-81bc-46c6d97d1d79' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/5a54379a-7129-4f5c-96f1-d827bfc21cfe' height='480px'/> |
 
 ### 4) 채팅
-| 채팅 목록, 채팅방 페이지 |
-| :---: |
+
+|                                                      채팅 목록, 채팅방 페이지                                                       |
+| :---------------------------------------------------------------------------------------------------------------------------------: |
 | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/32a5f8f9-2afd-47f1-9c7a-1a4a250d3fd8' height='480px'/> |
 
 ### 5) 프로필
-| 프로필 페이지 | 프로필 수정 페이지 | 팔로워/팔로잉 페이지 |
-| :---: | :---: | :---: |
-|  <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/352cf1bb-efe5-4d9f-ace9-23b6446994da' height='480px'/> |  <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/63a9ddb7-5bfe-44f3-a080-3e843d79fa24' height='480px'/> |  <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/c070f835-f0ba-4316-9b2e-1f9a8c553cd9' height='480px'/> |
 
-| 로그아웃 기능 |
-| :---: |
+|                                                            프로필 페이지                                                            |                                                         프로필 수정 페이지                                                          |                                                        팔로워/팔로잉 페이지                                                         |
+| :---------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
+| <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/352cf1bb-efe5-4d9f-ace9-23b6446994da' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/63a9ddb7-5bfe-44f3-a080-3e843d79fa24' height='480px'/> | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/c070f835-f0ba-4316-9b2e-1f9a8c553cd9' height='480px'/> |
+
+|                                                            로그아웃 기능                                                            |
+| :---------------------------------------------------------------------------------------------------------------------------------: |
 | <img src='https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/6a5f7d79-9f04-484b-96b8-c80259de1a51' height='480px'/> |
 
 <br/>
 <br/>
 
 ## 9. 상세 담당 업무
+
 ### 공통
+
 아이디어 도출
 
 기능 개발
-  - 초기 폴더구조 세팅 및 환경설정
-  - 각 페이지 라우터 연결
+
+- 초기 폴더구조 세팅 및 환경설정
+- 각 페이지 라우터 연결
 
 <br/>
 
 ### 김소리
+
 화면 개발
-- 헤더, 레이아웃, 유저 인포, 이미지 버튼 공통 컴포넌트 
-- 산책메이트, 돌보미, 프로필 페이지 (리스트, 상세, 글쓰기) 
+
+- 헤더, 레이아웃, 유저 인포, 이미지 버튼 공통 컴포넌트
+- 산책메이트, 돌보미, 프로필 페이지 (리스트, 상세, 글쓰기)
 
 기능 개발
-- 산책 메이트, 돌보미 
+
+- 산책 메이트, 돌보미
+
   - 게시글 리스트, 상세, 작성, 수정 기능 구현
   - 모든 데이터 중 펫팔 데이터만 필터링
   - 게시글 중에서 산책메이트/돌보미로 구분하여 글 작성 및 불러오기
@@ -249,43 +280,47 @@ main, dev, feature/기능명 브랜치를 사용했습니다.
   - 게시글 좋아요 기능 구현
 
 - 프로필
+
   - 로그인된 사용자의 정보에 따라 사용자의 프로필을 보여주도록 구현
   - 사용자의 판매중인 상품과 게시글 리스트 구현
 
 - 회원가입
+
   - 회원가입 시 이메일 유효성 체크
 
 - 피드
   - 게시글, 사용자 데이터 개수에 따른 무한 스크롤 여부 및 보여 줄 데이터 상태관리
-  
 - API
   - API 사용을 위한 axios instances 생성
 
 <br/>
 
 ### 류경민
+
 화면 개발
-  - 프로젝트 로고 및 UI 디자인
-  - 로그인, 회원가입, 게시물 작성, 404 페이지 UI
-  - Submit 버튼, 댓글 및 채팅 입력 Input 공통 컴포넌트
+
+- 프로젝트 로고 및 UI 디자인
+- 로그인, 회원가입, 게시물 작성, 404 페이지 UI
+- Submit 버튼, 댓글 및 채팅 입력 Input 공통 컴포넌트
 
 기능 개발
-  - 댓글
-      - 댓글 등록, 삭제 기능 구현
-  - 채팅
-      - 채팅 리스트 데이터 렌더링 구현
-      - 채팅 룸 사용자 입력 텍스트 및 이미지 렌더링 구현
-<br/>
+
+- 댓글
+  - 댓글 등록, 삭제 기능 구현
+- 채팅 - 채팅 리스트 데이터 렌더링 구현 - 채팅 룸 사용자 입력 텍스트 및 이미지 렌더링 구현
+  <br/>
 
 ### 최지완
 
 화면 개발
+
 - 홈 페이지
 - 스플래시 페이지
 - 피드 페이지
 - 공통 컴포넌트 UI (modal, alert..)
 
 기능 개발
+
 - 사용자 인증
   - 로그인
   - 로그아웃
@@ -303,35 +338,39 @@ main, dev, feature/기능명 브랜치를 사용했습니다.
   - tooltip
 - 상태관리
   - recoil atom으로 전역 데이터 관리
- 
+
 <br/>
 
 ### 최현아
+
 화면 개발
-  - NavBar 공통 컴포넌트
-  - 쇼핑하기(리스트, 상세, 글쓰기), 채팅 목록, 채팅방, 계정 검색, 팔로우 페이지
+
+- NavBar 공통 컴포넌트
+- 쇼핑하기(리스트, 상세, 글쓰기), 채팅 목록, 채팅방, 계정 검색, 팔로우 페이지
 
 기능 개발
-  - 팔로우
-      - 팔로우, 언팔로우 기능 구현
-      - 팔로잉, 팔로워 리스트 구현
-      - 페이지 url에 따라 팔로잉과 팔로워 분리하여 로드
-  - 계정 검색
-      - username을 필터링하여 사용자 검색 기능 구현
-  - 쇼핑하기
-      - 쇼핑하기 게시글 리스트 구현
-      - 모든 데이터 중 펫팔 데이터만 필터링
-  - 피드
-      - 팔로잉한 사용자의 게시글 이미지 리스트 구현
-  - 홈
-      - 사용자의 프로필 이미지 리스트 구현
-  - NavBar
-      - 페이지 경로에 해당하는 탭 메뉴 활성화
+
+- 팔로우
+  - 팔로우, 언팔로우 기능 구현
+  - 팔로잉, 팔로워 리스트 구현
+  - 페이지 url에 따라 팔로잉과 팔로워 분리하여 로드
+- 계정 검색
+  - username을 필터링하여 사용자 검색 기능 구현
+- 쇼핑하기
+  - 쇼핑하기 게시글 리스트 구현
+  - 모든 데이터 중 펫팔 데이터만 필터링
+- 피드
+  - 팔로잉한 사용자의 게시글 이미지 리스트 구현
+- 홈
+  - 사용자의 프로필 이미지 리스트 구현
+- NavBar
+  - 페이지 경로에 해당하는 탭 메뉴 활성화
 
 <br/>
 <br/>
 
 ## 10. 핵심 코드
+
 <details>
 <summary><b>홈, 피드 무한 스크롤 구현</b></summary>
 <br/>
@@ -343,125 +382,131 @@ import { ScrollContainer, ScrollImageButton } from './scrollStyle';
 import { Link, useLocation } from 'react-router-dom';
 
 const InfiniteScroll = ({ imageData, className }) => {
-  // useLocation을 사용하여 현재 경로(pathname)를 가져옵니다 -> 홈/피드 구분 위함
-  const { pathname } = useLocation();
+// useLocation을 사용하여 현재 경로(pathname)를 가져옵니다 -> 홈/피드 구분 위함
+const { pathname } = useLocation();
 
-	// 모든 이미지가 로딩되었는지를 추적
-  const [allImagesLoaded, setAllImagesLoaded] = useState(false);
+    // 모든 이미지가 로딩되었는지를 추적
 
-	// 스크롤링 하기 전 초기에 로드되는 이미지 객체 배열 생성
-  // 데이터가 10개 미만인 경우 -> 데이터의 개수만큼 
-  // 데이터가 10개 이상인 경우 -> 10개
-  // => 스크롤링 전 초기 상태에는 0 ~ 10개의 데이터가 로드됩니다. 
-  const initialImageUrls = Array.from(
-    { length: Math.min(10, imageData.length) },
-    (_, index) => {
-      // 이미지 있는 게시물만 처리
-      if (imageData[index]) {
-        // 이미지가 1개 이상인 경우 무조건 배열로 처리해줌 -> 게시글의 이미지가 문자열로 담겨있기 때문에
-        let imageArr = imageData[index].image.split(',');
-        return {
-					// 첫번째 이미지만 담기
-          image: imageArr[0],
-					// path가 /인 경우 home에서 보여줄 이미지의 accountname을 -> 추후 프로필이미지 GET
-					// 그 외의 경우에는 게시글의 accountname을 저장 -> 추후 피드 GET
-          accountname:
-            pathname === '/'
-              ? imageData[index].accountname
-              : imageData[index].author.accountname,
-					// id도 동일
-          id: pathname === '/' ? imageData[index]._id : imageData[index].id,
-        };
-      }
-      return null;
-    },
-  );
+const [allImagesLoaded, setAllImagesLoaded] = useState(false);
 
-	// 현재 렌더링되는 이미지 URL을 추적
-  const [imageUrls, setImageUrls] = useState(initialImageUrls);
+    // 스크롤링 하기 전 초기에 로드되는 이미지 객체 배열 생성
 
-	// 초기 이미지를 로딩 후 스크롤이 맨 아래로 도달했을 때 새 이미지를 추가하는 역할
-  // 초기 이미지 로직과 동일함
-  const addContent = () => {
-    const imageIndex = imageUrls.length % imageData.length;
-    if (imageData[imageIndex]) {
-      const newImageArr = imageData[imageIndex].image.split(',');
-      const newImageUrl = {
-        image: newImageArr[0],
-        accountname:
-          pathname === '/'
-            ? `${imageData[imageIndex].accountname}`
-            : `${imageData[imageIndex].author.accountname}`,
-        id:
-          pathname === '/'
-            ? `${imageData[imageIndex]._id}`
-            : `${imageData[imageIndex].id}`,
-      };
-      setImageUrls([...imageUrls, newImageUrl]);
-    }
-  };
+// 데이터가 10개 미만인 경우 -> 데이터의 개수만큼
+// 데이터가 10개 이상인 경우 -> 10개
+// => 스크롤링 전 초기 상태에는 0 ~ 10개의 데이터가 로드됩니다.
+const initialImageUrls = Array.from(
+{ length: Math.min(10, imageData.length) },
+(\_, index) => {
+// 이미지 있는 게시물만 처리
+if (imageData[index]) {
+// 이미지가 1개 이상인 경우 무조건 배열로 처리해줌 -> 게시글의 이미지가 문자열로 담겨있기 때문에
+let imageArr = imageData[index].image.split(',');
+return {
+// 첫번째 이미지만 담기
+image: imageArr[0],
+// path가 /인 경우 home에서 보여줄 이미지의 accountname을 -> 추후 프로필이미지 GET
+// 그 외의 경우에는 게시글의 accountname을 저장 -> 추후 피드 GET
+accountname:
+pathname === '/'
+? imageData[index].accountname
+: imageData[index].author.accountname,
+// id도 동일
+id: pathname === '/' ? imageData[index].\_id : imageData[index].id,
+};
+}
+return null;
+},
+);
 
-	// 스크롤이 맨 아래에 닿는 경우 체크
-  const checkScroll = () => {
-    const scrollHeight = document.documentElement.scrollHeight;
-    const scrollTop = window.innerHeight + window.scrollY;
-    if (scrollTop >= scrollHeight - 100) {
-      // 스크롤이 맨 아래로 도달했을 때 이미지 추가하는 addContent 호출
-      addContent();
-    }
-  };
+    // 현재 렌더링되는 이미지 URL을 추적
 
-  useEffect(() => {
-		// 가져온 데이터와 지금까지 보여준 이미지 데이터 길이가 같을 경우
-    if (imageUrls.length === imageData.length) {
-			// 모든 이미지 로드 여부를 true로 변경
-      setAllImagesLoaded(true);
-    } else {
-			// 그렇지 않으면 스크롤 이벤트 유지
-      window.addEventListener('scroll', checkScroll);
-    }
+const [imageUrls, setImageUrls] = useState(initialImageUrls);
+
+    // 초기 이미지를 로딩 후 스크롤이 맨 아래로 도달했을 때 새 이미지를 추가하는 역할
+
+// 초기 이미지 로직과 동일함
+const addContent = () => {
+const imageIndex = imageUrls.length % imageData.length;
+if (imageData[imageIndex]) {
+const newImageArr = imageData[imageIndex].image.split(',');
+const newImageUrl = {
+image: newImageArr[0],
+accountname:
+pathname === '/'
+? `${imageData[imageIndex].accountname}`
+: `${imageData[imageIndex].author.accountname}`,
+id:
+pathname === '/'
+? `${imageData[imageIndex]._id}`
+: `${imageData[imageIndex].id}`,
+};
+setImageUrls([...imageUrls, newImageUrl]);
+}
+};
+
+    // 스크롤이 맨 아래에 닿는 경우 체크
+
+const checkScroll = () => {
+const scrollHeight = document.documentElement.scrollHeight;
+const scrollTop = window.innerHeight + window.scrollY;
+if (scrollTop >= scrollHeight - 100) {
+// 스크롤이 맨 아래로 도달했을 때 이미지 추가하는 addContent 호출
+addContent();
+}
+};
+
+useEffect(() => {
+// 가져온 데이터와 지금까지 보여준 이미지 데이터 길이가 같을 경우
+if (imageUrls.length === imageData.length) {
+// 모든 이미지 로드 여부를 true로 변경
+setAllImagesLoaded(true);
+} else {
+// 그렇지 않으면 스크롤 이벤트 유지
+window.addEventListener('scroll', checkScroll);
+}
 
     return () => {
-			// 모든 이미지가 로딩되면 스크롤 이벤트 제거
+    		// 모든 이미지가 로딩되면 스크롤 이벤트 제거
       window.removeEventListener('scroll', checkScroll);
     };
     //eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [imageUrls]);
 
-  return (
-    <ScrollContainer style={{ paddingBottom: allImagesLoaded ? '70px' : '0' }}>
-			{/* 렌더링 부분에서는 위에서 처리한 이미지 imageUrls를 
-				 ScrollContainer 내에 매핑하여 이미지를 화면에 렌더링합니다 */}
-      {imageUrls.length > 0 ? (
-        imageUrls.map((item, index) => (
-					// pathname에 따라 보여줄 데이터와 위치가 결정됩니다.
-          <ScrollImageButton key={index} className={className}>
-            <Link
-              to={
-                pathname === '/'
-                  ? `/yourProfile/${item.accountname}`
-                  : `/walkDetail/${item.id}`
-              }
-            >
-              <img
-                src={item.image}
-                alt={
-                  pathname === '/'
-                    ? `프로필 이미지 ${index}`
-                    : `게시글 이미지 ${index}`
-                }
-              />
-            </Link>
-          </ScrollImageButton>
-        ))
-      ) : (
-        <h1>팔로잉 중인 사용자의 게시물이 없습니다.</h1>
-      )}
-    </ScrollContainer>
-  );
+}, [imageUrls]);
+
+return (
+<ScrollContainer style={{ paddingBottom: allImagesLoaded ? '70px' : '0' }}>
+{/_ 렌더링 부분에서는 위에서 처리한 이미지 imageUrls를
+ScrollContainer 내에 매핑하여 이미지를 화면에 렌더링합니다 _/}
+{imageUrls.length > 0 ? (
+imageUrls.map((item, index) => (
+// pathname에 따라 보여줄 데이터와 위치가 결정됩니다.
+<ScrollImageButton key={index} className={className}>
+<Link
+to={
+pathname === '/'
+? `/yourProfile/${item.accountname}`
+: `/walkDetail/${item.id}`
+} >
+<img
+src={item.image}
+alt={
+pathname === '/'
+? `프로필 이미지 ${index}`
+: `게시글 이미지 ${index}`
+}
+/>
+</Link>
+</ScrollImageButton>
+))
+) : (
+<h1>팔로잉 중인 사용자의 게시물이 없습니다.</h1>
+)}
+</ScrollContainer>
+);
 };
 
 export default InfiniteScroll;
+
 ```
 
 </details>
@@ -473,48 +518,48 @@ export default InfiniteScroll;
 <!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
 
 ```
+
 import React, { useState } from 'react';
 import DaumPostcode from 'react-daum-postcode';
 import Modal from 'react-modal';
 import Input from '../Common/Input/Input';
 
 function AddressSearch({ onAddressSelect, className }) {
-  const [roadAddress, setRoadAddress] = useState('');
-  const [isOpen, setIsOpen] = useState(false);
-  const completeHandler = data => {
-    setRoadAddress(data.roadAddress);
-    setIsOpen(false);
-    onAddressSelect(data.roadAddress);
-  };
+const [roadAddress, setRoadAddress] = useState('');
+const [isOpen, setIsOpen] = useState(false);
+const completeHandler = data => {
+setRoadAddress(data.roadAddress);
+setIsOpen(false);
+onAddressSelect(data.roadAddress);
+};
 
-  const openModal = () => {
-    setIsOpen(true);
-  };
+const openModal = () => {
+setIsOpen(true);
+};
 
-  return (
-    <div>
-      // 컴포넌트를 렌더링한 곳에서 사용자가 주소를 입력하려면 버튼 또는 링크와 같은 UI 요소를 만들어서 DaumPostcode 컴포넌트를 열도록 유도해야 합니다.
-저희는 readOnly 옵션이 적용된 Input 컴포넌트를 클릭 시 팝업을 열어서 주소를 입력받을 수 있습니다. 
-      <Input
+return (
+<div>
+// 컴포넌트를 렌더링한 곳에서 사용자가 주소를 입력하려면 버튼 또는 링크와 같은 UI 요소를 만들어서 DaumPostcode 컴포넌트를 열도록 유도해야 합니다.
+저희는 readOnly 옵션이 적용된 Input 컴포넌트를 클릭 시 팝업을 열어서 주소를 입력받을 수 있습니다.
+<Input
         value={roadAddress}
         readOnly
         placeholder="주소"
         onClick={openModal}
         className={className}
       />
-      <Modal
-        isOpen={isOpen}
-        ariaHideApp={false}
-        //바깥 클릭하면 꺼지도록
-        onRequestClose={() => setIsOpen(false)}
-      >
-        // 모달 내에 DaumPostcode 컴포넌트를 렌더링 합니다. 'onComplete' prop은 Daum 우편번호 서비스에서 주소 입력이 완료되면 실행할 함수를 지정합니다.
+<Modal
+isOpen={isOpen}
+ariaHideApp={false}
+//바깥 클릭하면 꺼지도록
+onRequestClose={() => setIsOpen(false)} >
+// 모달 내에 DaumPostcode 컴포넌트를 렌더링 합니다. 'onComplete' prop은 Daum 우편번호 서비스에서 주소 입력이 완료되면 실행할 함수를 지정합니다.
 이 함수에는 선택한 주소 정보가 전달되어 저장합니다.
-        <DaumPostcode onComplete={completeHandler} height="100%" />
-      </Modal>
-      <br />
-    </div>
-  );
+<DaumPostcode onComplete={completeHandler} height="100%" />
+</Modal>
+<br />
+</div>
+);
 }
 
 export default AddressSearch;
@@ -530,7 +575,9 @@ export default AddressSearch;
 <!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
 
 ```
+
 진행중
+
 ```
 
 </details>
@@ -600,7 +647,7 @@ export default AddressSearch;
 <br/>
 
 ### 리팩토링 진행
-Lighthouse 수치를 통해 파악 후 개선을 진행하였습니다. 
+Lighthouse 수치를 통해 파악 후 개선을 진행하였습니다.
 #### 홈 화면
 - 개선 전
 <img width="542" alt="image" src="https://github.com/Petpal-frontend/petpal-frontend/assets/73383923/42b5f7ab-a57d-4f99-8485-320a2ff637e3">
@@ -613,3 +660,4 @@ Lighthouse 수치를 통해 파악 후 개선을 진행하였습니다.
 ## 13. 프로젝트 관련 문서
 #### 👉 [Notion](https://www.notion.so/1-6beb92665ec04f3d87bc385de664104f)
 #### 👉 [Figma](https://www.figma.com/files/team/1294159315441165760)
+```
