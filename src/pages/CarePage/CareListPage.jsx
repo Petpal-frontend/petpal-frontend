@@ -37,20 +37,25 @@ export default function CareListPage() {
 
   return (
     <>
-      {loading ? <Loading /> : null}
-      <Header type="list" title="돌보미" />
-      {careList.length > 0 ? (
-        careList && <PostList postList={careList} postType="care" />
+      {loading ? (
+        <Loading />
       ) : (
-        <PostBlankWrapper>
-          <PostBlankTextBox postBoxStyle={true}>
-            <PostBlankH1>우리 동네에 등록된 게시물이 없습니다.</PostBlankH1>
-            <PostBlankP>먼저 작성해보는건 어때요?</PostBlankP>
-            <ToWriteButton>
-              <Link to={`/carePost`}>게시물 등록하러가기</Link>
-            </ToWriteButton>
-          </PostBlankTextBox>
-        </PostBlankWrapper>
+        <>
+          <Header type="list" title="돌보미" />
+          {careList.length > 0 ? (
+            <PostList postList={careList} postType="care" />
+          ) : (
+            <PostBlankWrapper>
+              <PostBlankTextBox postBoxStyle={true}>
+                <PostBlankH1>우리 동네에 등록된 게시물이 없습니다.</PostBlankH1>
+                <PostBlankP>먼저 작성해보는건 어때요?</PostBlankP>
+                <ToWriteButton>
+                  <Link to={`/carePost`}>게시물 등록하러가기</Link>
+                </ToWriteButton>
+              </PostBlankTextBox>
+            </PostBlankWrapper>
+          )}
+        </>
       )}
     </>
   );
