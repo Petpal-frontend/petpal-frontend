@@ -62,14 +62,14 @@ PW: 123123
 
 ## 5. 기술 스택 및 개발 환경
 
-<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=recoil&logoColor=white" /> <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" /> <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=ffd35b" /> <img src="https://img.shields.io/badge/javascript-F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=20232a" />  
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/javascript-F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=20232a" /> <img src="https://img.shields.io/badge/Recoil-3578E5?style=for-the-badge&logo=recoil&logoColor=white" /> <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" /> <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=ffd35b" />
 | 구분 | |
 | :---: | --- |
-| **사용 기술** | 프론트엔드: React, Recoil, Axios, styled-components, JavaScript <br/> 백엔드: 제공된 API 사용 |
+| **사용 기술** | 프론트엔드: React, JavaScript, Recoil, Axios, styled-components <br/> 백엔드: 제공된 API 사용 |
 | **컨벤션** | ESLint, Prettier |
-| **협업** | Git, GitHub, Notion, Discord, Figma |
+| **협업** | Git, GitHub, Notion, Figma, Discord |
 | **IDE** | VSCode |
-| **배포** | netlify |
+| **배포** | Netlify |
 
 <br/>
 
@@ -84,7 +84,7 @@ PW: 123123
 
 ### 컨벤션
 
-#### eslint
+#### ESLint
 
 ```
 {
@@ -100,7 +100,7 @@ PW: 123123
 }
 ```
 
-#### prettier
+#### Prettier
 
 ```
 {
@@ -136,15 +136,15 @@ PW: 123123
 ## 6. 폴더 구조
 
 ```
-petpal-frontend                     # git 저장소 # 여기서 git 작업을 해야합니다.
-└── 📁 petpal                       # react 프로젝트 # 여기서 npm start를 해야합니다.
+petpal-frontend                     # git 저장소 # 여기서 git 작업을 해야 합니다.
+└── 📁 petpal-frontend              # react 프로젝트 # 여기서 npm start를 해야 합니다.
     ├── 📁 node_modules             # 의존성 모듈
-    ├── 📁 public                   # 정적 파일 (index.html, 이미지 등)
+    ├── 📁 public                   # 정적 파일 (index.html 등)
     │   ├── favicon.ico
     │   └── index.html
     ├── 📁 src                      # 소스 코드
     │    ├── 📂 api                 # Axios 인스턴스 및 API 관련 모듈 함수
-    │    ├── 📂 assets              # 폰트, 이미지 등 정적 리소스
+    │    ├── 📂 assets              # 이미지 등 정적 리소스
     │    ├── 📂 atoms               # 리코일 관련 폴더
     │    ├── 📁 components          # 컴포넌트 (재사용 가능한 UI 컴포넌트가 위치하는 디렉토리)
     │    ├── 📁 mock                # mock 데이터 폴더
@@ -165,7 +165,7 @@ petpal-frontend                     # git 저장소 # 여기서 git 작업을 �
 <br/>
 <br/>
 
-## 7. Git Branch 전략 - Git + Github Flow
+## 7. Git Branch 전략: Git + Github Flow
 
 ### 프로젝트 Gitflow 전략
 
@@ -180,7 +180,7 @@ main, dev, feature/기능명 브랜치를 사용했습니다.
 - **dev**: 다음 릴리스를 위한 개발 중인 기능을 통합하는 브랜치입니다.
 - **feature/**: 새로운 기능 개발을 위한 브랜치입니다.
 
-이번 개발 기간동안에는 사용하지 못했지만 리펙토링 기간에는 다음의 브랜치를 활성화 할 예정입니다.
+이번 개발 기간 동안에는 사용하지 못했지만 리펙토링 기간에는 다음의 브랜치를 활성화할 예정입니다.
 
 - **bugfix/**: 버그 수정을 위한 브랜치입니다.
 - **hotfix/**: 긴급한 버그 수정을 위한 브랜치입니다.
@@ -215,7 +215,7 @@ main, dev, feature/기능명 브랜치를 사용했습니다.
 
 ### 3) 게시물
 
-#### 산책메이트, 돌보미
+#### 산책 메이트, 돌보미
 
 |                                                                                                                           게시물 목록 페이지                                                                                                                            |                                                                                                                           게시물 상세 페이지                                                                                                                            |                                                                                                                           게시물 작성 페이지                                                                                                                            |
 | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -256,7 +256,7 @@ main, dev, feature/기능명 브랜치를 사용했습니다.
 
 기능 개발
 
-- 초기 폴더구조 세팅 및 환경설정
+- 초기 폴더 구조 세팅 및 환경설정
 - 각 페이지 라우터 연결
 
 <br/>
@@ -266,7 +266,7 @@ main, dev, feature/기능명 브랜치를 사용했습니다.
 화면 개발
 
 - 헤더, 레이아웃, 유저 인포, 이미지 버튼 공통 컴포넌트
-- 산책메이트, 돌보미, 프로필 페이지 (리스트, 상세, 글쓰기)
+- 산책 메이트, 돌보미, 프로필 페이지 (리스트, 상세, 글쓰기)
 
 기능 개발
 
@@ -282,14 +282,14 @@ main, dev, feature/기능명 브랜치를 사용했습니다.
 - 프로필
 
   - 로그인된 사용자의 정보에 따라 사용자의 프로필을 보여주도록 구현
-  - 사용자의 판매중인 상품과 게시글 리스트 구현
+  - 사용자의 판매 중인 상품과 게시글 리스트 구현
 
 - 회원가입
 
   - 회원가입 시 이메일 유효성 체크
 
 - 피드
-  - 게시글, 사용자 데이터 개수에 따른 무한 스크롤 여부 및 보여 줄 데이터 상태관리
+  - 게시글, 사용자 데이터 개수에 따른 무한 스크롤 여부 및 보여 줄 데이터 상태 관리
 - API
   - API 사용을 위한 axios instances 생성
 
@@ -320,7 +320,7 @@ main, dev, feature/기능명 브랜치를 사용했습니다.
 - 홈 페이지
 - 스플래시 페이지
 - 피드 페이지
-- 공통 컴포넌트 UI (modal, alert..)
+- 공통 컴포넌트 UI (modal, alert 등)
 
 기능 개발
 
@@ -339,7 +339,7 @@ main, dev, feature/기능명 브랜치를 사용했습니다.
   - map
   - splash
   - tooltip
-- 상태관리
+- 상태 관리
   - recoil atom으로 전역 데이터 관리
 
 <br/>
@@ -378,7 +378,7 @@ main, dev, feature/기능명 브랜치를 사용했습니다.
 <summary><b>홈, 피드 무한 스크롤 구현</b></summary>
 <br/>
 	
-<!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
+<!--summary 아래 빈칸 공백 두고 내용을 적는 공간-->
 ```
 import React, { useEffect, useState } from 'react';
 import { ScrollContainer, ScrollImageButton } from './scrollStyle';
@@ -405,9 +405,9 @@ if (imageData[index]) {
 // 이미지가 1개 이상인 경우 무조건 배열로 처리해줌 -> 게시글의 이미지가 문자열로 담겨있기 때문에
 let imageArr = imageData[index].image.split(',');
 return {
-// 첫번째 이미지만 담기
+// 첫 번째 이미지만 담기
 image: imageArr[0],
-// path가 /인 경우 home에서 보여줄 이미지의 accountname을 -> 추후 프로필이미지 GET
+// path가 /인 경우 home에서 보여줄 이미지의 accountname을 -> 추후 프로필 이미지 GET
 // 그 외의 경우에는 게시글의 accountname을 저장 -> 추후 피드 GET
 accountname:
 pathname === '/'
@@ -421,7 +421,7 @@ return null;
 },
 );
 
-    // 현재 렌더링되는 이미지 URL을 추적
+    // 현재 렌더링 되는 이미지 URL을 추적
 
 const [imageUrls, setImageUrls] = useState(initialImageUrls);
 
@@ -447,7 +447,7 @@ setImageUrls([...imageUrls, newImageUrl]);
 }
 };
 
-    // 스크롤이 맨 아래에 닿는 경우 체크
+// 스크롤이 맨 아래에 닿는 경우 체크
 
 const checkScroll = () => {
 const scrollHeight = document.documentElement.scrollHeight;
@@ -518,7 +518,7 @@ export default InfiniteScroll;
 <summary><b>react-daum-postcode 사용</b></summary>
 <br/>
 
-<!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
+<!--summary 아래 빈칸 공백 두고 내용을 적는 공간-->
 
 ```
 
@@ -554,7 +554,7 @@ return (
 <Modal
 isOpen={isOpen}
 ariaHideApp={false}
-//바깥 클릭하면 꺼지도록
+// 바깥 클릭하면 꺼지도록
 onRequestClose={() => setIsOpen(false)} >
 // 모달 내에 DaumPostcode 컴포넌트를 렌더링 합니다. 'onComplete' prop은 Daum 우편번호 서비스에서 주소 입력이 완료되면 실행할 함수를 지정합니다.
 이 함수에는 선택한 주소 정보가 전달되어 저장합니다.
@@ -575,7 +575,7 @@ export default AddressSearch;
 <summary><b>반응형 구현 - 🔨코드는 추후 리팩토링 시 레이아웃 획일화를 진행하여 올릴 예정🔨</b></summary>
 <br/>
 
-<!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
+<!--summary 아래 빈칸 공백 두고 내용을 적는 공간-->
 
 ```
 
@@ -595,9 +595,9 @@ export default AddressSearch;
 
 - <b>주소 필드로 사용 (intro):</b> API에 'intro' 파트에 주소 정보를 추가했습니다. 이 주소 정보는 사용자에게 표시되며, 특정 위치의 지리적 정보를 나타냅니다. 이 주소 정보를 통해 사용자들은 서비스 내에서 원하는 위치를 식별하고 선택할 수 있습니다.
 - <b>고유 id:</b> API에서 고유 ID를 사용하여 개별 데이터 레코드를 식별합니다. 이 ID에 'petpal_'이라는 접두어를 추가함으로써, 해당 ID가 PetPal 애플리케이션에서 생성된 것임을 명확히합니다. 이로써 다른 시스템 또는 데이터베이스에서 유사한 ID와 혼동되는 것을 방지합니다.
-- <b>accountname 구분 (초단위 시간):</b> 'accountname' 필드는 사용자의 계정 이름을 나타내며, PetPal 내에서 사용자를 식별합니다. 초단위까지의 시간 정보를 'accountname'에 추가함으로써, 동일한 시간에 계정을 생성한 여러 사용자에 대한 중복을 피하고 사용자의 계정 이름이 고유하도록 보장합니다.
+- <b>accountname 구분 (초 단위 시간):</b> 'accountname' 필드는 사용자의 계정 이름을 나타내며, PetPal 내에서 사용자를 식별합니다. 초 단위까지의 시간 정보를 'accountname'에 추가함으로써, 동일한 시간에 계정을 생성한 여러 사용자에 대한 중복을 피하고 사용자의 계정 이름이 고유하도록 보장합니다.
 
-<!--summary 아래 빈칸 공백 두고 내용을 적는공간-->
+<!--summary 아래 빈칸 공백 두고 내용을 적는 공간-->
 <!--
 서버에서 데이터를 불러오거나 처리하는 과정에서 오류가 발생할 수 있습니다. 이러한 오류는 네트워크 요청 중에 서버에서 반환되는 상태 코드가 예상치 못한 오류 상태 코드인 경우 또는 서버에서 오류 메시지를 반환하는 경우 발생할 수 있습니다.
  -->
@@ -609,10 +609,12 @@ export default AddressSearch;
 
 네트워크 요청 중에 서버에서 반환되는 상태 코드를 확인하고, 오류 상태 코드에 따라 적절한 조치를 취합니다.
 오류 상태 코드를 분석하여 클라이언트 측에서 조치를 취할 수 있도록 에러 핸들링 코드를 작성합니다. 예를 들어, 404 상태 코드는 "리소스를 찾을 수 없음"을 의미하므로 사용자에게 해당 리소스를 찾을 수 없다는 메시지를 표시할 수 있습니다.
+
 에러 핸들링 및 오류 메시지 표시:
 
 서버에서 반환된 오류 메시지를 클라이언트 측에서 적절하게 처리하고 사용자에게 표시합니다.
 에러 핸들러를 사용하여 예외를 캐치하고, 사용자에게 사용자 친화적인 오류 메시지를 표시합니다. 이로써 사용자는 오류 상황을 이해하고 적절한 조치를 취할 수 있습니다.
+
 데이터 유효성 검사:
 
 데이터를 서버로 보내기 전에 클라이언트 측에서 데이터의 유효성을 검사합니다.
@@ -627,19 +629,19 @@ export default AddressSearch;
 
 - 로그인 상태를 관리하는 Recoil 상태가 페이지 새로 고침 시 초기화되는 문제에 직면했습니다. 이를 해결하기 위해 LocalStorage에 Recoil 상태를 저장하고 동기화하기 위해 recoil-persist 라이브러리를 사용했습니다. recoil-persist를 통해 페이지 새로 고침이나 이동과 같은 상황에서도 Recoil 상태를 유지하여 문제를 해결할 수 있었습니다.
 - 그러나 민감한 정보를 LocalStorage에 저장할 경우 보안 문제가 발생할 수 있습니다. 이를 해결하기 위해 SessionStorage를 사용하여 브라우저 Session이 종료될 때 데이터가 자동으로 삭제되도록 설정하는 방법이 있습니다. 그러나 이 경우에는 사용자의 로그인 상태를 계속 유지하기 어려울 수 있습니다.
-- 이에, 민감한 정보를 암호화하여 저장하고, 필요할 때 복호화하여 사용하여 보안을 강화하고 사용자의 로그인 상태를 지속적으로 유지할 수 있는 방법에 대해 고려할 수 있었습니다.
+- 이에, 민감한 정보를 암호화하여 저장하고, 필요할 때 복호화하여 사용해 보안을 강화하고 사용자의 로그인 상태를 지속적으로 유지할 수 있는 방법에 대해 고려할 수 있었습니다.
 </details>
 <br/>
 <br/>
 
-## 12. 리팩토링 목표 => 라이트하우스로 수치화, 조금 더 세분화 된 지역구
+## 12. 리팩토링 목표 => 라이트하우스로 수치화, 조금 더 세분화된 지역구
 - 맵 api의 고도화
   - 현재 펫팔은 사용자들에게 주소를 입력받아 위치정보를 사용하고 있습니다. 향후에는 Google Maps나 OpenStreetMap과 같은 다양한 맵 API를 도입하여 사용자들에게 더 나은 서비스를 제공할 계획입니다.
     이를 통해 사용자들에게는 실시간 위치 정보 제공 및 시설 검색과 같은 기능을 제공할 수 있게 될 것이며 이러한 업그레이드를 통해 펫팔의 사용성과 가치를 높여, 사용자들에게 더 편리하고 유용한 경험을 제공할 것입니다.
 - 코드 스타일 통일
-  - 프로젝트 내에서 일관 된 코드스타일 및 정확한 코드 컨벤션을 적용하여 가독성을 향상 시키고 협업을 더욱 원활하게 만들 것입니다.
+  - 프로젝트 내에서 일관된 코드 스타일 및 정확한 코드 컨벤션을 적용하여 가독성을 향상시키고 협업을 더욱 원활하게 만들 것입니다.
 - 재사용성 높이기
-  - 코드를 더욱 모듈화 하고 재사용 가능한 함수 컴포넌트로 구성함으로써, 코드 중복을 최소화하고 유지보수를 쉽게 만들 것입니다.
+  - 코드를 더욱 모듈화하고 재사용 가능한 함수 컴포넌트로 구성함으로써, 코드 중복을 최소화하고 유지 보수를 쉽게 만들 것입니다.
 - 웹 접근성 향상 계획
   - 펫팔은 시각, 청각, 지체, 인지적 장애 등 다양한 장애를 가진 사용자들이 애플리케이션을 이용할 때 불편함 없이 사용할 수 있도록 개선할 예정입니다.
     스크린 리더와 호환되는 텍스트와 레이아웃을 구현하고, 키보드 사용이 가능한 네비게이션 기능을 추가하여 사용자들에게 다양한 장애에 관계없이 쉽고 편리하게 펫팔의 서비스를 제공할 것입니다.
